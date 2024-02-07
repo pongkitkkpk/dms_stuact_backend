@@ -37,11 +37,11 @@ app.delete('/deleteUser/:id', (req, res) => { // Added a leading slash
 });
 
 app.post('/createUser', (req, res) => {
-    const { id_student, name_student, department, position, campus, clubname, codeclub } = req.body;
+    const { id_student, name_student, department, position, clubName, campus, yearly, codedivision, codeagency, codeworkgroup, codebooksome } = req.body;
 
     db.query(
-        "INSERT INTO users (id_student, name_student, department, position, campus, clubname, codeclub) VALUES (?, ?, ?, ?, ?, ?, ?)",
-        [id_student, name_student, department, position, campus, clubname, codeclub],
+        "INSERT INTO users (id_student, name_student, department, position, clubName, campus, yearly, codedivision, codeagency, codeworkgroup, codebooksome) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+        [id_student, name_student, department, position, clubName, campus, yearly, codedivision, codeagency, codeworkgroup, codebooksome],
         (err, result) => {
             if (err) {
                 console.log(err);
@@ -52,6 +52,8 @@ app.post('/createUser', (req, res) => {
         }
     );
 });
+
+
 
 app.post('/createProject', (req, res) => {
     const {
