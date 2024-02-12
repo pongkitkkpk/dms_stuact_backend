@@ -2,9 +2,12 @@ const express = require('express');
 const app = express();
 const mysql = require('mysql');
 const cors = require('cors');
+const generateDocx = require('./genDocument04')
 
 app.use(cors());
 app.use(express.json());
+
+
 
 const db = mysql.createConnection({
     user: "root",
@@ -55,50 +58,10 @@ app.post('/createUser', (req, res) => {
 
 
 
-app.post('/createProject', (req, res) => {
-    const {
-        id_student,
-        project_name,
-        project_number,
-        codeclub,
-        yearly,
-        yearly_count,
-        responsible_agency,
-        academic_year,
-        advisor_name,
-        person1_name,
-        person1_contact,
-        person2_name,
-        person2_contact,
-        person3_name,
-        person3_contact,
-        principles_and_reasons,
-        objective1,
-        objective2,
-        objective3,
-        project_type1,
-        project_type2,
-        project_type3,
-        is_newproject,
-        is_continueproject,
-        number_of_staff,
-        number_of_staffstudent,
-        number_of_joinstudent,
-        etc_typename1,
-        number_of_etc1,
-        etc_typename2,
-        number_of_etc2,
-        location1,
-        location2,
-        location3,
-        startDate,
-        endDate
-    } = req.body;
-
-    db.query(
-        // "INSERT INTO projects (project_name, project_number, codeclub, startDate, endDate) VALUES ('asdfasdf', 'B', 'A', NOW(), NOW())",
-         "INSERT INTO projects (id_student,project_name, project_number, codeclub, yearly, yearly_count, responsible_agency,academic_year, advisor_name, person1_name, person1_contact, person2_name,person2_contact, person3_name, person3_contact, principles_and_reasons,objective1, objective2, objective3, project_type1, project_type2, project_type3,is_newproject, is_continueproject, number_of_staff, number_of_staffstudent,number_of_joinstudent, etc_typename1, number_of_etc1, etc_typename2, number_of_etc2,location1, location2, location3, startDate, endDate) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
-         [
+app.post('/createProject', async (req, res) => {
+    try {
+        const {
+            // Destructure the fields from the request body
             id_student,
             project_name,
             project_number,
@@ -135,17 +98,127 @@ app.post('/createProject', (req, res) => {
             location3,
             startDate,
             endDate
-        ],
-        (err, result) => {
-            if (err) {
-                console.log(err);
-                res.status(500).send(err); // Handle the error and send an appropriate response
-            } else {
-                res.send("Values Inserted");
+        } = req.body;
+
+        // Insert data into the database
+        db.query(
+            "INSERT INTO projects (id_student,project_name, project_number, codeclub, yearly, yearly_count, responsible_agency,academic_year, advisor_name, person1_name, person1_contact, person2_name,person2_contact, person3_name, person3_contact, principles_and_reasons,objective1, objective2, objective3, project_type1, project_type2, project_type3,is_newproject, is_continueproject, number_of_staff, number_of_staffstudent,number_of_joinstudent, etc_typename1, number_of_etc1, etc_typename2, number_of_etc2,location1, location2, location3, startDate, endDate) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+            [
+                id_student,
+                project_name,
+                project_number,
+                codeclub,
+                yearly,
+                yearly_count,
+                responsible_agency,
+                academic_year,
+                advisor_name,
+                person1_name,
+                person1_contact,
+                person2_name,
+                person2_contact,
+                person3_name,
+                person3_contact,
+                principles_and_reasons,
+                objective1,
+                objective2,
+                objective3,
+                project_type1,
+                project_type2,
+                project_type3,
+                is_newproject,
+                is_continueproject,
+                number_of_staff,
+                number_of_staffstudent,
+                number_of_joinstudent,
+                etc_typename1,
+                number_of_etc1,
+                etc_typename2,
+                number_of_etc2,
+                location1,
+                location2,
+                location3,
+                startDate,
+                endDate
+            ],
+            async (err, result) => {
+                if (err) {
+                    console.error(err);
+                    res.status(500).send(err); // Handle the error and send an appropriate response
+                    return;
+                }
+
+                try {
+                    // Generate the document
+                    const PizZip = require("pizzip");
+                    const Docxtemplater = require("docxtemplater");
+                    const fs = require("fs");
+                    const path = require("path");
+
+                    // Load the template
+                    const content = fs.readFileSync(path.resolve(__dirname,"templateDoc", "temp04.docx"), "binary");
+                    const zip = new PizZip(content);
+                    const doc = new Docxtemplater(zip, { paragraphLoop: true, linebreaks: true });
+
+                    // Render the document
+                    doc.render({
+                        id_student: id_student,
+                        project_name: project_name,
+                        project_number: project_number,
+                        codeclub: codeclub,
+                        yearly: yearly,
+                        yearly_count: yearly_count,
+                        responsible_agency: responsible_agency,
+                        academic_year: academic_year,
+                        advisor_name: advisor_name,
+                        person1_name: person1_name,
+                        person1_contact: person1_contact,
+                        person2_name: person2_name,
+                        person2_contact: person2_contact,
+                        person3_name: person3_name,
+                        person3_contact: person3_contact,
+                        principles_and_reasons: principles_and_reasons,
+                        objective1: objective1,
+                        objective2: objective2,
+                        objective3: objective3,
+                        project_type1: project_type1,
+                        project_type2: project_type2,
+                        project_type3: project_type3,
+                        is_newproject: is_newproject,
+                        is_continueproject: is_continueproject,
+                        number_of_staff: number_of_staff,
+                        number_of_staffstudent: number_of_staffstudent,
+                        number_of_joinstudent: number_of_joinstudent,
+                        etc_typename1: etc_typename1,
+                        number_of_etc1: number_of_etc1,
+                        etc_typename2: etc_typename2,
+                        number_of_etc2: number_of_etc2,
+                        location1: location1,
+                        location2: location2,
+                        location3: location3,
+                        startDate: startDate,
+                        endDate: endDate,
+                    });
+
+                    // Generate and save the document
+                    const buf = doc.getZip().generate({ type: "nodebuffer", compression: "DEFLATE" });
+                    fs.writeFileSync(path.resolve(__dirname, "e-docx",`e-doc-${project_name}.docx`), buf);
+
+
+                    res.send("Project created and document generated successfully!");
+                } catch (error) {
+                    console.error("Error generating document:", error);
+                    res.status(500).send("Error generating document: " + error.message);
+                }
             }
-        }
-    );
+        );
+    } catch (error) {
+        console.error(error);
+        res.status(500).send(error); // Handle the error and send an appropriate response
+    }
 });
+
+
 
 
 app.listen(3001, () => { // Removed quotes around 3001
