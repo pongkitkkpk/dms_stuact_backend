@@ -77,32 +77,38 @@ app.post('/createProject', async (req, res) => {
             person2_contact,
             person3_name,
             person3_contact,
-            principles_and_reasons,
+            principles_and_reasons1,
+            principles_and_reasons2,
+            principles_and_reasons3,
             objective1,
             objective2,
             objective3,
             project_type1,
             project_type2,
             project_type3,
+            project_type4,
+            project_type5,
             is_newproject,
             is_continueproject,
-            number_of_staff,
-            number_of_staffstudent,
-            number_of_joinstudent,
-            etc_typename1,
-            number_of_etc1,
-            etc_typename2,
-            number_of_etc2,
             location1,
             location2,
             location3,
-            startDate,
-            endDate
+            start_prepare,
+            end_prepare,
+            start_event,
+            end_event,
+            deadline,
+            problem1,
+            result1,
+            problem2,
+            result2,
+            problem3,
+            result3
         } = req.body;
 
         // Insert data into the database
         db.query(
-            "INSERT INTO projects (id_student,project_name, project_number, codeclub, yearly, yearly_count, responsible_agency,academic_year, advisor_name, person1_name, person1_contact, person2_name,person2_contact, person3_name, person3_contact, principles_and_reasons,objective1, objective2, objective3, project_type1, project_type2, project_type3,is_newproject, is_continueproject, number_of_staff, number_of_staffstudent,number_of_joinstudent, etc_typename1, number_of_etc1, etc_typename2, number_of_etc2,location1, location2, location3, startDate, endDate) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+            "INSERT INTO projects (id_student,project_name, project_number, codeclub, yearly, yearly_count, responsible_agency,academic_year, advisor_name, person1_name, person1_contact, person2_name,person2_contact, person3_name, person3_contact, principles_and_reasons1,principles_and_reasons2,principles_and_reasons3,objective1, objective2, objective3, project_type1, project_type2, project_type3,project_type4,project_type5,is_newproject, is_continueproject,location1, location2, location3, start_prepare, end_prepare,start_event,end_event,deadline,problem1,result1,problem2,result2,problem3,result3) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
             [
                 id_student,
                 project_name,
@@ -119,27 +125,33 @@ app.post('/createProject', async (req, res) => {
                 person2_contact,
                 person3_name,
                 person3_contact,
-                principles_and_reasons,
+                principles_and_reasons1,
+                principles_and_reasons2,
+                principles_and_reasons3,
                 objective1,
                 objective2,
                 objective3,
                 project_type1,
                 project_type2,
                 project_type3,
+                project_type4,
+                project_type5,
                 is_newproject,
                 is_continueproject,
-                number_of_staff,
-                number_of_staffstudent,
-                number_of_joinstudent,
-                etc_typename1,
-                number_of_etc1,
-                etc_typename2,
-                number_of_etc2,
                 location1,
                 location2,
                 location3,
-                startDate,
-                endDate
+                start_prepare,
+                end_prepare,
+                start_event,
+                end_event,
+                deadline,
+                problem1,
+                result1,
+                problem2,
+                result2,
+                problem3,
+                result3
             ],
             async (err, result) => {
                 if (err) {
@@ -148,68 +160,74 @@ app.post('/createProject', async (req, res) => {
                     return;
                 }
 
-                try {
-                    // Generate the document
-                    const PizZip = require("pizzip");
-                    const Docxtemplater = require("docxtemplater");
-                    const fs = require("fs");
-                    const path = require("path");
+                // try {
+                //     // Generate the document
+                //     const PizZip = require("pizzip");
+                //     const Docxtemplater = require("docxtemplater");
+                //     const fs = require("fs");
+                //     const path = require("path");
 
-                    // Load the template
-                    const content = fs.readFileSync(path.resolve(__dirname,"templateDoc", "temp04.docx"), "binary");
-                    const zip = new PizZip(content);
-                    const doc = new Docxtemplater(zip, { paragraphLoop: true, linebreaks: true });
+                //     // Load the template
+                //     const content = fs.readFileSync(path.resolve(__dirname, "templateDoc", "temp04.docx"), "binary");
+                //     const zip = new PizZip(content);
+                //     const doc = new Docxtemplater(zip, { paragraphLoop: true, linebreaks: true });
 
-                    // Render the document
-                    doc.render({
-                        id_student: id_student,
-                        project_name: project_name,
-                        project_number: project_number,
-                        codeclub: codeclub,
-                        yearly: yearly,
-                        yearly_count: yearly_count,
-                        responsible_agency: responsible_agency,
-                        academic_year: academic_year,
-                        advisor_name: advisor_name,
-                        person1_name: person1_name,
-                        person1_contact: person1_contact,
-                        person2_name: person2_name,
-                        person2_contact: person2_contact,
-                        person3_name: person3_name,
-                        person3_contact: person3_contact,
-                        principles_and_reasons: principles_and_reasons,
-                        objective1: objective1,
-                        objective2: objective2,
-                        objective3: objective3,
-                        project_type1: project_type1,
-                        project_type2: project_type2,
-                        project_type3: project_type3,
-                        is_newproject: is_newproject,
-                        is_continueproject: is_continueproject,
-                        number_of_staff: number_of_staff,
-                        number_of_staffstudent: number_of_staffstudent,
-                        number_of_joinstudent: number_of_joinstudent,
-                        etc_typename1: etc_typename1,
-                        number_of_etc1: number_of_etc1,
-                        etc_typename2: etc_typename2,
-                        number_of_etc2: number_of_etc2,
-                        location1: location1,
-                        location2: location2,
-                        location3: location3,
-                        startDate: startDate,
-                        endDate: endDate,
-                    });
+                //     // Render the document
+                //     doc.render({
+                //         id_student: id_student,
+                //         project_name: project_name,
+                //         project_number: project_number,
+                //         codeclub: codeclub,
+                //         yearly: yearly,
+                //         yearly_count: yearly_count,
+                //         responsible_agency: responsible_agency,
+                //         academic_year: academic_year,
+                //         advisor_name: advisor_name,
+                //         person1_name: person1_name,
+                //         person1_contact: person1_contact,
+                //         person2_name: person2_name,
+                //         person2_contact: person2_contact,
+                //         person3_name: person3_name,
+                //         person3_contact: person3_contact,
+                //         principles_and_reasons1: principles_and_reasons1,
+                //         principles_and_reasons2: principles_and_reasons2,
+                //         principles_and_reasons3: principles_and_reasons3,
+                //         objective1: objective1,
+                //         objective2: objective2,
+                //         objective3: objective3,
+                //         project_type1: project_type1,
+                //         project_type2: project_type2,
+                //         project_type3: project_type3,
+                //         project_type4: project_type4,
+                //         project_type5: project_type5,
+                //         is_newproject: is_newproject,
+                //         is_continueproject: is_continueproject,
+                //         location1: location1,
+                //         location2: location2,
+                //         location3: location3,
+                //         start_prepare:start_prepare,
+                //         end_prepare:end_prepare,
+                //         start_event:start_event,
+                //         end_event:end_event,
+                //         deadline:deadline,
+                //         problem1:problem1,
+                //         result1:result1,
+                //         problem2:problem2,
+                //         result2:result2,
+                //         problem3:problem3,
+                //         result3:result3
+                //     });
 
-                    // Generate and save the document
-                    const buf = doc.getZip().generate({ type: "nodebuffer", compression: "DEFLATE" });
-                    fs.writeFileSync(path.resolve(__dirname, "e-docx",`e-doc-${project_name}.docx`), buf);
+                //     // Generate and save the document
+                //     const buf = doc.getZip().generate({ type: "nodebuffer", compression: "DEFLATE" });
+                //     fs.writeFileSync(path.resolve(__dirname, "e-docx", `e-doc-${project_name}.docx`), buf);
 
 
-                    res.send("Project created and document generated successfully!");
-                } catch (error) {
-                    console.error("Error generating document:", error);
-                    res.status(500).send("Error generating document: " + error.message);
-                }
+                //     res.send("Project created and document generated successfully!");
+                // } catch (error) {
+                //     console.error("Error generating document:", error);
+                //     res.status(500).send("Error generating document: " + error.message);
+                // }
             }
         );
     } catch (error) {
