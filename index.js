@@ -59,6 +59,17 @@ app.post('/createUser', (req, res) => {
 
 
 app.post('/createProject', async (req, res) => {
+    const addDays = (date, days) => {
+        const result = new Date(date);
+        result.setDate(result.getDate() - days);
+        return result;
+    };
+    
+    // Usage example
+    const start_prepare_plus_1_day = addDays(req.body.start_prepare, 0);
+    const end_prepare_plus_1_day = addDays(req.body.end_prepare, 0);
+    const start_event_plus_1_day = addDays(req.body.start_event, 0);
+    const end_event_plus_1_day = addDays(req.body.end_event, 0);
     try {
         const {
             // Destructure the fields from the request body
@@ -141,10 +152,10 @@ app.post('/createProject', async (req, res) => {
                 location1,
                 location2,
                 location3,
-                start_prepare,
-                end_prepare,
-                start_event,
-                end_event,
+                start_prepare_plus_1_day,
+                end_prepare_plus_1_day,
+                start_event_plus_1_day,
+                end_event_plus_1_day,
                 deadline,
                 problem1,
                 result1,
