@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const mysql = require('mysql');
 const cors = require('cors');
-const generateDocx = require('./genDocument04')
+// const generateDocx = require('./genDocument04')
 
 app.use(cors());
 app.use(express.json());
