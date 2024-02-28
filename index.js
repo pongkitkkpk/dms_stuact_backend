@@ -27,6 +27,18 @@ app.get('/users', (req, res) => {
     });
 });
 
+app.get('/projects/:codeclub', (req, res) => {
+    const codeclub = req.params.codeclub;
+    db.query('SELECT * FROM projects WHERE codeclub = ? ORDER BY id DESC LIMIT 1', [codeclub], (err, result) => {
+        if (err) {
+            console.log(err);
+            res.status(500).send("Error retrieving project");
+        } else {
+            res.send(result);
+        }
+    });
+});
+
 app.delete('/deleteUser/:id', (req, res) => { // Added a leading slash
     const id = req.params.id;
     db.query("DELETE FROM users WHERE id = ?", id, (err, result) => {
@@ -64,7 +76,7 @@ app.post('/createProject', async (req, res) => {
         result.setDate(result.getDate() - days);
         return result;
     };
-    
+
     // Usage example
     const start_prepare_plus_1_day = addDays(req.body.start_prepare, 0);
     const end_prepare_plus_1_day = addDays(req.body.end_prepare, 0);
@@ -91,6 +103,8 @@ app.post('/createProject', async (req, res) => {
             principles_and_reasons1,
             principles_and_reasons2,
             principles_and_reasons3,
+            principles_and_reasons4,
+            principles_and_reasons5,
             objective1,
             objective2,
             objective3,
@@ -119,7 +133,7 @@ app.post('/createProject', async (req, res) => {
 
         // Insert data into the database
         db.query(
-            "INSERT INTO projects (id_student,project_name, project_number, codeclub, yearly, yearly_count, responsible_agency,academic_year, advisor_name, person1_name, person1_contact, person2_name,person2_contact, person3_name, person3_contact, principles_and_reasons1,principles_and_reasons2,principles_and_reasons3,objective1, objective2, objective3, project_type1, project_type2, project_type3,project_type4,project_type5,is_newproject, is_continueproject,location1, location2, location3, start_prepare, end_prepare,start_event,end_event,deadline,problem1,result1,problem2,result2,problem3,result3) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+            "INSERT INTO projects (id_student,project_name, project_number, codeclub, yearly, yearly_count, responsible_agency,academic_year, advisor_name, person1_name, person1_contact, person2_name,person2_contact, person3_name, person3_contact, principles_and_reasons1,principles_and_reasons2,principles_and_reasons3,principles_and_reasons4,principles_and_reasons5,objective1, objective2, objective3, project_type1, project_type2, project_type3,project_type4,project_type5,is_newproject, is_continueproject,location1, location2, location3, start_prepare, end_prepare,start_event,end_event,deadline,problem1,result1,problem2,result2,problem3,result3) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
             [
                 id_student,
                 project_name,
@@ -139,6 +153,8 @@ app.post('/createProject', async (req, res) => {
                 principles_and_reasons1,
                 principles_and_reasons2,
                 principles_and_reasons3,
+                principles_and_reasons4,
+                principles_and_reasons5,
                 objective1,
                 objective2,
                 objective3,
@@ -164,12 +180,30 @@ app.post('/createProject', async (req, res) => {
                 problem3,
                 result3
             ],
+
             async (err, result) => {
                 if (err) {
                     console.error(err);
                     res.status(500).send(err); // Handle the error and send an appropriate response
                     return;
                 }
+                const projectId = result.insertId;
+
+                // Insert only id_project into the p_person table
+                db.query(
+                    "INSERT INTO p_person (id_projects) VALUES (?)",
+                    [projectId],
+                    (err, pPersonResult) => {
+                        if (err) {
+                            console.error(err);
+                            res.status(500).send(err); // Handle the error and send an appropriate response
+                            return;
+                        }
+
+                        // If both insertions are successful, send a success response
+                        res.status(200).send({ projectId, pPersonId: pPersonResult.insertId });
+                    }
+                );
 
                 // try {
                 //     // Generate the document
@@ -246,6 +280,121 @@ app.post('/createProject', async (req, res) => {
         res.status(500).send(error); // Handle the error and send an appropriate response
     }
 });
+// ยังไม่ออเคร
+app.post('/updateProject_person', (req, res) => {
+    const {
+        id_projects,
+        executiveType1Name,
+        executiveType1Number,
+        executiveType2Name,
+        executiveType2Number,
+        executiveType3Name,
+        executiveType3Number,
+        executiveType4Name,
+        executiveType4Number,
+        executiveType5Name,
+        executiveType5Number,
+        grandTotalExecutive,
+        professorType1Name,
+        professorType1Number,
+        professorType2Name,
+        professorType2Number,
+        professorType3Name,
+        professorType3Number,
+        professorType4Name,
+        professorType4Number,
+        professorType5Name,
+        professorType5Number,
+        grandTotalProfessor,
+        studentType1Name,
+        studentType1Number,
+        studentType2Name,
+        studentType2Number,
+        studentType3Name,
+        studentType3Number,
+        studentType4Name,
+        studentType4Number,
+        studentType5Name,
+        studentType5Number,
+        grandTotalStudent,
+        expertType1Name,
+        expertType1Number,
+        expertType2Name,
+        expertType2Number,
+        expertType3Name,
+        expertType3Number,
+        expertType4Name,
+        expertType4Number,
+        expertType5Name,
+        expertType5Number,
+        grandTotalExpert,
+        grandTotalAll
+    } = req.body;
+
+    const values = [
+        executiveType1Name,
+        executiveType1Number,
+        executiveType2Name,
+        executiveType2Number,
+        executiveType3Name,
+        executiveType3Number,
+        executiveType4Name,
+        executiveType4Number,
+        executiveType5Name,
+        executiveType5Number,
+        grandTotalExecutive,
+        professorType1Name,
+        professorType1Number,
+        professorType2Name,
+        professorType2Number,
+        professorType3Name,
+        professorType3Number,
+        professorType4Name,
+        professorType4Number,
+        professorType5Name,
+        professorType5Number,
+        grandTotalProfessor,
+        studentType1Name,
+        studentType1Number,
+        studentType2Name,
+        studentType2Number,
+        studentType3Name,
+        studentType3Number,
+        studentType4Name,
+        studentType4Number,
+        studentType5Name,
+        studentType5Number,
+        grandTotalStudent,
+        expertType1Name,
+        expertType1Number,
+        expertType2Name,
+        expertType2Number,
+        expertType3Name,
+        expertType3Number,
+        expertType4Name,
+        expertType4Number,
+        expertType5Name,
+        expertType5Number,
+        grandTotalExpert,
+        grandTotalAll,
+        id_projects // condition to identify the record to update
+    ];
+
+    db.query(
+        "UPDATE p_person SET executiveType1Name=?, executiveType1Number=?, executiveType2Name=?, executiveType2Number=?, executiveType3Name=?, executiveType3Number=?, executiveType4Name=?, executiveType4Number=?, executiveType5Name=?, executiveType5Number=?, grandTotalExecutive=?, professorType1Name=?, professorType1Number=?, professorType2Name=?, professorType2Number=?, professorType3Name=?, professorType3Number=?, professorType4Name=?, professorType4Number=?, professorType5Name=?, professorType5Number=?, grandTotalProfessor=?, studentType1Name=?, studentType1Number=?, studentType2Name=?, studentType2Number=?, studentType3Name=?, studentType3Number=?, studentType4Name=?, studentType4Number=?, studentType5Name=?, studentType5Number=?, grandTotalStudent=?, expertType1Name=?, expertType1Number=?, expertType2Name=?, expertType2Number=?, expertType3Name=?, expertType3Number=?, expertType4Name=?, expertType4Number=?, expertType5Name=?, expertType5Number=?, grandTotalExpert=?, grandTotalAll=? WHERE id_projects=?",
+        values,
+        (err, result) => {
+            if (err) {
+                console.log(err);
+                res.status(500).send(err); // Handle the error and send an appropriate response
+            } else {
+                res.send("Values Updated");
+            }
+        }
+    );
+});
+
+
 
 
 
