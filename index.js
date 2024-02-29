@@ -27,6 +27,16 @@ app.get('/users', (req, res) => {
     });
 });
 
+app.get('/projects', (req, res) => {
+    db.query("SELECT * FROM projects", (err, result) => {
+        if (err) {
+            console.log(err);
+            res.status(500).send(err); // Handle the error and send an appropriate response
+        } else {
+            res.send(result);
+        }
+    });
+});
 app.get('/projects/:codeclub', (req, res) => {
     const codeclub = req.params.codeclub;
     db.query('SELECT * FROM projects WHERE codeclub = ? ORDER BY id DESC LIMIT 1', [codeclub], (err, result) => {
@@ -35,6 +45,30 @@ app.get('/projects/:codeclub', (req, res) => {
             res.status(500).send("Error retrieving project");
         } else {
             res.send(result);
+        }
+    });
+});
+
+app.get('/p_person', (req, res) => {
+    db.query("SELECT * FROM p_person", (err, result) => {
+        if (err) {
+            console.log(err);
+            res.status(500).send(err); // Handle the error and send an appropriate response
+        } else {
+            res.send(result);
+        }
+    });
+});
+
+app.get('/p_person/:id_projects', (req, res) => {
+    const id_projects = req.params.id_projects;
+
+    db.query('SELECT * FROM p_person WHERE id_projects = ?', [id_projects], (err, result) => {
+        if (err) {
+            console.error(err);
+            res.status(500).send('Error fetching p_person data');
+        } else {
+            res.json(result);
         }
     });
 });
@@ -91,6 +125,7 @@ app.post('/createProject', async (req, res) => {
             codeclub,
             yearly,
             yearly_count,
+            yearly_countsketch,
             responsible_agency,
             academic_year,
             advisor_name,
@@ -133,7 +168,7 @@ app.post('/createProject', async (req, res) => {
 
         // Insert data into the database
         db.query(
-            "INSERT INTO projects (id_student,project_name, project_number, codeclub, yearly, yearly_count, responsible_agency,academic_year, advisor_name, person1_name, person1_contact, person2_name,person2_contact, person3_name, person3_contact, principles_and_reasons1,principles_and_reasons2,principles_and_reasons3,principles_and_reasons4,principles_and_reasons5,objective1, objective2, objective3, project_type1, project_type2, project_type3,project_type4,project_type5,is_newproject, is_continueproject,location1, location2, location3, start_prepare, end_prepare,start_event,end_event,deadline,problem1,result1,problem2,result2,problem3,result3) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+            "INSERT INTO projects (id_student,project_name, project_number, codeclub, yearly,yearly_count, yearly_countsketch, responsible_agency,academic_year, advisor_name, person1_name, person1_contact, person2_name,person2_contact, person3_name, person3_contact, principles_and_reasons1,principles_and_reasons2,principles_and_reasons3,principles_and_reasons4,principles_and_reasons5,objective1, objective2, objective3, project_type1, project_type2, project_type3,project_type4,project_type5,is_newproject, is_continueproject,location1, location2, location3, start_prepare, end_prepare,start_event,end_event,deadline,problem1,result1,problem2,result2,problem3,result3) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
             [
                 id_student,
                 project_name,
@@ -141,6 +176,7 @@ app.post('/createProject', async (req, res) => {
                 codeclub,
                 yearly,
                 yearly_count,
+                yearly_countsketch,
                 responsible_agency,
                 academic_year,
                 advisor_name,
@@ -188,11 +224,12 @@ app.post('/createProject', async (req, res) => {
                     return;
                 }
                 const projectId = result.insertId;
+                
 
                 // Insert only id_project into the p_person table
                 db.query(
-                    "INSERT INTO p_person (id_projects) VALUES (?)",
-                    [projectId],
+                    "INSERT INTO p_person (id_projects,codeclub,yearly_countsketch) VALUES (?,?,?)",
+                    [projectId,codeclub,yearly_countsketch],
                     (err, pPersonResult) => {
                         if (err) {
                             console.error(err);
