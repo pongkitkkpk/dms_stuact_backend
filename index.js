@@ -37,9 +37,11 @@ app.get('/projects', (req, res) => {
         }
     });
 });
-app.get('/projects/:codeclub', (req, res) => {
-    const codeclub = req.params.codeclub;
-    db.query('SELECT * FROM projects WHERE codeclub = ? ORDER BY id DESC LIMIT 1', [codeclub], (err, result) => {
+
+
+app.get('/projects/:id_projects', (req, res) => {
+    const id_projects = req.params.id_projects;
+    db.query('SELECT * FROM projects WHERE id = ? ORDER BY id DESC LIMIT 1', [id_projects], (err, result) => {
         if (err) {
             console.log(err);
             res.status(500).send("Error retrieving project");
@@ -48,6 +50,18 @@ app.get('/projects/:codeclub', (req, res) => {
         }
     });
 });
+
+// app.get('/projects/:codeclub', (req, res) => {
+//     const codeclub = req.params.codeclub;
+//     db.query('SELECT * FROM projects WHERE codeclub = ? ORDER BY id DESC LIMIT 1', [codeclub], (err, result) => {
+//         if (err) {
+//             console.log(err);
+//             res.status(500).send("Error retrieving project");
+//         } else {
+//             res.send(result);
+//         }
+//     });
+// });
 
 app.get('/p_person', (req, res) => {
     db.query("SELECT * FROM p_person", (err, result) => {
@@ -84,6 +98,7 @@ app.delete('/deleteUser/:id', (req, res) => { // Added a leading slash
         }
     });
 });
+
 
 app.post('/createUser', (req, res) => {
     const { id_student, name_student, department, position, clubName, campus, yearly, codedivision, codeagency, codeworkgroup, codebooksome } = req.body;
@@ -165,7 +180,7 @@ app.post('/createProject', async (req, res) => {
             problem3,
             result3,
             created_at,
-            updated_at 
+            updated_at
         } = req.body;
 
         // Insert data into the database
@@ -218,7 +233,7 @@ app.post('/createProject', async (req, res) => {
                 problem3,
                 result3,
                 created_at,
-                updated_at 
+                updated_at
             ],
 
             async (err, result) => {
@@ -228,12 +243,12 @@ app.post('/createProject', async (req, res) => {
                     return;
                 }
                 const projectId = result.insertId;
-                
+
 
                 // Insert only id_project into the p_person table
                 db.query(
                     "INSERT INTO p_person (id_projects,codeclub,yearly_countsketch) VALUES (?,?,?)",
-                    [projectId,codeclub,yearly_countsketch],
+                    [projectId, codeclub, yearly_countsketch],
                     (err, pPersonResult) => {
                         if (err) {
                             console.error(err);
@@ -323,117 +338,141 @@ app.post('/createProject', async (req, res) => {
 });
 
 app.post('/createperson_project', (req, res) => {
-    const {
-        
-        executiveType1Name,
-        executiveType1Number,
-        executiveType2Name,
-        executiveType2Number,
-        executiveType3Name,
-        executiveType3Number,
-        executiveType4Name,
-        executiveType4Number,
-        executiveType5Name,
-        executiveType5Number,
-        grandTotalExecutive,
-        professorType1Name,
-        professorType1Number,
-        professorType2Name,
-        professorType2Number,
-        professorType3Name,
-        professorType3Number,
-        professorType4Name,
-        professorType4Number,
-        professorType5Name,
-        professorType5Number,
-        grandTotalProfessor,
-        studentType1Name,
-        studentType1Number,
-        studentType2Name,
-        studentType2Number,
-        studentType3Name,
-        studentType3Number,
-        studentType4Name,
-        studentType4Number,
-        studentType5Name,
-        studentType5Number,
-        grandTotalStudent,
-        expertType1Name,
-        expertType1Number,
-        expertType2Name,
-        expertType2Number,
-        expertType3Name,
-        expertType3Number,
-        expertType4Name,
-        expertType4Number,
-        expertType5Name,
-        expertType5Number,
-        grandTotalExpert,
-        grandTotalAll,
-        id_projects
-    } = req.body;
+    try {
+        const {
+            id_projects,
+            codeclub,
+            yearly_countsketch,
+            executiveType1Name,
+            executiveType1Number,
+            executiveType2Name,
+            executiveType2Number,
+            executiveType3Name,
+            executiveType3Number,
+            executiveType4Name,
+            executiveType4Number,
+            executiveType5Name,
+            executiveType5Number,
+            grandTotalExecutive,
+            professorType1Name,
+            professorType1Number,
+            professorType2Name,
+            professorType2Number,
+            professorType3Name,
+            professorType3Number,
+            professorType4Name,
+            professorType4Number,
+            professorType5Name,
+            professorType5Number,
+            grandTotalProfessor,
+            studentType1Name,
+            studentType1Number,
+            studentType2Name,
+            studentType2Number,
+            studentType3Name,
+            studentType3Number,
+            studentType4Name,
+            studentType4Number,
+            studentType5Name,
+            studentType5Number,
+            grandTotalStudent,
+            expertType1Name,
+            expertType1Number,
+            expertType2Name,
+            expertType2Number,
+            expertType3Name,
+            expertType3Number,
+            expertType4Name,
+            expertType4Number,
+            expertType5Name,
+            expertType5Number,
+            grandTotalExpert,
+            grandTotalAll,
 
-    const values = [
-        executiveType1Name,
-        executiveType1Number,
-        executiveType2Name,
-        executiveType2Number,
-        executiveType3Name,
-        executiveType3Number,
-        executiveType4Name,
-        executiveType4Number,
-        executiveType5Name,
-        executiveType5Number,
-        grandTotalExecutive,
-        professorType1Name,
-        professorType1Number,
-        professorType2Name,
-        professorType2Number,
-        professorType3Name,
-        professorType3Number,
-        professorType4Name,
-        professorType4Number,
-        professorType5Name,
-        professorType5Number,
-        grandTotalProfessor,
-        studentType1Name,
-        studentType1Number,
-        studentType2Name,
-        studentType2Number,
-        studentType3Name,
-        studentType3Number,
-        studentType4Name,
-        studentType4Number,
-        studentType5Name,
-        studentType5Number,
-        grandTotalStudent,
-        expertType1Name,
-        expertType1Number,
-        expertType2Name,
-        expertType2Number,
-        expertType3Name,
-        expertType3Number,
-        expertType4Name,
-        expertType4Number,
-        expertType5Name,
-        expertType5Number,
-        grandTotalExpert,
-        grandTotalAll,
-        id_projects // condition to identify the record to update
-    ];
+        } = req.body;
 
-    db.query(
-        "UPDATE p_person SET executiveType1Name=?, executiveType1Number=?, executiveType2Name=?, executiveType2Number=?, executiveType3Name=?, executiveType3Number=?, executiveType4Name=?, executiveType4Number=?, executiveType5Name=?, executiveType5Number=?, grandTotalExecutive=?, professorType1Name=?, professorType1Number=?, professorType2Name=?, professorType2Number=?, professorType3Name=?, professorType3Number=?, professorType4Name=?, professorType4Number=?, professorType5Name=?, professorType5Number=?, grandTotalProfessor=?, studentType1Name=?, studentType1Number=?, studentType2Name=?, studentType2Number=?, studentType3Name=?, studentType3Number=?, studentType4Name=?, studentType4Number=?, studentType5Name=?, studentType5Number=?, grandTotalStudent=?, expertType1Name=?, expertType1Number=?, expertType2Name=?, expertType2Number=?, expertType3Name=?, expertType3Number=?, expertType4Name=?, expertType4Number=?, expertType5Name=?, expertType5Number=?, grandTotalExpert=?, grandTotalAll=? WHERE id_projects=?",
-        values,
-        (err, result) => {
-            if (err) {
-                console.log(err);
-                res.status(500).send(err); // Handle the error and send an appropriate response
-            } else {
-                res.send("Values Updated");
+        const values = [
+            id_projects,
+            codeclub,
+            yearly_countsketch,
+            executiveType1Name,
+            executiveType1Number,
+            executiveType2Name,
+            executiveType2Number,
+            executiveType3Name,
+            executiveType3Number,
+            executiveType4Name,
+            executiveType4Number,
+            executiveType5Name,
+            executiveType5Number,
+            grandTotalExecutive,
+            professorType1Name,
+            professorType1Number,
+            professorType2Name,
+            professorType2Number,
+            professorType3Name,
+            professorType3Number,
+            professorType4Name,
+            professorType4Number,
+            professorType5Name,
+            professorType5Number,
+            grandTotalProfessor,
+            studentType1Name,
+            studentType1Number,
+            studentType2Name,
+            studentType2Number,
+            studentType3Name,
+            studentType3Number,
+            studentType4Name,
+            studentType4Number,
+            studentType5Name,
+            studentType5Number,
+            grandTotalStudent,
+            expertType1Name,
+            expertType1Number,
+            expertType2Name,
+            expertType2Number,
+            expertType3Name,
+            expertType3Number,
+            expertType4Name,
+            expertType4Number,
+            expertType5Name,
+            expertType5Number,
+            grandTotalExpert,
+            grandTotalAll,
+
+        ];
+
+        db.query(
+            "UPDATE p_person SET executiveType1Name=?, executiveType1Number=?, executiveType2Name=?, executiveType2Number=?, executiveType3Name=?, executiveType3Number=?, executiveType4Name=?, executiveType4Number=?, executiveType5Name=?, executiveType5Number=?, grandTotalExecutive=?, professorType1Name=?, professorType1Number=?, professorType2Name=?, professorType2Number=?, professorType3Name=?, professorType3Number=?, professorType4Name=?, professorType4Number=?, professorType5Name=?, professorType5Number=?, grandTotalProfessor=?, studentType1Name=?, studentType1Number=?, studentType2Name=?, studentType2Number=?, studentType3Name=?, studentType3Number=?, studentType4Name=?, studentType4Number=?, studentType5Name=?, studentType5Number=?, grandTotalStudent=?, expertType1Name=?, expertType1Number=?, expertType2Name=?, expertType2Number=?, expertType3Name=?, expertType3Number=?, expertType4Name=?, expertType4Number=?, expertType5Name=?, expertType5Number=?, grandTotalExpert=?, grandTotalAll=? WHERE id_projects=?",
+            values,
+            async (err, result) => {
+                if (err) {
+                    console.error(err);
+                    res.status(500).send(err); // Handle the error and send an appropriate response
+                    return;
+                }
+
+                db.query("INSERT INTO p_timestep (id_projects,codeclub,yearly_countsketch) VALUES (?,?,?)",
+                    [id_projects, codeclub, yearly_countsketch],
+                    (err) => {
+                        if (err) {
+                            console.error(err);
+                            res.status(500).send(err); // Handle the error and send an appropriate response
+                            return;
+                        }
+
+                    }
+                );
+
+
             }
-        }
-    );
+        );
+
+    } catch (error) {
+        console.error(error);
+        res.status(500).send(error); // Handle the error and send an appropriate response
+    }
 });
 
 
