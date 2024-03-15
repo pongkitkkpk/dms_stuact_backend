@@ -163,12 +163,14 @@ app.post('/createProject', async (req, res) => {
             problem2,
             result2,
             problem3,
-            result3
+            result3,
+            created_at,
+            updated_at 
         } = req.body;
 
         // Insert data into the database
         db.query(
-            "INSERT INTO projects (id_student,project_name, project_number, codeclub, yearly,yearly_count, yearly_countsketch, responsible_agency,academic_year, advisor_name, person1_name, person1_contact, person2_name,person2_contact, person3_name, person3_contact, principles_and_reasons1,principles_and_reasons2,principles_and_reasons3,principles_and_reasons4,principles_and_reasons5,objective1, objective2, objective3, project_type1, project_type2, project_type3,project_type4,project_type5,is_newproject, is_continueproject,location1, location2, location3, start_prepare, end_prepare,start_event,end_event,deadline,problem1,result1,problem2,result2,problem3,result3) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+            "INSERT INTO projects (id_student,project_name, project_number, codeclub, yearly,yearly_count, yearly_countsketch, responsible_agency,academic_year, advisor_name, person1_name, person1_contact, person2_name,person2_contact, person3_name, person3_contact, principles_and_reasons1,principles_and_reasons2,principles_and_reasons3,principles_and_reasons4,principles_and_reasons5,objective1, objective2, objective3, project_type1, project_type2, project_type3,project_type4,project_type5,is_newproject, is_continueproject,location1, location2, location3, start_prepare, end_prepare,start_event,end_event,deadline,problem1,result1,problem2,result2,problem3,result3,created_at,updated_at ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
             [
                 id_student,
                 project_name,
@@ -214,7 +216,9 @@ app.post('/createProject', async (req, res) => {
                 problem2,
                 result2,
                 problem3,
-                result3
+                result3,
+                created_at,
+                updated_at 
             ],
 
             async (err, result) => {
@@ -317,10 +321,10 @@ app.post('/createProject', async (req, res) => {
         res.status(500).send(error); // Handle the error and send an appropriate response
     }
 });
-// ยังไม่ออเคร
-app.post('/updateProject_person', (req, res) => {
+
+app.post('/createperson_project', (req, res) => {
     const {
-        id_projects,
+        
         executiveType1Name,
         executiveType1Number,
         executiveType2Name,
@@ -365,7 +369,8 @@ app.post('/updateProject_person', (req, res) => {
         expertType5Name,
         expertType5Number,
         grandTotalExpert,
-        grandTotalAll
+        grandTotalAll,
+        id_projects
     } = req.body;
 
     const values = [
