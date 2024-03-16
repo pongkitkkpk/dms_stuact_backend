@@ -27,6 +27,18 @@ app.get('/users', (req, res) => {
     });
 });
 
+app.get('/users/:id_student', (req, res) => {
+    const id_student = req.params.id_student;
+    db.query('SELECT * FROM users WHERE id_student = ? ORDER BY id DESC LIMIT 1', [id_student], (err, result) => {
+        if (err) {
+            console.log(err);
+            res.status(500).send(err); // Handle the error and send an appropriate response
+        } else {
+            res.send(result);
+        }
+    });
+});
+
 app.get('/projects', (req, res) => {
     db.query("SELECT * FROM projects", (err, result) => {
         if (err) {
@@ -42,6 +54,18 @@ app.get('/projects', (req, res) => {
 app.get('/projects/:id_projects', (req, res) => {
     const id_projects = req.params.id_projects;
     db.query('SELECT * FROM projects WHERE id = ? ORDER BY id DESC LIMIT 1', [id_projects], (err, result) => {
+        if (err) {
+            console.log(err);
+            res.status(500).send("Error retrieving project");
+        } else {
+            res.send(result);
+        }
+    });
+});
+
+app.get('/projects-acc/:codeclub', (req, res) => {
+    const codeclub = req.params.codeclub;
+    db.query('SELECT * FROM projects WHERE codeclub = ? ', [codeclub], (err, result) => {
         if (err) {
             console.log(err);
             res.status(500).send("Error retrieving project");
@@ -437,7 +461,7 @@ app.post('/createperson_project', (req, res) => {
                 expertType5Number,
                 grandTotalExpert,
                 grandTotalAll,
-                id_projects
+                id_projects,
             ],
             async (err, result) => {
                 if (err) {
