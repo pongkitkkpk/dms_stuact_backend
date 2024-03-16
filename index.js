@@ -388,25 +388,10 @@ app.post('/createperson_project', (req, res) => {
             expertType5Number,
             grandTotalExpert,
             grandTotalAll,
-
         } = req.body;
-        // Print the received values
-        console.log('Received data:', req.body);
-        console.log('id_projects:', id_projects);
-        console.log('codeclub:', codeclub);
-        console.log('yearly_countsketch:', yearly_countsketch);
-        console.log('executiveType1Name:', executiveType1Name);
-        console.log('executiveType1Number:', executiveType1Number);
-        console.log('grandTotalExecutive:', grandTotalExecutive);
-        // Print other variables here
-
-
-
         db.query(
             "UPDATE p_person SET executiveType1Name=?, executiveType1Number=?, executiveType2Name=?, executiveType2Number=?, executiveType3Name=?, executiveType3Number=?, executiveType4Name=?, executiveType4Number=?, executiveType5Name=?, executiveType5Number=?, grandTotalExecutive=?, professorType1Name=?, professorType1Number=?, professorType2Name=?, professorType2Number=?, professorType3Name=?, professorType3Number=?, professorType4Name=?, professorType4Number=?, professorType5Name=?, professorType5Number=?, grandTotalProfessor=?, studentType1Name=?, studentType1Number=?, studentType2Name=?, studentType2Number=?, studentType3Name=?, studentType3Number=?, studentType4Name=?, studentType4Number=?, studentType5Name=?, studentType5Number=?, grandTotalStudent=?, expertType1Name=?, expertType1Number=?, expertType2Name=?, expertType2Number=?, expertType3Name=?, expertType3Number=?, expertType4Name=?, expertType4Number=?, expertType5Name=?, expertType5Number=?, grandTotalExpert=?, grandTotalAll=? WHERE id_projects=?",
             [
-                
-
                 executiveType1Name,
                 executiveType1Number,
                 executiveType2Name,
@@ -462,19 +447,18 @@ app.post('/createperson_project', (req, res) => {
                     console.log("up to database compleate")
                 }
 
-                // Proceed with the insertion query only after the update query finishes
-                // db.query("INSERT INTO p_timestep (id_projects,codeclub,yearly_countsketch) VALUES (?,?,?)",
-                //     [id_projects, codeclub, yearly_countsketch],
-                //     (err) => {
-                //         if (err) {
-                //             console.error(err);
-                //             return res.status(500).send("Error inserting data into the database"); // Handle the error and send an appropriate response
-                //         }
 
-                //         // If everything is successful, send a success response
-                //         res.status(200).send("Data updated and inserted successfully");
-                //     }
-                // );
+                db.query("INSERT INTO p_timestep (id_projects,codeclub,yearly_countsketch) VALUES (?,?,?)",
+                    [id_projects, codeclub, yearly_countsketch],
+                    (err) => {
+                        if (err) {
+                            console.error(err);
+                            return res.status(500).send("Error inserting data into the database"); // Handle the error and send an appropriate response
+                        }
+
+                        res.status(200).send("Data updated and inserted successfully");
+                    }
+                );
             }
         );
 
