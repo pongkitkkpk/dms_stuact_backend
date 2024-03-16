@@ -391,7 +391,7 @@ app.post('/createperson_project', (req, res) => {
 
         } = req.body;
         // Print the received values
-        console.log('Received data:');
+        console.log('Received data:', req.body);
         console.log('id_projects:', id_projects);
         console.log('codeclub:', codeclub);
         console.log('yearly_countsketch:', yearly_countsketch);
@@ -400,81 +400,81 @@ app.post('/createperson_project', (req, res) => {
         console.log('grandTotalExecutive:', grandTotalExecutive);
         // Print other variables here
 
-        const values = [
-            id_projects,
-            codeclub,
-            yearly_countsketch,
-            executiveType1Name,
-            executiveType1Number,
-            executiveType2Name,
-            executiveType2Number,
-            executiveType3Name,
-            executiveType3Number,
-            executiveType4Name,
-            executiveType4Number,
-            executiveType5Name,
-            executiveType5Number,
-            grandTotalExecutive,
-            professorType1Name,
-            professorType1Number,
-            professorType2Name,
-            professorType2Number,
-            professorType3Name,
-            professorType3Number,
-            professorType4Name,
-            professorType4Number,
-            professorType5Name,
-            professorType5Number,
-            grandTotalProfessor,
-            studentType1Name,
-            studentType1Number,
-            studentType2Name,
-            studentType2Number,
-            studentType3Name,
-            studentType3Number,
-            studentType4Name,
-            studentType4Number,
-            studentType5Name,
-            studentType5Number,
-            grandTotalStudent,
-            expertType1Name,
-            expertType1Number,
-            expertType2Name,
-            expertType2Number,
-            expertType3Name,
-            expertType3Number,
-            expertType4Name,
-            expertType4Number,
-            expertType5Name,
-            expertType5Number,
-            grandTotalExpert,
-            grandTotalAll,
 
-        ];
 
         db.query(
             "UPDATE p_person SET executiveType1Name=?, executiveType1Number=?, executiveType2Name=?, executiveType2Number=?, executiveType3Name=?, executiveType3Number=?, executiveType4Name=?, executiveType4Number=?, executiveType5Name=?, executiveType5Number=?, grandTotalExecutive=?, professorType1Name=?, professorType1Number=?, professorType2Name=?, professorType2Number=?, professorType3Name=?, professorType3Number=?, professorType4Name=?, professorType4Number=?, professorType5Name=?, professorType5Number=?, grandTotalProfessor=?, studentType1Name=?, studentType1Number=?, studentType2Name=?, studentType2Number=?, studentType3Name=?, studentType3Number=?, studentType4Name=?, studentType4Number=?, studentType5Name=?, studentType5Number=?, grandTotalStudent=?, expertType1Name=?, expertType1Number=?, expertType2Name=?, expertType2Number=?, expertType3Name=?, expertType3Number=?, expertType4Name=?, expertType4Number=?, expertType5Name=?, expertType5Number=?, grandTotalExpert=?, grandTotalAll=? WHERE id_projects=?",
-            values,
+            [
+                
+
+                executiveType1Name,
+                executiveType1Number,
+                executiveType2Name,
+                executiveType2Number,
+                executiveType3Name,
+                executiveType3Number,
+                executiveType4Name,
+                executiveType4Number,
+                executiveType5Name,
+                executiveType5Number,
+                grandTotalExecutive,
+                professorType1Name,
+                professorType1Number,
+                professorType2Name,
+                professorType2Number,
+                professorType3Name,
+                professorType3Number,
+                professorType4Name,
+                professorType4Number,
+                professorType5Name,
+                professorType5Number,
+                grandTotalProfessor,
+                studentType1Name,
+                studentType1Number,
+                studentType2Name,
+                studentType2Number,
+                studentType3Name,
+                studentType3Number,
+                studentType4Name,
+                studentType4Number,
+                studentType5Name,
+                studentType5Number,
+                grandTotalStudent,
+                expertType1Name,
+                expertType1Number,
+                expertType2Name,
+                expertType2Number,
+                expertType3Name,
+                expertType3Number,
+                expertType4Name,
+                expertType4Number,
+                expertType5Name,
+                expertType5Number,
+                grandTotalExpert,
+                grandTotalAll,
+                id_projects
+            ],
             async (err, result) => {
                 if (err) {
                     console.error(err);
-                    res.status(500).send(err); // Handle the error and send an appropriate response
-                    return;
+                    return res.status(500).send("Error updating data in the database"); // Handle the error and send an appropriate response
+                } else {
+                    console.log("up to database compleate")
                 }
 
-                db.query("INSERT INTO p_timestep (id_projects,codeclub,yearly_countsketch) VALUES (?,?,?)",
-                    [id_projects, codeclub, yearly_countsketch],
-                    (err) => {
-                        if (err) {
-                            console.error(err);
-                            res.status(500).send(err); // Handle the error and send an appropriate response
-                            return;
-                        }
+                // Proceed with the insertion query only after the update query finishes
+                // db.query("INSERT INTO p_timestep (id_projects,codeclub,yearly_countsketch) VALUES (?,?,?)",
+                //     [id_projects, codeclub, yearly_countsketch],
+                //     (err) => {
+                //         if (err) {
+                //             console.error(err);
+                //             return res.status(500).send("Error inserting data into the database"); // Handle the error and send an appropriate response
+                //         }
 
-                    }
-                );
-
-
+                //         // If everything is successful, send a success response
+                //         res.status(200).send("Data updated and inserted successfully");
+                //     }
+                // );
             }
         );
 
