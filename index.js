@@ -51,17 +51,17 @@ app.get('/projects/:id_projects', (req, res) => {
     });
 });
 
-// app.get('/projects/:codeclub', (req, res) => {
-//     const codeclub = req.params.codeclub;
-//     db.query('SELECT * FROM projects WHERE codeclub = ? ORDER BY id DESC LIMIT 1', [codeclub], (err, result) => {
-//         if (err) {
-//             console.log(err);
-//             res.status(500).send("Error retrieving project");
-//         } else {
-//             res.send(result);
-//         }
-//     });
-// });
+app.get('/projects-cc/:codeclub', (req, res) => {
+    const codeclub = req.params.codeclub;
+    db.query('SELECT * FROM projects WHERE codeclub = ? ORDER BY id DESC LIMIT 1', [codeclub], (err, result) => {
+        if (err) {
+            console.log(err);
+            res.status(500).send("Error retrieving project");
+        } else {
+            res.send(result);
+        }
+    });
+});
 
 app.get('/p_person', (req, res) => {
     db.query("SELECT * FROM p_person", (err, result) => {
@@ -390,6 +390,15 @@ app.post('/createperson_project', (req, res) => {
             grandTotalAll,
 
         } = req.body;
+        // Print the received values
+        console.log('Received data:');
+        console.log('id_projects:', id_projects);
+        console.log('codeclub:', codeclub);
+        console.log('yearly_countsketch:', yearly_countsketch);
+        console.log('executiveType1Name:', executiveType1Name);
+        console.log('executiveType1Number:', executiveType1Number);
+        console.log('grandTotalExecutive:', grandTotalExecutive);
+        // Print other variables here
 
         const values = [
             id_projects,
