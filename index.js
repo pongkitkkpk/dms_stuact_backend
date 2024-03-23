@@ -16,7 +16,7 @@ const db = mysql.createConnection({
     database: "usersystem"
 });
 
-app.get('/users', (req, res) => {
+app.get('/admin/users', (req, res) => {
     db.query("SELECT * FROM users", (err, result) => {
         if (err) {
             console.log(err);
@@ -27,91 +27,7 @@ app.get('/users', (req, res) => {
     });
 });
 
-app.get('/users/:id_student', (req, res) => {
-    const id_student = req.params.id_student;
-    db.query('SELECT * FROM users WHERE id_student = ? ORDER BY id DESC LIMIT 1', [id_student], (err, result) => {
-        if (err) {
-            console.log(err);
-            res.status(500).send(err); // Handle the error and send an appropriate response
-        } else {
-            res.send(result);
-        }
-    });
-});
-
-app.get('/projects', (req, res) => {
-    db.query("SELECT * FROM projects", (err, result) => {
-        if (err) {
-            console.log(err);
-            res.status(500).send(err); // Handle the error and send an appropriate response
-        } else {
-            res.send(result);
-        }
-    });
-});
-
-
-app.get('/projects/:id_projects', (req, res) => {
-    const id_projects = req.params.id_projects;
-    db.query('SELECT * FROM projects WHERE id = ? ORDER BY id DESC LIMIT 1', [id_projects], (err, result) => {
-        if (err) {
-            console.log(err);
-            res.status(500).send("Error retrieving project");
-        } else {
-            res.send(result);
-        }
-    });
-});
-
-app.get('/projects-acc/:codeclub', (req, res) => {
-    const codeclub = req.params.codeclub;
-    db.query('SELECT * FROM projects WHERE codeclub = ? ', [codeclub], (err, result) => {
-        if (err) {
-            console.log(err);
-            res.status(500).send("Error retrieving project");
-        } else {
-            res.send(result);
-        }
-    });
-});
-
-app.get('/projects-cc/:codeclub', (req, res) => {
-    const codeclub = req.params.codeclub;
-    db.query('SELECT * FROM projects WHERE codeclub = ? ORDER BY id DESC LIMIT 1', [codeclub], (err, result) => {
-        if (err) {
-            console.log(err);
-            res.status(500).send("Error retrieving project");
-        } else {
-            res.send(result);
-        }
-    });
-});
-
-app.get('/p_person', (req, res) => {
-    db.query("SELECT * FROM p_person", (err, result) => {
-        if (err) {
-            console.log(err);
-            res.status(500).send(err); // Handle the error and send an appropriate response
-        } else {
-            res.send(result);
-        }
-    });
-});
-
-app.get('/p_person/:id_projects', (req, res) => {
-    const id_projects = req.params.id_projects;
-
-    db.query('SELECT * FROM p_person WHERE id_projects = ?', [id_projects], (err, result) => {
-        if (err) {
-            console.error(err);
-            res.status(500).send('Error fetching p_person data');
-        } else {
-            res.json(result);
-        }
-    });
-});
-
-app.delete('/deleteUser/:id', (req, res) => { // Added a leading slash
+app.delete('/admin/user/deleteUser/:id', (req, res) => { // Added a leading slash
     const id = req.params.id;
     db.query("DELETE FROM users WHERE id = ?", id, (err, result) => {
         if (err) {
@@ -124,7 +40,7 @@ app.delete('/deleteUser/:id', (req, res) => { // Added a leading slash
 });
 
 
-app.post('/createUser', (req, res) => {
+app.post('/admin/user/createUser', (req, res) => {
     const { id_student, name_student, department, position, clubName, campus, yearly, codedivision, codeagency, codeworkgroup, codebooksome } = req.body;
 
     db.query(
@@ -141,9 +57,121 @@ app.post('/createUser', (req, res) => {
     );
 });
 
+// app.get('/users/:id_student', (req, res) => {
+//     const id_student = req.params.id_student;
+//     db.query('SELECT * FROM users WHERE id_student = ? ORDER BY id DESC LIMIT 1', [id_student], (err, result) => {
+//         if (err) {
+//             console.log(err);
+//             res.status(500).send(err); // Handle the error and send an appropriate response
+//         } else {
+//             res.send(result);
+//         }
+//     });
+// });
 
 
-app.post('/createProject', async (req, res) => {
+
+// app.get('/projects', (req, res) => {
+//     db.query("SELECT * FROM projects", (err, result) => {
+//         if (err) {
+//             console.log(err);
+//             res.status(500).send(err); // Handle the error and send an appropriate response
+//         } else {
+//             res.send(result);
+//         }
+//     });
+// });
+
+// app.get('/p_person/:id_projects', (req, res) => {
+//     const id_projects = req.params.id_projects;
+
+//     db.query('SELECT * FROM p_person WHERE id_projects = ?', [id_projects], (err, result) => {
+//         if (err) {
+//             console.error(err);
+//             res.status(500).send('Error fetching p_person data');
+//         } else {
+//             res.json(result);
+//         }
+//     });
+// });
+app.get('/student/users', (req, res) => {
+    db.query("SELECT * FROM users", (err, result) => {
+        if (err) {
+            console.log(err);
+            res.status(500).send(err); // Handle the error and send an appropriate response
+        } else {
+            res.send(result);
+        }
+    });
+});
+
+app.get('/student/project/getidproject/:id_projects', (req, res) => {
+    const id_projects = req.params.id_projects;
+    db.query('SELECT * FROM projects WHERE id = ? ORDER BY id DESC LIMIT 1', [id_projects], (err, result) => {
+        if (err) {
+            console.log(err);
+            res.status(500).send("Error retrieving project");
+        } else {
+            res.send(result);
+        }
+    });
+});
+
+app.get('/student/project/getallcodeclub/:codeclub', (req, res) => {
+    const codeclub = req.params.codeclub;
+    db.query('SELECT * FROM projects WHERE codeclub = ? ', [codeclub], (err, result) => {
+        if (err) {
+            console.log(err);
+            res.status(500).send("Error retrieving project");
+        } else {
+            res.send(result);
+        }
+    });
+});
+
+app.get('/student/project/getcodeclub/:codeclub', (req, res) => {
+    const codeclub = req.params.codeclub;
+    db.query('SELECT * FROM projects WHERE codeclub = ? ORDER BY id DESC LIMIT 1', [codeclub], (err, result) => {
+        if (err) {
+            console.log(err);
+            res.status(500).send("Error retrieving project");
+        } else {
+            res.send(result);
+        }
+    });
+});
+
+app.get('/student/project/p_person', (req, res) => {
+    db.query("SELECT * FROM p_person", (err, result) => {
+        if (err) {
+            console.log(err);
+            res.status(500).send(err); // Handle the error and send an appropriate response
+        } else {
+            res.send(result);
+        }
+    });
+});
+
+app.put('/student/project/edit/:id_project', (req, res) => {
+    const id_project = req.params.id_project;
+    const updatedData = req.body; // Updated data sent from the client
+
+    // Update the project with the given id_project in the database
+    db.query(
+        "UPDATE projects SET ? WHERE id = ?",
+        [updatedData, id_project],
+        (err, result) => {
+            if (err) {
+                console.error(err);
+                res.status(500).send("Error updating project data"); // Handle the error and send an appropriate response
+            } else {
+                res.status(200).send("Project data updated successfully");
+            }
+        }
+    );
+});
+
+app.post('/student/project/create/', async (req, res) => {
     const addDays = (date, days) => {
         const result = new Date(date);
         result.setDate(result.getDate() - days);
@@ -361,7 +389,7 @@ app.post('/createProject', async (req, res) => {
     }
 });
 
-app.post('/createperson_project', (req, res) => {
+app.post('/student/project/p_person/create/', (req, res) => {
     try {
         const {
             id_projects,
