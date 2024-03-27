@@ -155,7 +155,7 @@ app.get('/student/project/p_person', (req, res) => {
 app.put('/student/project/edit/:id_project', (req, res) => {
     const id_project = req.params.id_project;
     const updatedData = req.body; // Updated data sent from the client
-
+    
     // Update the project with the given id_project in the database
     db.query(
         "UPDATE projects SET ? WHERE id = ?",
