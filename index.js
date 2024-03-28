@@ -210,6 +210,8 @@ app.post('/student/project/create/', async (req, res) => {
             objective1,
             objective2,
             objective3,
+            objective4,
+            objective5,
             project_type1,
             project_type2,
             project_type3,
@@ -220,6 +222,8 @@ app.post('/student/project/create/', async (req, res) => {
             location1,
             location2,
             location3,
+            location4,
+            location5,
             start_prepare,
             end_prepare,
             start_event,
@@ -237,7 +241,7 @@ app.post('/student/project/create/', async (req, res) => {
 
         // Insert data into the database
         db.query(
-            "INSERT INTO projects (id_student,project_name, project_number, codeclub, yearly,yearly_count, yearly_countsketch, responsible_agency,academic_year, advisor_name, person1_name, person1_contact, person2_name,person2_contact, person3_name, person3_contact, principles_and_reasons1,principles_and_reasons2,principles_and_reasons3,principles_and_reasons4,principles_and_reasons5,objective1, objective2, objective3, project_type1, project_type2, project_type3,project_type4,project_type5,is_newproject, is_continueproject,location1, location2, location3, start_prepare, end_prepare,start_event,end_event,deadline,problem1,result1,problem2,result2,problem3,result3,created_at,updated_at ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+            "INSERT INTO projects (id_student,project_name, project_number, codeclub, yearly,yearly_count, yearly_countsketch, responsible_agency,academic_year, advisor_name, person1_name, person1_contact, person2_name,person2_contact, person3_name, person3_contact, principles_and_reasons1,principles_and_reasons2,principles_and_reasons3,principles_and_reasons4,principles_and_reasons5,objective1, objective2, objective3,objective4,objective5, project_type1, project_type2, project_type3,project_type4,project_type5,is_newproject, is_continueproject,location1, location2, location3,location4,location5, start_prepare, end_prepare,start_event,end_event,deadline,problem1,result1,problem2,result2,problem3,result3,created_at,updated_at ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
             [
                 id_student,
                 project_name,
@@ -263,6 +267,8 @@ app.post('/student/project/create/', async (req, res) => {
                 objective1,
                 objective2,
                 objective3,
+                objective4,
+                objective5,
                 project_type1,
                 project_type2,
                 project_type3,
@@ -273,6 +279,8 @@ app.post('/student/project/create/', async (req, res) => {
                 location1,
                 location2,
                 location3,
+                location4,
+                location5,
                 start_prepare_plus_1_day,
                 end_prepare_plus_1_day,
                 start_event_plus_1_day,
