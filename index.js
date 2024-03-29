@@ -170,19 +170,8 @@ app.put('/student/project/edit/:id_project', (req, res) => {
         }
     );
 });
-
-app.post('/student/project/create/', async (req, res) => {
-    const addDays = (date, days) => {
-        const result = new Date(date);
-        result.setDate(result.getDate() - days);
-        return result;
-    };
-
-    // Usage example
-    const start_prepare_plus_1_day = addDays(req.body.start_prepare, 0);
-    const end_prepare_plus_1_day = addDays(req.body.end_prepare, 0);
-    const start_event_plus_1_day = addDays(req.body.start_event, 0);
-    const end_event_plus_1_day = addDays(req.body.end_event, 0);
+//dd1
+app.post('/student/project/create/', async (req, res) => { 
     try {
         const {
             // Destructure the fields from the request body
@@ -202,46 +191,12 @@ app.post('/student/project/create/', async (req, res) => {
             person2_contact,
             person3_name,
             person3_contact,
-            principles_and_reasons1,
-            principles_and_reasons2,
-            principles_and_reasons3,
-            principles_and_reasons4,
-            principles_and_reasons5,
-            objective1,
-            objective2,
-            objective3,
-            objective4,
-            objective5,
-            project_type1,
-            project_type2,
-            project_type3,
-            project_type4,
-            project_type5,
-            is_newproject,
-            is_continueproject,
-            location1,
-            location2,
-            location3,
-            location4,
-            location5,
-            start_prepare,
-            end_prepare,
-            start_event,
-            end_event,
-            deadline,
-            problem1,
-            result1,
-            problem2,
-            result2,
-            problem3,
-            result3,
-            created_at,
-            updated_at
+            
         } = req.body;
 
         // Insert data into the database
         db.query(
-            "INSERT INTO projects (id_student,project_name, project_number, codeclub, yearly,yearly_count, yearly_countsketch, responsible_agency,academic_year, advisor_name, person1_name, person1_contact, person2_name,person2_contact, person3_name, person3_contact, principles_and_reasons1,principles_and_reasons2,principles_and_reasons3,principles_and_reasons4,principles_and_reasons5,objective1, objective2, objective3,objective4,objective5, project_type1, project_type2, project_type3,project_type4,project_type5,is_newproject, is_continueproject,location1, location2, location3,location4,location5, start_prepare, end_prepare,start_event,end_event,deadline,problem1,result1,problem2,result2,problem3,result3,created_at,updated_at ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+            "INSERT INTO projects (id_student,project_name, project_number, codeclub, yearly,yearly_count, yearly_countsketch, responsible_agency,academic_year, advisor_name, person1_name, person1_contact, person2_name,person2_contact, person3_name, person3_contact) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
             [
                 id_student,
                 project_name,
@@ -259,41 +214,7 @@ app.post('/student/project/create/', async (req, res) => {
                 person2_contact,
                 person3_name,
                 person3_contact,
-                principles_and_reasons1,
-                principles_and_reasons2,
-                principles_and_reasons3,
-                principles_and_reasons4,
-                principles_and_reasons5,
-                objective1,
-                objective2,
-                objective3,
-                objective4,
-                objective5,
-                project_type1,
-                project_type2,
-                project_type3,
-                project_type4,
-                project_type5,
-                is_newproject,
-                is_continueproject,
-                location1,
-                location2,
-                location3,
-                location4,
-                location5,
-                start_prepare_plus_1_day,
-                end_prepare_plus_1_day,
-                start_event_plus_1_day,
-                end_event_plus_1_day,
-                deadline,
-                problem1,
-                result1,
-                problem2,
-                result2,
-                problem3,
-                result3,
-                created_at,
-                updated_at
+                
             ],
 
             async (err, result) => {
@@ -398,7 +319,59 @@ app.post('/student/project/create/', async (req, res) => {
         res.status(500).send(error); // Handle the error and send an appropriate response
     }
 });
+//dd2
+app.put('/student/project/create2/:id_project',async (req,res)=>{
+    const id_project = req.params.id_project;
+    const updatedData = req.body; // Updated data sent from the client
+    
+    // Update the project with the given id_project in the database
+    db.query(
+        "UPDATE projects SET ? WHERE id = ?",
+        [updatedData, id_project],
+        (err, result) => {
+            if (err) {
+                console.error(err);
+                res.status(500).send("Error updating project data"); // Handle the error and send an appropriate response
+            } else {
+                res.status(200).send("Project data updated successfully");
+            }
+        }
+        
+    );
+});
 
+//ddlt3
+app.put('/student/project/create3/:id_project',async (req,res)=>{
+    const addDays = (date, days) => {
+        const result = new Date(date);
+        result.setDate(result.getDate() - days);
+        return result;
+    };
+
+    // Usage example
+    req.body.start_prepare = addDays(req.body.start_prepare, 0);
+    req.body.end_prepare = addDays(req.body.end_prepare, 0);
+    req.body.start_event = addDays(req.body.start_event, 0);
+    req.body.end_event = addDays(req.body.end_event, 0);
+
+    const id_project = req.params.id_project;
+    const updatedData = req.body; // Updated data sent from the client
+    
+    // Update the project with the given id_project in the database
+    db.query(
+        "UPDATE projects SET ? WHERE id = ?",
+        [updatedData, id_project],
+        (err, result) => {
+            if (err) {
+                console.error(err);
+                res.status(500).send("Error updating project data"); // Handle the error and send an appropriate response
+            } else {
+                res.status(200).send("Project data updated successfully");
+            }
+        }
+        
+    );
+});
 app.post('/student/project/p_person/create/', (req, res) => {
     try {
         const {
