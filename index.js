@@ -334,6 +334,7 @@ app.post('/student/project/create/', async (req, res) => {
                 //     const doc = new Docxtemplater(zip, { paragraphLoop: true, linebreaks: true });
 
                 //     // Render the document
+                //     // 
                 //     doc.render({
                 //         id_student: id_student,
                 //         project_name: project_name,
@@ -389,6 +390,7 @@ app.post('/student/project/create/', async (req, res) => {
                 //     console.error("Error generating document:", error);
                 //     res.status(500).send("Error generating document: " + error.message);
                 // }
+                // 
             }
         );
     } catch (error) {
