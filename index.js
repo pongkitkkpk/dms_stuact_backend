@@ -155,7 +155,7 @@ app.get('/student/project/p_person', (req, res) => {
 app.put('/student/project/edit/:id_project', (req, res) => {
     const id_project = req.params.id_project;
     const updatedData = req.body; // Updated data sent from the client
-    
+
     // Update the project with the given id_project in the database
     db.query(
         "UPDATE projects SET ? WHERE id = ?",
@@ -171,7 +171,7 @@ app.put('/student/project/edit/:id_project', (req, res) => {
     );
 });
 //dd1
-app.post('/student/project/create/', async (req, res) => { 
+app.post('/student/project/create/', async (req, res) => {
     try {
         const {
             // Destructure the fields from the request body
@@ -191,7 +191,7 @@ app.post('/student/project/create/', async (req, res) => {
             person2_contact,
             person3_name,
             person3_contact,
-            
+
         } = req.body;
 
         // Insert data into the database
@@ -214,7 +214,7 @@ app.post('/student/project/create/', async (req, res) => {
                 person2_contact,
                 person3_name,
                 person3_contact,
-                
+
             ],
 
             async (err, result) => {
@@ -320,10 +320,10 @@ app.post('/student/project/create/', async (req, res) => {
     }
 });
 //dd2
-app.put('/student/project/create2/:id_project',async (req,res)=>{
+app.put('/student/project/create2/:id_project', async (req, res) => {
     const id_project = req.params.id_project;
     const updatedData = req.body; // Updated data sent from the client
-    
+
     // Update the project with the given id_project in the database
     db.query(
         "UPDATE projects SET ? WHERE id = ?",
@@ -336,12 +336,12 @@ app.put('/student/project/create2/:id_project',async (req,res)=>{
                 res.status(200).send("Project data updated successfully");
             }
         }
-        
+
     );
 });
 
 //ddlt3
-app.put('/student/project/create3/:id_project',async (req,res)=>{
+app.put('/student/project/create3/:id_project', async (req, res) => {
     const addDays = (date, days) => {
         const result = new Date(date);
         result.setDate(result.getDate() - days);
@@ -356,7 +356,7 @@ app.put('/student/project/create3/:id_project',async (req,res)=>{
 
     const id_project = req.params.id_project;
     const updatedData = req.body; // Updated data sent from the client
-    
+
     // Update the project with the given id_project in the database
     db.query(
         "UPDATE projects SET ? WHERE id = ?",
@@ -369,7 +369,7 @@ app.put('/student/project/create3/:id_project',async (req,res)=>{
                 res.status(200).send("Project data updated successfully");
             }
         }
-        
+
     );
 });
 app.post('/student/project/p_person/create/', (req, res) => {
@@ -502,6 +502,208 @@ app.post('/student/project/p_person/create/', (req, res) => {
         res.status(500).send(error); // Handle the error and send an appropriate response
     }
 });
+app.post('/student/project/p_timestep/create/:id_project', async (req, res) => {
+    try {
+        const {
+            id_projects,
+            table1Topic,
+            startDurationTable1,
+            endDurationTable1,
+            responsibleTable1str,
+            table2Topic,
+            startDurationTable2,
+            endDurationTable2,
+            responsibleTable2str,
+            table3Topic,
+            startDurationTable3,
+            endDurationTable3,
+            responsibleTable3str,
+            table4Topic,
+            startDurationTable4,
+            endDurationTable4,
+            responsibleTable4str,
+            table5Topic,
+            startDurationTable5,
+            endDurationTable5,
+            responsibleTable5str,
+            table6Topic,
+            startDurationTable6,
+            endDurationTable6,
+            responsibleTable6str,
+            table7Topic,
+            startDurationTable7,
+            endDurationTable7,
+            responsibleTable7str,
+            table8Topic,
+            startDurationTable8,
+            endDurationTable8,
+            responsibleTable8str,
+            table9Topic,
+            startDurationTable9,
+            endDurationTable9,
+            responsibleTable9str,
+            table10Topic,
+            startDurationTable10,
+            endDurationTable10,
+            responsibleTable10str,
+            table11Topic,
+            startDurationTable11,
+            endDurationTable11,
+            responsibleTable11str,
+            table12Topic,
+            startDurationTable12,
+            endDurationTable12,
+            responsibleTable12str,
+            table13Topic,
+            startDurationTable13,
+            endDurationTable13,
+            responsibleTable13str,
+            table14Topic,
+            startDurationTable14,
+            endDurationTable14,
+            responsibleTable14str,
+            table15Topic,
+            startDurationTable15,
+            endDurationTable15,
+            responsibleTable15str
+        } = req.body;
+
+        await db.query(
+            "UPDATE p_timestep " +
+            "SET " +
+            "topic_table1 = ?, " +
+            "start_duration_table1 = ?, " +
+            "end_duration_table1 = ?, " +
+            "responsible_table1 = ?, " +
+            "topic_table2 = ?, " +
+            "start_duration_table2 = ?, " +
+            "end_duration_table2 = ?, " +
+            "responsible_table2 = ?, " +
+            "topic_table3 = ?, " +
+            "start_duration_table3 = ?, " +
+            "end_duration_table3 = ?, " +
+            "responsible_table3 = ?, " +
+            "topic_table4 = ?, " +
+            "start_duration_table4 = ?, " +
+            "end_duration_table4 = ?, " +
+            "responsible_table4 = ?, " +
+            "topic_table5 = ?, " +
+            "start_duration_table5 = ?, " +
+            "end_duration_table5 = ?, " +
+            "responsible_table5 = ?, " +
+            "topic_table6 = ?, " +
+            "start_duration_table6 = ?, " +
+            "end_duration_table6 = ?, " +
+            "responsible_table6 = ?, " +
+            "topic_table7 = ?, " +
+            "start_duration_table7 = ?, " +
+            "end_duration_table7 = ?, " +
+            "responsible_table7 = ?, " +
+            "topic_table8 = ?, " +
+            "start_duration_table8 = ?, " +
+            "end_duration_table8 = ?, " +
+            "responsible_table8 = ?, " +
+            "topic_table9 = ?, " +
+            "start_duration_table9 = ?, " +
+            "end_duration_table9 = ?, " +
+            "responsible_table9 = ?, " +
+            "topic_table10 = ?, " +
+            "start_duration_table10 = ?, " +
+            "end_duration_table10 = ?, " +
+            "responsible_table10 = ?, " +
+            "topic_table11 = ?, " +
+            "start_duration_table11 = ?, " +
+            "end_duration_table11 = ?, " +
+            "responsible_table11 = ?, " +
+            "topic_table12 = ?, " +
+            "start_duration_table12 = ?, " +
+            "end_duration_table12 = ?, " +
+            "responsible_table12 = ?, " +
+            "topic_table13 = ?, " +
+            "start_duration_table13 = ?, " +
+            "end_duration_table13 = ?, " +
+            "responsible_table13 = ?, " +
+            "topic_table14 = ?, " +
+            "start_duration_table14 = ?, " +
+            "end_duration_table14 = ?, " +
+            "responsible_table14 = ?, " +
+            "topic_table15 = ?, " +
+            "start_duration_table15 = ?, " +
+            "end_duration_table15 = ?, " +
+            "responsible_table15 = ? " +
+            "WHERE id_projects = ?",
+            [
+                table1Topic,
+                startDurationTable1,
+                endDurationTable1,
+                responsibleTable1str,
+                table2Topic,
+                startDurationTable2,
+                endDurationTable2,
+                responsibleTable2str,
+                table3Topic,
+                startDurationTable3,
+                endDurationTable3,
+                responsibleTable3str,
+                table4Topic,
+                startDurationTable4,
+                endDurationTable4,
+                responsibleTable4str,
+                table5Topic,
+                startDurationTable5,
+                endDurationTable5,
+                responsibleTable5str,
+                table6Topic,
+                startDurationTable6,
+                endDurationTable6,
+                responsibleTable6str,
+                table7Topic,
+                startDurationTable7,
+                endDurationTable7,
+                responsibleTable7str,
+                table8Topic,
+                startDurationTable8,
+                endDurationTable8,
+                responsibleTable8str,
+                table9Topic,
+                startDurationTable9,
+                endDurationTable9,
+                responsibleTable9str,
+                table10Topic,
+                startDurationTable10,
+                endDurationTable10,
+                responsibleTable10str,
+                table11Topic,
+                startDurationTable11,
+                endDurationTable11,
+                responsibleTable11str,
+                table12Topic,
+                startDurationTable12,
+                endDurationTable12,
+                responsibleTable12str,
+                table13Topic,
+                startDurationTable13,
+                endDurationTable13,
+                responsibleTable13str,
+                table14Topic,
+                startDurationTable14,
+                endDurationTable14,
+                responsibleTable14str,
+                table15Topic,
+                startDurationTable15,
+                endDurationTable15,
+                responsibleTable15str,
+                id_projects
+            ]
+        );
+
+        res.status(200).json({ message: "p_timestep updated successfully" });
+    } catch (error) {
+        console.error("Error updating p_timestep:", error);
+        res.status(500).json({ error: "Database error" });
+    }
+});
+
 
 
 
