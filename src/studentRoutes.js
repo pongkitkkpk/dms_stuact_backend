@@ -1,38 +1,12 @@
 const express = require('express');
-const app = express();
-const mysql = require('mysql');
-const cors = require('cors');
-// const generateDocx = require('./genDocument04')
+const router = express.Router();
+const db = require('../db');
 
-app.use(cors());
-app.use(express.json());
-
-
-
-const db = mysql.createConnection({
-    user: "root",
-    host: "localhost",
-    password: "",
-    database: "usersystem"
-});
-
-app.get('/admin/users', (req, res) => {
+router.get('/users', (req, res) => {
     db.query("SELECT * FROM users", (err, result) => {
         if (err) {
             console.log(err);
-            res.status(500).send(err); // Handle the error and send an appropriate response
-        } else {
-            res.send(result);
-        }
-    });
-});
-
-app.delete('/admin/user/deleteUser/:id', (req, res) => { // Added a leading slash
-    const id = req.params.id;
-    db.query("DELETE FROM users WHERE id = ?", id, (err, result) => {
-        if (err) {
-            console.log(err);
-            res.status(500).send(err); // Handle the error and send an appropriate response
+            res.status(500).send(err);
         } else {
             res.send(result);
         }
@@ -40,72 +14,7 @@ app.delete('/admin/user/deleteUser/:id', (req, res) => { // Added a leading slas
 });
 
 
-app.post('/admin/user/createUser', (req, res) => {
-    const { id_student, name_student, department, position, clubName, campus, yearly, codedivision, codeagency, codeworkgroup, codebooksome } = req.body;
-
-    db.query(
-        "INSERT INTO users (id_student, name_student, department, position, clubName, campus, yearly, codedivision, codeagency, codeworkgroup, codebooksome) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
-        [id_student, name_student, department, position, clubName, campus, yearly, codedivision, codeagency, codeworkgroup, codebooksome],
-        (err, result) => {
-            if (err) {
-                console.log(err);
-                res.status(500).send(err); // Handle the error and send an appropriate response
-            } else {
-                res.send("Values Inserted");
-            }
-        }
-    );
-});
-
-// app.get('/users/:id_student', (req, res) => {
-//     const id_student = req.params.id_student;
-//     db.query('SELECT * FROM users WHERE id_student = ? ORDER BY id DESC LIMIT 1', [id_student], (err, result) => {
-//         if (err) {
-//             console.log(err);
-//             res.status(500).send(err); // Handle the error and send an appropriate response
-//         } else {
-//             res.send(result);
-//         }
-//     });
-// });
-
-
-
-// app.get('/projects', (req, res) => {
-//     db.query("SELECT * FROM projects", (err, result) => {
-//         if (err) {
-//             console.log(err);
-//             res.status(500).send(err); // Handle the error and send an appropriate response
-//         } else {
-//             res.send(result);
-//         }
-//     });
-// });
-
-// app.get('/p_person/:id_projects', (req, res) => {
-//     const id_projects = req.params.id_projects;
-
-//     db.query('SELECT * FROM p_person WHERE id_projects = ?', [id_projects], (err, result) => {
-//         if (err) {
-//             console.error(err);
-//             res.status(500).send('Error fetching p_person data');
-//         } else {
-//             res.json(result);
-//         }
-//     });
-// });
-app.get('/student/users', (req, res) => {
-    db.query("SELECT * FROM users", (err, result) => {
-        if (err) {
-            console.log(err);
-            res.status(500).send(err); // Handle the error and send an appropriate response
-        } else {
-            res.send(result);
-        }
-    });
-});
-
-app.get('/student/project/getidproject/:id_projects', (req, res) => {
+router.get('/project/getidproject/:id_projects', (req, res) => {
     const id_projects = req.params.id_projects;
     db.query('SELECT * FROM projects WHERE id = ? ORDER BY id DESC LIMIT 1', [id_projects], (err, result) => {
         if (err) {
@@ -117,7 +26,7 @@ app.get('/student/project/getidproject/:id_projects', (req, res) => {
     });
 });
 
-app.get('/student/project/getallcodeclub/:codeclub', (req, res) => {
+router.get('/project/getallcodeclub/:codeclub', (req, res) => {
     const codeclub = req.params.codeclub;
     db.query('SELECT * FROM projects WHERE codeclub = ? ', [codeclub], (err, result) => {
         if (err) {
@@ -129,7 +38,7 @@ app.get('/student/project/getallcodeclub/:codeclub', (req, res) => {
     });
 });
 
-app.get('/student/project/getcodeclub/:codeclub', (req, res) => {
+router.get('/project/getcodeclub/:codeclub', (req, res) => {
     const codeclub = req.params.codeclub;
     db.query('SELECT * FROM projects WHERE codeclub = ? ORDER BY id DESC LIMIT 1', [codeclub], (err, result) => {
         if (err) {
@@ -141,7 +50,7 @@ app.get('/student/project/getcodeclub/:codeclub', (req, res) => {
     });
 });
 
-app.get('/student/project/p_person', (req, res) => {
+router.get('/project/p_person', (req, res) => {
     db.query("SELECT * FROM p_person", (err, result) => {
         if (err) {
             console.log(err);
@@ -152,7 +61,7 @@ app.get('/student/project/p_person', (req, res) => {
     });
 });
 
-app.put('/student/project/edit/:id_project', (req, res) => {
+router.put('/project/edit/:id_project', (req, res) => {
     const id_project = req.params.id_project;
     const updatedData = req.body; // Updated data sent from the client
 
@@ -171,7 +80,7 @@ app.put('/student/project/edit/:id_project', (req, res) => {
     );
 });
 //dd1
-app.post('/student/project/create/', async (req, res) => {
+router.post('/project/create/', async (req, res) => {
     try {
         const {
             // Destructure the fields from the request body
@@ -320,7 +229,7 @@ app.post('/student/project/create/', async (req, res) => {
     }
 });
 //dd2
-app.put('/student/project/create2/:id_project', async (req, res) => {
+router.put('/project/create2/:id_project', async (req, res) => {
     const id_project = req.params.id_project;
     const updatedData = req.body; // Updated data sent from the client
 
@@ -341,7 +250,7 @@ app.put('/student/project/create2/:id_project', async (req, res) => {
 });
 
 //ddlt3
-app.put('/student/project/create3/:id_project', async (req, res) => {
+router.put('/project/create3/:id_project', async (req, res) => {
     const addDays = (date, days) => {
         const result = new Date(date);
         result.setDate(result.getDate() - days);
@@ -372,7 +281,7 @@ app.put('/student/project/create3/:id_project', async (req, res) => {
 
     );
 });
-app.post('/student/project/p_person/create/', (req, res) => {
+router.post('/project/p_person/create/', (req, res) => {
     try {
         const {
             id_projects,
@@ -502,7 +411,7 @@ app.post('/student/project/p_person/create/', (req, res) => {
         res.status(500).send(error); // Handle the error and send an appropriate response
     }
 });
-app.post('/student/project/p_timestep/create/:id_project', async (req, res) => {
+router.post('/project/p_timestep/create/:id_project', async (req, res) => {
     try {
         const {
             id_projects,
@@ -704,12 +613,4 @@ app.post('/student/project/p_timestep/create/:id_project', async (req, res) => {
     }
 });
 
-
-
-
-
-
-
-app.listen(3001, () => { // Removed quotes around 3001
-    console.log("Server is running on port 3001");
-});
+module.exports = router;

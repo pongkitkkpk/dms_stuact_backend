@@ -1,0 +1,45 @@
+const express = require('express');
+const router = express.Router();
+const db = require('../db');
+
+router.get('/users', (req, res) => {
+    db.query("SELECT * FROM users", (err, result) => {
+        if (err) {
+            console.log(err);
+            res.status(500).send(err);
+        } else {
+            res.send(result);
+        }
+    });
+});
+router.delete('/user/deleteUser/:id', (req, res) => { // Added a leading slash
+    const id = req.params.id;
+    db.query("DELETE FROM users WHERE id = ?", id, (err, result) => {
+        if (err) {
+            console.log(err);
+            res.status(500).send(err); // Handle the error and send an appropriate response
+        } else {
+            res.send(result);
+        }
+    });
+});
+
+
+router.post('/user/createUser', (req, res) => {
+    const { id_student, name_student, department, position, clubName, campus, yearly, codedivision, codeagency, codeworkgroup, codebooksome } = req.body;
+
+    db.query(
+        "INSERT INTO users (id_student, name_student, department, position, clubName, campus, yearly, codedivision, codeagency, codeworkgroup, codebooksome) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+        [id_student, name_student, department, position, clubName, campus, yearly, codedivision, codeagency, codeworkgroup, codebooksome],
+        (err, result) => {
+            if (err) {
+                console.log(err);
+                res.status(500).send(err); // Handle the error and send an appropriate response
+            } else {
+                res.send("Values Inserted");
+            }
+        }
+    );
+});
+
+module.exports = router;
