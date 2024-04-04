@@ -7,6 +7,8 @@ const axios = require('axios');
 const routes = require('./routes');
 const port = process.env.PORT || 3001;
 const login = require('./src/login');
+// const userinfo = require('./src/userinfo');
+const userInfo = require('./src/getUserInfo');
 
 app.use(cors());
 app.use(express.json());
@@ -22,22 +24,48 @@ app.get('/api/status', (req, res) => {
     res.json({ status: 'ok', message: 'Server is running' });
 });
 app.post('/api/authen', async (req, res) => {
+    console.log("Backend")
     try {
-        console.log("Backend")
         const { username, password } = req.body;
         // console.log(req.body);
         const response = await login(username, password);
         if (response.status === 'success') {
+            
             console.log(response.message.firstname_en + " " + response.message.lastname_en + " is login success as " + req.body.username);
 
         } else {
             console.log("(" + response.message + ") Is login failed as " + req.body.username);
         }
+        
         delete response.message.pid;
+        
         res.json({ status: response.status, message: response.message });
     } catch (error) {
         console.error( error);
         res.status(500).json({ message: 'Internal server error' });
+    }
+
+});
+
+app.post('/api/userInfo', async (req, res) => {
+    
+    try {
+        const { username } = req.body;
+        // console.log(req.body);
+        const response = await userInfo(username);
+        if (response.status === 'success') {
+            console.log(response.message)
+            console.log(response.message.firstname_en + " " + response.message.lastname_en + " is getuser success as " + req.body.username);
+
+        } else {
+            console.log("(" + response.message + ") Is userino failed as " + req.body.username);
+        }
+        delete response.message.pid;
+
+        res.json({ status: response.status, message: response.message });
+    } catch (error) {
+        console.error( error);
+        res.status(500).json({ message: 'Internal userinfoserver error' });
     }
 
 });
