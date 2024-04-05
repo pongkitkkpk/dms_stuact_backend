@@ -13,6 +13,7 @@ const login = async (username, password) => {
             method: "post", // Explicitly specify the method
             url: process.env.ICIT_AUTHENTICATION,
             data: {
+                student_info : "1",
                 username,
                 password,
                 scopes: "student",
@@ -29,20 +30,23 @@ const login = async (username, password) => {
             // Authentication successful
             return {
                 status: 'success',
-                message: authResponse.data.userInfo // or any relevant user information
+                message: authResponse.data.userInfo ,// or any relevant user information
+                message2: authResponse.data.studentInfo // or any relevant user information
             };
         } else {
             // Authentication failed
             return {
                 status: 'error',
-                message: 'Invalid username or password' // or any relevant error message
+                message: 'Invalid username or password',// or any relevant error message
+                message2:'errorr2'
             };
         }
     } catch (error) {
         console.error("Authentication error:", error);
         return {
             status: 'error',
-            message: 'Internal server error' // or any relevant error message
+            message: 'Internal server error' ,// or any relevant error message
+            message2:'errorr2'
         };
     }
 };

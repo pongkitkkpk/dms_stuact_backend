@@ -26,11 +26,43 @@ router.delete('/user/deleteUser/:id', (req, res) => { // Added a leading slash
 
 
 router.post('/user/createUser', (req, res) => {
-    const { id_student, name_student, department, position, clubName, campus, yearly, codedivision, codeagency, codeworkgroup, codebooksome } = req.body;
+    const { id_student,
+        name_student,
+        department,
+        position,
+        clubName,
+        WorkGroup,
+        ClubGroup,
+        campus,
+        email,
+        account_type,
+        STU_STATUS_DESC,
+        LEVEL_DESC,
+        yearly,
+        codedivision,
+        codeagency,
+        codeworkgroup,
+        codebooksome } = req.body;
 
     db.query(
-        "INSERT INTO users (id_student, name_student, department, position, clubName, campus, yearly, codedivision, codeagency, codeworkgroup, codebooksome) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
-        [id_student, name_student, department, position, clubName, campus, yearly, codedivision, codeagency, codeworkgroup, codebooksome],
+        "INSERT INTO users (id_student, name_student, department, position, clubName,WorkGroup,ClubGroup, campus,email,account_type,STU_STATUS_DESC,LEVEL_DESC, yearly, codedivision, codeagency, codeworkgroup, codebooksome) VALUES (?,?,?,?,?,?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+        [id_student,
+            name_student,
+            department,
+            position,
+            clubName,
+            WorkGroup,
+            ClubGroup,
+            campus,
+            email,
+            account_type,
+            STU_STATUS_DESC,
+            LEVEL_DESC,
+            yearly,
+            codedivision,
+            codeagency,
+            codeworkgroup,
+            codebooksome],
         (err, result) => {
             if (err) {
                 console.log(err);

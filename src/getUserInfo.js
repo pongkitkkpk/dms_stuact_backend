@@ -10,6 +10,7 @@ const userInfo = async (username) => {
         const authResponse = await axios.post(
             process.env.ICIT_INFORMATION,
             {
+                student_info : "1",
                 username,
             },
             {
@@ -27,19 +28,22 @@ const userInfo = async (username) => {
             // Authentication successful
             return {
                 status: 'success',
-                message: authResponse.data.userInfo // or any relevant user information
+                message: authResponse.data.userInfo ,// or any relevant user information
+                message2 :authResponse.data.studentInfo
             };
         } else {
             // Authentication failed
             return {
                 status: 'error',
-                message: 'Invalid username or password' // or any relevant error message
+                message: 'ไม่พบ ICIT Account กรุณากรอกใหม่อีกครั้ง', // or any relevant error message
+                message2: 'Invalid username or password2', // or any relevant error message
             };
         }
         return {
             status: authResponse.status,
             message: authResponse.data.api_status,
             userInfo: authResponse.data.userInfo,
+            studentInfo :authResponse.data.studentInfo
         };
 
     } catch (error) {
@@ -48,6 +52,7 @@ const userInfo = async (username) => {
         return {
             status: 500, // Internal server error
             message: "Internal server error",
+            message2:"error22"
         };
     }
 };
