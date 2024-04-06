@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const db = require('../db');
 
-router.get('/users', (req, res) => {
+router.get('/allusers', (req, res) => {
     db.query("SELECT * FROM users", (err, result) => {
         if (err) {
             console.log(err);
@@ -12,6 +12,29 @@ router.get('/users', (req, res) => {
         }
     });
 });
+
+router.get('/studentusers', (req, res) => {
+    db.query("SELECT * FROM users WHERE position IN ('S', 'SH', 'Ad')", (err, result) => {
+        if (err) {
+            console.log(err);
+            res.status(500).send(err);
+        } else {
+            res.send(result);
+        }
+    });
+});
+
+router.get('/stuactusers', (req, res) => {
+    db.query("SELECT * FROM users WHERE position = 'Stuact'", (err, result) => {
+        if (err) {
+            console.log(err);
+            res.status(500).send(err);
+        } else {
+            res.send(result);
+        }
+    });
+});
+
 router.delete('/user/deleteUser/:id', (req, res) => { // Added a leading slash
     const id = req.params.id;
     db.query("DELETE FROM users WHERE id = ?", id, (err, result) => {
