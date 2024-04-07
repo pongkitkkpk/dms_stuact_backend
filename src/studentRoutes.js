@@ -88,6 +88,7 @@ router.post('/project/create/', async (req, res) => {
             project_name,
             project_number,
             codeclub,
+            project_phase,
             yearly,
             yearly_count,
             yearly_countsketch,
@@ -100,17 +101,22 @@ router.post('/project/create/', async (req, res) => {
             person2_contact,
             person3_name,
             person3_contact,
-
+            is_1side,
+            is_2side,
+            is_3side,
+            is_4side,
+            is_5side
         } = req.body;
 
         // Insert data into the database
         db.query(
-            "INSERT INTO projects (id_student,project_name, project_number, codeclub, yearly,yearly_count, yearly_countsketch, responsible_agency,academic_year, advisor_name, person1_name, person1_contact, person2_name,person2_contact, person3_name, person3_contact) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+            "INSERT INTO projects (id_student,project_name, project_number, codeclub,project_phase, yearly,yearly_count, yearly_countsketch, responsible_agency,academic_year, advisor_name, person1_name, person1_contact, person2_name,person2_contact, person3_name, person3_contact,is_1side,is_2side,is_3side,is_4side,is_5side) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
             [
                 id_student,
                 project_name,
                 project_number,
                 codeclub,
+                project_phase,
                 yearly,
                 yearly_count,
                 yearly_countsketch,
@@ -123,6 +129,11 @@ router.post('/project/create/', async (req, res) => {
                 person2_contact,
                 person3_name,
                 person3_contact,
+                is_1side,
+                is_2side,
+                is_3side,
+                is_4side,
+                is_5side
 
             ],
 
@@ -412,6 +423,43 @@ router.post('/project/p_person/create/', (req, res) => {
     }
 });
 router.post('/project/p_timestep/create/:id_project', async (req, res) => {
+    const addDays = (date, days) => {
+        const result = new Date(date);
+        result.setDate(result.getDate() - days);
+        return result;
+    };
+
+    // Usage example
+    req.body.startDurationTable1 = addDays(req.body.startDurationTable1, 0);
+    req.body.endDurationTable1 = addDays(req.body.endDurationTable1, 0);
+    req.body.startDurationTable2 = addDays(req.body.startDurationTable2, 0);
+    req.body.endDurationTable2 = addDays(req.body.endDurationTable2, 0);
+    req.body.startDurationTable3 = addDays(req.body.startDurationTable3, 0);
+    req.body.endDurationTable3 = addDays(req.body.endDurationTable3, 0);
+    req.body.startDurationTable4 = addDays(req.body.startDurationTable4, 0);
+    req.body.endDurationTable4 = addDays(req.body.endDurationTable4, 0);
+    req.body.startDurationTable5 = addDays(req.body.startDurationTable5, 0);
+    req.body.endDurationTable5 = addDays(req.body.endDurationTable5, 0);
+    req.body.startDurationTable6 = addDays(req.body.startDurationTable6, 0);
+    req.body.endDurationTable6 = addDays(req.body.endDurationTable6, 0);
+    req.body.startDurationTable7 = addDays(req.body.startDurationTable7, 0);
+    req.body.endDurationTable7 = addDays(req.body.endDurationTable7, 0);
+    req.body.startDurationTable8 = addDays(req.body.startDurationTable8, 0);
+    req.body.endDurationTable8 = addDays(req.body.endDurationTable8, 0);
+    req.body.startDurationTable9 = addDays(req.body.startDurationTable9, 0);
+    req.body.endDurationTable9 = addDays(req.body.endDurationTable9, 0);
+    req.body.startDurationTable10 = addDays(req.body.startDurationTable10, 0);
+    req.body.endDurationTable10 = addDays(req.body.endDurationTable10, 0);
+    req.body.startDurationTable11 = addDays(req.body.startDurationTable11, 0);
+    req.body.endDurationTable11 = addDays(req.body.endDurationTable11, 0);
+    req.body.startDurationTable12 = addDays(req.body.startDurationTable12, 0);
+    req.body.endDurationTable12 = addDays(req.body.endDurationTable12, 0);
+    req.body.startDurationTable13 = addDays(req.body.startDurationTable13, 0);
+    req.body.endDurationTable13 = addDays(req.body.endDurationTable13, 0);
+    req.body.startDurationTable14 = addDays(req.body.startDurationTable14, 0);
+    req.body.endDurationTable14 = addDays(req.body.endDurationTable14, 0);
+    req.body.startDurationTable15 = addDays(req.body.startDurationTable15, 0);
+    req.body.endDurationTable15 = addDays(req.body.endDurationTable15, 0);
     try {
         const {
             id_projects,
