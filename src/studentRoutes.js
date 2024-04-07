@@ -463,6 +463,8 @@ router.post('/project/p_timestep/create/:id_project', async (req, res) => {
     try {
         const {
             id_projects,
+            codeclub,
+            yearly_countsketch,
             table1Topic,
             startDurationTable1,
             endDurationTable1,
@@ -525,9 +527,12 @@ router.post('/project/p_timestep/create/:id_project', async (req, res) => {
             responsibleTable15str
         } = req.body;
 
+
         await db.query(
             "UPDATE p_timestep " +
             "SET " +
+            "codeclub = ?, " +
+            "yearly_countsketch = ?, " +
             "topic_table1 = ?, " +
             "start_duration_table1 = ?, " +
             "end_duration_table1 = ?, " +
@@ -590,6 +595,8 @@ router.post('/project/p_timestep/create/:id_project', async (req, res) => {
             "responsible_table15 = ? " +
             "WHERE id_projects = ?",
             [
+                codeclub,
+                yearly_countsketch,
                 table1Topic,
                 startDurationTable1,
                 endDurationTable1,
@@ -654,7 +661,23 @@ router.post('/project/p_timestep/create/:id_project', async (req, res) => {
             ]
         );
 
-        res.status(200).json({ message: "p_timestep updated successfully" });
+        res.status(200).json({ message: `p_timestep updated successfully ${codeclub} yearly${yearly_countsketch}` });   
+        db.query(
+            "INSERT INTO p_budget (id_projects,codeclub,yearly_countsketch) VALUES (?,?,?)",
+            [id_projects, codeclub, yearly_countsketch],
+            (err) => {
+                if (err) {
+                    console.error(err);
+                    res.status(500).send(err); // Handle the error and send an appropriate response
+                    return;
+                }
+
+                // If both insertions are successful, send a success response
+               
+            }
+        );
+
+
     } catch (error) {
         console.error("Error updating p_timestep:", error);
         res.status(500).json({ error: "Database error" });
