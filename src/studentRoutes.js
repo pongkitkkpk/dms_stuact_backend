@@ -14,7 +14,7 @@ router.get('/users', (req, res) => {
 });
 
 
-router.get('/project/getidproject/:id_projects', (req, res) => {
+router.get('/project/codebooksomeoutyear/:id_projects', (req, res) => {
     const id_projects = req.params.id_projects;
     db.query('SELECT * FROM projects WHERE id = ? ORDER BY id DESC LIMIT 1', [id_projects], (err, result) => {
         if (err) {
@@ -26,9 +26,9 @@ router.get('/project/getidproject/:id_projects', (req, res) => {
     });
 });
 
-router.get('/project/getallcodeclub/:codeclub', (req, res) => {
-    const codeclub = req.params.codeclub;
-    db.query('SELECT * FROM projects WHERE codeclub = ? ', [codeclub], (err, result) => {
+router.get('/project/getcodebooksomeoutyear/:codebooksomeoutyear', (req, res) => {
+    const codebooksomeoutyear = req.params.codebooksomeoutyear;
+    db.query('SELECT * FROM projects WHERE codebooksomeoutyear = ? ', [codebooksomeoutyear], (err, result) => {
         if (err) {
             console.log(err);
             res.status(500).send("Error retrieving project");
@@ -88,6 +88,7 @@ router.post('/project/create/', async (req, res) => {
             project_name,
             project_number,
             codeclub,
+            codebooksomeoutyear,
             project_phase,
             yearly,
             yearly_count,
@@ -110,12 +111,13 @@ router.post('/project/create/', async (req, res) => {
 
         // Insert data into the database
         db.query(
-            "INSERT INTO projects (id_student,project_name, project_number, codeclub,project_phase, yearly,yearly_count, yearly_countsketch, responsible_agency,academic_year, advisor_name, person1_name, person1_contact, person2_name,person2_contact, person3_name, person3_contact,is_1side,is_2side,is_3side,is_4side,is_5side) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+            "INSERT INTO projects (id_student,project_name, project_number, codeclub,codebooksomeoutyear,project_phase, yearly,yearly_count, yearly_countsketch, responsible_agency,academic_year, advisor_name, person1_name, person1_contact, person2_name,person2_contact, person3_name, person3_contact,is_1side,is_2side,is_3side,is_4side,is_5side) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
             [
                 id_student,
                 project_name,
                 project_number,
                 codeclub,
+                codebooksomeoutyear,
                 project_phase,
                 yearly,
                 yearly_count,
