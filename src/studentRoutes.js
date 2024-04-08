@@ -14,7 +14,7 @@ router.get('/users', (req, res) => {
 });
 
 
-router.get('/project/codebooksomeoutyear/:id_projects', (req, res) => {
+router.get('/project/getidproject/:id_projects', (req, res) => {
     const id_projects = req.params.id_projects;
     db.query('SELECT * FROM projects WHERE id = ? ORDER BY id DESC LIMIT 1', [id_projects], (err, result) => {
         if (err) {
@@ -680,57 +680,201 @@ router.post('/project/p_timestep/create/:id_project', async (req, res) => {
         res.status(500).json({ error: "Database error" });
     }
 });
-router.post('/project/p_budget/create/:id_projects', async (req, res) => {
+router.put('/project/p_budget/create/:id_project', async (req, res) => {
+    const id_project = req.params.id_project;
+
     try {
         const {
-            id_projects,
             codeclub,
             yearly_countsketch,
+            //A
             listA1,
             listA2,
-            listA3
-            
+            listA3,
+            listA4,
+            listA5,
+            listA6,
+            listA7,
+            listA8,
+            listA9,
+            listA10,
+            listA11,
+            listA12,
+            listA13,
+            listA14,
+            listA15,
+            //NA
+            listNA1,
+            listNA2,
+            listNA3,
+            listNA4,
+            listNA5,
+            listNA6,
+            listNA7,
+            listNA8,
+            listNA9,
+            listNA10,
+            listNA11,
+            listNA12,
+            listNA13,
+            listNA14,
+            listNA15,
+            //TA
+            listTA1,
+            listTA2,
+            listTA3,
+            listTA4,
+            listTA5,
+            listTA6,
+            listTA7,
+            listTA8,
+            listTA9,
+            listTA10,
+            listTA11,
+            listTA12,
+            listTA13,
+            listTA14,
+            listTA15,
+            //TPA
+            listTPA1,
+            listTPA2,
+            listTPA3,
+            listTPA4,
+            listTPA5,
+            listTPA6,
+            listTPA7,
+            listTPA8,
+            listTPA9,
+            listTPA10,
+            listTPA11,
+            listTPA12,
+            listTPA13,
+            listTPA14,
+            listTPA15,
+            //SA
+            listSA1,
+            listSA2,
+            listSA3,
+            listSA4,
+            listSA5,
+            listSA6,
+            listSA7,
+            listSA8,
+            listSA9,
+            listSA10,
+            listSA11,
+            listSA12,
+            listSA13,
+            listSA14,
+            listSA15,
+            //SSA
+            listSSA,
         } = req.body;
-        console.log(codeclub)
+
         db.query(
-            "UPDATE p_budget SET  codeclub = ?,yearly_countsketch = ?, listA1 = ?, listA2=?, listA3=?,  WHERE id_projects=?",
+            "UPDATE p_budget SET codeclub = ?, yearly_countsketch = ?, listA1 = ?, listA2 = ?, listA3 = ?, listA4 = ?, listA5 = ?, listA6 = ?, listA7 = ?, listA8 = ?, listA9 = ?, listA10 = ?, listA11 = ?, listA12 = ?, listA13 = ?, listA14 = ?, listA15 = ?, listNA1 = ?, listNA2 = ?, listNA3 = ?, listNA4 = ?, listNA5 = ?, listNA6 = ?, listNA7 = ?, listNA8 = ?, listNA9 = ?, listNA10 = ?, listNA11 = ?, listNA12 = ?, listNA13 = ?, listNA14 = ?, listNA15 = ?, listTA1 = ?, listTA2 = ?, listTA3 = ?, listTA4 = ?, listTA5 = ?, listTA6 = ?, listTA7 = ?, listTA8 = ?, listTA9 = ?, listTA10 = ?, listTA11 = ?, listTA12 = ?, listTA13 = ?, listTA14 = ?, listTA15 = ?, listTPA1 = ?, listTPA2 = ?, listTPA3 = ?, listTPA4 = ?, listTPA5 = ?, listTPA6 = ?, listTPA7 = ?, listTPA8 = ?, listTPA9 = ?, listTPA10 = ?, listTPA11 = ?, listTPA12 = ?, listTPA13 = ?, listTPA14 = ?, listTPA15 = ?, listSA1 = ?, listSA2 = ?, listSA3 = ?, listSA4 = ?, listSA5 = ?, listSA6 = ?, listSA7 = ?, listSA8 = ?, listSA9 = ?, listSA10 = ?, listSA11 = ?, listSA12 = ?, listSA13 = ?, listSA14 = ?, listSA15 = ?, listSSA = ? WHERE id_projects = ?",
+
             [
                 codeclub,
                 yearly_countsketch,
                 listA1,
                 listA2,
                 listA3,
-                id_projects
-                
+                listA4,
+                listA5,
+                listA6,
+                listA7,
+                listA8,
+                listA9,
+                listA10,
+                listA11,
+                listA12,
+                listA13,
+                listA14,
+                listA15,
+                listNA1,
+                listNA2,
+                listNA3,
+                listNA4,
+                listNA5,
+                listNA6,
+                listNA7,
+                listNA8,
+                listNA9,
+                listNA10,
+                listNA11,
+                listNA12,
+                listNA13,
+                listNA14,
+                listNA15,
+                //TA
+                listTA1,
+                listTA2,
+                listTA3,
+                listTA4,
+                listTA5,
+                listTA6,
+                listTA7,
+                listTA8,
+                listTA9,
+                listTA10,
+                listTA11,
+                listTA12,
+                listTA13,
+                listTA14,
+                listTA15,
+                //TPA
+                listTPA1,
+                listTPA2,
+                listTPA3,
+                listTPA4,
+                listTPA5,
+                listTPA6,
+                listTPA7,
+                listTPA8,
+                listTPA9,
+                listTPA10,
+                listTPA11,
+                listTPA12,
+                listTPA13,
+                listTPA14,
+                listTPA15,
+                //SA
+                listSA1,
+                listSA2,
+                listSA3,
+                listSA4,
+                listSA5,
+                listSA6,
+                listSA7,
+                listSA8,
+                listSA9,
+                listSA10,
+                listSA11,
+                listSA12,
+                listSA13,
+                listSA14,
+                listSA15,
+                //SSA
+                listSSA,
+                id_project
             ],
             async (err, result) => {
                 if (err) {
                     console.error(err);
-                    return res.status(500).send("Error updating data in the database"); // Handle the error and send an appropriate response
+                    return res.status(500).send("Error updating data in the database");
                 } else {
-                    console.log("up to database compleate")
+                    console.log("Update to database complete");
+                    res.status(200).send("Data updated successfully");
                 }
-
-
-                // db.query("INSERT INTO p_timestep (id_projects,codeclub,yearly_countsketch) VALUES (?,?,?)",
-                //     [id_projects, codeclub, yearly_countsketch],
-                //     (err) => {
-                //         if (err) {
-                //             console.error(err);
-                //             return res.status(500).send("Error inserting data into the database"); // Handle the error and send an appropriate response
-                //         }
-
-                //         res.status(200).send("Data updated and inserted successfully");
-                //     }
-                // );
             }
         );
 
     } catch (error) {
         console.error(error);
-        res.status(500).send(error); // Handle the error and send an appropriate response
+        res.status(500).send(error);
     }
+});
 
 
-})
 module.exports = router;
