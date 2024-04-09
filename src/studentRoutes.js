@@ -182,33 +182,83 @@ router.get('/download/:id_project', async (req, res) => {
             res.status(500).send("Error retrieving project");
         } else {
 
-            res.send(result);
+            // res.send(result); // have data
             console.log(result)
-            // try {
-            //     // Generate the document
-            //     const PizZip = require("pizzip");
-            //     const Docxtemplater = require("docxtemplater");
-            //     const fs = require("fs");
-            //     const path = require("path");
+            console.log(result[0].id_student) 
+            console.log(result[0].project_name) 
+            console.log(result[0].project_number) 
+            console.log(result[0].codeclub) 
+            try {
+                    // Generate the document
+                    const PizZip = require("pizzip");
+                    const Docxtemplater = require("docxtemplater");
+                    const fs = require("fs");
+                    const path = require("path");
 
-            //     // Load the template
-            //     const content = fs.readFileSync(path.resolve(__dirname, "../templateDoc", "temp04.docx"), "binary");
-            //     const zip = new PizZip(content);
-            //     const doc = new Docxtemplater(zip, { paragraphLoop: true, linebreaks: true });
+                    // Load the template
+                    const content = fs.readFileSync(path.resolve(__dirname, "templateDoc", "temp04-real.docx"), "binary");
+                    const zip = new PizZip(content);
+                    const doc = new Docxtemplater(zip, { paragraphLoop: true, linebreaks: true });
 
-            //     // Render the document
-            //     // 
-            //     doc.setData(result);
-            //     // Generate and save the document
-            //     const buf = doc.getZip().generate({ type: "nodebuffer", compression: "DEFLATE" });
-            //     fs.writeFileSync(path.resolve(__dirname, "e-docx", `e-doc-${project_name}.docx`), buf);
+                    // Render the document
+                    // 
+                    // doc.render({
+                    //     id_student: result[0].id_student,
+                    //     project_name: result[0].project_name,
+                    //     project_number: result[0].project_number,
+                    //     codeclub: result[0].codeclub,
+                    //     yearly: result[0].yearly,
+                    //     yearly_count: result[0].yearly_count,
+                    //     responsible_agency: result[0].responsible_agency,
+                    //     academic_year: result[0].academic_year,
+                    //     advisor_name: result[0].advisor_name,
+                    //     person1_name: result[0].person1_name,
+                    //     person1_contact: result[0].person1_contact,
+                    //     person2_name: result[0].person2_name,
+                    //     person2_contact: result[0].person2_contact,
+                    //     person3_name: result[0].person3_name,
+                    //     person3_contact: result[0].person3_contact,
+                    //     principles_and_reasons1: result[0].principles_and_reasons1,
+                    //     principles_and_reasons2: result[0].principles_and_reasons2,
+                    //     principles_and_reasons3: result[0].principles_and_reasons3,
+                    //     objective1: result[0].objective1,
+                    //     objective2: result[0].objective2,
+                    //     objective3: result[0].objective3,
+                    //     project_type1: result[0].project_type1,
+                    //     project_type2: result[0].project_type2,
+                    //     project_type3: result[0].project_type3,
+                    //     project_type4: result[0].project_type4,
+                    //     project_type5: result[0].project_type5,
+                    //     is_newproject: result[0].is_newproject,
+                    //     is_continueproject: result[0].is_continueproject,
+                    //     location1: result[0].location1,
+                    //     location2: result[0].location2,
+                    //     location3: result[0].location3,
+                    //     start_prepare:result[0].start_prepare,
+                    //     end_prepare:result[0].end_prepare,
+                    //     start_event:result[0].start_event,
+                    //     end_event:result[0].end_event,
+                    //     deadline:result[0].deadline,
+                    //     problem1:result[0].problem1,
+                    //     result1:result[0].result1,
+                    //     problem2:result[0].problem2,
+                    //     result2:result[0].result2,
+                    //     problem3:result[0].problem3,
+                    //     result3:result[0].result3
+                    // });
+                    doc.render(result[0]);
+
+                    // Generate and save the document
+                    const buf = doc.getZip().generate({ type: "nodebuffer", compression: "DEFLATE" });
+                    fs.writeFileSync(path.resolve(__dirname, "e-docx", `e-doc-${result[0].project_name}.docx`), buf);
 
 
-            //     res.send("Project created and document generated successfully!");
-            // } catch (error) {
-            //     console.error("Error generating document:", error);
-            //     res.status(500).send("Error generating document: " + error.message);
-            // }
+                    res.send("Project created and document generated successfully!");
+                } catch (error) {
+                    console.error("Error generating document:", error);
+                    res.status(500).send("Error generating document: " + error.message);
+                }
+                
 
         }
     });
