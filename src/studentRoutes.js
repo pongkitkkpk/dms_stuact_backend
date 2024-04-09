@@ -108,7 +108,7 @@ router.post('/project/create/', async (req, res) => {
             is_4side,
             is_5side
         } = req.body;
-        const createdAt = new Date(); 
+        const createdAt = new Date();
         // Insert data into the database
         db.query(
             "INSERT INTO projects (id_student,project_name, project_number, codeclub,codebooksomeoutyear,project_phase, yearly,yearly_count, yearly_countsketch, responsible_agency,academic_year, advisor_name, person1_name, person1_contact, person2_name,person2_contact, person3_name, person3_contact,is_1side,is_2side,is_3side,is_4side,is_5side, created_at) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
@@ -165,82 +165,53 @@ router.post('/project/create/', async (req, res) => {
                     }
                 );
 
-                // try {
-                //     // Generate the document
-                //     const PizZip = require("pizzip");
-                //     const Docxtemplater = require("docxtemplater");
-                //     const fs = require("fs");
-                //     const path = require("path");
 
-                //     // Load the template
-                //     const content = fs.readFileSync(path.resolve(__dirname, "templateDoc", "temp04.docx"), "binary");
-                //     const zip = new PizZip(content);
-                //     const doc = new Docxtemplater(zip, { paragraphLoop: true, linebreaks: true });
-
-                //     // Render the document
-                //     // 
-                //     doc.render({
-                //         id_student: id_student,
-                //         project_name: project_name,
-                //         project_number: project_number,
-                //         codeclub: codeclub,
-                //         yearly: yearly,
-                //         yearly_count: yearly_count,
-                //         responsible_agency: responsible_agency,
-                //         academic_year: academic_year,
-                //         advisor_name: advisor_name,
-                //         person1_name: person1_name,
-                //         person1_contact: person1_contact,
-                //         person2_name: person2_name,
-                //         person2_contact: person2_contact,
-                //         person3_name: person3_name,
-                //         person3_contact: person3_contact,
-                //         principles_and_reasons1: principles_and_reasons1,
-                //         principles_and_reasons2: principles_and_reasons2,
-                //         principles_and_reasons3: principles_and_reasons3,
-                //         objective1: objective1,
-                //         objective2: objective2,
-                //         objective3: objective3,
-                //         project_type1: project_type1,
-                //         project_type2: project_type2,
-                //         project_type3: project_type3,
-                //         project_type4: project_type4,
-                //         project_type5: project_type5,
-                //         is_newproject: is_newproject,
-                //         is_continueproject: is_continueproject,
-                //         location1: location1,
-                //         location2: location2,
-                //         location3: location3,
-                //         start_prepare:start_prepare,
-                //         end_prepare:end_prepare,
-                //         start_event:start_event,
-                //         end_event:end_event,
-                //         deadline:deadline,
-                //         problem1:problem1,
-                //         result1:result1,
-                //         problem2:problem2,
-                //         result2:result2,
-                //         problem3:problem3,
-                //         result3:result3
-                //     });
-
-                //     // Generate and save the document
-                //     const buf = doc.getZip().generate({ type: "nodebuffer", compression: "DEFLATE" });
-                //     fs.writeFileSync(path.resolve(__dirname, "e-docx", `e-doc-${project_name}.docx`), buf);
-
-
-                //     res.send("Project created and document generated successfully!");
-                // } catch (error) {
-                //     console.error("Error generating document:", error);
-                //     res.status(500).send("Error generating document: " + error.message);
-                // }
-                // 
             }
         );
     } catch (error) {
         console.error(error);
         res.status(500).send(error); // Handle the error and send an appropriate response
     }
+});
+
+router.get('/download/:id_project', async (req, res) => {
+    const id_projects = req.params.id_project;
+    db.query('SELECT * FROM projects WHERE id = ? ORDER BY id DESC LIMIT 1', [id_projects], (err, result) => {
+        if (err) {
+            console.log(err);
+            res.status(500).send("Error retrieving project");
+        } else {
+
+            res.send(result);
+            console.log(result)
+            // try {
+            //     // Generate the document
+            //     const PizZip = require("pizzip");
+            //     const Docxtemplater = require("docxtemplater");
+            //     const fs = require("fs");
+            //     const path = require("path");
+
+            //     // Load the template
+            //     const content = fs.readFileSync(path.resolve(__dirname, "../templateDoc", "temp04.docx"), "binary");
+            //     const zip = new PizZip(content);
+            //     const doc = new Docxtemplater(zip, { paragraphLoop: true, linebreaks: true });
+
+            //     // Render the document
+            //     // 
+            //     doc.setData(result);
+            //     // Generate and save the document
+            //     const buf = doc.getZip().generate({ type: "nodebuffer", compression: "DEFLATE" });
+            //     fs.writeFileSync(path.resolve(__dirname, "e-docx", `e-doc-${project_name}.docx`), buf);
+
+
+            //     res.send("Project created and document generated successfully!");
+            // } catch (error) {
+            //     console.error("Error generating document:", error);
+            //     res.status(500).send("Error generating document: " + error.message);
+            // }
+
+        }
+    });
 });
 //dd2
 router.put('/project/create2/:id_project', async (req, res) => {
@@ -1190,7 +1161,7 @@ router.put('/project/p_budget/create/:id_project', async (req, res) => {
 
     const updatedData = req.body; // Updated data sent from the client
 
-    
+
     const id_projects = req.params.id_project;
 
     db.query(
