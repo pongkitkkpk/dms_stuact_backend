@@ -665,7 +665,18 @@ router.post('/project/p_timestep/create/:id_project', async (req, res) => {
 
         res.status(200).json({ message: `p_timestep updated successfully ${codeclub} yearly${yearly_countsketch}` });
         db.query(
-            "INSERT INTO p_budget (id_project,codeclub,yearly_countsketch) VALUES (?,?,?)",
+            "INSERT INTO p_budget (id_projects,codeclub,yearly_countsketch) VALUES (?,?,?)",
+            [id_projects, codeclub, yearly_countsketch],
+            (err) => {
+                if (err) {
+                    console.error(err);
+                    res.status(500).send(err); // Handle the error and send an appropriate response
+                    return;
+                }
+            }
+        );
+        db.query(
+            "INSERT INTO p_indicator  (id_projects,codeclub,yearly_countsketch) VALUES (?,?,?)",
             [id_projects, codeclub, yearly_countsketch],
             (err) => {
                 if (err) {
@@ -1177,12 +1188,30 @@ router.post('/project/p_timestep/create/:id_project', async (req, res) => {
 router.put('/project/p_budget/create/:id_project', async (req, res) => {
 
     const updatedData = req.body; // Updated data sent from the client
-    // console.log(updatedData)
+
+    
     const id_projects = req.params.id_project;
 
     db.query(
-        "UPDATE p_budget SET ? WHERE id_project = ?",
-        [updatedData, id_projects],
+        "UPDATE p_budget SET ? WHERE id_projects = ?",
+        [updatedData, id_projects], // Pass the updated value of listA1
+        (err, result) => {
+            if (err) {
+                console.error(err);
+                res.status(500).send("Error updating project data");
+            } else {
+                res.status(200).send("Project data updated successfully");
+            }
+        }
+    );
+});
+
+router.put('/project/p_indicator/create/:id_project', async (req, res) => {
+    const updatedData = req.body; // Updated data sent from the client
+    const id_projects = req.params.id_project;
+    db.query(
+        "UPDATE p_indicator SET ? WHERE id_projects = ?",
+        [updatedData, id_projects], // Pass the updated value of listA1
         (err, result) => {
             if (err) {
                 console.error(err);
