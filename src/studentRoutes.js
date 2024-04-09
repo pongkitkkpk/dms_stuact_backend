@@ -64,7 +64,7 @@ router.get('/project/p_person', (req, res) => {
 router.put('/project/edit/:id_project', (req, res) => {
     const id_project = req.params.id_project;
     const updatedData = req.body; // Updated data sent from the client
-
+    updatedData.updated_at = new Date();
     // Update the project with the given id_project in the database
     db.query(
         "UPDATE projects SET ? WHERE id = ?",
@@ -108,10 +108,10 @@ router.post('/project/create/', async (req, res) => {
             is_4side,
             is_5side
         } = req.body;
-
+        const createdAt = new Date(); 
         // Insert data into the database
         db.query(
-            "INSERT INTO projects (id_student,project_name, project_number, codeclub,codebooksomeoutyear,project_phase, yearly,yearly_count, yearly_countsketch, responsible_agency,academic_year, advisor_name, person1_name, person1_contact, person2_name,person2_contact, person3_name, person3_contact,is_1side,is_2side,is_3side,is_4side,is_5side) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+            "INSERT INTO projects (id_student,project_name, project_number, codeclub,codebooksomeoutyear,project_phase, yearly,yearly_count, yearly_countsketch, responsible_agency,academic_year, advisor_name, person1_name, person1_contact, person2_name,person2_contact, person3_name, person3_contact,is_1side,is_2side,is_3side,is_4side,is_5side, created_at) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
             [
                 id_student,
                 project_name,
@@ -135,7 +135,8 @@ router.post('/project/create/', async (req, res) => {
                 is_2side,
                 is_3side,
                 is_4side,
-                is_5side
+                is_5side,
+                createdAt
 
             ],
 
