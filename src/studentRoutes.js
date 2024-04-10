@@ -448,273 +448,275 @@ router.post('/project/p_person/create/', (req, res) => {
         res.status(500).send(error); // Handle the error and send an appropriate response
     }
 });
-router.post('/project/p_timestep/create/:id_project', async (req, res) => {
-    const addDays = (date, days) => {
-        const result = new Date(date);
-        result.setDate(result.getDate() - days);
-        return result;
-    };
+// old
+// router.post('/project/p_timestep/create/:id_project', async (req, res) => {
+//     const addDays = (date, days) => {
+//         const result = new Date(date);
+//         result.setDate(result.getDate() - days);
+//         return result;
+//     };
 
-    // Usage example
-    req.body.startDurationTable1 = addDays(req.body.startDurationTable1, 0);
-    req.body.endDurationTable1 = addDays(req.body.endDurationTable1, 0);
-    req.body.startDurationTable2 = addDays(req.body.startDurationTable2, 0);
-    req.body.endDurationTable2 = addDays(req.body.endDurationTable2, 0);
-    req.body.startDurationTable3 = addDays(req.body.startDurationTable3, 0);
-    req.body.endDurationTable3 = addDays(req.body.endDurationTable3, 0);
-    req.body.startDurationTable4 = addDays(req.body.startDurationTable4, 0);
-    req.body.endDurationTable4 = addDays(req.body.endDurationTable4, 0);
-    req.body.startDurationTable5 = addDays(req.body.startDurationTable5, 0);
-    req.body.endDurationTable5 = addDays(req.body.endDurationTable5, 0);
-    req.body.startDurationTable6 = addDays(req.body.startDurationTable6, 0);
-    req.body.endDurationTable6 = addDays(req.body.endDurationTable6, 0);
-    req.body.startDurationTable7 = addDays(req.body.startDurationTable7, 0);
-    req.body.endDurationTable7 = addDays(req.body.endDurationTable7, 0);
-    req.body.startDurationTable8 = addDays(req.body.startDurationTable8, 0);
-    req.body.endDurationTable8 = addDays(req.body.endDurationTable8, 0);
-    req.body.startDurationTable9 = addDays(req.body.startDurationTable9, 0);
-    req.body.endDurationTable9 = addDays(req.body.endDurationTable9, 0);
-    req.body.startDurationTable10 = addDays(req.body.startDurationTable10, 0);
-    req.body.endDurationTable10 = addDays(req.body.endDurationTable10, 0);
-    req.body.startDurationTable11 = addDays(req.body.startDurationTable11, 0);
-    req.body.endDurationTable11 = addDays(req.body.endDurationTable11, 0);
-    req.body.startDurationTable12 = addDays(req.body.startDurationTable12, 0);
-    req.body.endDurationTable12 = addDays(req.body.endDurationTable12, 0);
-    req.body.startDurationTable13 = addDays(req.body.startDurationTable13, 0);
-    req.body.endDurationTable13 = addDays(req.body.endDurationTable13, 0);
-    req.body.startDurationTable14 = addDays(req.body.startDurationTable14, 0);
-    req.body.endDurationTable14 = addDays(req.body.endDurationTable14, 0);
-    req.body.startDurationTable15 = addDays(req.body.startDurationTable15, 0);
-    req.body.endDurationTable15 = addDays(req.body.endDurationTable15, 0);
-    try {
-        const {
-            id_projects,
-            codeclub,
-            yearly_countsketch,
-            table1Topic,
-            startDurationTable1,
-            endDurationTable1,
-            responsibleTable1str,
-            table2Topic,
-            startDurationTable2,
-            endDurationTable2,
-            responsibleTable2str,
-            table3Topic,
-            startDurationTable3,
-            endDurationTable3,
-            responsibleTable3str,
-            table4Topic,
-            startDurationTable4,
-            endDurationTable4,
-            responsibleTable4str,
-            table5Topic,
-            startDurationTable5,
-            endDurationTable5,
-            responsibleTable5str,
-            table6Topic,
-            startDurationTable6,
-            endDurationTable6,
-            responsibleTable6str,
-            table7Topic,
-            startDurationTable7,
-            endDurationTable7,
-            responsibleTable7str,
-            table8Topic,
-            startDurationTable8,
-            endDurationTable8,
-            responsibleTable8str,
-            table9Topic,
-            startDurationTable9,
-            endDurationTable9,
-            responsibleTable9str,
-            table10Topic,
-            startDurationTable10,
-            endDurationTable10,
-            responsibleTable10str,
-            table11Topic,
-            startDurationTable11,
-            endDurationTable11,
-            responsibleTable11str,
-            table12Topic,
-            startDurationTable12,
-            endDurationTable12,
-            responsibleTable12str,
-            table13Topic,
-            startDurationTable13,
-            endDurationTable13,
-            responsibleTable13str,
-            table14Topic,
-            startDurationTable14,
-            endDurationTable14,
-            responsibleTable14str,
-            table15Topic,
-            startDurationTable15,
-            endDurationTable15,
-            responsibleTable15str
-        } = req.body;
+//     // Usage example
+//     req.body.startDurationTable1 = addDays(req.body.startDurationTable1, 0);
+//     req.body.endDurationTable1 = addDays(req.body.endDurationTable1, 0);
+//     req.body.startDurationTable2 = addDays(req.body.startDurationTable2, 0);
+//     req.body.endDurationTable2 = addDays(req.body.endDurationTable2, 0);
+//     req.body.startDurationTable3 = addDays(req.body.startDurationTable3, 0);
+//     req.body.endDurationTable3 = addDays(req.body.endDurationTable3, 0);
+//     req.body.startDurationTable4 = addDays(req.body.startDurationTable4, 0);
+//     req.body.endDurationTable4 = addDays(req.body.endDurationTable4, 0);
+//     req.body.startDurationTable5 = addDays(req.body.startDurationTable5, 0);
+//     req.body.endDurationTable5 = addDays(req.body.endDurationTable5, 0);
+//     req.body.startDurationTable6 = addDays(req.body.startDurationTable6, 0);
+//     req.body.endDurationTable6 = addDays(req.body.endDurationTable6, 0);
+//     req.body.startDurationTable7 = addDays(req.body.startDurationTable7, 0);
+//     req.body.endDurationTable7 = addDays(req.body.endDurationTable7, 0);
+//     req.body.startDurationTable8 = addDays(req.body.startDurationTable8, 0);
+//     req.body.endDurationTable8 = addDays(req.body.endDurationTable8, 0);
+//     req.body.startDurationTable9 = addDays(req.body.startDurationTable9, 0);
+//     req.body.endDurationTable9 = addDays(req.body.endDurationTable9, 0);
+//     req.body.startDurationTable10 = addDays(req.body.startDurationTable10, 0);
+//     req.body.endDurationTable10 = addDays(req.body.endDurationTable10, 0);
+//     req.body.startDurationTable11 = addDays(req.body.startDurationTable11, 0);
+//     req.body.endDurationTable11 = addDays(req.body.endDurationTable11, 0);
+//     req.body.startDurationTable12 = addDays(req.body.startDurationTable12, 0);
+//     req.body.endDurationTable12 = addDays(req.body.endDurationTable12, 0);
+//     req.body.startDurationTable13 = addDays(req.body.startDurationTable13, 0);
+//     req.body.endDurationTable13 = addDays(req.body.endDurationTable13, 0);
+//     req.body.startDurationTable14 = addDays(req.body.startDurationTable14, 0);
+//     req.body.endDurationTable14 = addDays(req.body.endDurationTable14, 0);
+//     req.body.startDurationTable15 = addDays(req.body.startDurationTable15, 0);
+//     req.body.endDurationTable15 = addDays(req.body.endDurationTable15, 0);
+//     try {
+//         const {
+//             id_projects,
+//             codeclub,
+//             yearly_countsketch,
+//             table1Topic,
+//             startDurationTable1,
+//             endDurationTable1,
+//             responsibleTable1str,
+//             table2Topic,
+//             startDurationTable2,
+//             endDurationTable2,
+//             responsibleTable2str,
+//             table3Topic,
+//             startDurationTable3,
+//             endDurationTable3,
+//             responsibleTable3str,
+//             table4Topic,
+//             startDurationTable4,
+//             endDurationTable4,
+//             responsibleTable4str,
+//             table5Topic,
+//             startDurationTable5,
+//             endDurationTable5,
+//             responsibleTable5str,
+//             table6Topic,
+//             startDurationTable6,
+//             endDurationTable6,
+//             responsibleTable6str,
+//             table7Topic,
+//             startDurationTable7,
+//             endDurationTable7,
+//             responsibleTable7str,
+//             table8Topic,
+//             startDurationTable8,
+//             endDurationTable8,
+//             responsibleTable8str,
+//             table9Topic,
+//             startDurationTable9,
+//             endDurationTable9,
+//             responsibleTable9str,
+//             table10Topic,
+//             startDurationTable10,
+//             endDurationTable10,
+//             responsibleTable10str,
+//             table11Topic,
+//             startDurationTable11,
+//             endDurationTable11,
+//             responsibleTable11str,
+//             table12Topic,
+//             startDurationTable12,
+//             endDurationTable12,
+//             responsibleTable12str,
+//             table13Topic,
+//             startDurationTable13,
+//             endDurationTable13,
+//             responsibleTable13str,
+//             table14Topic,
+//             startDurationTable14,
+//             endDurationTable14,
+//             responsibleTable14str,
+//             table15Topic,
+//             startDurationTable15,
+//             endDurationTable15,
+//             responsibleTable15str
+//         } = req.body;
 
 
-        await db.query(
-            "UPDATE p_timestep " +
-            "SET " +
-            "codeclub = ?, " +
-            "yearly_countsketch = ?, " +
-            "topic_table1 = ?, " +
-            "start_duration_table1 = ?, " +
-            "end_duration_table1 = ?, " +
-            "responsible_table1 = ?, " +
-            "topic_table2 = ?, " +
-            "start_duration_table2 = ?, " +
-            "end_duration_table2 = ?, " +
-            "responsible_table2 = ?, " +
-            "topic_table3 = ?, " +
-            "start_duration_table3 = ?, " +
-            "end_duration_table3 = ?, " +
-            "responsible_table3 = ?, " +
-            "topic_table4 = ?, " +
-            "start_duration_table4 = ?, " +
-            "end_duration_table4 = ?, " +
-            "responsible_table4 = ?, " +
-            "topic_table5 = ?, " +
-            "start_duration_table5 = ?, " +
-            "end_duration_table5 = ?, " +
-            "responsible_table5 = ?, " +
-            "topic_table6 = ?, " +
-            "start_duration_table6 = ?, " +
-            "end_duration_table6 = ?, " +
-            "responsible_table6 = ?, " +
-            "topic_table7 = ?, " +
-            "start_duration_table7 = ?, " +
-            "end_duration_table7 = ?, " +
-            "responsible_table7 = ?, " +
-            "topic_table8 = ?, " +
-            "start_duration_table8 = ?, " +
-            "end_duration_table8 = ?, " +
-            "responsible_table8 = ?, " +
-            "topic_table9 = ?, " +
-            "start_duration_table9 = ?, " +
-            "end_duration_table9 = ?, " +
-            "responsible_table9 = ?, " +
-            "topic_table10 = ?, " +
-            "start_duration_table10 = ?, " +
-            "end_duration_table10 = ?, " +
-            "responsible_table10 = ?, " +
-            "topic_table11 = ?, " +
-            "start_duration_table11 = ?, " +
-            "end_duration_table11 = ?, " +
-            "responsible_table11 = ?, " +
-            "topic_table12 = ?, " +
-            "start_duration_table12 = ?, " +
-            "end_duration_table12 = ?, " +
-            "responsible_table12 = ?, " +
-            "topic_table13 = ?, " +
-            "start_duration_table13 = ?, " +
-            "end_duration_table13 = ?, " +
-            "responsible_table13 = ?, " +
-            "topic_table14 = ?, " +
-            "start_duration_table14 = ?, " +
-            "end_duration_table14 = ?, " +
-            "responsible_table14 = ?, " +
-            "topic_table15 = ?, " +
-            "start_duration_table15 = ?, " +
-            "end_duration_table15 = ?, " +
-            "responsible_table15 = ? " +
-            "WHERE id_projects = ?",
-            [
-                codeclub,
-                yearly_countsketch,
-                table1Topic,
-                startDurationTable1,
-                endDurationTable1,
-                responsibleTable1str,
-                table2Topic,
-                startDurationTable2,
-                endDurationTable2,
-                responsibleTable2str,
-                table3Topic,
-                startDurationTable3,
-                endDurationTable3,
-                responsibleTable3str,
-                table4Topic,
-                startDurationTable4,
-                endDurationTable4,
-                responsibleTable4str,
-                table5Topic,
-                startDurationTable5,
-                endDurationTable5,
-                responsibleTable5str,
-                table6Topic,
-                startDurationTable6,
-                endDurationTable6,
-                responsibleTable6str,
-                table7Topic,
-                startDurationTable7,
-                endDurationTable7,
-                responsibleTable7str,
-                table8Topic,
-                startDurationTable8,
-                endDurationTable8,
-                responsibleTable8str,
-                table9Topic,
-                startDurationTable9,
-                endDurationTable9,
-                responsibleTable9str,
-                table10Topic,
-                startDurationTable10,
-                endDurationTable10,
-                responsibleTable10str,
-                table11Topic,
-                startDurationTable11,
-                endDurationTable11,
-                responsibleTable11str,
-                table12Topic,
-                startDurationTable12,
-                endDurationTable12,
-                responsibleTable12str,
-                table13Topic,
-                startDurationTable13,
-                endDurationTable13,
-                responsibleTable13str,
-                table14Topic,
-                startDurationTable14,
-                endDurationTable14,
-                responsibleTable14str,
-                table15Topic,
-                startDurationTable15,
-                endDurationTable15,
-                responsibleTable15str,
-                id_projects
-            ]
-        );
+//         await db.query(
+//             "UPDATE p_timestep " +
+//             "SET " +
+//             "codeclub = ?, " +
+//             "yearly_countsketch = ?, " +
+//             "topic_table1 = ?, " +
+//             "start_duration_table1 = ?, " +
+//             "end_duration_table1 = ?, " +
+//             "responsible_table1 = ?, " +
+//             "topic_table2 = ?, " +
+//             "start_duration_table2 = ?, " +
+//             "end_duration_table2 = ?, " +
+//             "responsible_table2 = ?, " +
+//             "topic_table3 = ?, " +
+//             "start_duration_table3 = ?, " +
+//             "end_duration_table3 = ?, " +
+//             "responsible_table3 = ?, " +
+//             "topic_table4 = ?, " +
+//             "start_duration_table4 = ?, " +
+//             "end_duration_table4 = ?, " +
+//             "responsible_table4 = ?, " +
+//             "topic_table5 = ?, " +
+//             "start_duration_table5 = ?, " +
+//             "end_duration_table5 = ?, " +
+//             "responsible_table5 = ?, " +
+//             "topic_table6 = ?, " +
+//             "start_duration_table6 = ?, " +
+//             "end_duration_table6 = ?, " +
+//             "responsible_table6 = ?, " +
+//             "topic_table7 = ?, " +
+//             "start_duration_table7 = ?, " +
+//             "end_duration_table7 = ?, " +
+//             "responsible_table7 = ?, " +
+//             "topic_table8 = ?, " +
+//             "start_duration_table8 = ?, " +
+//             "end_duration_table8 = ?, " +
+//             "responsible_table8 = ?, " +
+//             "topic_table9 = ?, " +
+//             "start_duration_table9 = ?, " +
+//             "end_duration_table9 = ?, " +
+//             "responsible_table9 = ?, " +
+//             "topic_table10 = ?, " +
+//             "start_duration_table10 = ?, " +
+//             "end_duration_table10 = ?, " +
+//             "responsible_table10 = ?, " +
+//             "topic_table11 = ?, " +
+//             "start_duration_table11 = ?, " +
+//             "end_duration_table11 = ?, " +
+//             "responsible_table11 = ?, " +
+//             "topic_table12 = ?, " +
+//             "start_duration_table12 = ?, " +
+//             "end_duration_table12 = ?, " +
+//             "responsible_table12 = ?, " +
+//             "topic_table13 = ?, " +
+//             "start_duration_table13 = ?, " +
+//             "end_duration_table13 = ?, " +
+//             "responsible_table13 = ?, " +
+//             "topic_table14 = ?, " +
+//             "start_duration_table14 = ?, " +
+//             "end_duration_table14 = ?, " +
+//             "responsible_table14 = ?, " +
+//             "topic_table15 = ?, " +
+//             "start_duration_table15 = ?, " +
+//             "end_duration_table15 = ?, " +
+//             "responsible_table15 = ? " +
+//             "WHERE id_projects = ?",
+//             [
+//                 codeclub,
+//                 yearly_countsketch,
+//                 table1Topic,
+//                 startDurationTable1,
+//                 endDurationTable1,
+//                 responsibleTable1str,
+//                 table2Topic,
+//                 startDurationTable2,
+//                 endDurationTable2,
+//                 responsibleTable2str,
+//                 table3Topic,
+//                 startDurationTable3,
+//                 endDurationTable3,
+//                 responsibleTable3str,
+//                 table4Topic,
+//                 startDurationTable4,
+//                 endDurationTable4,
+//                 responsibleTable4str,
+//                 table5Topic,
+//                 startDurationTable5,
+//                 endDurationTable5,
+//                 responsibleTable5str,
+//                 table6Topic,
+//                 startDurationTable6,
+//                 endDurationTable6,
+//                 responsibleTable6str,
+//                 table7Topic,
+//                 startDurationTable7,
+//                 endDurationTable7,
+//                 responsibleTable7str,
+//                 table8Topic,
+//                 startDurationTable8,
+//                 endDurationTable8,
+//                 responsibleTable8str,
+//                 table9Topic,
+//                 startDurationTable9,
+//                 endDurationTable9,
+//                 responsibleTable9str,
+//                 table10Topic,
+//                 startDurationTable10,
+//                 endDurationTable10,
+//                 responsibleTable10str,
+//                 table11Topic,
+//                 startDurationTable11,
+//                 endDurationTable11,
+//                 responsibleTable11str,
+//                 table12Topic,
+//                 startDurationTable12,
+//                 endDurationTable12,
+//                 responsibleTable12str,
+//                 table13Topic,
+//                 startDurationTable13,
+//                 endDurationTable13,
+//                 responsibleTable13str,
+//                 table14Topic,
+//                 startDurationTable14,
+//                 endDurationTable14,
+//                 responsibleTable14str,
+//                 table15Topic,
+//                 startDurationTable15,
+//                 endDurationTable15,
+//                 responsibleTable15str,
+//                 id_projects
+//             ]
+//         );
 
-        res.status(200).json({ message: `p_timestep updated successfully ${codeclub} yearly${yearly_countsketch}` });
-        db.query(
-            "INSERT INTO p_budget (id_projects,codeclub,yearly_countsketch) VALUES (?,?,?)",
-            [id_projects, codeclub, yearly_countsketch],
-            (err) => {
-                if (err) {
-                    console.error(err);
-                    res.status(500).send(err); // Handle the error and send an appropriate response
-                    return;
-                }
-            }
-        );
-        db.query(
-            "INSERT INTO p_indicator  (id_projects,codeclub,yearly_countsketch) VALUES (?,?,?)",
-            [id_projects, codeclub, yearly_countsketch],
-            (err) => {
-                if (err) {
-                    console.error(err);
-                    res.status(500).send(err); // Handle the error and send an appropriate response
-                    return;
-                }
-            }
-        );
-    } catch (error) {
-        console.error("Error updating p_timestep:", error);
-        res.status(500).json({ error: "Database error" });
-    }
-});
+//         res.status(200).json({ message: `p_timestep updated successfully ${codeclub} yearly${yearly_countsketch}` });
+//         db.query(
+//             "INSERT INTO p_budget (id_projects,codeclub,yearly_countsketch) VALUES (?,?,?)",
+//             [id_projects, codeclub, yearly_countsketch],
+//             (err) => {
+//                 if (err) {
+//                     console.error(err);
+//                     res.status(500).send(err); // Handle the error and send an appropriate response
+//                     return;
+//                 }
+//             }
+//         );
+//         db.query(
+//             "INSERT INTO p_indicator  (id_projects,codeclub,yearly_countsketch) VALUES (?,?,?)",
+//             [id_projects, codeclub, yearly_countsketch],
+//             (err) => {
+//                 if (err) {
+//                     console.error(err);
+//                     res.status(500).send(err); // Handle the error and send an appropriate response
+//                     return;
+//                 }
+//             }
+//         );
+//     } catch (error) {
+//         console.error("Error updating p_timestep:", error);
+//         res.status(500).json({ error: "Database error" });
+//     }
+// });
+
 // router.put('/project/p_budget/create/:id_project', async (req, res) => {
 //     const id_project = req.params.id_project;
 
@@ -1209,6 +1211,154 @@ router.post('/project/p_timestep/create/:id_project', async (req, res) => {
 //     }
 // });
 
+router.post('/project/p_timestep/create/:id_project', async (req, res) => {
+    const addDays = (date, days) => {
+        const result = new Date(date);
+        result.setDate(result.getDate() - days);
+        return result;
+    };
+
+    // Usage example
+    // req.body.startDurationTable1 = addDays(req.body.startDurationTable1, 0);
+    // req.body.endDurationTable1 = addDays(req.body.endDurationTable1, 0);
+    // req.body.startDurationTable2 = addDays(req.body.startDurationTable2, 0);
+    // req.body.endDurationTable2 = addDays(req.body.endDurationTable2, 0);
+    // req.body.startDurationTable3 = addDays(req.body.startDurationTable3, 0);
+    // req.body.endDurationTable3 = addDays(req.body.endDurationTable3, 0);
+    // req.body.startDurationTable4 = addDays(req.body.startDurationTable4, 0);
+    // req.body.endDurationTable4 = addDays(req.body.endDurationTable4, 0);
+    // req.body.startDurationTable5 = addDays(req.body.startDurationTable5, 0);
+    // req.body.endDurationTable5 = addDays(req.body.endDurationTable5, 0);
+    // req.body.startDurationTable6 = addDays(req.body.startDurationTable6, 0);
+    // req.body.endDurationTable6 = addDays(req.body.endDurationTable6, 0);
+    // req.body.startDurationTable7 = addDays(req.body.startDurationTable7, 0);
+    // req.body.endDurationTable7 = addDays(req.body.endDurationTable7, 0);
+    // req.body.startDurationTable8 = addDays(req.body.startDurationTable8, 0);
+    // req.body.endDurationTable8 = addDays(req.body.endDurationTable8, 0);
+    // req.body.startDurationTable9 = addDays(req.body.startDurationTable9, 0);
+    // req.body.endDurationTable9 = addDays(req.body.endDurationTable9, 0);
+    // req.body.startDurationTable10 = addDays(req.body.startDurationTable10, 0);
+    // req.body.endDurationTable10 = addDays(req.body.endDurationTable10, 0);
+    // req.body.startDurationTable11 = addDays(req.body.startDurationTable11, 0);
+    // req.body.endDurationTable11 = addDays(req.body.endDurationTable11, 0);
+    // req.body.startDurationTable12 = addDays(req.body.startDurationTable12, 0);
+    // req.body.endDurationTable12 = addDays(req.body.endDurationTable12, 0);
+    // req.body.startDurationTable13 = addDays(req.body.startDurationTable13, 0);
+    // req.body.endDurationTable13 = addDays(req.body.endDurationTable13, 0);
+    // req.body.startDurationTable14 = addDays(req.body.startDurationTable14, 0);
+    // req.body.endDurationTable14 = addDays(req.body.endDurationTable14, 0);
+    // req.body.startDurationTable15 = addDays(req.body.startDurationTable15, 0);
+    // req.body.endDurationTable15 = addDays(req.body.endDurationTable15, 0);
+    try {
+        // const {
+        //     id_projects,
+        //     codeclub,
+        //     yearly_countsketch,
+        //     table1Topic,
+        //     startDurationTable1,
+        //     endDurationTable1,
+        //     responsibleTable1str,
+        //     table2Topic,
+        //     startDurationTable2,
+        //     endDurationTable2,
+        //     responsibleTable2str,
+        //     table3Topic,
+        //     startDurationTable3,
+        //     endDurationTable3,
+        //     responsibleTable3str,
+        //     table4Topic,
+        //     startDurationTable4,
+        //     endDurationTable4,
+        //     responsibleTable4str,
+        //     table5Topic,
+        //     startDurationTable5,
+        //     endDurationTable5,
+        //     responsibleTable5str,
+        //     table6Topic,
+        //     startDurationTable6,
+        //     endDurationTable6,
+        //     responsibleTable6str,
+        //     table7Topic,
+        //     startDurationTable7,
+        //     endDurationTable7,
+        //     responsibleTable7str,
+        //     table8Topic,
+        //     startDurationTable8,
+        //     endDurationTable8,
+        //     responsibleTable8str,
+        //     table9Topic,
+        //     startDurationTable9,
+        //     endDurationTable9,
+        //     responsibleTable9str,
+        //     table10Topic,
+        //     startDurationTable10,
+        //     endDurationTable10,
+        //     responsibleTable10str,
+        //     table11Topic,
+        //     startDurationTable11,
+        //     endDurationTable11,
+        //     responsibleTable11str,
+        //     table12Topic,
+        //     startDurationTable12,
+        //     endDurationTable12,
+        //     responsibleTable12str,
+        //     table13Topic,
+        //     startDurationTable13,
+        //     endDurationTable13,
+        //     responsibleTable13str,
+        //     table14Topic,
+        //     startDurationTable14,
+        //     endDurationTable14,
+        //     responsibleTable14str,
+        //     table15Topic,
+        //     startDurationTable15,
+        //     endDurationTable15,
+        //     responsibleTable15str
+        // } = req.body;
+        const id_projects = req.params.id_project;
+        const updatedData = req.body; 
+        console.log(updatedData)
+        await db.query(
+            "UPDATE p_timestep SET ? WHERE id_projects = ?",
+            [updatedData, id_projects], // Pass the updated value of listA1
+            (err, result) => {
+                if (err) {
+                    console.error(err);
+                    res.status(500).send("Error updating project data");
+                } else {
+                    res.status(200).send("Project data updated successfully");
+                }
+            }
+        );
+
+        res.status(200).json({ message: `p_timestep updated ${updatedData.codeclub} yearly${updatedData.yearly_countsketch}` });
+        db.query(
+            "INSERT INTO p_budget (id_projects,codeclub,yearly_countsketch) VALUES (?,?,?)",
+            [id_projects, updatedData.codeclub, updatedData.yearly_countsketch],
+            (err) => {
+                if (err) {
+                    console.error(err);
+                    res.status(500).send(err); // Handle the error and send an appropriate response
+                    return;
+                }
+            }
+        );
+        db.query(
+            "INSERT INTO p_indicator  (id_projects,codeclub,yearly_countsketch) VALUES (?,?,?)",
+            [id_projects, updatedData.codeclub, updatedData.yearly_countsketch],
+            (err) => {
+                if (err) {
+                    console.error(err);
+                    res.status(500).send(err); // Handle the error and send an appropriate response
+                    return;
+                }
+            }
+        );
+    } catch (error) {
+        console.error("Error updating p_timestep:", error);
+        res.status(500).json({ error: "Database error" });
+    }
+});
 router.put('/project/p_budget/create/:id_project', async (req, res) => {
 
     const updatedData = req.body; // Updated data sent from the client
