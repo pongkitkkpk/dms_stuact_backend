@@ -208,7 +208,8 @@ router.get('/download/:id_project', async (req, res) => {
                         doc.render({
                             "detail": result[0],
                             "person": resultp_person[0],
-                            "timestep": resultp_timestep[0]
+                            "timestep": resultp_timestep[0],
+                            
                         });
 
                         const buf = doc.getZip().generate({ type: "nodebuffer", compression: "DEFLATE" });
@@ -245,7 +246,7 @@ router.get('/download/:id_project', async (req, res) => {
 //                     const Docxtemplater = require("docxtemplater");
 //                     const fs = require("fs");
 //                     const path = require("path");
-                
+
 //                     const content = fs.readFileSync(path.resolve(__dirname, "templateDoc", "temp04-real.docx"), "binary");
 //                     const zip = new PizZip(content);
 //                     const doc = new Docxtemplater(zip, { paragraphLoop: true, linebreaks: true });
@@ -261,7 +262,7 @@ router.get('/download/:id_project', async (req, res) => {
 //                     console.error("Error generating document:", error);
 //                     res.status(500).send("Error generating document: " + error.message);
 //                 }
-                
+
 
 //         }
 //     });
