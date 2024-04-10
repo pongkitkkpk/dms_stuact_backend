@@ -175,56 +175,58 @@ router.post('/project/create/', async (req, res) => {
 });
 router.get('/download/:id_project', async (req, res) => {
     const id_projects = req.params.id_project;
-    
-    db.query('SELECT * FROM p_person WHERE id_projects= ? ORDER BY id_projects DESC LIMIT 1 ', [id_projects], (err, resultp_person) => {
+
+    db.query('SELECT * FROM p_person WHERE id_projects = ? ORDER BY id_projects DESC LIMIT 1', [id_projects], (err, resultp_person) => {
         if (err) {
-            console.log(err);
-            res.status(500).send("Error retrieving project");
-        } else {
-            // If p_person is found, proceed with rendering the document
-            if (resultp_person.length > 0) {
-                // Assuming you also want to query projects here
-                db.query('SELECT * FROM projects WHERE id = ? ORDER BY id DESC LIMIT 1', [id_projects], (err, result) => {
+            console.error(err);
+            return res.status(500).send("Error retrieving project");
+        }
+
+        if (resultp_person.length > 0) {
+            db.query('SELECT * FROM projects WHERE id = ? ORDER BY id DESC LIMIT 1', [id_projects], (err, result) => {
+                if (err) {
+                    console.error(err);
+                    return res.status(500).send("Error retrieving project");
+                }
+
+                db.query('SELECT * FROM p_timestep WHERE id_projects = ? ORDER BY id_projects DESC LIMIT 1', [id_projects], (err, resultp_timestep) => {
                     if (err) {
-                        console.log(err);
-                        res.status(500).send("Error retrieving project");
-                    } else {
-                        try {
-                            const PizZip = require("pizzip");
-                            const Docxtemplater = require("docxtemplater");
-                            const fs = require("fs");
-                            const path = require("path");
+                        console.error(err);
+                        return res.status(500).send("Error retrieving timestep data");
+                    }
 
-                            const content = fs.readFileSync(path.resolve(__dirname, "templateDoc", "temp04-real.docx"), "binary");
-                            const zip = new PizZip(content);
-                            const doc = new Docxtemplater(zip, { paragraphLoop: true, linebreaks: true });
+                    try {
+                        const PizZip = require("pizzip");
+                        const Docxtemplater = require("docxtemplater");
+                        const fs = require("fs");
+                        const path = require("path");
 
-                            // Pass both result and resultp_person to doc.render
-                            console.log("AAAAAAAAAAAAAAAAAAAAA")
-                            console.log()
-                            console.log("BBBBBBBBBBBBBBBBBBBBBBBBBBB")
-                            console.log(result[0],resultp_person[0])
-                            doc.render({
-                                "detail": result[0],
-                                "person": resultp_person[0] // Assuming you want to pass the first person from resultp_person
-                            });
+                        const content = fs.readFileSync(path.resolve(__dirname, "templateDoc", "temp04-real.docx"), "binary");
+                        const zip = new PizZip(content);
+                        const doc = new Docxtemplater(zip, { paragraphLoop: true, linebreaks: true });
 
-                            const buf = doc.getZip().generate({ type: "nodebuffer", compression: "DEFLATE" });
-                            fs.writeFileSync(path.resolve(__dirname, "e-docx", `e-doc-${result[0].project_name}.docx`), buf);
+                        doc.render({
+                            "detail": result[0],
+                            "person": resultp_person[0],
+                            "timestep": resultp_timestep[0]
+                        });
 
-                            res.send("Project created and document generated successfully!");
-                        } catch (error) {
-                            console.error("Error generating document:", error);
-                            res.status(500).send("Error generating document: " + error.message);
-                        }
+                        const buf = doc.getZip().generate({ type: "nodebuffer", compression: "DEFLATE" });
+                        fs.writeFileSync(path.resolve(__dirname, "e-docx", `e-doc-${result[0].project_name}.docx`), buf);
+
+                        res.send("Project created and document generated successfully!");
+                    } catch (error) {
+                        console.error("Error generating document:", error);
+                        res.status(500).send("Error generating document: " + error.message);
                     }
                 });
-            } else {
-                res.status(404).send("No person found for this project.");
-            }
+            });
+        } else {
+            res.status(404).send("No person found for this project.");
         }
     });
 });
+
 
 
 //ต้นแบบ
@@ -1211,154 +1213,46 @@ router.post('/project/p_person/create/', (req, res) => {
 //     }
 // });
 
-router.post('/project/p_timestep/create/:id_project', async (req, res) => {
+router.put('/project/p_timestep/create/:id_project', async (req, res) => {
     const addDays = (date, days) => {
         const result = new Date(date);
         result.setDate(result.getDate() - days);
         return result;
     };
 
-    // Usage example
-    // req.body.startDurationTable1 = addDays(req.body.startDurationTable1, 0);
-    // req.body.endDurationTable1 = addDays(req.body.endDurationTable1, 0);
-    // req.body.startDurationTable2 = addDays(req.body.startDurationTable2, 0);
-    // req.body.endDurationTable2 = addDays(req.body.endDurationTable2, 0);
-    // req.body.startDurationTable3 = addDays(req.body.startDurationTable3, 0);
-    // req.body.endDurationTable3 = addDays(req.body.endDurationTable3, 0);
-    // req.body.startDurationTable4 = addDays(req.body.startDurationTable4, 0);
-    // req.body.endDurationTable4 = addDays(req.body.endDurationTable4, 0);
-    // req.body.startDurationTable5 = addDays(req.body.startDurationTable5, 0);
-    // req.body.endDurationTable5 = addDays(req.body.endDurationTable5, 0);
-    // req.body.startDurationTable6 = addDays(req.body.startDurationTable6, 0);
-    // req.body.endDurationTable6 = addDays(req.body.endDurationTable6, 0);
-    // req.body.startDurationTable7 = addDays(req.body.startDurationTable7, 0);
-    // req.body.endDurationTable7 = addDays(req.body.endDurationTable7, 0);
-    // req.body.startDurationTable8 = addDays(req.body.startDurationTable8, 0);
-    // req.body.endDurationTable8 = addDays(req.body.endDurationTable8, 0);
-    // req.body.startDurationTable9 = addDays(req.body.startDurationTable9, 0);
-    // req.body.endDurationTable9 = addDays(req.body.endDurationTable9, 0);
-    // req.body.startDurationTable10 = addDays(req.body.startDurationTable10, 0);
-    // req.body.endDurationTable10 = addDays(req.body.endDurationTable10, 0);
-    // req.body.startDurationTable11 = addDays(req.body.startDurationTable11, 0);
-    // req.body.endDurationTable11 = addDays(req.body.endDurationTable11, 0);
-    // req.body.startDurationTable12 = addDays(req.body.startDurationTable12, 0);
-    // req.body.endDurationTable12 = addDays(req.body.endDurationTable12, 0);
-    // req.body.startDurationTable13 = addDays(req.body.startDurationTable13, 0);
-    // req.body.endDurationTable13 = addDays(req.body.endDurationTable13, 0);
-    // req.body.startDurationTable14 = addDays(req.body.startDurationTable14, 0);
-    // req.body.endDurationTable14 = addDays(req.body.endDurationTable14, 0);
-    // req.body.startDurationTable15 = addDays(req.body.startDurationTable15, 0);
-    // req.body.endDurationTable15 = addDays(req.body.endDurationTable15, 0);
     try {
-        // const {
-        //     id_projects,
-        //     codeclub,
-        //     yearly_countsketch,
-        //     table1Topic,
-        //     startDurationTable1,
-        //     endDurationTable1,
-        //     responsibleTable1str,
-        //     table2Topic,
-        //     startDurationTable2,
-        //     endDurationTable2,
-        //     responsibleTable2str,
-        //     table3Topic,
-        //     startDurationTable3,
-        //     endDurationTable3,
-        //     responsibleTable3str,
-        //     table4Topic,
-        //     startDurationTable4,
-        //     endDurationTable4,
-        //     responsibleTable4str,
-        //     table5Topic,
-        //     startDurationTable5,
-        //     endDurationTable5,
-        //     responsibleTable5str,
-        //     table6Topic,
-        //     startDurationTable6,
-        //     endDurationTable6,
-        //     responsibleTable6str,
-        //     table7Topic,
-        //     startDurationTable7,
-        //     endDurationTable7,
-        //     responsibleTable7str,
-        //     table8Topic,
-        //     startDurationTable8,
-        //     endDurationTable8,
-        //     responsibleTable8str,
-        //     table9Topic,
-        //     startDurationTable9,
-        //     endDurationTable9,
-        //     responsibleTable9str,
-        //     table10Topic,
-        //     startDurationTable10,
-        //     endDurationTable10,
-        //     responsibleTable10str,
-        //     table11Topic,
-        //     startDurationTable11,
-        //     endDurationTable11,
-        //     responsibleTable11str,
-        //     table12Topic,
-        //     startDurationTable12,
-        //     endDurationTable12,
-        //     responsibleTable12str,
-        //     table13Topic,
-        //     startDurationTable13,
-        //     endDurationTable13,
-        //     responsibleTable13str,
-        //     table14Topic,
-        //     startDurationTable14,
-        //     endDurationTable14,
-        //     responsibleTable14str,
-        //     table15Topic,
-        //     startDurationTable15,
-        //     endDurationTable15,
-        //     responsibleTable15str
-        // } = req.body;
         const id_projects = req.params.id_project;
-        const updatedData = req.body; 
-        console.log(updatedData)
+        const updatedData = req.body;
+
         await db.query(
             "UPDATE p_timestep SET ? WHERE id_projects = ?",
-            [updatedData, id_projects], // Pass the updated value of listA1
+            [updatedData, id_projects],
             (err, result) => {
                 if (err) {
                     console.error(err);
                     res.status(500).send("Error updating project data");
-                } else {
-                    res.status(200).send("Project data updated successfully");
+                    return; // Return to avoid further execution
                 }
             }
         );
 
-        res.status(200).json({ message: `p_timestep updated ${updatedData.codeclub} yearly${updatedData.yearly_countsketch}` });
-        db.query(
+        await db.query(
             "INSERT INTO p_budget (id_projects,codeclub,yearly_countsketch) VALUES (?,?,?)",
-            [id_projects, updatedData.codeclub, updatedData.yearly_countsketch],
-            (err) => {
-                if (err) {
-                    console.error(err);
-                    res.status(500).send(err); // Handle the error and send an appropriate response
-                    return;
-                }
-            }
+            [id_projects, updatedData.codeclub, updatedData.yearly_countsketch]
         );
-        db.query(
-            "INSERT INTO p_indicator  (id_projects,codeclub,yearly_countsketch) VALUES (?,?,?)",
-            [id_projects, updatedData.codeclub, updatedData.yearly_countsketch],
-            (err) => {
-                if (err) {
-                    console.error(err);
-                    res.status(500).send(err); // Handle the error and send an appropriate response
-                    return;
-                }
-            }
+
+        await db.query(
+            "INSERT INTO p_indicator (id_projects,codeclub,yearly_countsketch) VALUES (?,?,?)",
+            [id_projects, updatedData.codeclub, updatedData.yearly_countsketch]
         );
+
+        res.status(200).json({ message: `p_timestep updated ${updatedData.codeclub} yearly${updatedData.yearly_countsketch}` });
     } catch (error) {
         console.error("Error updating p_timestep:", error);
         res.status(500).json({ error: "Database error" });
     }
 });
+
 router.put('/project/p_budget/create/:id_project', async (req, res) => {
 
     const updatedData = req.body; // Updated data sent from the client
