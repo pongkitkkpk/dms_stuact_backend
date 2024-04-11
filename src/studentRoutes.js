@@ -200,11 +200,11 @@ router.get('/download/:id_project', async (req, res) => {
                         const Docxtemplater = require("docxtemplater");
                         const fs = require("fs");
                         const path = require("path");
-
+                        const expressionParser = require("docxtemplater/expressions.js");
                         const content = fs.readFileSync(path.resolve(__dirname, "templateDoc", "temp04-real.docx"), "binary");
                         const zip = new PizZip(content);
-                        const doc = new Docxtemplater(zip, { paragraphLoop: true, linebreaks: true });
-
+                        const doc = new Docxtemplater(zip, { parser: expressionParser ,paragraphLoop: true, linebreaks: true });
+                        console.log(resultp_timestep[0])
                         doc.render({
                             "detail": result[0],
                             "person": resultp_person[0],
