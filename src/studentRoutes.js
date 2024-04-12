@@ -201,32 +201,40 @@ router.get('/download/:id_project', async (req, res) => {
                             return res.status(500).send("Error retrieving indicator data");
                         }
 
-                        try {
-                            console.log(resultp_indicator[0])
-                            const PizZip = require("pizzip");
-                            const Docxtemplater = require("docxtemplater");
-                            const fs = require("fs");
-                            const path = require("path");
-                            const expressionParser = require("docxtemplater/expressions.js");
-                            const content = fs.readFileSync(path.resolve(__dirname, "templateDoc", "temp04-real.docx"), "binary");
-                            const zip = new PizZip(content);
-                            const doc = new Docxtemplater(zip, { parser: expressionParser ,paragraphLoop: true, linebreaks: true });
-                            
-                            doc.render({
-                                "detail": result[0],
-                                "person": resultp_person[0],
-                                "timestep": resultp_timestep[0],
-                                "indicator": resultp_indicator[0] // Pass the indicator data to the template
-                            });
+                        db.query('SELECT * FROM p_budget WHERE id_projects = ? ORDER BY id_projects DESC LIMIT 1', [id_projects], (err, resultp_budget) => {
+                            if (err) {
+                                console.error(err);
+                                return res.status(500).send("Error retrieving budget data");
+                            }
 
-                            const buf = doc.getZip().generate({ type: "nodebuffer", compression: "DEFLATE" });
-                            fs.writeFileSync(path.resolve(__dirname, "e-docx", `e-doc-${result[0].project_name}.docx`), buf);
+                            try {
+                                console.log(resultp_indicator[0])
+                                const PizZip = require("pizzip");
+                                const Docxtemplater = require("docxtemplater");
+                                const fs = require("fs");
+                                const path = require("path");
+                                const expressionParser = require("docxtemplater/expressions.js");
+                                const content = fs.readFileSync(path.resolve(__dirname, "templateDoc", "temp04-real.docx"), "binary");
+                                const zip = new PizZip(content);
+                                const doc = new Docxtemplater(zip, { parser: expressionParser ,paragraphLoop: true, linebreaks: true });
+                                
+                                doc.render({
+                                    "detail": result[0],
+                                    "person": resultp_person[0],
+                                    "timestep": resultp_timestep[0],
+                                    "indicator": resultp_indicator[0], // Pass the indicator data to the template
+                                    "budget": resultp_budget[0] // Pass the budget data to the template
+                                });
 
-                            res.send("Project created and document generated successfully!");
-                        } catch (error) {
-                            console.error("Error generating document:", error);
-                            res.status(500).send("Error generating document: " + error.message);
-                        }
+                                const buf = doc.getZip().generate({ type: "nodebuffer", compression: "DEFLATE" });
+                                fs.writeFileSync(path.resolve(__dirname, "e-docx", `e-doc-${result[0].project_name}.docx`), buf);
+
+                                res.send("Project created and document generated successfully!");
+                            } catch (error) {
+                                console.error("Error generating document:", error);
+                                res.status(500).send("Error generating document: " + error.message);
+                            }
+                        });
                     });
                 });
             });
@@ -235,6 +243,7 @@ router.get('/download/:id_project', async (req, res) => {
         }
     });
 });
+
 
 
 
