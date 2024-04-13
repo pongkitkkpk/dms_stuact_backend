@@ -25,6 +25,17 @@ router.get('/project/getidproject/:id_projects', (req, res) => {
         }
     });
 });
+router.get('/project/person/getidproject/:id_projects', (req, res) => {
+    const id_projects = req.params.id_projects;
+    db.query('SELECT * FROM p_person WHERE id_projects = ? ORDER BY id DESC LIMIT 1', [id_projects], (err, result) => {
+        if (err) {
+            console.log(err);
+            res.status(500).send("Error retrieving project");
+        } else {
+            res.send(result);
+        }
+    });
+});
 
 router.get('/project/getcodebooksomeoutyear/:codebooksomeoutyear', (req, res) => {
     const codebooksomeoutyear = req.params.codebooksomeoutyear;
@@ -69,6 +80,24 @@ router.put('/project/edit/:id_project', (req, res) => {
     db.query(
         "UPDATE projects SET ? WHERE id = ?",
         [updatedData, id_project],
+        (err, result) => {
+            if (err) {
+                console.error(err);
+                res.status(500).send("Error updating project data"); // Handle the error and send an appropriate response
+            } else {
+                res.status(200).send("Project data updated successfully");
+            }
+        }
+    );
+});
+router.put('/project/person/edit/:id_project', (req, res) => {
+    const id_project = req.params.id_project;
+    const updatedData = req.body; // Updated data sent from the client
+    // updatedData.updated_at = new Date();
+    // Update the project with the given id_project in the database
+    db.query(
+        "UPDATE p_person SET ? WHERE id_projects = ?",
+        [updatedData,id_project],
         (err, result) => {
             if (err) {
                 console.error(err);
@@ -355,6 +384,7 @@ router.post('/project/p_person/create/', (req, res) => {
             executiveType4Number,
             executiveType5Name,
             executiveType5Number,
+            executiveTypeCount,
             grandTotalExecutive,
             professorType1Name,
             professorType1Number,
@@ -366,6 +396,7 @@ router.post('/project/p_person/create/', (req, res) => {
             professorType4Number,
             professorType5Name,
             professorType5Number,
+            professorTypeCount,
             grandTotalProfessor,
             studentType1Name,
             studentType1Number,
@@ -377,6 +408,7 @@ router.post('/project/p_person/create/', (req, res) => {
             studentType4Number,
             studentType5Name,
             studentType5Number,
+            studentTypeCount,
             grandTotalStudent,
             expertType1Name,
             expertType1Number,
@@ -388,11 +420,12 @@ router.post('/project/p_person/create/', (req, res) => {
             expertType4Number,
             expertType5Name,
             expertType5Number,
+            expertTypeCount,
             grandTotalExpert,
             grandTotalAll,
         } = req.body;
         db.query(
-            "UPDATE p_person SET executiveType1Name=?, executiveType1Number=?, executiveType2Name=?, executiveType2Number=?, executiveType3Name=?, executiveType3Number=?, executiveType4Name=?, executiveType4Number=?, executiveType5Name=?, executiveType5Number=?, grandTotalExecutive=?, professorType1Name=?, professorType1Number=?, professorType2Name=?, professorType2Number=?, professorType3Name=?, professorType3Number=?, professorType4Name=?, professorType4Number=?, professorType5Name=?, professorType5Number=?, grandTotalProfessor=?, studentType1Name=?, studentType1Number=?, studentType2Name=?, studentType2Number=?, studentType3Name=?, studentType3Number=?, studentType4Name=?, studentType4Number=?, studentType5Name=?, studentType5Number=?, grandTotalStudent=?, expertType1Name=?, expertType1Number=?, expertType2Name=?, expertType2Number=?, expertType3Name=?, expertType3Number=?, expertType4Name=?, expertType4Number=?, expertType5Name=?, expertType5Number=?, grandTotalExpert=?, grandTotalAll=? WHERE id_projects=?",
+            "UPDATE p_person SET executiveType1Name=?, executiveType1Number=?, executiveType2Name=?, executiveType2Number=?, executiveType3Name=?, executiveType3Number=?, executiveType4Name=?, executiveType4Number=?, executiveType5Name=?, executiveType5Number=? ,executiveTypeCount=?, grandTotalExecutive=?, professorType1Name=?, professorType1Number=?, professorType2Name=?, professorType2Number=?, professorType3Name=?, professorType3Number=?, professorType4Name=?, professorType4Number=?, professorType5Name=?, professorType5Number=?, professorTypeCount=?,grandTotalProfessor=?, studentType1Name=?, studentType1Number=?, studentType2Name=?, studentType2Number=?, studentType3Name=?, studentType3Number=?, studentType4Name=?, studentType4Number=?, studentType5Name=?, studentType5Number=?,studentTypeCount=?, grandTotalStudent=?, expertType1Name=?, expertType1Number=?, expertType2Name=?, expertType2Number=?, expertType3Name=?, expertType3Number=?, expertType4Name=?, expertType4Number=?, expertType5Name=?, expertType5Number=?,expertTypeCount=?,grandTotalExpert=?, grandTotalAll=? WHERE id_projects=?",
             [
                 executiveType1Name,
                 executiveType1Number,
@@ -404,6 +437,7 @@ router.post('/project/p_person/create/', (req, res) => {
                 executiveType4Number,
                 executiveType5Name,
                 executiveType5Number,
+                executiveTypeCount,
                 grandTotalExecutive,
                 professorType1Name,
                 professorType1Number,
@@ -415,6 +449,7 @@ router.post('/project/p_person/create/', (req, res) => {
                 professorType4Number,
                 professorType5Name,
                 professorType5Number,
+                professorTypeCount,
                 grandTotalProfessor,
                 studentType1Name,
                 studentType1Number,
@@ -426,6 +461,7 @@ router.post('/project/p_person/create/', (req, res) => {
                 studentType4Number,
                 studentType5Name,
                 studentType5Number,
+                studentTypeCount,
                 grandTotalStudent,
                 expertType1Name,
                 expertType1Number,
@@ -437,6 +473,7 @@ router.post('/project/p_person/create/', (req, res) => {
                 expertType4Number,
                 expertType5Name,
                 expertType5Number,
+                expertTypeCount,
                 grandTotalExpert,
                 grandTotalAll,
                 id_projects,
