@@ -73,6 +73,15 @@ router.get('/project/p_person', (req, res) => {
 });
 
 router.put('/project/edit/:id_project', (req, res) => {
+    const addDays = (date, days) => {
+        const result = new Date(date);
+        result.setDate(result.getDate() - days);
+        return result;
+    };
+    req.body.start_prepare = addDays(req.body.start_prepare, 0);
+    req.body.end_prepare = addDays(req.body.end_prepare, 0);
+    req.body.start_event = addDays(req.body.start_event, 0);
+    req.body.end_event = addDays(req.body.end_event, 0);
     const id_project = req.params.id_project;
     const updatedData = req.body; // Updated data sent from the client
     updatedData.updated_at = new Date();
