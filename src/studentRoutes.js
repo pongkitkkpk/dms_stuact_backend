@@ -1,6 +1,32 @@
 const express = require("express");
 const router = express.Router();
 const db = require("../db");
+const multer = require("multer");
+const path = require("path");
+
+const upload = multer();
+
+router.post("/upload-pdf", upload.single("pdfFile"), async (req, res) => {
+  try {
+    // Check if file is present
+    if (!req.file) {
+      return res.status(400).send("No file uploaded.");
+    }
+
+    // Extract file content
+    const pdfContent = req.file.buffer; // Assuming Multer saves file content to buffer
+
+    // Store the PDF content in the database
+    const query = "INSERT INTO p_addfile (id_projects, filename, filepath) VALUES (?,  ?, ?)";
+    const values = [req.body.projectId, req.file.originalname, req.file.path]; // Assuming projectId and codeclub are sent in the request body
+    await db.query(query, values);
+
+    res.send("PDF file stored successfully.");
+  } catch (error) {
+    console.error("Error storing PDF file:", error);
+    res.status(500).send("Error storing PDF file.");
+  }
+});
 
 router.get("/users", (req, res) => {
   db.query("SELECT * FROM users", (err, result) => {
@@ -47,6 +73,36 @@ router.get("/project/timestep/getidproject/:id_projects", (req, res) => {
   const id_projects = req.params.id_projects;
   db.query(
     "SELECT * FROM p_timestep WHERE id_projects = ? ORDER BY id DESC LIMIT 1",
+    [id_projects],
+    (err, result) => {
+      if (err) {
+        console.log(err);
+        res.status(500).send("Error retrieving project");
+      } else {
+        res.send(result);
+      }
+    }
+  );
+});
+router.get("/project/budget/getidproject/:id_projects", (req, res) => {
+  const id_projects = req.params.id_projects;
+  db.query(
+    "SELECT * FROM p_budget WHERE id_projects = ? ORDER BY id DESC LIMIT 1",
+    [id_projects],
+    (err, result) => {
+      if (err) {
+        console.log(err);
+        res.status(500).send("Error retrieving project");
+      } else {
+        res.send(result);
+      }
+    }
+  );
+});
+router.get("/project/indicator/getidproject/:id_projects", (req, res) => {
+  const id_projects = req.params.id_projects;
+  db.query(
+    "SELECT * FROM p_indicator WHERE id_projects = ? ORDER BY id DESC LIMIT 1",
     [id_projects],
     (err, result) => {
       if (err) {
@@ -204,6 +260,23 @@ router.put("/project/timestep/edit/:id_project", (req, res) => {
     }
   );
 });
+router.put("/project/indicator/edit/:id_project", (req, res) => {
+  const id_project = req.params.id_project;
+  const updatedData = req.body;
+  db.query(
+    "UPDATE p_indicator SET ? WHERE id_projects = ?",
+    [updatedData, id_project],
+    (err, result) => {
+      if (err) {
+        console.error(err);
+        res.status(500).send("Error updating project data"); // Handle the error and send an appropriate response
+      } else {
+        res.status(200).send("Project data updated successfully");
+      }
+    }
+  );
+});
+
 //dd1
 router.post("/project/create/", async (req, res) => {
   try {
@@ -287,6 +360,20 @@ router.post("/project/create/", async (req, res) => {
             res
               .status(200)
               .send({ projectId, pPersonId: pPersonResult.insertId });
+          }
+        );
+        db.query(
+          "INSERT INTO p_addfile (id_projects,codeclub,yearly_countsketch) VALUES (?,?,?)",
+          [projectId, codeclub, yearly_countsketch],
+          (err, pPersonResult) => {
+            if (err) {
+              console.error(err);
+              res.status(500).send(err); // Handle the error and send an appropriate response
+              return;
+            }
+
+            // If both insertions are successful, send a success response
+           
           }
         );
       }
