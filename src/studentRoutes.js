@@ -59,9 +59,7 @@ router.get("/project/timestep/getidproject/:id_projects", (req, res) => {
   );
 });
 
-router.get(
-  "/project/getcodebooksomeoutyear/:codebooksomeoutyear",
-  (req, res) => {
+router.get("/project/getcodebooksomeoutyear/:codebooksomeoutyear",(req, res) => {
     const codebooksomeoutyear = req.params.codebooksomeoutyear;
     db.query(
       "SELECT * FROM projects WHERE codebooksomeoutyear = ? ",
@@ -1386,6 +1384,22 @@ router.put("/project/p_timestep/create/:id_project", async (req, res) => {
     result.setDate(result.getDate() - days);
     return result;
   };
+
+    req.body.start_duration_table1 = addDays(req.body.start_duration_table1, 0);
+    req.body.start_duration_table2 = addDays(req.body.start_duration_table2, 0);
+    req.body.start_duration_table3 = addDays(req.body.start_duration_table3, 0);
+    req.body.start_duration_table4 = addDays(req.body.start_duration_table4, 0);
+    req.body.start_duration_table5 = addDays(req.body.start_duration_table5, 0);
+    req.body.start_duration_table6 = addDays(req.body.start_duration_table6, 0);
+    req.body.start_duration_table7 = addDays(req.body.start_duration_table7, 0);
+    req.body.start_duration_table8 = addDays(req.body.start_duration_table8, 0);
+    req.body.start_duration_table9 = addDays(req.body.start_duration_table9, 0);
+    req.body.start_duration_table10 = addDays(req.body.start_duration_table10, 0);
+    req.body.start_duration_table11 = addDays(req.body.start_duration_table11, 0);
+    req.body.start_duration_table12 = addDays(req.body.start_duration_table12, 0);
+    req.body.start_duration_table13 = addDays(req.body.start_duration_table13, 0);
+    req.body.start_duration_table14 = addDays(req.body.start_duration_table14, 0);
+    req.body.start_duration_table15 = addDays(req.body.start_duration_table15, 0);
 
   try {
     const id_projects = req.params.id_project;
