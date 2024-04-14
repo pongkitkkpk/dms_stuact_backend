@@ -1,290 +1,396 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const db = require('../db');
+const db = require("../db");
 
-router.get('/users', (req, res) => {
-    db.query("SELECT * FROM users", (err, result) => {
-        if (err) {
-            console.log(err);
-            res.status(500).send(err);
-        } else {
-            res.send(result);
-        }
-    });
+router.get("/users", (req, res) => {
+  db.query("SELECT * FROM users", (err, result) => {
+    if (err) {
+      console.log(err);
+      res.status(500).send(err);
+    } else {
+      res.send(result);
+    }
+  });
 });
 
-
-router.get('/project/getidproject/:id_projects', (req, res) => {
-    const id_projects = req.params.id_projects;
-    db.query('SELECT * FROM projects WHERE id = ? ORDER BY id DESC LIMIT 1', [id_projects], (err, result) => {
-        if (err) {
-            console.log(err);
-            res.status(500).send("Error retrieving project");
-        } else {
-            res.send(result);
-        }
-    });
+router.get("/project/getidproject/:id_projects", (req, res) => {
+  const id_projects = req.params.id_projects;
+  db.query(
+    "SELECT * FROM projects WHERE id = ? ORDER BY id DESC LIMIT 1",
+    [id_projects],
+    (err, result) => {
+      if (err) {
+        console.log(err);
+        res.status(500).send("Error retrieving project");
+      } else {
+        res.send(result);
+      }
+    }
+  );
 });
-router.get('/project/person/getidproject/:id_projects', (req, res) => {
-    const id_projects = req.params.id_projects;
-    db.query('SELECT * FROM p_person WHERE id_projects = ? ORDER BY id DESC LIMIT 1', [id_projects], (err, result) => {
-        if (err) {
-            console.log(err);
-            res.status(500).send("Error retrieving project");
-        } else {
-            res.send(result);
-        }
-    });
+router.get("/project/person/getidproject/:id_projects", (req, res) => {
+  const id_projects = req.params.id_projects;
+  db.query(
+    "SELECT * FROM p_person WHERE id_projects = ? ORDER BY id DESC LIMIT 1",
+    [id_projects],
+    (err, result) => {
+      if (err) {
+        console.log(err);
+        res.status(500).send("Error retrieving project");
+      } else {
+        res.send(result);
+      }
+    }
+  );
+});
+router.get("/project/timestep/getidproject/:id_projects", (req, res) => {
+  const id_projects = req.params.id_projects;
+  db.query(
+    "SELECT * FROM p_timestep WHERE id_projects = ? ORDER BY id DESC LIMIT 1",
+    [id_projects],
+    (err, result) => {
+      if (err) {
+        console.log(err);
+        res.status(500).send("Error retrieving project");
+      } else {
+        res.send(result);
+      }
+    }
+  );
 });
 
-router.get('/project/getcodebooksomeoutyear/:codebooksomeoutyear', (req, res) => {
+router.get(
+  "/project/getcodebooksomeoutyear/:codebooksomeoutyear",
+  (req, res) => {
     const codebooksomeoutyear = req.params.codebooksomeoutyear;
-    db.query('SELECT * FROM projects WHERE codebooksomeoutyear = ? ', [codebooksomeoutyear], (err, result) => {
-        if (err) {
-            console.log(err);
-            res.status(500).send("Error retrieving project");
-        } else {
-            res.send(result);
-        }
-    });
-});
-
-router.get('/project/getcodeclub/:codeclub', (req, res) => {
-    const codeclub = req.params.codeclub;
-    db.query('SELECT * FROM projects WHERE codeclub = ? ORDER BY id DESC LIMIT 1', [codeclub], (err, result) => {
-        if (err) {
-            console.log(err);
-            res.status(500).send("Error retrieving project");
-        } else {
-            res.send(result);
-        }
-    });
-});
-
-router.get('/project/p_person', (req, res) => {
-    db.query("SELECT * FROM p_person", (err, result) => {
-        if (err) {
-            console.log(err);
-            res.status(500).send(err); // Handle the error and send an appropriate response
-        } else {
-            res.send(result);
-        }
-    });
-});
-
-router.put('/project/edit/:id_project', (req, res) => {
-    const addDays = (date, days) => {
-        const result = new Date(date);
-        result.setDate(result.getDate() - days);
-        return result;
-    };
-    req.body.start_prepare = addDays(req.body.start_prepare, 0);
-    req.body.end_prepare = addDays(req.body.end_prepare, 0);
-    req.body.start_event = addDays(req.body.start_event, 0);
-    req.body.end_event = addDays(req.body.end_event, 0);
-    const id_project = req.params.id_project;
-    const updatedData = req.body; // Updated data sent from the client
-    updatedData.updated_at = new Date();
-    // Update the project with the given id_project in the database
     db.query(
-        "UPDATE projects SET ? WHERE id = ?",
-        [updatedData, id_project],
-        (err, result) => {
-            if (err) {
-                console.error(err);
-                res.status(500).send("Error updating project data"); // Handle the error and send an appropriate response
-            } else {
-                res.status(200).send("Project data updated successfully");
-            }
+      "SELECT * FROM projects WHERE codebooksomeoutyear = ? ",
+      [codebooksomeoutyear],
+      (err, result) => {
+        if (err) {
+          console.log(err);
+          res.status(500).send("Error retrieving project");
+        } else {
+          res.send(result);
         }
+      }
     );
+  }
+);
+
+router.get("/project/getcodeclub/:codeclub", (req, res) => {
+  const codeclub = req.params.codeclub;
+  db.query(
+    "SELECT * FROM projects WHERE codeclub = ? ORDER BY id DESC LIMIT 1",
+    [codeclub],
+    (err, result) => {
+      if (err) {
+        console.log(err);
+        res.status(500).send("Error retrieving project");
+      } else {
+        res.send(result);
+      }
+    }
+  );
 });
-router.put('/project/person/edit/:id_project', (req, res) => {
-    const id_project = req.params.id_project;
-    const updatedData = req.body; // Updated data sent from the client
-    // updatedData.updated_at = new Date();
-    // Update the project with the given id_project in the database
-    db.query(
-        "UPDATE p_person SET ? WHERE id_projects = ?",
-        [updatedData,id_project],
-        (err, result) => {
-            if (err) {
-                console.error(err);
-                res.status(500).send("Error updating project data"); // Handle the error and send an appropriate response
-            } else {
-                res.status(200).send("Project data updated successfully");
-            }
-        }
-    );
+
+router.get("/project/p_person", (req, res) => {
+  db.query("SELECT * FROM p_person", (err, result) => {
+    if (err) {
+      console.log(err);
+      res.status(500).send(err); // Handle the error and send an appropriate response
+    } else {
+      res.send(result);
+    }
+  });
+});
+
+router.put("/project/edit/:id_project", (req, res) => {
+  const addDays = (date, days) => {
+    const result = new Date(date);
+    result.setDate(result.getDate() - days);
+    return result;
+  };
+  req.body.start_prepare = addDays(req.body.start_prepare, 0);
+  req.body.end_prepare = addDays(req.body.end_prepare, 0);
+  req.body.start_event = addDays(req.body.start_event, 0);
+  req.body.end_event = addDays(req.body.end_event, 0);
+  const id_project = req.params.id_project;
+  const updatedData = req.body; // Updated data sent from the client
+  updatedData.updated_at = new Date();
+  // Update the project with the given id_project in the database
+  db.query(
+    "UPDATE projects SET ? WHERE id = ?",
+    [updatedData, id_project],
+    (err, result) => {
+      if (err) {
+        console.error(err);
+        res.status(500).send("Error updating project data"); // Handle the error and send an appropriate response
+      } else {
+        res.status(200).send("Project data updated successfully");
+      }
+    }
+  );
+});
+router.put("/project/person/edit/:id_project", (req, res) => {
+  const id_project = req.params.id_project;
+  const updatedData = req.body; // Updated data sent from the client
+  // updatedData.updated_at = new Date();
+  // Update the project with the given id_project in the database
+  db.query(
+    "UPDATE p_person SET ? WHERE id_projects = ?",
+    [updatedData, id_project],
+    (err, result) => {
+      if (err) {
+        console.error(err);
+        res.status(500).send("Error updating project data"); // Handle the error and send an appropriate response
+      } else {
+        res.status(200).send("Project data updated successfully");
+      }
+    }
+  );
+});
+router.put("/project/timestep/edit/:id_project", (req, res) => {
+  const addDays = (date, days) => {
+    const result = new Date(date);
+    result.setDate(result.getDate() - days);
+    return result;
+  };
+//   req.body.start_prepare = addDays(req.body.start_prepare, 0);
+//   req.body.end_prepare = addDays(req.body.end_prepare, 0);
+//   req.body.start_event = addDays(req.body.start_event, 0);
+//   req.body.end_event = addDays(req.body.end_event, 0);
+  const id_project = req.params.id_project;
+  const updatedData = req.body;
+
+  db.query(
+    "UPDATE p_timestep SET ? WHERE id_projects = ?",
+    [updatedData, id_project],
+    (err, result) => {
+      if (err) {
+        console.error(err);
+        res.status(500).send("Error updating project data"); // Handle the error and send an appropriate response
+      } else {
+        res.status(200).send("Project data updated successfully");
+      }
+    }
+  );
 });
 //dd1
-router.post('/project/create/', async (req, res) => {
-    try {
-        const {
-            // Destructure the fields from the request body
-            id_student,
-            project_name,
-            project_number,
-            codeclub,
-            codebooksomeoutyear,
-            project_phase,
-            yearly,
-            yearly_count,
-            yearly_countsketch,
-            responsible_agency,
-            academic_year,
-            advisor_name,
-            person1_name,
-            person1_contact,
-            person2_name,
-            person2_contact,
-            person3_name,
-            person3_contact,
-            is_1side,
-            is_2side,
-            is_3side,
-            is_4side,
-            is_5side
-        } = req.body;
-        const createdAt = new Date();
-        // Insert data into the database
-        db.query(
-            "INSERT INTO projects (id_student,project_name, project_number, codeclub,codebooksomeoutyear,project_phase, yearly,yearly_count, yearly_countsketch, responsible_agency,academic_year, advisor_name, person1_name, person1_contact, person2_name,person2_contact, person3_name, person3_contact,is_1side,is_2side,is_3side,is_4side,is_5side, created_at) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
-            [
-                id_student,
-                project_name,
-                project_number,
-                codeclub,
-                codebooksomeoutyear,
-                project_phase,
-                yearly,
-                yearly_count,
-                yearly_countsketch,
-                responsible_agency,
-                academic_year,
-                advisor_name,
-                person1_name,
-                person1_contact,
-                person2_name,
-                person2_contact,
-                person3_name,
-                person3_contact,
-                is_1side,
-                is_2side,
-                is_3side,
-                is_4side,
-                is_5side,
-                createdAt
+router.post("/project/create/", async (req, res) => {
+  try {
+    const {
+      // Destructure the fields from the request body
+      id_student,
+      project_name,
+      project_number,
+      codeclub,
+      codebooksomeoutyear,
+      project_phase,
+      yearly,
+      yearly_count,
+      yearly_countsketch,
+      responsible_agency,
+      academic_year,
+      advisor_name,
+      person1_name,
+      person1_contact,
+      person2_name,
+      person2_contact,
+      person3_name,
+      person3_contact,
+      is_1side,
+      is_2side,
+      is_3side,
+      is_4side,
+      is_5side,
+    } = req.body;
+    const createdAt = new Date();
+    // Insert data into the database
+    db.query(
+      "INSERT INTO projects (id_student,project_name, project_number, codeclub,codebooksomeoutyear,project_phase, yearly,yearly_count, yearly_countsketch, responsible_agency,academic_year, advisor_name, person1_name, person1_contact, person2_name,person2_contact, person3_name, person3_contact,is_1side,is_2side,is_3side,is_4side,is_5side, created_at) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+      [
+        id_student,
+        project_name,
+        project_number,
+        codeclub,
+        codebooksomeoutyear,
+        project_phase,
+        yearly,
+        yearly_count,
+        yearly_countsketch,
+        responsible_agency,
+        academic_year,
+        advisor_name,
+        person1_name,
+        person1_contact,
+        person2_name,
+        person2_contact,
+        person3_name,
+        person3_contact,
+        is_1side,
+        is_2side,
+        is_3side,
+        is_4side,
+        is_5side,
+        createdAt,
+      ],
 
-            ],
-
-            async (err, result) => {
-                if (err) {
-                    console.error(err);
-                    res.status(500).send(err); // Handle the error and send an appropriate response
-                    return;
-                }
-                const projectId = result.insertId;
-
-
-                // Insert only id_project into the p_person table
-                db.query(
-                    "INSERT INTO p_person (id_projects,codeclub,yearly_countsketch) VALUES (?,?,?)",
-                    [projectId, codeclub, yearly_countsketch],
-                    (err, pPersonResult) => {
-                        if (err) {
-                            console.error(err);
-                            res.status(500).send(err); // Handle the error and send an appropriate response
-                            return;
-                        }
-
-                        // If both insertions are successful, send a success response
-                        res.status(200).send({ projectId, pPersonId: pPersonResult.insertId });
-                    }
-                );
-
-
-            }
-        );
-    } catch (error) {
-        console.error(error);
-        res.status(500).send(error); // Handle the error and send an appropriate response
-    }
-});
-router.get('/download/:id_project', async (req, res) => {
-    const id_projects = req.params.id_project;
-
-    db.query('SELECT * FROM p_person WHERE id_projects = ? ORDER BY id_projects DESC LIMIT 1', [id_projects], (err, resultp_person) => {
+      async (err, result) => {
         if (err) {
-            console.error(err);
-            return res.status(500).send("Error retrieving project");
+          console.error(err);
+          res.status(500).send(err); // Handle the error and send an appropriate response
+          return;
         }
+        const projectId = result.insertId;
 
-        if (resultp_person.length > 0) {
-            db.query('SELECT * FROM projects WHERE id = ? ORDER BY id DESC LIMIT 1', [id_projects], (err, result) => {
+        // Insert only id_project into the p_person table
+        db.query(
+          "INSERT INTO p_person (id_projects,codeclub,yearly_countsketch) VALUES (?,?,?)",
+          [projectId, codeclub, yearly_countsketch],
+          (err, pPersonResult) => {
+            if (err) {
+              console.error(err);
+              res.status(500).send(err); // Handle the error and send an appropriate response
+              return;
+            }
+
+            // If both insertions are successful, send a success response
+            res
+              .status(200)
+              .send({ projectId, pPersonId: pPersonResult.insertId });
+          }
+        );
+      }
+    );
+  } catch (error) {
+    console.error(error);
+    res.status(500).send(error); // Handle the error and send an appropriate response
+  }
+});
+router.get("/download/:id_project", async (req, res) => {
+  const id_projects = req.params.id_project;
+
+  db.query(
+    "SELECT * FROM p_person WHERE id_projects = ? ORDER BY id_projects DESC LIMIT 1",
+    [id_projects],
+    (err, resultp_person) => {
+      if (err) {
+        console.error(err);
+        return res.status(500).send("Error retrieving project");
+      }
+
+      if (resultp_person.length > 0) {
+        db.query(
+          "SELECT * FROM projects WHERE id = ? ORDER BY id DESC LIMIT 1",
+          [id_projects],
+          (err, result) => {
+            if (err) {
+              console.error(err);
+              return res.status(500).send("Error retrieving project");
+            }
+
+            db.query(
+              "SELECT * FROM p_timestep WHERE id_projects = ? ORDER BY id_projects DESC LIMIT 1",
+              [id_projects],
+              (err, resultp_timestep) => {
                 if (err) {
-                    console.error(err);
-                    return res.status(500).send("Error retrieving project");
+                  console.error(err);
+                  return res.status(500).send("Error retrieving timestep data");
                 }
 
-                db.query('SELECT * FROM p_timestep WHERE id_projects = ? ORDER BY id_projects DESC LIMIT 1', [id_projects], (err, resultp_timestep) => {
+                db.query(
+                  "SELECT * FROM p_indicator WHERE id_projects = ? ORDER BY id_projects DESC LIMIT 1",
+                  [id_projects],
+                  (err, resultp_indicator) => {
                     if (err) {
-                        console.error(err);
-                        return res.status(500).send("Error retrieving timestep data");
+                      console.error(err);
+                      return res
+                        .status(500)
+                        .send("Error retrieving indicator data");
                     }
 
-                    db.query('SELECT * FROM p_indicator WHERE id_projects = ? ORDER BY id_projects DESC LIMIT 1', [id_projects], (err, resultp_indicator) => {
+                    db.query(
+                      "SELECT * FROM p_budget WHERE id_projects = ? ORDER BY id_projects DESC LIMIT 1",
+                      [id_projects],
+                      (err, resultp_budget) => {
                         if (err) {
-                            console.error(err);
-                            return res.status(500).send("Error retrieving indicator data");
+                          console.error(err);
+                          return res
+                            .status(500)
+                            .send("Error retrieving budget data");
                         }
 
-                        db.query('SELECT * FROM p_budget WHERE id_projects = ? ORDER BY id_projects DESC LIMIT 1', [id_projects], (err, resultp_budget) => {
-                            if (err) {
-                                console.error(err);
-                                return res.status(500).send("Error retrieving budget data");
-                            }
+                        try {
+                          console.log(resultp_indicator[0]);
+                          const PizZip = require("pizzip");
+                          const Docxtemplater = require("docxtemplater");
+                          const fs = require("fs");
+                          const path = require("path");
+                          const expressionParser = require("docxtemplater/expressions.js");
+                          const content = fs.readFileSync(
+                            path.resolve(
+                              __dirname,
+                              "templateDoc",
+                              "temp04-real.docx"
+                            ),
+                            "binary"
+                          );
+                          const zip = new PizZip(content);
+                          const doc = new Docxtemplater(zip, {
+                            parser: expressionParser,
+                            paragraphLoop: true,
+                            linebreaks: true,
+                          });
 
-                            try {
-                                console.log(resultp_indicator[0])
-                                const PizZip = require("pizzip");
-                                const Docxtemplater = require("docxtemplater");
-                                const fs = require("fs");
-                                const path = require("path");
-                                const expressionParser = require("docxtemplater/expressions.js");
-                                const content = fs.readFileSync(path.resolve(__dirname, "templateDoc", "temp04-real.docx"), "binary");
-                                const zip = new PizZip(content);
-                                const doc = new Docxtemplater(zip, { parser: expressionParser ,paragraphLoop: true, linebreaks: true });
-                                
-                                doc.render({
-                                    "detail": result[0],
-                                    "person": resultp_person[0],
-                                    "timestep": resultp_timestep[0],
-                                    "indicator": resultp_indicator[0], // Pass the indicator data to the template
-                                    "budget": resultp_budget[0] // Pass the budget data to the template
-                                });
+                          doc.render({
+                            detail: result[0],
+                            person: resultp_person[0],
+                            timestep: resultp_timestep[0],
+                            indicator: resultp_indicator[0], // Pass the indicator data to the template
+                            budget: resultp_budget[0], // Pass the budget data to the template
+                          });
 
-                                const buf = doc.getZip().generate({ type: "nodebuffer", compression: "DEFLATE" });
-                                fs.writeFileSync(path.resolve(__dirname, "e-docx", `e-doc-${result[0].project_name}.docx`), buf);
+                          const buf = doc
+                            .getZip()
+                            .generate({
+                              type: "nodebuffer",
+                              compression: "DEFLATE",
+                            });
+                          fs.writeFileSync(
+                            path.resolve(
+                              __dirname,
+                              "e-docx",
+                              `e-doc-${result[0].project_name}.docx`
+                            ),
+                            buf
+                          );
 
-                                res.send("Project created and document generated successfully!");
-                            } catch (error) {
-                                console.error("Error generating document:", error);
-                                res.status(500).send("Error generating document: " + error.message);
-                            }
-                        });
-                    });
-                });
-            });
-        } else {
-            res.status(404).send("No person found for this project.");
-        }
-    });
+                          res.send(
+                            "Project created and document generated successfully!"
+                          );
+                        } catch (error) {
+                          console.error("Error generating document:", error);
+                          res
+                            .status(500)
+                            .send(
+                              "Error generating document: " + error.message
+                            );
+                        }
+                      }
+                    );
+                  }
+                );
+              }
+            );
+          }
+        );
+      } else {
+        res.status(404).send("No person found for this project.");
+      }
+    }
+  );
 });
-
-
-
-
 
 //ต้นแบบ
 // router.get('/download/:id_project', async (req, res) => {
@@ -297,7 +403,7 @@ router.get('/download/:id_project', async (req, res) => {
 
 //             // res.send(result); // have data
 //             console.log(result)
-//             try {        
+//             try {
 //                     const PizZip = require("pizzip");
 //                     const Docxtemplater = require("docxtemplater");
 //                     const fs = require("fs");
@@ -312,208 +418,205 @@ router.get('/download/:id_project', async (req, res) => {
 //                     const buf = doc.getZip().generate({ type: "nodebuffer", compression: "DEFLATE" });
 //                     fs.writeFileSync(path.resolve(__dirname, "e-docx", `e-doc-${result[0].project_name}.docx`), buf);
 
-
 //                     res.send("Project created and document generated successfully!");
 //                 } catch (error) {
 //                     console.error("Error generating document:", error);
 //                     res.status(500).send("Error generating document: " + error.message);
 //                 }
 
-
 //         }
 //     });
 // });
 //dd2
 
-router.put('/project/create2/:id_project', async (req, res) => {
-    const id_project = req.params.id_project;
-    const updatedData = req.body; // Updated data sent from the client
+router.put("/project/create2/:id_project", async (req, res) => {
+  const id_project = req.params.id_project;
+  const updatedData = req.body; // Updated data sent from the client
 
-    // Update the project with the given id_project in the database
-    db.query(
-        "UPDATE projects SET ? WHERE id = ?",
-        [updatedData, id_project],
-        (err, result) => {
-            if (err) {
-                console.error(err);
-                res.status(500).send("Error updating project data"); // Handle the error and send an appropriate response
-            } else {
-                res.status(200).send("Project data updated successfully");
-            }
-        }
-
-    );
+  // Update the project with the given id_project in the database
+  db.query(
+    "UPDATE projects SET ? WHERE id = ?",
+    [updatedData, id_project],
+    (err, result) => {
+      if (err) {
+        console.error(err);
+        res.status(500).send("Error updating project data"); // Handle the error and send an appropriate response
+      } else {
+        res.status(200).send("Project data updated successfully");
+      }
+    }
+  );
 });
 
 //ddlt3
-router.put('/project/create3/:id_project', async (req, res) => {
-    const addDays = (date, days) => {
-        const result = new Date(date);
-        result.setDate(result.getDate() - days);
-        return result;
-    };
+router.put("/project/create3/:id_project", async (req, res) => {
+  const addDays = (date, days) => {
+    const result = new Date(date);
+    result.setDate(result.getDate() - days);
+    return result;
+  };
 
-    // Usage example
-    req.body.start_prepare = addDays(req.body.start_prepare, 0);
-    req.body.end_prepare = addDays(req.body.end_prepare, 0);
-    req.body.start_event = addDays(req.body.start_event, 0);
-    req.body.end_event = addDays(req.body.end_event, 0);
+  // Usage example
+  req.body.start_prepare = addDays(req.body.start_prepare, 0);
+  req.body.end_prepare = addDays(req.body.end_prepare, 0);
+  req.body.start_event = addDays(req.body.start_event, 0);
+  req.body.end_event = addDays(req.body.end_event, 0);
 
-    const id_project = req.params.id_project;
-    const updatedData = req.body; // Updated data sent from the client
+  const id_project = req.params.id_project;
+  const updatedData = req.body; // Updated data sent from the client
 
-    // Update the project with the given id_project in the database
+  // Update the project with the given id_project in the database
+  db.query(
+    "UPDATE projects SET ? WHERE id = ?",
+    [updatedData, id_project],
+    (err, result) => {
+      if (err) {
+        console.error(err);
+        res.status(500).send("Error updating project data"); // Handle the error and send an appropriate response
+      } else {
+        res.status(200).send("Project data updated successfully");
+      }
+    }
+  );
+});
+router.post("/project/p_person/create/", (req, res) => {
+  try {
+    const {
+      id_projects,
+      codeclub,
+      yearly_countsketch,
+      executiveType1Name,
+      executiveType1Number,
+      executiveType2Name,
+      executiveType2Number,
+      executiveType3Name,
+      executiveType3Number,
+      executiveType4Name,
+      executiveType4Number,
+      executiveType5Name,
+      executiveType5Number,
+      executiveTypeCount,
+      grandTotalExecutive,
+      professorType1Name,
+      professorType1Number,
+      professorType2Name,
+      professorType2Number,
+      professorType3Name,
+      professorType3Number,
+      professorType4Name,
+      professorType4Number,
+      professorType5Name,
+      professorType5Number,
+      professorTypeCount,
+      grandTotalProfessor,
+      studentType1Name,
+      studentType1Number,
+      studentType2Name,
+      studentType2Number,
+      studentType3Name,
+      studentType3Number,
+      studentType4Name,
+      studentType4Number,
+      studentType5Name,
+      studentType5Number,
+      studentTypeCount,
+      grandTotalStudent,
+      expertType1Name,
+      expertType1Number,
+      expertType2Name,
+      expertType2Number,
+      expertType3Name,
+      expertType3Number,
+      expertType4Name,
+      expertType4Number,
+      expertType5Name,
+      expertType5Number,
+      expertTypeCount,
+      grandTotalExpert,
+      grandTotalAll,
+    } = req.body;
     db.query(
-        "UPDATE projects SET ? WHERE id = ?",
-        [updatedData, id_project],
-        (err, result) => {
-            if (err) {
-                console.error(err);
-                res.status(500).send("Error updating project data"); // Handle the error and send an appropriate response
-            } else {
-                res.status(200).send("Project data updated successfully");
-            }
+      "UPDATE p_person SET executiveType1Name=?, executiveType1Number=?, executiveType2Name=?, executiveType2Number=?, executiveType3Name=?, executiveType3Number=?, executiveType4Name=?, executiveType4Number=?, executiveType5Name=?, executiveType5Number=? ,executiveTypeCount=?, grandTotalExecutive=?, professorType1Name=?, professorType1Number=?, professorType2Name=?, professorType2Number=?, professorType3Name=?, professorType3Number=?, professorType4Name=?, professorType4Number=?, professorType5Name=?, professorType5Number=?, professorTypeCount=?,grandTotalProfessor=?, studentType1Name=?, studentType1Number=?, studentType2Name=?, studentType2Number=?, studentType3Name=?, studentType3Number=?, studentType4Name=?, studentType4Number=?, studentType5Name=?, studentType5Number=?,studentTypeCount=?, grandTotalStudent=?, expertType1Name=?, expertType1Number=?, expertType2Name=?, expertType2Number=?, expertType3Name=?, expertType3Number=?, expertType4Name=?, expertType4Number=?, expertType5Name=?, expertType5Number=?,expertTypeCount=?,grandTotalExpert=?, grandTotalAll=? WHERE id_projects=?",
+      [
+        executiveType1Name,
+        executiveType1Number,
+        executiveType2Name,
+        executiveType2Number,
+        executiveType3Name,
+        executiveType3Number,
+        executiveType4Name,
+        executiveType4Number,
+        executiveType5Name,
+        executiveType5Number,
+        executiveTypeCount,
+        grandTotalExecutive,
+        professorType1Name,
+        professorType1Number,
+        professorType2Name,
+        professorType2Number,
+        professorType3Name,
+        professorType3Number,
+        professorType4Name,
+        professorType4Number,
+        professorType5Name,
+        professorType5Number,
+        professorTypeCount,
+        grandTotalProfessor,
+        studentType1Name,
+        studentType1Number,
+        studentType2Name,
+        studentType2Number,
+        studentType3Name,
+        studentType3Number,
+        studentType4Name,
+        studentType4Number,
+        studentType5Name,
+        studentType5Number,
+        studentTypeCount,
+        grandTotalStudent,
+        expertType1Name,
+        expertType1Number,
+        expertType2Name,
+        expertType2Number,
+        expertType3Name,
+        expertType3Number,
+        expertType4Name,
+        expertType4Number,
+        expertType5Name,
+        expertType5Number,
+        expertTypeCount,
+        grandTotalExpert,
+        grandTotalAll,
+        id_projects,
+      ],
+      async (err, result) => {
+        if (err) {
+          console.error(err);
+          return res.status(500).send("Error updating data in the database"); // Handle the error and send an appropriate response
+        } else {
+          console.log("up to database compleate");
         }
 
-    );
-});
-router.post('/project/p_person/create/', (req, res) => {
-    try {
-        const {
-            id_projects,
-            codeclub,
-            yearly_countsketch,
-            executiveType1Name,
-            executiveType1Number,
-            executiveType2Name,
-            executiveType2Number,
-            executiveType3Name,
-            executiveType3Number,
-            executiveType4Name,
-            executiveType4Number,
-            executiveType5Name,
-            executiveType5Number,
-            executiveTypeCount,
-            grandTotalExecutive,
-            professorType1Name,
-            professorType1Number,
-            professorType2Name,
-            professorType2Number,
-            professorType3Name,
-            professorType3Number,
-            professorType4Name,
-            professorType4Number,
-            professorType5Name,
-            professorType5Number,
-            professorTypeCount,
-            grandTotalProfessor,
-            studentType1Name,
-            studentType1Number,
-            studentType2Name,
-            studentType2Number,
-            studentType3Name,
-            studentType3Number,
-            studentType4Name,
-            studentType4Number,
-            studentType5Name,
-            studentType5Number,
-            studentTypeCount,
-            grandTotalStudent,
-            expertType1Name,
-            expertType1Number,
-            expertType2Name,
-            expertType2Number,
-            expertType3Name,
-            expertType3Number,
-            expertType4Name,
-            expertType4Number,
-            expertType5Name,
-            expertType5Number,
-            expertTypeCount,
-            grandTotalExpert,
-            grandTotalAll,
-        } = req.body;
         db.query(
-            "UPDATE p_person SET executiveType1Name=?, executiveType1Number=?, executiveType2Name=?, executiveType2Number=?, executiveType3Name=?, executiveType3Number=?, executiveType4Name=?, executiveType4Number=?, executiveType5Name=?, executiveType5Number=? ,executiveTypeCount=?, grandTotalExecutive=?, professorType1Name=?, professorType1Number=?, professorType2Name=?, professorType2Number=?, professorType3Name=?, professorType3Number=?, professorType4Name=?, professorType4Number=?, professorType5Name=?, professorType5Number=?, professorTypeCount=?,grandTotalProfessor=?, studentType1Name=?, studentType1Number=?, studentType2Name=?, studentType2Number=?, studentType3Name=?, studentType3Number=?, studentType4Name=?, studentType4Number=?, studentType5Name=?, studentType5Number=?,studentTypeCount=?, grandTotalStudent=?, expertType1Name=?, expertType1Number=?, expertType2Name=?, expertType2Number=?, expertType3Name=?, expertType3Number=?, expertType4Name=?, expertType4Number=?, expertType5Name=?, expertType5Number=?,expertTypeCount=?,grandTotalExpert=?, grandTotalAll=? WHERE id_projects=?",
-            [
-                executiveType1Name,
-                executiveType1Number,
-                executiveType2Name,
-                executiveType2Number,
-                executiveType3Name,
-                executiveType3Number,
-                executiveType4Name,
-                executiveType4Number,
-                executiveType5Name,
-                executiveType5Number,
-                executiveTypeCount,
-                grandTotalExecutive,
-                professorType1Name,
-                professorType1Number,
-                professorType2Name,
-                professorType2Number,
-                professorType3Name,
-                professorType3Number,
-                professorType4Name,
-                professorType4Number,
-                professorType5Name,
-                professorType5Number,
-                professorTypeCount,
-                grandTotalProfessor,
-                studentType1Name,
-                studentType1Number,
-                studentType2Name,
-                studentType2Number,
-                studentType3Name,
-                studentType3Number,
-                studentType4Name,
-                studentType4Number,
-                studentType5Name,
-                studentType5Number,
-                studentTypeCount,
-                grandTotalStudent,
-                expertType1Name,
-                expertType1Number,
-                expertType2Name,
-                expertType2Number,
-                expertType3Name,
-                expertType3Number,
-                expertType4Name,
-                expertType4Number,
-                expertType5Name,
-                expertType5Number,
-                expertTypeCount,
-                grandTotalExpert,
-                grandTotalAll,
-                id_projects,
-            ],
-            async (err, result) => {
-                if (err) {
-                    console.error(err);
-                    return res.status(500).send("Error updating data in the database"); // Handle the error and send an appropriate response
-                } else {
-                    console.log("up to database compleate")
-                }
-
-
-                db.query("INSERT INTO p_timestep (id_projects,codeclub,yearly_countsketch) VALUES (?,?,?)",
-                    [id_projects, codeclub, yearly_countsketch],
-                    (err) => {
-                        if (err) {
-                            console.error(err);
-                            return res.status(500).send("Error inserting data into the database"); // Handle the error and send an appropriate response
-                        }
-
-                        res.status(200).send("Data updated and inserted successfully");
-                    }
-                );
+          "INSERT INTO p_timestep (id_projects,codeclub,yearly_countsketch) VALUES (?,?,?)",
+          [id_projects, codeclub, yearly_countsketch],
+          (err) => {
+            if (err) {
+              console.error(err);
+              return res
+                .status(500)
+                .send("Error inserting data into the database"); // Handle the error and send an appropriate response
             }
-        );
 
-    } catch (error) {
-        console.error(error);
-        res.status(500).send(error); // Handle the error and send an appropriate response
-    }
+            res.status(200).send("Data updated and inserted successfully");
+          }
+        );
+      }
+    );
+  } catch (error) {
+    console.error(error);
+    res.status(500).send(error); // Handle the error and send an appropriate response
+  }
 });
 // old
 // router.post('/project/p_timestep/create/:id_project', async (req, res) => {
@@ -620,7 +723,6 @@ router.post('/project/p_person/create/', (req, res) => {
 //             endDurationTable15,
 //             responsibleTable15str
 //         } = req.body;
-
 
 //         await db.query(
 //             "UPDATE p_timestep " +
@@ -1278,83 +1380,84 @@ router.post('/project/p_person/create/', (req, res) => {
 //     }
 // });
 
-router.put('/project/p_timestep/create/:id_project', async (req, res) => {
-    const addDays = (date, days) => {
-        const result = new Date(date);
-        result.setDate(result.getDate() - days);
-        return result;
-    };
+router.put("/project/p_timestep/create/:id_project", async (req, res) => {
+  const addDays = (date, days) => {
+    const result = new Date(date);
+    result.setDate(result.getDate() - days);
+    return result;
+  };
 
-    try {
-        const id_projects = req.params.id_project;
-        const updatedData = req.body;
+  try {
+    const id_projects = req.params.id_project;
+    const updatedData = req.body;
 
-        await db.query(
-            "UPDATE p_timestep SET ? WHERE id_projects = ?",
-            [updatedData, id_projects],
-            (err, result) => {
-                if (err) {
-                    console.error(err);
-                    res.status(500).send("Error updating project data");
-                    return; // Return to avoid further execution
-                }
-            }
-        );
+    await db.query(
+      "UPDATE p_timestep SET ? WHERE id_projects = ?",
+      [updatedData, id_projects],
+      (err, result) => {
+        if (err) {
+          console.error(err);
+          res.status(500).send("Error updating project data");
+          return; // Return to avoid further execution
+        }
+      }
+    );
 
-        await db.query(
-            "INSERT INTO p_budget (id_projects,codeclub,yearly_countsketch) VALUES (?,?,?)",
-            [id_projects, updatedData.codeclub, updatedData.yearly_countsketch]
-        );
+    await db.query(
+      "INSERT INTO p_budget (id_projects,codeclub,yearly_countsketch) VALUES (?,?,?)",
+      [id_projects, updatedData.codeclub, updatedData.yearly_countsketch]
+    );
 
-        await db.query(
-            "INSERT INTO p_indicator (id_projects,codeclub,yearly_countsketch) VALUES (?,?,?)",
-            [id_projects, updatedData.codeclub, updatedData.yearly_countsketch]
-        );
+    await db.query(
+      "INSERT INTO p_indicator (id_projects,codeclub,yearly_countsketch) VALUES (?,?,?)",
+      [id_projects, updatedData.codeclub, updatedData.yearly_countsketch]
+    );
 
-        res.status(200).json({ message: `p_timestep updated ${updatedData.codeclub} yearly${updatedData.yearly_countsketch}` });
-    } catch (error) {
-        console.error("Error updating p_timestep:", error);
-        res.status(500).json({ error: "Database error" });
+    res
+      .status(200)
+      .json({
+        message: `p_timestep updated ${updatedData.codeclub} yearly${updatedData.yearly_countsketch}`,
+      });
+  } catch (error) {
+    console.error("Error updating p_timestep:", error);
+    res.status(500).json({ error: "Database error" });
+  }
+});
+
+router.put("/project/p_budget/create/:id_project", async (req, res) => {
+  const updatedData = req.body; // Updated data sent from the client
+
+  const id_projects = req.params.id_project;
+
+  db.query(
+    "UPDATE p_budget SET ? WHERE id_projects = ?",
+    [updatedData, id_projects], // Pass the updated value of listA1
+    (err, result) => {
+      if (err) {
+        console.error(err);
+        res.status(500).send("Error updating project data");
+      } else {
+        res.status(200).send("Project data updated successfully");
+      }
     }
+  );
 });
 
-router.put('/project/p_budget/create/:id_project', async (req, res) => {
-
-    const updatedData = req.body; // Updated data sent from the client
-
-
-    const id_projects = req.params.id_project;
-
-    db.query(
-        "UPDATE p_budget SET ? WHERE id_projects = ?",
-        [updatedData, id_projects], // Pass the updated value of listA1
-        (err, result) => {
-            if (err) {
-                console.error(err);
-                res.status(500).send("Error updating project data");
-            } else {
-                res.status(200).send("Project data updated successfully");
-            }
-        }
-    );
+router.put("/project/p_indicator/create/:id_project", async (req, res) => {
+  const updatedData = req.body; // Updated data sent from the client
+  const id_projects = req.params.id_project;
+  db.query(
+    "UPDATE p_indicator SET ? WHERE id_projects = ?",
+    [updatedData, id_projects], // Pass the updated value of listA1
+    (err, result) => {
+      if (err) {
+        console.error(err);
+        res.status(500).send("Error updating project data");
+      } else {
+        res.status(200).send("Project data updated successfully");
+      }
+    }
+  );
 });
-
-router.put('/project/p_indicator/create/:id_project', async (req, res) => {
-    const updatedData = req.body; // Updated data sent from the client
-    const id_projects = req.params.id_project;
-    db.query(
-        "UPDATE p_indicator SET ? WHERE id_projects = ?",
-        [updatedData, id_projects], // Pass the updated value of listA1
-        (err, result) => {
-            if (err) {
-                console.error(err);
-                res.status(500).send("Error updating project data");
-            } else {
-                res.status(200).send("Project data updated successfully");
-            }
-        }
-    );
-});
-
 
 module.exports = router;
