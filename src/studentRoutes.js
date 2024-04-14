@@ -154,12 +154,42 @@ router.put("/project/timestep/edit/:id_project", (req, res) => {
     result.setDate(result.getDate() - days);
     return result;
   };
-//   req.body.start_prepare = addDays(req.body.start_prepare, 0);
-//   req.body.end_prepare = addDays(req.body.end_prepare, 0);
-//   req.body.start_event = addDays(req.body.start_event, 0);
-//   req.body.end_event = addDays(req.body.end_event, 0);
+
+    
   const id_project = req.params.id_project;
   const updatedData = req.body;
+
+    updatedData.start_duration_table1 = addDays(req.body.start_duration_table1, 0);
+    updatedData.start_duration_table2 = addDays(req.body.start_duration_table2, 0);
+    updatedData.start_duration_table3 = addDays(req.body.start_duration_table3, 0);
+    updatedData.start_duration_table4 = addDays(req.body.start_duration_table4, 0);
+    updatedData.start_duration_table5 = addDays(req.body.start_duration_table5, 0);
+    updatedData.start_duration_table6 = addDays(req.body.start_duration_table6, 0);
+    updatedData.start_duration_table7 = addDays(req.body.start_duration_table7, 0);
+    updatedData.start_duration_table8 = addDays(req.body.start_duration_table8, 0);
+    updatedData.start_duration_table9 = addDays(req.body.start_duration_table9, 0);
+    updatedData.start_duration_table10 = addDays(req.body.start_duration_table10, 0);
+    updatedData.start_duration_table11 = addDays(req.body.start_duration_table11, 0);
+    updatedData.start_duration_table12 = addDays(req.body.start_duration_table12, 0);
+    updatedData.start_duration_table13 = addDays(req.body.start_duration_table13, 0);
+    updatedData.start_duration_table14 = addDays(req.body.start_duration_table14, 0);
+    updatedData.start_duration_table15 = addDays(req.body.start_duration_table15, 0);
+
+    updatedData.end_duration_table1 = addDays(req.body.end_duration_table1, 0);
+    updatedData.end_duration_table2 = addDays(req.body.end_duration_table2, 0);
+    updatedData.end_duration_table3 = addDays(req.body.end_duration_table3, 0);
+    updatedData.end_duration_table4 = addDays(req.body.end_duration_table4, 0);
+    updatedData.end_duration_table5 = addDays(req.body.end_duration_table5, 0);
+    updatedData.end_duration_table6 = addDays(req.body.end_duration_table6, 0);
+    updatedData.end_duration_table7 = addDays(req.body.end_duration_table7, 0);
+    updatedData.end_duration_table8 = addDays(req.body.end_duration_table8, 0);
+    updatedData.end_duration_table9 = addDays(req.body.end_duration_table9, 0);
+    updatedData.end_duration_table10 = addDays(req.body.end_duration_table10, 0);
+    updatedData.end_duration_table11 = addDays(req.body.end_duration_table11, 0);
+    updatedData.end_duration_table12 = addDays(req.body.end_duration_table12, 0);
+    updatedData.end_duration_table13 = addDays(req.body.end_duration_table13, 0);
+    updatedData.end_duration_table14 = addDays(req.body.end_duration_table14, 0);
+    updatedData.end_duration_table15 = addDays(req.body.end_duration_table15, 0);
 
   db.query(
     "UPDATE p_timestep SET ? WHERE id_projects = ?",
@@ -1401,6 +1431,21 @@ router.put("/project/p_timestep/create/:id_project", async (req, res) => {
     req.body.start_duration_table14 = addDays(req.body.start_duration_table14, 0);
     req.body.start_duration_table15 = addDays(req.body.start_duration_table15, 0);
 
+    req.body.end_duration_table1 = addDays(req.body.end_duration_table1, 0);
+    req.body.end_duration_table2 = addDays(req.body.end_duration_table2, 0);
+    req.body.end_duration_table3 = addDays(req.body.end_duration_table3, 0);
+    req.body.end_duration_table4 = addDays(req.body.end_duration_table4, 0);
+    req.body.end_duration_table5 = addDays(req.body.end_duration_table5, 0);
+    req.body.end_duration_table6 = addDays(req.body.end_duration_table6, 0);
+    req.body.end_duration_table7 = addDays(req.body.end_duration_table7, 0);
+    req.body.end_duration_table8 = addDays(req.body.end_duration_table8, 0);
+    req.body.end_duration_table9 = addDays(req.body.end_duration_table9, 0);
+    req.body.end_duration_table10 = addDays(req.body.end_duration_table10, 0);
+    req.body.end_duration_table11 = addDays(req.body.end_duration_table11, 0);
+    req.body.end_duration_table12 = addDays(req.body.end_duration_table12, 0);
+    req.body.end_duration_table13 = addDays(req.body.end_duration_table13, 0);
+    req.body.end_duration_table14 = addDays(req.body.end_duration_table14, 0);
+    req.body.end_duration_table15 = addDays(req.body.end_duration_table15, 0);
   try {
     const id_projects = req.params.id_project;
     const updatedData = req.body;
