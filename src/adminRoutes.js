@@ -12,6 +12,16 @@ router.get('/allusers', (req, res) => {
         }
     });
 });
+router.get('/allprojects', (req, res) => {
+    db.query("SELECT * FROM projects", (err, result) => {
+        if (err) {
+            console.log(err);
+            res.status(500).send(err);
+        } else {
+            res.send(result);
+        }
+    });
+});
 
 router.get('/studentusers', (req, res) => {
     db.query("SELECT * FROM users WHERE position IN ('S', 'SH', 'Ad')", (err, result) => {
@@ -66,11 +76,13 @@ router.post('/user/createUser', (req, res) => {
         codeagency,
         codeworkgroup,
         codebooksome,
-        codebooksomeoutyear
+        codebooksomeoutyear,
+        agencyGroupName
      } = req.body;
+     console.log(req.body)
 
     db.query(
-        "INSERT INTO users (id_student, name_student, department, position, clubName,WorkGroup,ClubGroup, campus,email,account_type,STU_STATUS_DESC,LEVEL_DESC, yearly, codedivision, codeagency, codeworkgroup, codebooksome,codebooksomeoutyear) VALUES (?,?,?,?,?,?,?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+        "INSERT INTO users (id_student, name_student, department, position, clubName,WorkGroup,ClubGroup, campus,email,account_type,STU_STATUS_DESC,LEVEL_DESC, yearly, codedivision, codeagency, codeworkgroup, codebooksome,codebooksomeoutyear,agencyGroupName) VALUES (?,?,?,?,?,?,?,?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
         [id_student,
             name_student,
             department,
@@ -88,7 +100,8 @@ router.post('/user/createUser', (req, res) => {
             codeagency,
             codeworkgroup,
             codebooksome,
-            codebooksomeoutyear
+            codebooksomeoutyear,
+            agencyGroupName
         ],
         (err, result) => {
             if (err) {
