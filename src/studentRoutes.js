@@ -4,29 +4,29 @@ const db = require("../db");
 const multer = require("multer");
 const path = require("path");
 
-const upload = multer();
+// const upload = multer();
 
-router.post("/upload-pdf", upload.single("pdfFile"), async (req, res) => {
-  try {
-    // Check if file is present
-    if (!req.file) {
-      return res.status(400).send("No file uploaded.");
-    }
+// router.post("/upload-pdf", upload.single("pdfFile"), async (req, res) => {
+//   try {
+//     // Check if file is present
+//     if (!req.file) {
+//       return res.status(400).send("No file uploaded.");
+//     }
 
-    // Extract file content
-    const pdfContent = req.file.buffer; // Assuming Multer saves file content to buffer
+//     // Extract file content
+//     const pdfContent = req.file.buffer; // Assuming Multer saves file content to buffer
 
-    // Store the PDF content in the database
-    const query = "INSERT INTO p_addfile (id_projects, filename, filepath) VALUES (?,  ?, ?)";
-    const values = [req.body.projectId, req.file.originalname, req.file.path]; // Assuming projectId and codeclub are sent in the request body
-    await db.query(query, values);
+//     // Store the PDF content in the database
+//     const query = "INSERT INTO p_addfile (id_projects, filename, filepath) VALUES (?,  ?, ?)";
+//     const values = [req.body.projectId, req.file.originalname, req.file.path]; // Assuming projectId and codeclub are sent in the request body
+//     await db.query(query, values);
 
-    res.send("PDF file stored successfully.");
-  } catch (error) {
-    console.error("Error storing PDF file:", error);
-    res.status(500).send("Error storing PDF file.");
-  }
-});
+//     res.send("PDF file stored successfully.");
+//   } catch (error) {
+//     console.error("Error storing PDF file:", error);
+//     res.status(500).send("Error storing PDF file.");
+//   }
+// });
 
 router.get("/users", (req, res) => {
   db.query("SELECT * FROM users", (err, result) => {
@@ -115,7 +115,9 @@ router.get("/project/indicator/getidproject/:id_projects", (req, res) => {
   );
 });
 
-router.get("/project/getcodebooksomeoutyear/:codebooksomeoutyear",(req, res) => {
+router.get(
+  "/project/getcodebooksomeoutyear/:codebooksomeoutyear",
+  (req, res) => {
     const codebooksomeoutyear = req.params.codebooksomeoutyear;
     db.query(
       "SELECT * FROM projects WHERE codebooksomeoutyear = ? ",
@@ -211,41 +213,85 @@ router.put("/project/timestep/edit/:id_project", (req, res) => {
     return result;
   };
 
-    
   const id_project = req.params.id_project;
   const updatedData = req.body;
 
-    updatedData.start_duration_table1 = addDays(req.body.start_duration_table1, 0);
-    updatedData.start_duration_table2 = addDays(req.body.start_duration_table2, 0);
-    updatedData.start_duration_table3 = addDays(req.body.start_duration_table3, 0);
-    updatedData.start_duration_table4 = addDays(req.body.start_duration_table4, 0);
-    updatedData.start_duration_table5 = addDays(req.body.start_duration_table5, 0);
-    updatedData.start_duration_table6 = addDays(req.body.start_duration_table6, 0);
-    updatedData.start_duration_table7 = addDays(req.body.start_duration_table7, 0);
-    updatedData.start_duration_table8 = addDays(req.body.start_duration_table8, 0);
-    updatedData.start_duration_table9 = addDays(req.body.start_duration_table9, 0);
-    updatedData.start_duration_table10 = addDays(req.body.start_duration_table10, 0);
-    updatedData.start_duration_table11 = addDays(req.body.start_duration_table11, 0);
-    updatedData.start_duration_table12 = addDays(req.body.start_duration_table12, 0);
-    updatedData.start_duration_table13 = addDays(req.body.start_duration_table13, 0);
-    updatedData.start_duration_table14 = addDays(req.body.start_duration_table14, 0);
-    updatedData.start_duration_table15 = addDays(req.body.start_duration_table15, 0);
+  updatedData.start_duration_table1 = addDays(
+    req.body.start_duration_table1,
+    0
+  );
+  updatedData.start_duration_table2 = addDays(
+    req.body.start_duration_table2,
+    0
+  );
+  updatedData.start_duration_table3 = addDays(
+    req.body.start_duration_table3,
+    0
+  );
+  updatedData.start_duration_table4 = addDays(
+    req.body.start_duration_table4,
+    0
+  );
+  updatedData.start_duration_table5 = addDays(
+    req.body.start_duration_table5,
+    0
+  );
+  updatedData.start_duration_table6 = addDays(
+    req.body.start_duration_table6,
+    0
+  );
+  updatedData.start_duration_table7 = addDays(
+    req.body.start_duration_table7,
+    0
+  );
+  updatedData.start_duration_table8 = addDays(
+    req.body.start_duration_table8,
+    0
+  );
+  updatedData.start_duration_table9 = addDays(
+    req.body.start_duration_table9,
+    0
+  );
+  updatedData.start_duration_table10 = addDays(
+    req.body.start_duration_table10,
+    0
+  );
+  updatedData.start_duration_table11 = addDays(
+    req.body.start_duration_table11,
+    0
+  );
+  updatedData.start_duration_table12 = addDays(
+    req.body.start_duration_table12,
+    0
+  );
+  updatedData.start_duration_table13 = addDays(
+    req.body.start_duration_table13,
+    0
+  );
+  updatedData.start_duration_table14 = addDays(
+    req.body.start_duration_table14,
+    0
+  );
+  updatedData.start_duration_table15 = addDays(
+    req.body.start_duration_table15,
+    0
+  );
 
-    updatedData.end_duration_table1 = addDays(req.body.end_duration_table1, 0);
-    updatedData.end_duration_table2 = addDays(req.body.end_duration_table2, 0);
-    updatedData.end_duration_table3 = addDays(req.body.end_duration_table3, 0);
-    updatedData.end_duration_table4 = addDays(req.body.end_duration_table4, 0);
-    updatedData.end_duration_table5 = addDays(req.body.end_duration_table5, 0);
-    updatedData.end_duration_table6 = addDays(req.body.end_duration_table6, 0);
-    updatedData.end_duration_table7 = addDays(req.body.end_duration_table7, 0);
-    updatedData.end_duration_table8 = addDays(req.body.end_duration_table8, 0);
-    updatedData.end_duration_table9 = addDays(req.body.end_duration_table9, 0);
-    updatedData.end_duration_table10 = addDays(req.body.end_duration_table10, 0);
-    updatedData.end_duration_table11 = addDays(req.body.end_duration_table11, 0);
-    updatedData.end_duration_table12 = addDays(req.body.end_duration_table12, 0);
-    updatedData.end_duration_table13 = addDays(req.body.end_duration_table13, 0);
-    updatedData.end_duration_table14 = addDays(req.body.end_duration_table14, 0);
-    updatedData.end_duration_table15 = addDays(req.body.end_duration_table15, 0);
+  updatedData.end_duration_table1 = addDays(req.body.end_duration_table1, 0);
+  updatedData.end_duration_table2 = addDays(req.body.end_duration_table2, 0);
+  updatedData.end_duration_table3 = addDays(req.body.end_duration_table3, 0);
+  updatedData.end_duration_table4 = addDays(req.body.end_duration_table4, 0);
+  updatedData.end_duration_table5 = addDays(req.body.end_duration_table5, 0);
+  updatedData.end_duration_table6 = addDays(req.body.end_duration_table6, 0);
+  updatedData.end_duration_table7 = addDays(req.body.end_duration_table7, 0);
+  updatedData.end_duration_table8 = addDays(req.body.end_duration_table8, 0);
+  updatedData.end_duration_table9 = addDays(req.body.end_duration_table9, 0);
+  updatedData.end_duration_table10 = addDays(req.body.end_duration_table10, 0);
+  updatedData.end_duration_table11 = addDays(req.body.end_duration_table11, 0);
+  updatedData.end_duration_table12 = addDays(req.body.end_duration_table12, 0);
+  updatedData.end_duration_table13 = addDays(req.body.end_duration_table13, 0);
+  updatedData.end_duration_table14 = addDays(req.body.end_duration_table14, 0);
+  updatedData.end_duration_table15 = addDays(req.body.end_duration_table15, 0);
 
   db.query(
     "UPDATE p_timestep SET ? WHERE id_projects = ?",
@@ -277,6 +323,99 @@ router.put("/project/indicator/edit/:id_project", (req, res) => {
   );
 });
 
+router.post("/project/edit/history/:id_project", async (req, res) => {
+  try {
+    const id_project = req.params.id_project;
+    const { codeclub, editpage, id_student } = req.body;
+    const thaiTimeOptions = { timeZone: "Asia/Bangkok" };
+    const edit_at = new Date().toLocaleString("en-US", thaiTimeOptions);
+
+    // Check if the codeclub already exists in the historyeditproject table
+    db.query(
+      "SELECT * FROM historyeditproject WHERE id_projects = ? AND codeclub = ? ORDER BY id_history DESC LIMIT 1",
+      [id_project, codeclub],
+      async (err, result) => {
+        if (err) {
+          console.error(err);
+          res.status(500).send(err); // Handle the error and send an appropriate response
+          return;
+        }
+        if (result.length > 0) {
+          // If the codeclub exists, update the countedit and edit_at columns
+          const countedit = parseInt(result[0].countedit) + 1;
+          db.query(
+            "INSERT INTO historyeditproject (id_projects, id_student,codeclub, editpage, countedit, edit_at) VALUES (?,?, ?, ?, ?, ?)",
+            [id_project, id_student, codeclub, editpage, countedit, edit_at],
+            async (updateErr, updateResult) => {
+              if (updateErr) {
+                console.error(updateErr);
+                res.status(500).send(updateErr); // Handle the error and send an appropriate response
+                return;
+              }
+              res
+                .status(200)
+                .send("Countedit and edit_at updated successfully");
+            }
+          );
+        } else {
+          // If the codeclub does not exist, insert a new record with edit_at
+          db.query(
+            "INSERT INTO historyeditproject (id_projects,id_student, codeclub, editpage, countedit, edit_at) VALUES (?,?, ?, ?, 1, ?)",
+            [id_project, id_student, codeclub, editpage, edit_at],
+            async (insertErr, insertResult) => {
+              if (insertErr) {
+                console.error(insertErr);
+                res.status(500).send(insertErr); // Handle the error and send an appropriate response
+                return;
+              }
+              res.status(200).send("Record inserted successfully");
+            }
+          );
+        }
+      }
+    );
+  } catch (error) {
+    console.error(error);
+    res.status(500).send(error); // Handle the error and send an appropriate response
+  }
+});
+router.get("/project/getedithistory/:id_project", async (req, res) => {
+  try {
+    const id_project = req.params.id_project;
+    // Check if the codeclub already exists in the historyeditproject table
+    db.query(
+      "SELECT * FROM historyeditproject WHERE id_projects = ? ",
+      [id_project],
+      async (err, result) => {
+        if (err) {
+          console.error(err);
+          res.status(500).send(err); // Handle the error and send an appropriate response
+          return;
+        }
+        res.status(200).json(result); // Send the result back as a JSON response
+      }
+    );
+  } catch (error) {
+    console.error(error);
+    res.status(500).send(error); // Handle the error and send an appropriate response
+  }
+});
+
+router.get("/project/person/getidproject/:id_projects", (req, res) => {
+  const id_projects = req.params.id_projects;
+  db.query(
+    "SELECT * FROM p_person WHERE id_projects = ? ORDER BY id_history DESC LIMIT 1",
+    [id_projects],
+    (err, result) => {
+      if (err) {
+        console.log(err);
+        res.status(500).send("Error retrieving project");
+      } else {
+        res.send(result);
+      }
+    }
+  );
+});
 //dd1
 router.post("/project/create/", async (req, res) => {
   try {
@@ -373,7 +512,6 @@ router.post("/project/create/", async (req, res) => {
             }
 
             // If both insertions are successful, send a success response
-           
           }
         );
       }
@@ -466,12 +604,10 @@ router.get("/download/:id_project", async (req, res) => {
                             budget: resultp_budget[0], // Pass the budget data to the template
                           });
 
-                          const buf = doc
-                            .getZip()
-                            .generate({
-                              type: "nodebuffer",
-                              compression: "DEFLATE",
-                            });
+                          const buf = doc.getZip().generate({
+                            type: "nodebuffer",
+                            compression: "DEFLATE",
+                          });
                           fs.writeFileSync(
                             path.resolve(
                               __dirname,
@@ -1502,37 +1638,37 @@ router.put("/project/p_timestep/create/:id_project", async (req, res) => {
     return result;
   };
 
-    req.body.start_duration_table1 = addDays(req.body.start_duration_table1, 0);
-    req.body.start_duration_table2 = addDays(req.body.start_duration_table2, 0);
-    req.body.start_duration_table3 = addDays(req.body.start_duration_table3, 0);
-    req.body.start_duration_table4 = addDays(req.body.start_duration_table4, 0);
-    req.body.start_duration_table5 = addDays(req.body.start_duration_table5, 0);
-    req.body.start_duration_table6 = addDays(req.body.start_duration_table6, 0);
-    req.body.start_duration_table7 = addDays(req.body.start_duration_table7, 0);
-    req.body.start_duration_table8 = addDays(req.body.start_duration_table8, 0);
-    req.body.start_duration_table9 = addDays(req.body.start_duration_table9, 0);
-    req.body.start_duration_table10 = addDays(req.body.start_duration_table10, 0);
-    req.body.start_duration_table11 = addDays(req.body.start_duration_table11, 0);
-    req.body.start_duration_table12 = addDays(req.body.start_duration_table12, 0);
-    req.body.start_duration_table13 = addDays(req.body.start_duration_table13, 0);
-    req.body.start_duration_table14 = addDays(req.body.start_duration_table14, 0);
-    req.body.start_duration_table15 = addDays(req.body.start_duration_table15, 0);
+  req.body.start_duration_table1 = addDays(req.body.start_duration_table1, 0);
+  req.body.start_duration_table2 = addDays(req.body.start_duration_table2, 0);
+  req.body.start_duration_table3 = addDays(req.body.start_duration_table3, 0);
+  req.body.start_duration_table4 = addDays(req.body.start_duration_table4, 0);
+  req.body.start_duration_table5 = addDays(req.body.start_duration_table5, 0);
+  req.body.start_duration_table6 = addDays(req.body.start_duration_table6, 0);
+  req.body.start_duration_table7 = addDays(req.body.start_duration_table7, 0);
+  req.body.start_duration_table8 = addDays(req.body.start_duration_table8, 0);
+  req.body.start_duration_table9 = addDays(req.body.start_duration_table9, 0);
+  req.body.start_duration_table10 = addDays(req.body.start_duration_table10, 0);
+  req.body.start_duration_table11 = addDays(req.body.start_duration_table11, 0);
+  req.body.start_duration_table12 = addDays(req.body.start_duration_table12, 0);
+  req.body.start_duration_table13 = addDays(req.body.start_duration_table13, 0);
+  req.body.start_duration_table14 = addDays(req.body.start_duration_table14, 0);
+  req.body.start_duration_table15 = addDays(req.body.start_duration_table15, 0);
 
-    req.body.end_duration_table1 = addDays(req.body.end_duration_table1, 0);
-    req.body.end_duration_table2 = addDays(req.body.end_duration_table2, 0);
-    req.body.end_duration_table3 = addDays(req.body.end_duration_table3, 0);
-    req.body.end_duration_table4 = addDays(req.body.end_duration_table4, 0);
-    req.body.end_duration_table5 = addDays(req.body.end_duration_table5, 0);
-    req.body.end_duration_table6 = addDays(req.body.end_duration_table6, 0);
-    req.body.end_duration_table7 = addDays(req.body.end_duration_table7, 0);
-    req.body.end_duration_table8 = addDays(req.body.end_duration_table8, 0);
-    req.body.end_duration_table9 = addDays(req.body.end_duration_table9, 0);
-    req.body.end_duration_table10 = addDays(req.body.end_duration_table10, 0);
-    req.body.end_duration_table11 = addDays(req.body.end_duration_table11, 0);
-    req.body.end_duration_table12 = addDays(req.body.end_duration_table12, 0);
-    req.body.end_duration_table13 = addDays(req.body.end_duration_table13, 0);
-    req.body.end_duration_table14 = addDays(req.body.end_duration_table14, 0);
-    req.body.end_duration_table15 = addDays(req.body.end_duration_table15, 0);
+  req.body.end_duration_table1 = addDays(req.body.end_duration_table1, 0);
+  req.body.end_duration_table2 = addDays(req.body.end_duration_table2, 0);
+  req.body.end_duration_table3 = addDays(req.body.end_duration_table3, 0);
+  req.body.end_duration_table4 = addDays(req.body.end_duration_table4, 0);
+  req.body.end_duration_table5 = addDays(req.body.end_duration_table5, 0);
+  req.body.end_duration_table6 = addDays(req.body.end_duration_table6, 0);
+  req.body.end_duration_table7 = addDays(req.body.end_duration_table7, 0);
+  req.body.end_duration_table8 = addDays(req.body.end_duration_table8, 0);
+  req.body.end_duration_table9 = addDays(req.body.end_duration_table9, 0);
+  req.body.end_duration_table10 = addDays(req.body.end_duration_table10, 0);
+  req.body.end_duration_table11 = addDays(req.body.end_duration_table11, 0);
+  req.body.end_duration_table12 = addDays(req.body.end_duration_table12, 0);
+  req.body.end_duration_table13 = addDays(req.body.end_duration_table13, 0);
+  req.body.end_duration_table14 = addDays(req.body.end_duration_table14, 0);
+  req.body.end_duration_table15 = addDays(req.body.end_duration_table15, 0);
   try {
     const id_projects = req.params.id_project;
     const updatedData = req.body;
@@ -1559,11 +1695,9 @@ router.put("/project/p_timestep/create/:id_project", async (req, res) => {
       [id_projects, updatedData.codeclub, updatedData.yearly_countsketch]
     );
 
-    res
-      .status(200)
-      .json({
-        message: `p_timestep updated ${updatedData.codeclub} yearly${updatedData.yearly_countsketch}`,
-      });
+    res.status(200).json({
+      message: `p_timestep updated ${updatedData.codeclub} yearly${updatedData.yearly_countsketch}`,
+    });
   } catch (error) {
     console.error("Error updating p_timestep:", error);
     res.status(500).json({ error: "Database error" });
