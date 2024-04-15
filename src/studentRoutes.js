@@ -39,6 +39,67 @@ router.get("/users", (req, res) => {
   });
 });
 
+
+router.delete('/deleteProject/:id_projects', (req, res) => {
+  const id_project = req.params.id_projects;
+
+  // Delete related records from the `p_indicator` table
+  db.query("DELETE FROM p_indicator WHERE id_projects = ?", id_project, (err, result) => {
+    if (err) {
+      console.log(err);
+      res.status(500).send(err);
+      return; // Return early to prevent further execution
+    }
+
+    // Delete related records from the `p_budget` table
+    db.query("DELETE FROM p_budget WHERE id_projects = ?", id_project, (err, result) => {
+      if (err) {
+        console.log(err);
+        res.status(500).send(err);
+        return; // Return early to prevent further execution
+      }
+
+      // Delete related records from the `p_timestep` table
+      db.query("DELETE FROM p_timestep WHERE id_projects = ?", id_project, (err, result) => {
+        if (err) {
+          console.log(err);
+          res.status(500).send(err);
+          return; // Return early to prevent further execution
+        }
+
+        // Delete related records from the `p_person` table
+        db.query("DELETE FROM p_person WHERE id_projects = ?", id_project, (err, result) => {
+          if (err) {
+            console.log(err);
+            res.status(500).send(err);
+            return; // Return early to prevent further execution
+          }
+
+          // Delete related records from the `p_addfile` table
+          db.query("DELETE FROM p_addfile WHERE id_projects = ?", id_project, (err, result) => {
+            if (err) {
+              console.log(err);
+              res.status(500).send(err);
+              return; // Return early to prevent further execution
+            }
+
+            // Finally, delete the project itself from the `projects` table
+            db.query("DELETE FROM projects WHERE id = ?", id_project, (err, result) => {
+              if (err) {
+                console.log(err);
+                res.status(500).send(err);
+              } else {
+                res.send("Project and related records deleted successfully");
+              }
+            });
+          });
+        });
+      });
+    });
+  });
+});
+
+
 router.get("/project/getidproject/:id_projects", (req, res) => {
   const id_projects = req.params.id_projects;
   db.query(
