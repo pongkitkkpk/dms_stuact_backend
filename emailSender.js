@@ -1,39 +1,37 @@
 const nodemailer = require('nodemailer');
 
-// Create a transporter with your SMTP settings
-const transporter = nodemailer.createTransport({
-  service: 'Gmail',
+// Gmail configuration
+const gmailEmail = process.env.EMAIL_USER;
+const gmailPassword = process.env.EMAIL_PASSWORD;
+// Create transporter with Gmail service
+const mailTransport = nodemailer.createTransport({
+  service: 'gmail',
   auth: {
-    user: process.env.EMAIL_USER, // Your email address
-    pass: process.env.EMAIL_PASSWORD, // Your email password
+    user: gmailEmail,
+    pass: gmailPassword,
   },
 });
 
-/**
- * Function to send an email using nodemailer.
- * @param {string} recipient - The recipient's email address.
- * @param {string} subject - The subject of the email.
- * @param {string} text - The text content of the email.
- * @returns {Promise} A promise indicating whether the email was sent successfully or not.
- */
-const sendEmail = async (recipient, subject, text) => {
-  try {
-    // Create email options
-    const mailOptions = {
-      from: process.env.EMAIL_USER,
-      to: recipient,
-      subject: subject,
-      text: text,
-    };
+// Function to send email
+const sendEmail = (emails, subject, html) => {
+  // Set email options
+  const mailOptions = {
+    from: `"NAME" <${gmailEmail}>`, // Sender name and email
+    to: emails, // Comma separated list or an array of recipients' email addresses
+    subject: subject, // Email subject
+    html: html, // HTML body content
+  };
 
-    // Send the email
-    await transporter.sendMail(mailOptions);
-    
-    return { status: 'success', message: 'Email sent successfully' };
-  } catch (error) {
-    console.error('Error sending email:', error);
-    throw new Error('Failed to send email');
-  }
+  // Send email to recipients
+  return mailTransport.sendMail(mailOptions)
+    .then((info) => {
+      console.log('Email sent:', info.response);
+      return { success: true, messageId: info.messageId };
+    })
+    .catch((error) => {
+      console.error('Error sending email:', error);
+      return { success: false, error: error.message };
+    });
 };
 
 module.exports = sendEmail;

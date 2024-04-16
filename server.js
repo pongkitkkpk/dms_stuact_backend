@@ -7,9 +7,11 @@ const axios = require('axios');
 const routes = require('./routes');
 const port = process.env.PORT || 3001;
 const login = require('./src/login');
-// const userinfo = require('./src/userinfo');
 const userInfo = require('./src/getUserInfo');
 const db = require('./db');
+
+
+const nodemailer = require('nodemailer');
 
 app.use(cors());
 app.use(express.json());
@@ -22,18 +24,42 @@ app.use((req, res, next) => {
     next();
 });
 
-const sendEmail = require('./emailSender');
 
+
+const transporter = nodemailer.createTransport({
+  host: "smtp.ethereal.email",
+  port: 587,
+  secure: false, // Use `true` for port 465, `false` for all other ports
+  auth: {
+    user: "maddison53@ethereal.email",
+    pass: "jn7jnAPss4f63QBp6D",
+  },
+});
+
+// Route handler for sending email
 app.post('/sendEmail', async (req, res) => {
   try {
-    const { recipient, subject, text } = req.body;
-    const result = await sendEmail(recipient, subject, text);
-    res.json(result);
+    const { to, subject, text, html } = req.body; // Extract email details from request body
+
+    // Send email with the provided data
+    const info = await transporter.sendMail({
+      from: '"Maddison Foo Koch 👻" <maddison53@ethereal.email>', // Sender address
+      to: "s6303051613149@email.kmutnb.ac.th", // List of receivers
+      subject: subject, // Subject line
+      text: text, // Plain text body
+      html: html, // HTML body
+    });
+
+    console.log("Message sent: %s", info.messageId);
+    res.json({ success: true, messageId: info.messageId }); // Send success response back to client
   } catch (error) {
-    console.error('Error sending email:', error);
-    res.status(500).json({ status: 'error', message: 'Internal server error' });
+    console.error("Error sending email:", error);
+    res.status(500).json({ success: false, error: error.message }); // Send error response back to client
   }
 });
+
+
+
 
 app.get('/api/status', (req, res) => {
     res.json({ status: 'ok', message: 'Server is running' });
