@@ -222,6 +222,17 @@ router.get("/project/p_person", (req, res) => {
   });
 });
 
+router.get('/getallNetProject/', (req, res) => {
+  db.query("SELECT * FROM netprojectbudget ", (err, result) => {
+      if (err) {
+          console.log(err);
+          res.status(500).send(err);
+      } else {
+          res.send(result);
+      }
+  });
+});
+
 router.put("/project/edit/:id_project", (req, res) => {
   const addDays = (date, days) => {
     const result = new Date(date);

@@ -145,9 +145,9 @@ router.post('/createNetProject', (req, res) => {
     );
 });
 
-router.get('/getallNetProject/', (req, res) => {
-   
-    db.query("SELECT * FROM netprojectbudget ", (err, result) => {
+
+router.get('/getallNetProject', (req, res) => {
+    db.query("SELECT * FROM netprojectbudget", (err, result) => {
         if (err) {
             console.log(err);
             res.status(500).send(err);
@@ -156,4 +156,17 @@ router.get('/getallNetProject/', (req, res) => {
         }
     });
 });
+
+router.delete('/deleteNetProject/:id', (req, res) => { // Added a leading slash
+    const id = req.params.id;
+    db.query("DELETE FROM netprojectbudget WHERE id = ?", id, (err, result) => {
+        if (err) {
+            console.log(err);
+            res.status(500).send(err); // Handle the error and send an appropriate response
+        } else {
+            res.send(result);
+        }
+    });
+});
+
 module.exports = router;
