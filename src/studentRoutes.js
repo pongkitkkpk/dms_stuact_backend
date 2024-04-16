@@ -540,12 +540,12 @@ router.post("/project/create/", async (req, res) => {
       async (err, result) => {
         if (err) {
           console.error(err);
-          res.status(500).send(err); // Handle the error and send an appropriate response
+          res.status(500).send(err); 
           return;
         }
         const projectId = result.insertId;
 
-        // Insert only id_project into the p_person table
+
         db.query(
           "INSERT INTO p_person (id_projects,codeclub,yearly_countsketch) VALUES (?,?,?)",
           [projectId, codeclub, yearly_countsketch],
@@ -573,6 +573,17 @@ router.post("/project/create/", async (req, res) => {
             }
 
             // If both insertions are successful, send a success response
+          }
+        );
+        db.query(
+          "INSERT INTO status_project (id_projects,project_name,codeclub,project_phase,createdAt,editor_name) VALUES (?,?,?,?,?,?)",
+          [projectId,project_name, codeclub,project_phase, createdAt,id_student],
+          (err, pPersonResult) => {
+            if (err) {
+              console.error(err);
+              res.status(500).send(err); // Handle the error and send an appropriate response
+              return;
+            }
           }
         );
       }
@@ -923,6 +934,7 @@ router.post("/project/p_person/create/", (req, res) => {
             res.status(200).send("Data updated and inserted successfully");
           }
         );
+
       }
     );
   } catch (error) {
