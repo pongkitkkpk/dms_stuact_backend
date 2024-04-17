@@ -510,6 +510,7 @@ router.get("/project/person/getidproject/:id_projects", (req, res) => {
 });
 //dd1
 router.post("/project/create/", async (req, res) => {
+
   try {
     const {
       // Destructure the fields from the request body
@@ -782,23 +783,23 @@ router.get("/download/:id_project", async (req, res) => {
 //     });
 // });
 //dd2
-
 router.put("/project/create2/:id_project", async (req, res) => {
-
-
   const id_project = req.params.id_project;
   const updatedData = req.body; // Updated data sent from the client
-  console.log("project/create2")
-  console.log(id_project)
+
+  console.log("Updating project...");
+  console.log(id_project);
+
   // Update the project with the given id_project in the database
   db.query(
     "UPDATE projects SET ? WHERE id = ?",
     [updatedData, id_project],
     (err, result) => {
       if (err) {
-        console.error(err);
-        // res.status(500).send("Error updating project data"); // Handle the error and send an appropriate response
+        console.error("Error updating project:", err);
+        res.status(500).send("Error updating project data");
       } else {
+        console.log("Project updated successfully");
         res.status(200).send("Project data updated successfully");
       }
     }
@@ -1816,7 +1817,7 @@ router.put("/project/p_budget/create/:id_project", async (req, res) => {
   const id_project = req.params.id_project; // Corrected parameter name
 
   db.query(
-    "UPDATE p_budget SET ? WHERE id_project = ?",
+    "UPDATE p_budget SET ? WHERE id_projects = ?",
     [updatedData, id_project],
     (err, result) => {
       if (err) {
@@ -1825,7 +1826,7 @@ router.put("/project/p_budget/create/:id_project", async (req, res) => {
       } else {
         // Optionally, you can fetch the updated data from the database and send it back as the response
         db.query(
-          "SELECT * FROM p_budget WHERE id_project = ?",
+          "SELECT * FROM p_budget WHERE id_projects = ?",
           id_project,
           (err, updatedProject) => {
             if (err) {
