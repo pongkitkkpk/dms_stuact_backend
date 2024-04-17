@@ -784,6 +784,8 @@ router.get("/download/:id_project", async (req, res) => {
 //dd2
 
 router.put("/project/create2/:id_project", async (req, res) => {
+
+
   const id_project = req.params.id_project;
   const updatedData = req.body; // Updated data sent from the client
   console.log("project/create2")
