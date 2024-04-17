@@ -99,7 +99,22 @@ router.delete('/deleteProject/:id_projects', (req, res) => {
   });
 });
 
-
+router.get("/project/getBudgetclubName/:clubName/:yearly", (req, res) => {
+  const responsible_agency = req.params.clubName;
+  const yearly = req.params.yearly;
+  db.query(
+    "SELECT * FROM netprojectbudget WHERE responsible_agency = ? AND yearly = ?",
+    [responsible_agency, yearly],
+    (err, result) => {
+      if (err) {
+        console.log(err);
+        res.status(500).send("Error retrieving project");
+      } else {
+        res.send(result);
+      }
+    }
+  );
+});
 router.get("/project/getidproject/:id_projects", (req, res) => {
   const id_projects = req.params.id_projects;
   db.query(
@@ -115,6 +130,22 @@ router.get("/project/getidproject/:id_projects", (req, res) => {
     }
   );
 });
+router.get("/project/getnameproject/:project_name", (req, res) => {
+  const project_name = req.params.project_name;
+  db.query(
+    "SELECT * FROM projects WHERE project_name = ? ORDER BY id DESC LIMIT 1",
+    [project_name],
+    (err, result) => {
+      if (err) {
+        console.log(err);
+        res.status(500).send("Error retrieving project");
+      } else {
+        res.send(result);
+      }
+    }
+  );
+});
+
 router.get("/project/person/getidproject/:id_projects", (req, res) => {
   const id_projects = req.params.id_projects;
   db.query(
@@ -176,8 +207,7 @@ router.get("/project/indicator/getidproject/:id_projects", (req, res) => {
   );
 });
 
-router.get(
-  "/project/getcodebooksomeoutyear/:codebooksomeoutyear",
+router.get("/project/getcodebooksomeoutyear/:codebooksomeoutyear",
   (req, res) => {
     const codebooksomeoutyear = req.params.codebooksomeoutyear;
     db.query(
@@ -221,6 +251,7 @@ router.get("/project/p_person", (req, res) => {
     }
   });
 });
+
 
 router.put("/project/edit/:id_project", (req, res) => {
   const addDays = (date, days) => {
@@ -540,7 +571,7 @@ router.post("/project/create/", async (req, res) => {
       async (err, result) => {
         if (err) {
           console.error(err);
-          res.status(500).send(err); 
+          res.status(500).send(err);
           return;
         }
         const projectId = result.insertId;
@@ -577,7 +608,7 @@ router.post("/project/create/", async (req, res) => {
         );
         db.query(
           "INSERT INTO status_project (id_projects,project_name,codeclub,project_phase,createdAt,editor_name) VALUES (?,?,?,?,?,?)",
-          [projectId,project_name, codeclub,project_phase, createdAt,id_student],
+          [projectId, project_name, codeclub, project_phase, createdAt, id_student],
           (err, pPersonResult) => {
             if (err) {
               console.error(err);
@@ -753,9 +784,12 @@ router.get("/download/:id_project", async (req, res) => {
 //dd2
 
 router.put("/project/create2/:id_project", async (req, res) => {
+
+
   const id_project = req.params.id_project;
   const updatedData = req.body; // Updated data sent from the client
-
+  console.log("project/create2")
+  console.log(id_project)
   // Update the project with the given id_project in the database
   db.query(
     "UPDATE projects SET ? WHERE id = ?",
@@ -763,7 +797,7 @@ router.put("/project/create2/:id_project", async (req, res) => {
     (err, result) => {
       if (err) {
         console.error(err);
-        res.status(500).send("Error updating project data"); // Handle the error and send an appropriate response
+        // res.status(500).send("Error updating project data"); // Handle the error and send an appropriate response
       } else {
         res.status(200).send("Project data updated successfully");
       }
@@ -1779,22 +1813,34 @@ router.put("/project/p_timestep/create/:id_project", async (req, res) => {
 
 router.put("/project/p_budget/create/:id_project", async (req, res) => {
   const updatedData = req.body; // Updated data sent from the client
-
-  const id_projects = req.params.id_project;
+  const id_project = req.params.id_project; // Corrected parameter name
 
   db.query(
-    "UPDATE p_budget SET ? WHERE id_projects = ?",
-    [updatedData, id_projects], // Pass the updated value of listA1
+    "UPDATE p_budget SET ? WHERE id_project = ?",
+    [updatedData, id_project],
     (err, result) => {
       if (err) {
         console.error(err);
         res.status(500).send("Error updating project data");
       } else {
-        res.status(200).send("Project data updated successfully");
+        // Optionally, you can fetch the updated data from the database and send it back as the response
+        db.query(
+          "SELECT * FROM p_budget WHERE id_project = ?",
+          id_project,
+          (err, updatedProject) => {
+            if (err) {
+              console.error(err);
+              res.status(500).send("Error fetching updated project data");
+            } else {
+              res.status(200).json(updatedProject[0]); // Assuming there's only one updated project
+            }
+          }
+        );
       }
     }
   );
 });
+
 
 router.put("/project/p_indicator/create/:id_project", async (req, res) => {
   const updatedData = req.body; // Updated data sent from the client
@@ -1813,4 +1859,16 @@ router.put("/project/p_indicator/create/:id_project", async (req, res) => {
   );
 });
 
+// ++++++++++++++++++++++++++++++++++++++++++++
+router.get('/getNetProject/:clubName', (req, res) => {
+  const responsible_agency = req.params.clubName;
+  db.query("SELECT * FROM netprojectbudget WHERE responsible_agency = ?", responsible_agency, (err, result) => {
+    if (err) {
+      console.log(err);
+      res.status(500).send(err);
+    } else {
+      res.send(result);
+    }
+  });
+});
 module.exports = router;

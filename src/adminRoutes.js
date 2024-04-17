@@ -114,46 +114,4 @@ router.post('/user/createUser', (req, res) => {
     );
 });
 
-router.post('/createNetProject', (req, res) => {
-    const { 
-        project_name,
-        responsible_agency,
-        campus,
-        net_budget,
-        yearly,
-        
-     } = req.body;
-     console.log(req.body)
-     const createdAt = new Date();
-    db.query(
-        "INSERT INTO netprojectbudget (project_name, responsible_agency, yearly, campus, net_budget,createdAt) VALUES (?,?,?,?,?,?)",
-        [project_name,
-            responsible_agency,
-            yearly,
-            campus,
-            net_budget,
-            createdAt
-        ],
-        (err, result) => {
-            if (err) {
-                console.log(err);
-                res.status(500).send(err); // Handle the error and send an appropriate response
-            } else {
-                res.send("Values Inserted");
-            }
-        }
-    );
-});
-
-router.get('/getNetProject/:clubName', (req, res) => {
-    const responsible_agency= req.params.clubName;
-    db.query("SELECT * FROM netprojectbudget WHERE responsible_agency = ?",responsible_agency, (err, result) => {
-        if (err) {
-            console.log(err);
-            res.status(500).send(err);
-        } else {
-            res.send(result);
-        }
-    });
-});
 module.exports = router;
