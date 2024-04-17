@@ -61,6 +61,7 @@ router.delete('/user/deleteUser/:id', (req, res) => { // Added a leading slash
 router.post('/user/createUser', (req, res) => {
     const { id_student,
         name_student,
+        Phone,
         department,
         position,
         clubName,
@@ -82,9 +83,10 @@ router.post('/user/createUser', (req, res) => {
      console.log(req.body)
 
     db.query(
-        "INSERT INTO users (id_student, name_student, department, position, clubName,WorkGroup,ClubGroup, campus,email,account_type,STU_STATUS_DESC,LEVEL_DESC, yearly, codedivision, codeagency, codeworkgroup, codebooksome,codebooksomeoutyear,agencyGroupName) VALUES (?,?,?,?,?,?,?,?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+        "INSERT INTO users (id_student, name_student,Phone, department, position, clubName,WorkGroup,ClubGroup, campus,email,account_type,STU_STATUS_DESC,LEVEL_DESC, yearly, codedivision, codeagency, codeworkgroup, codebooksome,codebooksomeoutyear,agencyGroupName) VALUES (?,?,?,?,?,?,?,?,?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
         [id_student,
             name_student,
+            Phone,
             department,
             position,
             clubName,
@@ -114,4 +116,59 @@ router.post('/user/createUser', (req, res) => {
     );
 });
 
-module.exports = router;
+router.post('/createNetProject', (req, res) => {
+    const { 
+        project_name,
+        responsible_agency,
+        campus,
+        net_budget,
+        yearly,
+        
+     } = req.body;
+     console.log(req.body)
+     const createdAt = new Date();
+    db.query(
+        "INSERT INTO netprojectbudget (project_name, responsible_agency, yearly, campus, net_budget,createdAt) VALUES (?,?,?,?,?,?)",
+        [project_name,
+            responsible_agency,
+            yearly,
+            campus,
+            net_budget,
+            createdAt
+        ],
+        (err, result) => {
+            if (err) {
+                console.log(err);
+                res.status(500).send(err); // Handle the error and send an appropriate response
+            } else {
+                res.send("Values Inserted");
+            }
+        }
+    );
+});
+
+
+router.get('/getallNetProject', (req, res) => {
+    db.query("SELECT * FROM netprojectbudget", (err, result) => {
+        if (err) {
+            console.log(err);
+            res.status(500).send(err);
+        } else {
+            res.send(result);
+        }
+    });
+});
+
+router.delete('/deleteNetProject/:id', (req, res) => { // Added a leading slash
+    const id = req.params.id;
+    db.query("DELETE FROM netprojectbudget WHERE id = ?", id, (err, result) => {
+        if (err) {
+            console.log(err);
+            res.status(500).send(err); // Handle the error and send an appropriate response
+        } else {
+            res.send(result);
+        }
+    });
+});
+
+module.exports = router;    
