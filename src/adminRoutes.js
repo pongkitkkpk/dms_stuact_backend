@@ -145,9 +145,15 @@ router.post('/createNetProject', (req, res) => {
     );
 });
 
+<<<<<<< HEAD
 
 router.get('/getallNetProject', (req, res) => {
     db.query("SELECT * FROM netprojectbudget", (err, result) => {
+=======
+router.get('/getNetProject/:clubName', (req, res) => {
+    const responsible_agency= req.params.clubName;
+    db.query("SELECT * FROM netprojectbudget WHERE responsible_agency = ?",responsible_agency, (err, result) => {
+>>>>>>> parent of cf0f8b1 (get netlist)
         if (err) {
             console.log(err);
             res.status(500).send(err);

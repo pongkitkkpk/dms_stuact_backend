@@ -1859,6 +1859,7 @@ router.put("/project/p_indicator/create/:id_project", async (req, res) => {
   );
 });
 
+<<<<<<< HEAD
 // ++++++++++++++++++++++++++++++++++++++++++++
 router.get('/getNetProject/:clubName', (req, res) => {
   const responsible_agency = req.params.clubName;
@@ -1871,4 +1872,6 @@ router.get('/getNetProject/:clubName', (req, res) => {
     }
   });
 });
+=======
+>>>>>>> parent of cf0f8b1 (get netlist)
 module.exports = router;
