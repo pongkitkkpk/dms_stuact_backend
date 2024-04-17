@@ -62,6 +62,7 @@ router.post('/user/createUser', (req, res) => {
     const { id_student,
         name_student,
         Phone,
+        AgencyAdvisor,
         department,
         position,
         clubName,
@@ -83,10 +84,11 @@ router.post('/user/createUser', (req, res) => {
      console.log(req.body)
 
     db.query(
-        "INSERT INTO users (id_student, name_student,Phone, department, position, clubName,WorkGroup,ClubGroup, campus,email,account_type,STU_STATUS_DESC,LEVEL_DESC, yearly, codedivision, codeagency, codeworkgroup, codebooksome,codebooksomeoutyear,agencyGroupName) VALUES (?,?,?,?,?,?,?,?,?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+        "INSERT INTO users (id_student, name_student,Phone,AgencyAdvisor, department, position, clubName,WorkGroup,ClubGroup, campus,email,account_type,STU_STATUS_DESC,LEVEL_DESC, yearly, codedivision, codeagency, codeworkgroup, codebooksome,codebooksomeoutyear,agencyGroupName) VALUES (?,?,?,?,?,?,?,?,?,?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
         [id_student,
             name_student,
             Phone,
+            AgencyAdvisor,
             department,
             position,
             clubName,

@@ -126,44 +126,83 @@ app.get("/getState/:id_projects", (req, res) => {
     }
   );
 });
-app.post("/updateState/:id_projects", async (req, res) => {
+
+app.put("/firstupdateState/:id_projects", async (req, res) => {
   const id_projects = req.params.id_projects;
-  const { project_name, codeclub, project_phase, editor_name } = req.body; // Extract updated data from the request body
+  const { project_name,codeclub,project_phase, CountYear } = req.body;
   const updated_at = new Date();
-  // Create an object to hold the updated data
-  try {
-    const {
-      project_name,
-      codeclub,
-      project_phase,
-      updated_at,
-      editor_name // Assuming last_time_edit corresponds to updated_at
-    } = req.body;
 
-    // Update the project with the given id_project in the database
-    db.query(
-      "INSERT INTO status_project (id_projects,project_name,codeclub,project_phase,editor_name) VALUES (?,?,?,?,?)",
-          [id_projects, project_name, codeclub, project_phase, editor_name],
-      // "UPDATE status_project SET ? WHERE id_projects = ?",
-      [updatedData, id_projects],
-      (err, result) => {
-        if (err) {
-          console.error(err);
+  const updatedData = {
+    project_name,
+    codeclub,
+    project_phase,
+    updated_at,
+  };
+  const yearly_count = CountYear;
+  
+  const updateProjectData = {
+    project_phase,
+    yearly_count,
+    updated_at,
+  }
 
-          res.status(500).send("Error updating project data"); // Handle the error and send an appropriate response
-        } else {
-
-          res.status(200).send("Project data updated successfully");
-        }
+  // Update the project with the given id_project in the database
+  db.query(
+    "UPDATE status_project SET ? WHERE id_projects = ?",
+    [updatedData, id_projects],
+    (err, result) => {
+      if (err) {
+        console.error(err);
       }
-    );
+    }
+  );
+  db.query(
+    "UPDATE projects SET ? WHERE id = ?",
+    [updateProjectData, id_projects],
+    (err, result) => {
+      if (err) {
+        console.error(err);
+      }
+    }
+  );
 
-  }
-  catch (error) {
-    console.error(error);
-    res.status(500).send(error); // Handle the error and send an appropriate response
+});
+app.put("/updateState/:id_projects", async (req, res) => {
+  const id_projects = req.params.id_projects;
+  const { project_name, codeclub, project_phase, editor_name } = req.body;
+  const updated_at = new Date();
+
+  const updatedData = {
+    project_name,
+    codeclub,
+    project_phase,
+    updated_at,
+    editor_name
+  };
+  const updateProjectData = {
+    project_phase,
+    updated_at,
   }
 
+  // Update the project with the given id_project in the database
+  db.query(
+    "UPDATE status_project SET ? WHERE id_projects = ?",
+    [updatedData, id_projects],
+    (err, result) => {
+      if (err) {
+        console.error(err);
+      }
+    }
+  );
+  db.query(
+    "UPDATE projects SET ? WHERE id = ?",
+    [updateProjectData, id_projects],
+    (err, result) => {
+      if (err) {
+        console.error(err);
+      }
+    }
+  );
 
 });
 

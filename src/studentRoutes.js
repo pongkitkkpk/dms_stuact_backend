@@ -115,6 +115,22 @@ router.get("/project/getBudgetclubName/:clubName/:yearly", (req, res) => {
     }
   );
 });
+router.get("/project/getProjectYearly/:codeclub/", (req, res) => {
+  const codeclub = req.params.codeclub;
+  // const yearly = req.params.yearly;
+  db.query(
+    "SELECT * FROM projects WHERE codeclub = ? ",
+    [codeclub ],
+    (err, result) => {
+      if (err) {
+        console.log(err);
+        res.status(500).send("Error retrieving project");
+      } else {
+        res.send(result);
+      }
+    }
+  );
+});
 router.get("/project/getidproject/:id_projects", (req, res) => {
   const id_projects = req.params.id_projects;
   db.query(
@@ -526,6 +542,8 @@ router.post("/project/create/", async (req, res) => {
       responsible_agency,
       academic_year,
       advisor_name,
+      PhoneAdvisor,
+      AgencyAdvisor,
       person1_name,
       person1_contact,
       person2_name,
@@ -541,7 +559,7 @@ router.post("/project/create/", async (req, res) => {
     const createdAt = new Date();
     // Insert data into the database
     db.query(
-      "INSERT INTO projects (id_student,project_name, project_number, codeclub,codebooksomeoutyear,project_phase, yearly,yearly_count, yearly_countsketch, responsible_agency,academic_year, advisor_name, person1_name, person1_contact, person2_name,person2_contact, person3_name, person3_contact,is_1side,is_2side,is_3side,is_4side,is_5side, created_at) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+      "INSERT INTO projects (id_student,project_name, project_number, codeclub,codebooksomeoutyear,project_phase, yearly,yearly_count, yearly_countsketch, responsible_agency,academic_year, advisor_name,PhoneAdvisor,AgencyAdvisor, person1_name, person1_contact, person2_name,person2_contact, person3_name, person3_contact,is_1side,is_2side,is_3side,is_4side,is_5side, created_at) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
       [
         id_student,
         project_name,
@@ -555,6 +573,8 @@ router.post("/project/create/", async (req, res) => {
         responsible_agency,
         academic_year,
         advisor_name,
+        PhoneAdvisor,
+        AgencyAdvisor,
         person1_name,
         person1_contact,
         person2_name,
