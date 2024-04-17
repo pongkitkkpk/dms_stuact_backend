@@ -145,9 +145,9 @@ router.post('/createNetProject', (req, res) => {
     );
 });
 
-router.get('/getallNetProject/', (req, res) => {
-   
-    db.query("SELECT * FROM netprojectbudget ", (err, result) => {
+router.get('/getNetProject/:clubName', (req, res) => {
+    const responsible_agency= req.params.clubName;
+    db.query("SELECT * FROM netprojectbudget WHERE responsible_agency = ?",responsible_agency, (err, result) => {
         if (err) {
             console.log(err);
             res.status(500).send(err);
