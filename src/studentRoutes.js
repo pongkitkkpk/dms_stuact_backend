@@ -115,12 +115,12 @@ router.get("/project/getBudgetclubName/:clubName/:yearly", (req, res) => {
     }
   );
 });
-router.get("/project/getProjectYearly/:codeclub/", (req, res) => {
+router.get("/project/getProjectYearly/:codeclub/:yearly", (req, res) => {
   const codeclub = req.params.codeclub;
-  // const yearly = req.params.yearly;
+  const yearly = req.params.yearly;
   db.query(
-    "SELECT * FROM projects WHERE codeclub = ? ",
-    [codeclub ],
+    "SELECT * FROM projects WHERE codeclub = ?  AND yearly = ?",
+    [codeclub, yearly],
     (err, result) => {
       if (err) {
         console.log(err);
@@ -539,7 +539,9 @@ router.post("/project/create/", async (req, res) => {
       yearly,
       yearly_count,
       yearly_countsketch,
+      AgnecyGroupName,
       responsible_agency,
+      net_budget,
       academic_year,
       advisor_name,
       PhoneAdvisor,
@@ -559,7 +561,7 @@ router.post("/project/create/", async (req, res) => {
     const createdAt = new Date();
     // Insert data into the database
     db.query(
-      "INSERT INTO projects (id_student,project_name, project_number, codeclub,codebooksomeoutyear,project_phase, yearly,yearly_count, yearly_countsketch, responsible_agency,academic_year, advisor_name,PhoneAdvisor,AgencyAdvisor, person1_name, person1_contact, person2_name,person2_contact, person3_name, person3_contact,is_1side,is_2side,is_3side,is_4side,is_5side, created_at) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+      "INSERT INTO projects (id_student,project_name, project_number, codeclub,codebooksomeoutyear,project_phase, yearly,yearly_count, yearly_countsketch,AgnecyGroupName, responsible_agency,net_budget,academic_year, advisor_name,PhoneAdvisor,AgencyAdvisor, person1_name, person1_contact, person2_name,person2_contact, person3_name, person3_contact,is_1side,is_2side,is_3side,is_4side,is_5side, created_at) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
       [
         id_student,
         project_name,
@@ -570,7 +572,9 @@ router.post("/project/create/", async (req, res) => {
         yearly,
         yearly_count,
         yearly_countsketch,
+        AgnecyGroupName,
         responsible_agency,
+        net_budget,
         academic_year,
         advisor_name,
         PhoneAdvisor,
@@ -1835,7 +1839,7 @@ router.put("/project/p_timestep/create/:id_project", async (req, res) => {
 router.put("/project/p_budget/create/:id_project", async (req, res) => {
   const updatedData = req.body; // Updated data sent from the client
   const id_project = req.params.id_project; // Corrected parameter name
-
+  const allow_budget = req.body.listSAll
   db.query(
     "UPDATE p_budget SET ? WHERE id_projects = ?",
     [updatedData, id_project],
@@ -1854,6 +1858,16 @@ router.put("/project/p_budget/create/:id_project", async (req, res) => {
               res.status(500).send("Error fetching updated project data");
             } else {
               res.status(200).json(updatedProject[0]); // Assuming there's only one updated project
+            }
+          }
+        );
+        db.query(
+          "UPDATE projects SET allow_budget= ? WHERE id = ?",
+          [allow_budget, id_project],
+          (err, result) => {
+            if (err) {
+              console.log(err);
+              res.status(500).send("Error updating project");
             }
           }
         );
@@ -1891,5 +1905,64 @@ router.get('/getNetProject/:clubName', (req, res) => {
       res.send(result);
     }
   });
+});
+
+router.put("/firstupdateState/:id_projects", async (req, res) => {
+  const id_projects = req.params.id_projects;
+  const { project_name, codeclub, project_phase, CountYear, project_number } = req.body;
+  const updated_at = new Date();
+  console.log(req.body)
+
+  const updatedData = {
+    project_name,
+    codeclub,
+    project_phase,
+    updated_at,
+  };
+  const yearly_count = CountYear;
+
+  const updateProjectData = {
+    project_number,
+    project_phase,
+    yearly_count,
+    updated_at,
+  }
+
+  // Update the project with the given id_project in the database
+  db.query(
+    "UPDATE status_project SET ? WHERE id_projects = ?",
+    [updatedData, id_projects],
+    (err, result) => {
+      if (err) {
+        console.error(err);
+      }
+    }
+  );
+  db.query(
+    "UPDATE projects SET ? WHERE id = ?",
+    [updateProjectData, id_projects],
+    (err, result) => {
+      if (err) {
+        console.error(err);
+      }
+    }
+  );
+
+});
+
+router.get("/project/budget/getidproject/:id_projects", (req, res) => {
+  const id_projects = req.params.id_projects;
+  db.query(
+    "SELECT * FROM p_budget WHERE id_projects = ? ORDER BY id_projects DESC LIMIT 1",
+    [id_projects],
+    (err, result) => {
+      if (err) {
+        console.log(err);
+        res.status(500).send("Error retrieving project");
+      } else {
+        res.send(result);
+      }
+    }
+  );
 });
 module.exports = router;

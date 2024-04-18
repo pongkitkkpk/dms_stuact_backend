@@ -13,7 +13,7 @@ router.get('/allusers', (req, res) => {
     });
 });
 router.get('/allprojects', (req, res) => {
-    db.query("SELECT * FROM projects", (err, result) => {
+    db.query("SELECT * FROM projects WHERE project_phase != 'ร่างคำขออนุมัติ'", (err, result) => {
         if (err) {
             console.log(err);
             res.status(500).send(err);

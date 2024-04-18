@@ -131,6 +131,7 @@ app.put("/firstupdateState/:id_projects", async (req, res) => {
   const id_projects = req.params.id_projects;
   const { project_name,codeclub,project_phase, CountYear } = req.body;
   const updated_at = new Date();
+  console.log(req.body)
 
   const updatedData = {
     project_name,
@@ -167,6 +168,7 @@ app.put("/firstupdateState/:id_projects", async (req, res) => {
   );
 
 });
+
 app.put("/updateState/:id_projects", async (req, res) => {
   const id_projects = req.params.id_projects;
   const { project_name, codeclub, project_phase, editor_name } = req.body;
