@@ -39,6 +39,22 @@ router.get("/users", (req, res) => {
   });
 });
 
+router.get('/studentallprojects/:responsible_agency/:yearly', (req, res) => {
+  const responsible_agency = req.params.responsible_agency;
+  const yearly = req.params.yearly;
+  db.query(
+      "SELECT * FROM projects WHERE responsible_agency = ? AND project_phase != 'ร่างคำขออนุมัติ' AND project_phase != 'ดำเนินการขออนุมัติ' AND project_phase != 'โครงการอนุมัติ' AND yearly = ?",
+      [responsible_agency,yearly],
+      (err, result) => {
+        if (err) {
+          console.log(err);
+          res.status(500).send("Error retrieving project");
+        } else {
+          res.send(result);
+        }
+      }
+    );
+});
 
 router.delete('/deleteProject/:id_projects', (req, res) => {
   const id_project = req.params.id_projects;
@@ -131,6 +147,23 @@ router.get("/project/getProjectYearly/:codeclub/:yearly", (req, res) => {
     }
   );
 });
+router.get("/project/getNameProjectYearly/:project_name/:codeclub/:yearly", (req, res) => {
+  const project_name = req.params.project_name;
+  const codeclub = req.params.codeclub;
+  const yearly = req.params.yearly;
+  db.query(
+    "SELECT * FROM projects WHERE  project_name=? AND codeclub = ? AND yearly = ? ",
+    [project_name,codeclub, yearly],
+    (err, result) => {
+      if (err) {
+        console.log(err);
+        res.status(500).send("Error retrieving project");
+      } else {
+        res.send(result);
+      }
+    }
+  );
+});
 router.get("/project/getidproject/:id_projects", (req, res) => {
   const id_projects = req.params.id_projects;
   db.query(
@@ -161,6 +194,7 @@ router.get("/project/getnameproject/:project_name", (req, res) => {
     }
   );
 });
+
 
 router.get("/project/person/getidproject/:id_projects", (req, res) => {
   const id_projects = req.params.id_projects;
@@ -1911,7 +1945,6 @@ router.put("/firstupdateState/:id_projects", async (req, res) => {
   const id_projects = req.params.id_projects;
   const { project_name, codeclub, project_phase, CountYear, project_number } = req.body;
   const updated_at = new Date();
-  console.log(req.body)
 
   const updatedData = {
     project_name,

@@ -23,6 +23,17 @@ router.get('/allprojects', (req, res) => {
     });
 });
 
+router.get('/allprojectshavenumber', (req, res) => {
+    db.query("SELECT * FROM projects WHERE project_phase != 'ร่างคำขออนุมัติ' AND project_phase != 'ดำเนินการขออนุมัติ' AND project_phase != 'โครงการอนุมัติ'", (err, result) => {
+        if (err) {
+            console.log(err);
+            res.status(500).send(err);
+        } else {
+            res.send(result);
+        }
+    });
+});
+
 router.get('/studentusers', (req, res) => {
     db.query("SELECT * FROM users WHERE position IN ('S', 'SH', 'Ad')", (err, result) => {
         if (err) {
@@ -160,6 +171,24 @@ router.get('/getallNetProject', (req, res) => {
         }
     });
 });
+
+router.put("/updateusebudget/:project_name", (req, res) => {
+    
+    const project_name = req.params.project_name;
+    const {allow_budget} = req.body;
+    db.query(
+      "UPDATE netprojectbudget SET allow_budget= ? WHERE project_name = ?",
+      [allow_budget, project_name],
+      (err, result) => {
+        if (err) {
+          console.error(err);
+          res.status(500).send("Error updating project data"); // Handle the error and send an appropriate response
+        } else {
+          console.log("Project data updated successfully");
+        }
+      }
+    );
+  });
 
 router.delete('/deleteNetProject/:id', (req, res) => { // Added a leading slash
     const id = req.params.id;
