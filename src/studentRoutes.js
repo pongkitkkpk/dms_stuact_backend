@@ -114,7 +114,21 @@ router.delete('/deleteProject/:id_projects', (req, res) => {
     });
   });
 });
-
+router.get("/project/getBudgetProjectName/:project_name", (req, res) => {
+  const project_name = req.params.project_name;
+  db.query(
+    "SELECT * FROM netprojectbudget WHERE project_name = ? ",
+    [project_name],
+    (err, result) => {
+      if (err) {
+        console.log(err);
+        res.status(500).send("Error retrieving project");
+      } else {
+        res.send(result);
+      }
+    }
+  );
+});
 router.get("/project/getBudgetclubName/:clubName/:yearly", (req, res) => {
   const responsible_agency = req.params.clubName;
   const yearly = req.params.yearly;
