@@ -220,6 +220,34 @@ app.put("/updateState/:id_projects", async (req, res) => {
 
 });
 
+app.post("/insertlogState/:id_projects", async (req, res) => {
+  const id_projects = req.params.id_projects;
+  const { project_name, codeclub, project_phase, editor_name } = req.body;
+  const updated_at = new Date();
+
+  const updatedData = {
+    id_projects,
+    project_name,
+    codeclub,
+    project_phase,
+    updated_at,
+    editor_name
+  };
+
+  // Update the project with the given id_project in the database
+  db.query(
+    "INSERT INTO logstatus_project SET ?",
+    updatedData,
+    (err, result) => {
+      if (err) {
+        console.error(err);
+      }
+      console.log("ASDFAEEEEE")
+    }
+  );
+
+});
+
 
 
 const PORT = process.env.PORT || 3001;

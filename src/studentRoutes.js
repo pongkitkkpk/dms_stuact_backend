@@ -557,6 +557,28 @@ router.get("/project/getedithistory/:id_project", async (req, res) => {
   }
 });
 
+router.get("/project/getlogstatus/:id_project", async (req, res) => {
+  try {
+    const id_project = req.params.id_project;
+    // Check if the codeclub already exists in the historyeditproject table
+    db.query(
+      "SELECT * FROM logstatus_project WHERE id_projects = ? ",
+      [id_project],
+      async (err, result) => {
+        if (err) {
+          console.error(err);
+          res.status(500).send(err); // Handle the error and send an appropriate response
+          return;
+        }
+        res.status(200).json(result); // Send the result back as a JSON response
+      }
+    );
+  } catch (error) {
+    console.error(error);
+    res.status(500).send(error); // Handle the error and send an appropriate response
+  }
+});
+
 router.get("/project/person/getidproject/:id_projects", (req, res) => {
   const id_projects = req.params.id_projects;
   db.query(
