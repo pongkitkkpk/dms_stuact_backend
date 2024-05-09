@@ -242,13 +242,56 @@ app.post("/insertlogState/:id_projects", async (req, res) => {
       if (err) {
         console.error(err);
       }
-      console.log("ASDFAEEEEE")
     }
   );
 
 });
 
+app.post("/studentgetmoney/:id_projects", async (req, res) => {
+  const id_projects = req.params.id_projects;
+  const { project_name,namestudent_receive,numberstudent_receive,namestuact_receive,remainingBudget} = req.body;
+  const updated_at = new Date();
 
+  const updatedData = {
+    id_projects,
+    project_name,
+    namestudent_receive,
+    numberstudent_receive,
+    namestuact_receive,
+    remainingBudget,
+    updated_at,
+  };
+
+  // Update the project with the given id_project in the database
+  db.query(
+    "INSERT INTO logstudentgetmoney SET ?",
+    updatedData,
+    (err, result) => {
+      if (err) {
+        console.error(err);
+      }
+    }
+  );
+
+});
+
+app.get("/gethistorystudentgetmoney/:id_projects", async (req, res) => {
+  const id_projects = req.params.id_projects;
+
+  db.query(
+    "SELECT * FROM logstudentgetmoney WHERE id_projects = ?",
+    [id_projects],
+    (err, result) => {
+      if (err) {
+        console.log(err);
+        res.status(500).send("Error retrieving project");
+      } else {
+        res.send(result);
+      }
+    }
+  );
+
+});
 
 const PORT = process.env.PORT || 3001;
 // const PORT = process.env.PORT || 5000;
