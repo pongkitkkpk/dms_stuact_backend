@@ -43,17 +43,17 @@ router.get('/studentallprojects/:responsible_agency/:yearly', (req, res) => {
   const responsible_agency = req.params.responsible_agency;
   const yearly = req.params.yearly;
   db.query(
-      "SELECT * FROM projects WHERE responsible_agency = ? AND project_phase != 'ร่างคำขออนุมัติ' AND project_phase != 'ดำเนินการขออนุมัติ' AND project_phase != 'โครงการอนุมัติ' AND yearly = ?",
-      [responsible_agency,yearly],
-      (err, result) => {
-        if (err) {
-          console.log(err);
-          res.status(500).send("Error retrieving project");
-        } else {
-          res.send(result);
-        }
+    "SELECT * FROM projects WHERE responsible_agency = ? AND project_phase != 'ร่างคำขออนุมัติ' AND project_phase != 'ดำเนินการขออนุมัติ' AND project_phase != 'โครงการอนุมัติ' AND yearly = ?",
+    [responsible_agency, yearly],
+    (err, result) => {
+      if (err) {
+        console.log(err);
+        res.status(500).send("Error retrieving project");
+      } else {
+        res.send(result);
       }
-    );
+    }
+  );
 });
 
 router.delete('/deleteProject/:id_projects', (req, res) => {
@@ -167,7 +167,7 @@ router.get("/project/getNameProjectYearly/:project_name/:codeclub/:yearly", (req
   const yearly = req.params.yearly;
   db.query(
     "SELECT * FROM projects WHERE  project_name=? AND codeclub = ? AND yearly = ? ",
-    [project_name,codeclub, yearly],
+    [project_name, codeclub, yearly],
     (err, result) => {
       if (err) {
         console.log(err);
@@ -806,18 +806,20 @@ router.get("/download/:id_project", async (req, res) => {
                             type: "nodebuffer",
                             compression: "DEFLATE",
                           });
-                          fs.writeFileSync(
-                            path.resolve(
-                              __dirname,
-                              "e-docx",
-                              `e-doc-${result[0].project_name}.docx`
-                            ),
-                            buf
-                          );
-
-                          res.send(
-                            "Project created and document generated successfully!"
-                          );
+                          const filename = `e-doc-${result[0].project_name}.docx`;
+                          const filePath = path.resolve(__dirname, "e-docx", filename);
+                          fs.writeFileSync(filePath, buf);
+     
+                          res.download(filePath, filename, (err) => {
+                            if (err) {
+                              console.error("Error sending file to client:", err);
+                              res.status(500).send("Error sending file to client");
+                            } else {
+                              console.log("File sent successfully");
+                              // Optionally, you can delete the file after it's sent
+                              fs.unlinkSync(filePath);
+                            }
+                          });
                         } catch (error) {
                           console.error("Error generating document:", error);
                           res
