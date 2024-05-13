@@ -22,9 +22,33 @@ router.get('/allprojects', (req, res) => {
         }
     });
 });
+router.get('/allprojectshavenumber/', (req, res) => {
+    db.query("SELECT * FROM projects WHERE project_phase != 'ร่างคำขออนุมัติ' AND project_phase != 'ดำเนินการขออนุมัติ' AND project_phase != 'โครงการอนุมัติ' ", (err, result) => {
+        if (err) {
+            console.log(err);
+            res.status(500).send(err);
+        } else {
+            res.send(result);
+        }
+    });
+});
 
-router.get('/allprojectshavenumber', (req, res) => {
-    db.query("SELECT * FROM projects WHERE project_phase != 'ร่างคำขออนุมัติ' AND project_phase != 'ดำเนินการขออนุมัติ' AND project_phase != 'โครงการอนุมัติ'", (err, result) => {
+router.get('/yearlyprojectshavenumber/:yearly', (req, res) => {
+    const yearly = req.params.yearly;
+    db.query("SELECT * FROM projects WHERE project_phase != 'ร่างคำขออนุมัติ' AND project_phase != 'ดำเนินการขออนุมัติ' AND project_phase != 'โครงการอนุมัติ' AND yearly = ?",yearly, (err, result) => {
+        if (err) {
+            console.log(err);
+            res.status(500).send(err);
+        } else {
+            res.send(result);
+        }
+    });
+});
+
+router.get('/getsomeprojectshavenumber/:AgnecyGroupName/:yearly', (req, res) => {
+    const AgnecyGroupName = req.params.AgnecyGroupName;
+    const yearly = req.params.yearly;
+    db.query("SELECT * FROM projects WHERE project_phase != 'ร่างคำขออนุมัติ' AND project_phase != 'ดำเนินการขออนุมัติ' AND project_phase != 'โครงการอนุมัติ' AND AgnecyGroupName = ? AND yearly = ?", [AgnecyGroupName, yearly], (err, result) => {
         if (err) {
             console.log(err);
             res.status(500).send(err);
@@ -132,6 +156,7 @@ router.post('/user/createUser', (req, res) => {
 router.post('/createNetProject', (req, res) => {
     const { 
         project_name,
+        AgnecyGroupName,
         responsible_agency,
         campus,
         net_budget,
@@ -141,8 +166,9 @@ router.post('/createNetProject', (req, res) => {
      console.log(req.body)
      const createdAt = new Date();
     db.query(
-        "INSERT INTO netprojectbudget (project_name, responsible_agency, yearly, campus, net_budget,createdAt) VALUES (?,?,?,?,?,?)",
+        "INSERT INTO netprojectbudget (project_name,AgnecyGroupName, responsible_agency, yearly, campus, net_budget,createdAt) VALUES (?,?,?,?,?,?,?)",
         [project_name,
+            AgnecyGroupName,
             responsible_agency,
             yearly,
             campus,
@@ -171,6 +197,31 @@ router.get('/getallNetProject', (req, res) => {
         }
     });
 });
+router.get('/getyearlyNetProject/:yearly', (req, res) => {
+    const yearly = req.params.yearly;
+    db.query("SELECT * FROM netprojectbudget WHERE yearly = ?",yearly, (err, result) => {
+        if (err) {
+            console.log(err);
+            res.status(500).send(err);
+        } else {
+            res.send(result);
+        }
+    });
+});
+
+router.get('/getSelectGroupNetProject/:AgnecyGroupName/:yearly', (req, res) => {
+    const AgnecyGroupName = req.params.AgnecyGroupName;
+    const yearly = req.params.yearly;
+    db.query("SELECT * FROM netprojectbudget  WHERE AgnecyGroupName = ? AND yearly = ?", [AgnecyGroupName, yearly], (err, result) => {
+        if (err) {
+            console.log(err);
+            res.status(500).send(err);
+        } else {
+            res.send(result);
+        }
+    });
+});
+
 
 router.put("/updateusebudget/:project_name", (req, res) => {
     

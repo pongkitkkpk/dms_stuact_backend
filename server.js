@@ -141,7 +141,7 @@ app.get("/getState/:id_projects", (req, res) => {
 
 app.put("/firstupdateState/:id_projects", async (req, res) => {
   const id_projects = req.params.id_projects;
-  const { project_name,codeclub,project_phase, CountYear } = req.body;
+  const { project_name, codeclub, project_phase, CountYear } = req.body;
   const updated_at = new Date();
   console.log(req.body)
 
@@ -152,7 +152,7 @@ app.put("/firstupdateState/:id_projects", async (req, res) => {
     updated_at,
   };
   const yearly_count = CountYear;
-  
+
   const updateProjectData = {
     project_phase,
     yearly_count,
@@ -249,19 +249,20 @@ app.post("/insertlogState/:id_projects", async (req, res) => {
 
 app.post("/studentgetmoney/:id_projects", async (req, res) => {
   const id_projects = req.params.id_projects;
-  const { project_name,namestudent_receive,numberstudent_receive,namestuact_receive,remainingBudget} = req.body;
+  const { project_name, yearly, namestudent_receive, numberstudent_receive, namestuact_receive, remainingBudget } = req.body;
   const updated_at = new Date();
 
   const updatedData = {
     id_projects,
     project_name,
+    yearly,
     namestudent_receive,
     numberstudent_receive,
     namestuact_receive,
     remainingBudget,
     updated_at,
   };
-
+  // const use_budget = numberstudent_receive+(old in database )
   // Update the project with the given id_project in the database
   db.query(
     "INSERT INTO logstudentgetmoney SET ?",
@@ -272,8 +273,60 @@ app.post("/studentgetmoney/:id_projects", async (req, res) => {
       }
     }
   );
-
 });
+
+app.post("/updateprojectusebudget/:id_projects", async (req, res) => {
+  const id_projects = req.params.id_projects;
+  const { project_name, yearly, namestudent_receive, numberstudent_receive, namestuact_receive, remainingBudget } = req.body;
+  const updated_at = new Date();
+
+  try {
+    // Query logstudentgetmoney table to get the sum of numberstudent_receive
+    db.query(
+      "SELECT SUM(numberstudent_receive) AS totalReceived FROM logstudentgetmoney WHERE project_name = ? AND yearly = ?",
+      [project_name, yearly],
+      async (err, result) => {
+        if (err) {
+          console.error(err);
+          return res.status(500).send("Error querying logstudentgetmoney table");
+        }
+        
+        const allow_budget = parseInt(result[0].totalReceived) || 0; // Ensure totalReceived is an integer
+
+        console.log(allow_budget)
+        // Update allow_budget in the projects table
+        db.query(
+          "UPDATE projects SET allow_budget = ? WHERE id = ?",
+          [allow_budget, id_projects],
+          (err, result) => {
+            if (err) {
+              console.error(err);
+              return res.status(500).send("Error updating allow_budget in projects table");
+            }
+            return res.status(200).send("allow_budget updated successfully");
+          }
+        );
+        db.query(
+          "UPDATE netprojectbudget SET allow_budget = ? WHERE project_name = ? AND yearly=?",
+          [allow_budget, project_name,yearly],
+          (err, result) => {
+            if (err) {
+              console.error(err);
+              return res.status(500).send("Error updating allow_budget in projects table");
+            }
+            return res.status(200).send("allow_budget updated successfully");
+          }
+        );
+      }
+    );
+  } catch (error) {
+    console.error(error);
+    return res.status(500).send("Error performing database operations");
+  }
+});
+
+
+
 
 app.get("/gethistorystudentgetmoney/:id_projects", async (req, res) => {
   const id_projects = req.params.id_projects;

@@ -114,11 +114,12 @@ router.delete('/deleteProject/:id_projects', (req, res) => {
     });
   });
 });
-router.get("/project/getBudgetProjectName/:project_name", (req, res) => {
+router.get("/project/getBudgetProjectName/:project_name/:yearly", (req, res) => {
   const project_name = req.params.project_name;
+  const yearly = req.params.yearly;
   db.query(
-    "SELECT * FROM netprojectbudget WHERE project_name = ? ",
-    [project_name],
+    "SELECT * FROM netprojectbudget WHERE project_name = ? AND yearly=?",
+    [project_name,yearly],
     (err, result) => {
       if (err) {
         console.log(err);
@@ -129,6 +130,39 @@ router.get("/project/getBudgetProjectName/:project_name", (req, res) => {
     }
   );
 });
+// router.get("/project/getBudgetProjectName/:project_name", (req, res) => {
+//   const project_name = req.params.project_name;
+//   db.query(
+//     "SELECT * FROM netprojectbudget WHERE project_name = ? ",
+//     [project_name],
+//     (err, result) => {
+//       if (err) {
+//         console.log(err);
+//         res.status(500).send("Error retrieving project");
+//       } else {
+//         res.send(result);
+//       }
+//     }
+//   );
+// });
+// router.get("/project/getBudgetclubName/:project_name/:clubName/:yearly", (req, res) => {
+//   const project_name = req.params.project_name;
+//   const responsible_agency = req.params.clubName;
+//   const yearly = req.params.yearly;
+//   db.query(
+//     "SELECT * FROM netprojectbudget WHERE project_name=? AND responsible_agency = ? AND yearly = ?",
+//     [project_name,responsible_agency, yearly],
+//     (err, result) => {
+//       if (err) {
+//         console.log(err);
+//         res.status(500).send("Error retrieving project");
+//       } else {
+//         res.send(result);
+//         console.log(result)
+//       }
+//     }
+//   );
+// });
 router.get("/project/getBudgetclubName/:clubName/:yearly", (req, res) => {
   const responsible_agency = req.params.clubName;
   const yearly = req.params.yearly;
@@ -141,6 +175,7 @@ router.get("/project/getBudgetclubName/:clubName/:yearly", (req, res) => {
         res.status(500).send("Error retrieving project");
       } else {
         res.send(result);
+        console.log(result)
       }
     }
   );
@@ -1934,7 +1969,7 @@ router.put("/project/p_budget/create/:id_project", async (req, res) => {
           }
         );
         db.query(
-          "UPDATE projects SET allow_budget= ? WHERE id = ?",
+          "UPDATE projects SET use_budget= ? WHERE id = ?",
           [allow_budget, id_project],
           (err, result) => {
             if (err) {
