@@ -119,7 +119,7 @@ router.get("/project/getBudgetProjectName/:project_name/:yearly", (req, res) => 
   const yearly = req.params.yearly;
   db.query(
     "SELECT * FROM netprojectbudget WHERE project_name = ? AND yearly=?",
-    [project_name,yearly],
+    [project_name, yearly],
     (err, result) => {
       if (err) {
         console.log(err);
@@ -294,6 +294,22 @@ router.get("/project/indicator/getidproject/:id_projects", (req, res) => {
   const id_projects = req.params.id_projects;
   db.query(
     "SELECT * FROM p_indicator WHERE id_projects = ? ORDER BY id DESC LIMIT 1",
+    [id_projects],
+    (err, result) => {
+      if (err) {
+        console.log(err);
+        res.status(500).send("Error retrieving project");
+      } else {
+        res.send(result);
+      }
+    }
+  );
+});
+
+router.get("/project/finalperson/getidproject/:id_projects", (req, res) => {
+  const id_projects = req.params.id_projects;
+  db.query(
+    "SELECT * FROM p_finalperson WHERE id_projects = ? ORDER BY id DESC LIMIT 1",
     [id_projects],
     (err, result) => {
       if (err) {
@@ -514,6 +530,40 @@ router.put("/project/indicator/edit/:id_project", (req, res) => {
   );
 });
 
+router.put("/project/finalperson/edit/:id_project", (req, res) => {
+  const id_project = req.params.id_project;
+  const updatedData = req.body; // Updated data sent from the client
+  // updatedData.updated_at = new Date();
+  // Update the project with the given id_project in the database
+  db.query(
+    "UPDATE p_finalperson SET ? WHERE id_projects = ?",
+    [updatedData, id_project],
+    (err, result) => {
+      if (err) {
+        console.error(err);
+        res.status(500).send("Error updating project data"); // Handle the error and send an appropriate response
+      } else {
+        res.status(200).send("Project data updated successfully");
+      }
+    }
+  );
+});
+router.put("/project/finalindicator/edit/:id_project", (req, res) => {
+  const id_project = req.params.id_project;
+  const updatedData = req.body;
+  db.query(
+    "UPDATE p_indicator SET ? WHERE id_projects = ?",
+    [updatedData, id_project],
+    (err, result) => {
+      if (err) {
+        console.error(err);
+        res.status(500).send("Error updating project data"); // Handle the error and send an appropriate response
+      } else {
+        res.status(200).send("Project data updated successfully");
+      }
+    }
+  );
+});
 router.post("/project/edit/history/:id_project", async (req, res) => {
   try {
     const id_project = req.params.id_project;
@@ -844,7 +894,7 @@ router.get("/download/:id_project", async (req, res) => {
                           const filename = `e-doc-${result[0].project_name}.docx`;
                           const filePath = path.resolve(__dirname, "e-docx", filename);
                           fs.writeFileSync(filePath, buf);
-     
+
                           res.download(filePath, filename, (err) => {
                             if (err) {
                               console.error("Error sending file to client:", err);
@@ -1081,7 +1131,7 @@ router.post("/project/p_person/create/", (req, res) => {
       async (err, result) => {
         if (err) {
           console.error(err);
-          return res.status(500).send("Error updating data in the database"); // Handle the error and send an appropriate response
+           
         } else {
           console.log("up to database compleate");
         }
@@ -1092,14 +1142,45 @@ router.post("/project/p_person/create/", (req, res) => {
           (err) => {
             if (err) {
               console.error(err);
-              return res
-                .status(500)
-                .send("Error inserting data into the database"); // Handle the error and send an appropriate response
+
             }
 
-            res.status(200).send("Data updated and inserted successfully");
+            
           }
         );
+        db.query(
+          `INSERT INTO p_finalperson 
+            (executiveType1Name, executiveType1Number, executiveType2Name, executiveType2Number, executiveType3Name, executiveType3Number, 
+             executiveType4Name, executiveType4Number, executiveType5Name, executiveType5Number, executiveTypeCount, grandTotalExecutive, 
+             professorType1Name, professorType1Number, professorType2Name, professorType2Number, professorType3Name, professorType3Number, 
+             professorType4Name, professorType4Number, professorType5Name, professorType5Number, professorTypeCount, grandTotalProfessor, 
+             studentType1Name, studentType1Number, studentType2Name, studentType2Number, studentType3Name, studentType3Number, 
+             studentType4Name, studentType4Number, studentType5Name, studentType5Number, studentTypeCount, grandTotalStudent, 
+             expertType1Name, expertType1Number, expertType2Name, expertType2Number, expertType3Name, expertType3Number, 
+             expertType4Name, expertType4Number, expertType5Name, expertType5Number, expertTypeCount, grandTotalExpert, grandTotalAll, id_projects) 
+           VALUES 
+            (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+          [
+            executiveType1Name, executiveType1Number, executiveType2Name, executiveType2Number, 
+            executiveType3Name, executiveType3Number, executiveType4Name, executiveType4Number, 
+            executiveType5Name, executiveType5Number, executiveTypeCount, grandTotalExecutive, 
+            professorType1Name, professorType1Number, professorType2Name, professorType2Number, 
+            professorType3Name, professorType3Number, professorType4Name, professorType4Number, 
+            professorType5Name, professorType5Number, professorTypeCount, grandTotalProfessor, 
+            studentType1Name, studentType1Number, studentType2Name, studentType2Number, 
+            studentType3Name, studentType3Number, studentType4Name, studentType4Number, 
+            studentType5Name, studentType5Number, studentTypeCount, grandTotalStudent, 
+            expertType1Name, expertType1Number, expertType2Name, expertType2Number, 
+            expertType3Name, expertType3Number, expertType4Name, expertType4Number, 
+            expertType5Name, expertType5Number, expertTypeCount, grandTotalExpert, grandTotalAll, id_projects
+          ],
+          (err) => {
+            if (err) {
+              console.error(err);
+            }
+          }
+        );
+        
 
       }
     );
