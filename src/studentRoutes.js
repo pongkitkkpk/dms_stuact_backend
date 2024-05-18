@@ -322,6 +322,22 @@ router.get("/project/finalperson/getidproject/:id_projects", (req, res) => {
   );
 });
 
+router.get("/project/finalbudget/getidproject/:id_projects", (req, res) => {
+  const id_projects = req.params.id_projects;
+  db.query(
+    "SELECT * FROM p_finalbudget WHERE id_projects = ? ORDER BY id DESC LIMIT 1",
+    [id_projects],
+    (err, result) => {
+      if (err) {
+        console.log(err);
+        res.status(500).send("Error retrieving project");
+      } else {
+        res.send(result);
+      }
+    }
+  );
+});
+
 router.get("/project/getcodebooksomeoutyear/:codebooksomeoutyear",
   (req, res) => {
     const codebooksomeoutyear = req.params.codebooksomeoutyear;
@@ -564,6 +580,24 @@ router.put("/project/finalindicator/edit/:id_project", (req, res) => {
     }
   );
 });
+
+router.put("/project/finalbudget/edit/:id_project", (req, res) => {
+  const id_project = req.params.id_project;
+  const updatedData = req.body;
+  db.query(
+    "UPDATE p_finalbudget SET ? WHERE id_projects = ?",
+    [updatedData, id_project],
+    (err, result) => {
+      if (err) {
+        console.error(err);
+        res.status(500).send("Error updating project data"); // Handle the error and send an appropriate response
+      } else {
+        res.status(200).send("Project data updated successfully");
+      }
+    }
+  );
+});
+
 router.post("/project/edit/history/:id_project", async (req, res) => {
   try {
     const id_project = req.params.id_project;
@@ -1131,7 +1165,7 @@ router.post("/project/p_person/create/", (req, res) => {
       async (err, result) => {
         if (err) {
           console.error(err);
-           
+
         } else {
           console.log("up to database compleate");
         }
@@ -1145,7 +1179,7 @@ router.post("/project/p_person/create/", (req, res) => {
 
             }
 
-            
+
           }
         );
         db.query(
@@ -1161,17 +1195,17 @@ router.post("/project/p_person/create/", (req, res) => {
            VALUES 
             (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
           [
-            executiveType1Name, executiveType1Number, executiveType2Name, executiveType2Number, 
-            executiveType3Name, executiveType3Number, executiveType4Name, executiveType4Number, 
-            executiveType5Name, executiveType5Number, executiveTypeCount, grandTotalExecutive, 
-            professorType1Name, professorType1Number, professorType2Name, professorType2Number, 
-            professorType3Name, professorType3Number, professorType4Name, professorType4Number, 
-            professorType5Name, professorType5Number, professorTypeCount, grandTotalProfessor, 
-            studentType1Name, studentType1Number, studentType2Name, studentType2Number, 
-            studentType3Name, studentType3Number, studentType4Name, studentType4Number, 
-            studentType5Name, studentType5Number, studentTypeCount, grandTotalStudent, 
-            expertType1Name, expertType1Number, expertType2Name, expertType2Number, 
-            expertType3Name, expertType3Number, expertType4Name, expertType4Number, 
+            executiveType1Name, executiveType1Number, executiveType2Name, executiveType2Number,
+            executiveType3Name, executiveType3Number, executiveType4Name, executiveType4Number,
+            executiveType5Name, executiveType5Number, executiveTypeCount, grandTotalExecutive,
+            professorType1Name, professorType1Number, professorType2Name, professorType2Number,
+            professorType3Name, professorType3Number, professorType4Name, professorType4Number,
+            professorType5Name, professorType5Number, professorTypeCount, grandTotalProfessor,
+            studentType1Name, studentType1Number, studentType2Name, studentType2Number,
+            studentType3Name, studentType3Number, studentType4Name, studentType4Number,
+            studentType5Name, studentType5Number, studentTypeCount, grandTotalStudent,
+            expertType1Name, expertType1Number, expertType2Name, expertType2Number,
+            expertType3Name, expertType3Number, expertType4Name, expertType4Number,
             expertType5Name, expertType5Number, expertTypeCount, grandTotalExpert, grandTotalAll, id_projects
           ],
           (err) => {
@@ -1180,7 +1214,7 @@ router.post("/project/p_person/create/", (req, res) => {
             }
           }
         );
-        
+
 
       }
     );
@@ -2027,42 +2061,74 @@ router.put("/project/p_timestep/create/:id_project", async (req, res) => {
 router.put("/project/p_budget/create/:id_project", async (req, res) => {
   const updatedData = req.body; // Updated data sent from the client
   const id_project = req.params.id_project; // Corrected parameter name
-  const allow_budget = req.body.listSAll
-  db.query(
-    "UPDATE p_budget SET ? WHERE id_projects = ?",
-    [updatedData, id_project],
-    (err, result) => {
-      if (err) {
-        console.error(err);
-        res.status(500).send("Error updating project data");
-      } else {
-        // Optionally, you can fetch the updated data from the database and send it back as the response
-        db.query(
-          "SELECT * FROM p_budget WHERE id_projects = ?",
-          id_project,
-          (err, updatedProject) => {
-            if (err) {
-              console.error(err);
-              res.status(500).send("Error fetching updated project data");
-            } else {
-              res.status(200).json(updatedProject[0]); // Assuming there's only one updated project
-            }
+  const { listSAll, codeclub, yearly_countsketch, listSSA, listSSBT, listSSBNT, listSSC } = req.body;
+
+  try {
+    // Update p_budget table
+    await new Promise((resolve, reject) => {
+      db.query(
+        "UPDATE p_budget SET ? WHERE id_projects = ?",
+        [updatedData, id_project],
+        (err, result) => {
+          if (err) {
+            return reject(err);
           }
-        );
-        db.query(
-          "UPDATE projects SET use_budget= ? WHERE id = ?",
-          [allow_budget, id_project],
-          (err, result) => {
-            if (err) {
-              console.log(err);
-              res.status(500).send("Error updating project");
-            }
+          resolve(result);
+        }
+      );
+    });
+
+    // Fetch the updated project data
+    const updatedProject = await new Promise((resolve, reject) => {
+      db.query(
+        "SELECT * FROM p_budget WHERE id_projects = ?",
+        [id_project],
+        (err, result) => {
+          if (err) {
+            return reject(err);
           }
-        );
-      }
-    }
-  );
+          resolve(result);
+        }
+      );
+    });
+
+    // Update projects table
+    await new Promise((resolve, reject) => {
+      db.query(
+        "UPDATE projects SET use_budget = ? WHERE id = ?",
+        [listSAll, id_project],
+        (err, result) => {
+          if (err) {
+            return reject(err);
+          }
+          resolve(result);
+        }
+      );
+    });
+
+    // Insert into p_finalbudget table
+    await new Promise((resolve, reject) => {
+      db.query(
+        "INSERT INTO p_finalbudget (id_projects, listSSA, listSSBT, listSSBNT, listSSC, listSAll) VALUES (?, ?, ?, ?, ?, ?)",
+        [id_project, listSSA, listSSBT, listSSBNT, listSSC, listSAll],
+        (err, result) => {
+          if (err) {
+            return reject(err);
+          }
+          resolve(result);
+        }
+      );
+    });
+
+    // Send the updated project data as response
+    res.status(200).json(updatedProject[0]);
+
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Error processing request");
+  }
 });
+
 
 
 router.put("/project/p_indicator/create/:id_project", async (req, res) => {
