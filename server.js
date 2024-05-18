@@ -274,6 +274,7 @@ app.post("/studentgetmoney/:id_projects", async (req, res) => {
     }
   );
 });
+//test
 
 app.post("/updateprojectusebudget/:id_projects", async (req, res) => {
   const id_projects = req.params.id_projects;
