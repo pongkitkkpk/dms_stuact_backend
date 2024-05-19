@@ -548,18 +548,18 @@ router.put("/project/indicator/edit/:id_project", (req, res) => {
 
 router.put("/project/finalperson/edit/:id_project", (req, res) => {
   const id_project = req.params.id_project;
-  const { executiveType1Name, executiveType1Number, executiveType2Name, executiveType2Number,executiveType3Name,executiveType3Number,executiveType4Name,executiveType4Number,executiveType5Name,executiveType5Number,executiveTypeCount,grandTotalExecutive,
-    professorType1Name,professorType1Number,professorType2Name,professorType2Number,professorType3Name,professorType3Number,professorType4Name,professorType4Number,professorType5Name,professorType5Number,professorTypeCount,grandTotalProfessor,
-    studentType1Name,studentType1Number,studentType2Name,studentType2Number,studentType3Name,studentType3Number,studentType4Name,studentType4Number,studentType5Name,studentType5Number,studentTypeCount,grandTotalStudent,
-    expertType1Name,expertType1Number,expertType2Name,expertType2Number,expertType3Name,expertType3Number,expertType4Name,expertType4Number,expertType5Name,expertType5Number,expertTypeCount,grandTotalExpert,grandTotalAll
+  const { executiveType1Name, executiveType1Number, executiveType2Name, executiveType2Number, executiveType3Name, executiveType3Number, executiveType4Name, executiveType4Number, executiveType5Name, executiveType5Number, executiveTypeCount, grandTotalExecutive,
+    professorType1Name, professorType1Number, professorType2Name, professorType2Number, professorType3Name, professorType3Number, professorType4Name, professorType4Number, professorType5Name, professorType5Number, professorTypeCount, grandTotalProfessor,
+    studentType1Name, studentType1Number, studentType2Name, studentType2Number, studentType3Name, studentType3Number, studentType4Name, studentType4Number, studentType5Name, studentType5Number, studentTypeCount, grandTotalStudent,
+    expertType1Name, expertType1Number, expertType2Name, expertType2Number, expertType3Name, expertType3Number, expertType4Name, expertType4Number, expertType5Name, expertType5Number, expertTypeCount, grandTotalExpert, grandTotalAll
   } = req.body;
-  
+
   // Construct the object containing the fields to update
   const updatedData = {
- executiveType1Name, executiveType1Number, executiveType2Name, executiveType2Number,executiveType3Name,executiveType3Number,executiveType4Name,executiveType4Number,executiveType5Name,executiveType5Number,executiveTypeCount,grandTotalExecutive,
-    professorType1Name,professorType1Number,professorType2Name,professorType2Number,professorType3Name,professorType3Number,professorType4Name,professorType4Number,professorType5Name,professorType5Number,professorTypeCount,grandTotalProfessor,
-    studentType1Name,studentType1Number,studentType2Name,studentType2Number,studentType3Name,studentType3Number,studentType4Name,studentType4Number,studentType5Name,studentType5Number,studentTypeCount,grandTotalStudent,
-    expertType1Name,expertType1Number,expertType2Name,expertType2Number,expertType3Name,expertType3Number,expertType4Name,expertType4Number,expertType5Name,expertType5Number,expertTypeCount,grandTotalExpert,grandTotalAll
+    executiveType1Name, executiveType1Number, executiveType2Name, executiveType2Number, executiveType3Name, executiveType3Number, executiveType4Name, executiveType4Number, executiveType5Name, executiveType5Number, executiveTypeCount, grandTotalExecutive,
+    professorType1Name, professorType1Number, professorType2Name, professorType2Number, professorType3Name, professorType3Number, professorType4Name, professorType4Number, professorType5Name, professorType5Number, professorTypeCount, grandTotalProfessor,
+    studentType1Name, studentType1Number, studentType2Name, studentType2Number, studentType3Name, studentType3Number, studentType4Name, studentType4Number, studentType5Name, studentType5Number, studentTypeCount, grandTotalStudent,
+    expertType1Name, expertType1Number, expertType2Name, expertType2Number, expertType3Name, expertType3Number, expertType4Name, expertType4Number, expertType5Name, expertType5Number, expertTypeCount, grandTotalExpert, grandTotalAll
   };
 
   db.query(
@@ -594,7 +594,7 @@ router.put("/project/finalindicator/edit/:id_project", (req, res) => {
 router.put("/project/finalbudget/edit/:id_project", (req, res) => {
   const id_project = req.params.id_project;
   const { listSSA, listSSB, listSSC, listSAll, refundtotal } = req.body;
-  
+
   const updatedData = {
     listSSA,
     listSSB,
