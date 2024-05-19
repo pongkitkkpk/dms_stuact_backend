@@ -548,9 +548,20 @@ router.put("/project/indicator/edit/:id_project", (req, res) => {
 
 router.put("/project/finalperson/edit/:id_project", (req, res) => {
   const id_project = req.params.id_project;
-  const updatedData = req.body; // Updated data sent from the client
-  // updatedData.updated_at = new Date();
-  // Update the project with the given id_project in the database
+  const { executiveType1Name, executiveType1Number, executiveType2Name, executiveType2Number,executiveType3Name,executiveType3Number,executiveType4Name,executiveType4Number,executiveType5Name,executiveType5Number,executiveTypeCount,grandTotalExecutive,
+    professorType1Name,professorType1Number,professorType2Name,professorType2Number,professorType3Name,professorType3Number,professorType4Name,professorType4Number,professorType5Name,professorType5Number,professorTypeCount,grandTotalProfessor,
+    studentType1Name,studentType1Number,studentType2Name,studentType2Number,studentType3Name,studentType3Number,studentType4Name,studentType4Number,studentType5Name,studentType5Number,studentTypeCount,grandTotalStudent,
+    expertType1Name,expertType1Number,expertType2Name,expertType2Number,expertType3Name,expertType3Number,expertType4Name,expertType4Number,expertType5Name,expertType5Number,expertTypeCount,grandTotalExpert,grandTotalAll
+  } = req.body;
+  
+  // Construct the object containing the fields to update
+  const updatedData = {
+ executiveType1Name, executiveType1Number, executiveType2Name, executiveType2Number,executiveType3Name,executiveType3Number,executiveType4Name,executiveType4Number,executiveType5Name,executiveType5Number,executiveTypeCount,grandTotalExecutive,
+    professorType1Name,professorType1Number,professorType2Name,professorType2Number,professorType3Name,professorType3Number,professorType4Name,professorType4Number,professorType5Name,professorType5Number,professorTypeCount,grandTotalProfessor,
+    studentType1Name,studentType1Number,studentType2Name,studentType2Number,studentType3Name,studentType3Number,studentType4Name,studentType4Number,studentType5Name,studentType5Number,studentTypeCount,grandTotalStudent,
+    expertType1Name,expertType1Number,expertType2Name,expertType2Number,expertType3Name,expertType3Number,expertType4Name,expertType4Number,expertType5Name,expertType5Number,expertTypeCount,grandTotalExpert,grandTotalAll
+  };
+
   db.query(
     "UPDATE p_finalperson SET ? WHERE id_projects = ?",
     [updatedData, id_project],
@@ -580,17 +591,25 @@ router.put("/project/finalindicator/edit/:id_project", (req, res) => {
     }
   );
 });
-
 router.put("/project/finalbudget/edit/:id_project", (req, res) => {
   const id_project = req.params.id_project;
-  const updatedData = req.body;
+  const { listSSA, listSSB, listSSC, listSAll, refundtotal } = req.body;
+  
+  const updatedData = {
+    listSSA,
+    listSSB,
+    listSSC,
+    listSAll,
+    refundtotal
+  };
+
   db.query(
     "UPDATE p_finalbudget SET ? WHERE id_projects = ?",
     [updatedData, id_project],
     (err, result) => {
       if (err) {
         console.error(err);
-        res.status(500).send("Error updating project data"); // Handle the error and send an appropriate response
+        res.status(500).send("Error updating project data");
       } else {
         res.status(200).send("Project data updated successfully");
       }
@@ -2061,7 +2080,7 @@ router.put("/project/p_timestep/create/:id_project", async (req, res) => {
 router.put("/project/p_budget/create/:id_project", async (req, res) => {
   const updatedData = req.body; // Updated data sent from the client
   const id_project = req.params.id_project; // Corrected parameter name
-  const { listSAll, codeclub, yearly_countsketch, listSSA, listSSBT, listSSBNT, listSSC } = req.body;
+  const { listSAll, listSSA, listSSB, listSSC } = req.body;
 
   try {
     // Update p_budget table
@@ -2071,6 +2090,7 @@ router.put("/project/p_budget/create/:id_project", async (req, res) => {
         [updatedData, id_project],
         (err, result) => {
           if (err) {
+            console.log("ErRrrrr1")
             return reject(err);
           }
           resolve(result);
@@ -2085,6 +2105,7 @@ router.put("/project/p_budget/create/:id_project", async (req, res) => {
         [id_project],
         (err, result) => {
           if (err) {
+            console.log("ErRrrrr2")
             return reject(err);
           }
           resolve(result);
@@ -2099,6 +2120,7 @@ router.put("/project/p_budget/create/:id_project", async (req, res) => {
         [listSAll, id_project],
         (err, result) => {
           if (err) {
+            console.log("ErRrrrr3")
             return reject(err);
           }
           resolve(result);
@@ -2109,10 +2131,11 @@ router.put("/project/p_budget/create/:id_project", async (req, res) => {
     // Insert into p_finalbudget table
     await new Promise((resolve, reject) => {
       db.query(
-        "INSERT INTO p_finalbudget (id_projects, listSSA, listSSBT, listSSBNT, listSSC, listSAll) VALUES (?, ?, ?, ?, ?, ?)",
-        [id_project, listSSA, listSSBT, listSSBNT, listSSC, listSAll],
+        "INSERT INTO p_finalbudget (id_projects, listSSA, listSSB, listSSC, listSAll,refundtotal) VALUES (?, ?, ?, ?, ?,0)",
+        [id_project, listSSA, listSSB, listSSC, listSAll],
         (err, result) => {
           if (err) {
+            console.log("ErRrrrr4")
             return reject(err);
           }
           resolve(result);

@@ -281,11 +281,12 @@ app.post("/updateprojectusebudget/:id_projects", async (req, res) => {
   const { project_name, yearly, namestudent_receive, numberstudent_receive, namestuact_receive, remainingBudget } = req.body;
   const updated_at = new Date();
 
+  
   try {
     // Query logstudentgetmoney table to get the sum of numberstudent_receive
     db.query(
-      "SELECT SUM(numberstudent_receive) AS totalReceived FROM logstudentgetmoney WHERE project_name = ? AND yearly = ?",
-      [project_name, yearly],
+      "SELECT SUM(numberstudent_receive) AS totalReceived FROM logstudentgetmoney WHERE id_projects=?AND project_name = ? AND yearly = ?",
+      [id_projects,project_name, yearly],
       async (err, result) => {
         if (err) {
           console.error(err);
@@ -302,9 +303,7 @@ app.post("/updateprojectusebudget/:id_projects", async (req, res) => {
           (err, result) => {
             if (err) {
               console.error(err);
-              return res.status(500).send("Error updating allow_budget in projects table");
             }
-            return res.status(200).send("allow_budget updated successfully");
           }
         );
         db.query(
@@ -313,16 +312,13 @@ app.post("/updateprojectusebudget/:id_projects", async (req, res) => {
           (err, result) => {
             if (err) {
               console.error(err);
-              return res.status(500).send("Error updating allow_budget in projects table");
             }
-            return res.status(200).send("allow_budget updated successfully");
           }
         );
       }
     );
   } catch (error) {
     console.error(error);
-    return res.status(500).send("Error performing database operations");
   }
 });
 
