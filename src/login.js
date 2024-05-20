@@ -16,7 +16,7 @@ const login = async (username, password) => {
                 student_info : "1",
                 username,
                 password,
-                scopes: "student",
+                scopes: "student,personel",
             },
             headers: {
                 "Content-Type": "application/x-www-form-urlencoded",
