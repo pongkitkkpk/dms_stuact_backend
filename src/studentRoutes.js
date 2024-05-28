@@ -732,6 +732,8 @@ router.get("/project/person/getidproject/:id_projects", (req, res) => {
     }
   );
 });
+
+
 //dd1
 router.post("/project/create/", async (req, res) => {
 
@@ -857,7 +859,7 @@ router.post("/project/create/", async (req, res) => {
     res.status(500).send(error); // Handle the error and send an appropriate response
   }
 });
-router.get("/download/:id_project", async (req, res) => {
+router.get("/download04/:id_project", async (req, res) => {
   const id_projects = req.params.id_project;
 
   db.query(
@@ -887,7 +889,6 @@ router.get("/download/:id_project", async (req, res) => {
                   console.error(err);
                   return res.status(500).send("Error retrieving timestep data");
                 }
-
                 db.query(
                   "SELECT * FROM p_indicator WHERE id_projects = ? ORDER BY id_projects DESC LIMIT 1",
                   [id_projects],
@@ -909,63 +910,228 @@ router.get("/download/:id_project", async (req, res) => {
                             .status(500)
                             .send("Error retrieving budget data");
                         }
-
-                        try {
-                          console.log(resultp_indicator[0]);
-                          const PizZip = require("pizzip");
-                          const Docxtemplater = require("docxtemplater");
-                          const fs = require("fs");
-                          const path = require("path");
-                          const expressionParser = require("docxtemplater/expressions.js");
-                          const content = fs.readFileSync(
-                            path.resolve(
-                              __dirname,
-                              "templateDoc",
-                              "temp04-real.docx"
-                            ),
-                            "binary"
-                          );
-                          const zip = new PizZip(content);
-                          const doc = new Docxtemplater(zip, {
-                            parser: expressionParser,
-                            paragraphLoop: true,
-                            linebreaks: true,
-                          });
-
-                          doc.render({
-                            detail: result[0],
-                            person: resultp_person[0],
-                            timestep: resultp_timestep[0],
-                            indicator: resultp_indicator[0], // Pass the indicator data to the template
-                            budget: resultp_budget[0], // Pass the budget data to the template
-                          });
-
-                          const buf = doc.getZip().generate({
-                            type: "nodebuffer",
-                            compression: "DEFLATE",
-                          });
-                          const filename = `e-doc-${result[0].project_name}.docx`;
-                          const filePath = path.resolve(__dirname, "e-docx", filename);
-                          fs.writeFileSync(filePath, buf);
-
-                          res.download(filePath, filename, (err) => {
+                        db.query(
+                          "SELECT * FROM users WHERE name_student = ? AND yearly = ? ORDER BY id DESC LIMIT 1",
+                          [result[0].advisor_name, result[0].yearly],
+                          (err, resultuser) => {
                             if (err) {
-                              console.error("Error sending file to client:", err);
-                              res.status(500).send("Error sending file to client");
-                            } else {
-                              console.log("File sent successfully");
-                              // Optionally, you can delete the file after it's sent
-                              fs.unlinkSync(filePath);
+                              console.error(err);
+                              return res
+                                .status(500)
+                                .send("Error retrieving budget data");
                             }
-                          });
-                        } catch (error) {
-                          console.error("Error generating document:", error);
-                          res
+
+                            try {
+                              const PizZip = require("pizzip");
+                              const Docxtemplater = require("docxtemplater");
+                              const fs = require("fs");
+                              const path = require("path");
+                              const expressionParser = require("docxtemplater/expressions.js");
+                              const content = fs.readFileSync(
+                                path.resolve(
+                                  __dirname,
+                                  "templateDoc",
+                                  "temp04.docx"
+                                ),
+                                "binary"
+                              );
+                              const zip = new PizZip(content);
+                              const doc = new Docxtemplater(zip, {
+                                parser: expressionParser,
+                                paragraphLoop: true,
+                                linebreaks: true,
+                              });
+
+                              doc.render({
+                                detail: result[0],
+                                person: resultp_person[0],
+                                timestep: resultp_timestep[0],
+                                indicator: resultp_indicator[0],
+                                budget: resultp_budget[0],
+                                user: resultuser[0],
+                              });
+
+                              const buf = doc.getZip().generate({
+                                type: "nodebuffer",
+                                compression: "DEFLATE",
+                              });
+                              const filename = `e-doc-04-${result[0].project_name}.docx`;
+                              const filePath = path.resolve(__dirname, "e-docx", filename);
+                              fs.writeFileSync(filePath, buf);
+
+                              res.download(filePath, filename, (err) => {
+                                if (err) {
+                                  console.error("Error sending file to client:", err);
+                                  res.status(500).send("Error sending file to client");
+                                } else {
+                                  console.log("File sent successfully");
+                                  // Optionally, you can delete the file after it's sent
+                                  fs.unlinkSync(filePath);
+                                }
+                              });
+                            } catch (error) {
+                              console.error("Error generating document:", error);
+                              res
+                                .status(500)
+                                .send(
+                                  "Error generating document: " + error.message
+                                );
+                            }
+                          }
+                        );
+
+
+                      }
+                    );
+                  }
+                );
+              }
+            );
+          }
+        );
+      } else {
+        res.status(404).send("No person found for this project.");
+      }
+    }
+  );
+});
+router.get("/download06/:id_project", async (req, res) => {
+  const id_projects = req.params.id_project;
+
+  db.query(
+    "SELECT * FROM p_person WHERE id_projects = ? ORDER BY id_projects DESC LIMIT 1",
+    [id_projects],
+    (err, resultp_person) => {
+      if (err) {
+        console.error(err);
+        return res.status(500).send("Error retrieving project");
+      }
+
+      if (resultp_person.length > 0) {
+        db.query(
+          "SELECT * FROM projects WHERE id = ? ORDER BY id DESC LIMIT 1",
+          [id_projects],
+          (err, result) => {
+            if (err) {
+              console.error(err);
+              return res.status(500).send("Error retrieving project");
+            }
+
+            db.query(
+              "SELECT * FROM p_finalperson WHERE id_projects = ? ORDER BY id_projects DESC LIMIT 1",
+              [id_projects],
+              (err, resultp_finaltimeperson) => {
+                if (err) {
+                  console.error(err);
+                  return res.status(500).send("Error retrieving timestep data");
+                }
+                db.query(
+                  "SELECT * FROM p_indicator WHERE id_projects = ? ORDER BY id_projects DESC LIMIT 1",
+                  [id_projects],
+                  (err, resultp_indicator) => {
+                    if (err) {
+                      console.error(err);
+                      return res
+                        .status(500)
+                        .send("Error retrieving indicator data");
+                    }
+
+                    db.query(
+                      "SELECT * FROM p_finalbudget WHERE id_projects = ? ORDER BY id_projects DESC LIMIT 1",
+                      [id_projects],
+                      (err, resultp_finalbudget) => {
+                        if (err) {
+                          console.error(err);
+                          return res
                             .status(500)
-                            .send(
-                              "Error generating document: " + error.message
-                            );
+                            .send("Error retrieving budget data");
                         }
+                        db.query(
+                          "SELECT * FROM users WHERE name_student = ? AND yearly = ? ORDER BY id DESC LIMIT 1",
+                          [result[0].advisor_name, result[0].yearly],
+                          (err, resultuser) => {
+                            if (err) {
+                              console.error(err);
+                              return res
+                                .status(500)
+                                .send("Error retrieving budget data");
+                            }
+                            const position = "SH"
+                            db.query(
+                              "SELECT * FROM users WHERE clubName = ? AND yearly = ? AND position = ? ORDER BY id DESC LIMIT 1",
+                              [result[0].responsible_agency, result[0].yearly,position],
+                              (err, resultuserSH) => {
+                                if (err) {
+                                  console.error(err);
+                                  return res
+                                    .status(500)
+                                    .send("Error retrieving budget data");
+                                }
+                                try {
+
+                                  const PizZip = require("pizzip");
+                                  const Docxtemplater = require("docxtemplater");
+                                  const fs = require("fs");
+                                  const path = require("path");
+                                  const expressionParser = require("docxtemplater/expressions.js");
+                                  const content = fs.readFileSync(
+                                    path.resolve(
+                                      __dirname,
+                                      "templateDoc",
+                                      "temp06.docx"
+                                    ),
+                                    "binary"
+                                  );
+                                  const zip = new PizZip(content);
+                                  const doc = new Docxtemplater(zip, {
+                                    parser: expressionParser,
+                                    paragraphLoop: true,
+                                    linebreaks: true,
+                                  });
+
+                                  doc.render({
+                                    detail: result[0],
+                                    person: resultp_person[0],
+                                    Fperson: resultp_finaltimeperson[0],
+                                    indicator: resultp_indicator[0],
+                                    Fbudget: resultp_finalbudget[0],
+                                    user: resultuser[0],
+                                    userSH: resultuserSH[0],
+                                  });
+
+                                  const buf = doc.getZip().generate({
+                                    type: "nodebuffer",
+                                    compression: "DEFLATE",
+                                  });
+                                  const filename = `e-doc-06-${result[0].project_name}.docx`;
+                                  const filePath = path.resolve(__dirname, "e-docx", filename);
+                                  fs.writeFileSync(filePath, buf);
+
+                                  res.download(filePath, filename, (err) => {
+                                    if (err) {
+                                      console.error("Error sending file to client:", err);
+                                      res.status(500).send("Error sending file to client");
+                                    } else {
+                                      console.log("File sent successfully");
+                                      // Optionally, you can delete the file after it's sent
+                                      fs.unlinkSync(filePath);
+                                    }
+                                  });
+                                } catch (error) {
+                                  console.error("Error generating document:", error);
+                                  res
+                                    .status(500)
+                                    .send(
+                                      "Error generating document: " + error.message
+                                    );
+                                }
+                              }
+                            );
+
+                          }
+                        );
+
+
                       }
                     );
                   }
