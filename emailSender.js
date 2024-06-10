@@ -9,7 +9,7 @@ const mailTransport = nodemailer.createTransport({
   auth: {
     user: gmailEmail,
     pass: gmailPassword,
-  },
+  },                                                           
 });
 
 // Function to send email
