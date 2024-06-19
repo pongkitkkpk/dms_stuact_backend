@@ -1,0 +1,984 @@
+<mxfile host="app.diagrams.net" modified="2024-06-12T10:47:40.655Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36" etag="5YTdm7zKte5nR6NB7xc6" version="24.4.14" type="device">
+  <diagram name="หน้า-1" id="xoCHngNK6IxY0QqmwnbI">
+    <mxGraphModel dx="867" dy="437" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="1654" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="RT6BizPViVm5CZ8Vax3i-2" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="1560" y="90" width="560" height="1280" as="geometry" />
+        </mxCell>
+        <mxCell id="tSsIBaGaeIuZSB1Pof6B-33" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" vertex="1">
+          <mxGeometry x="296" y="230" width="350" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="tSsIBaGaeIuZSB1Pof6B-21" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" vertex="1">
+          <mxGeometry x="340" y="610" width="350" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="tSsIBaGaeIuZSB1Pof6B-17" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" vertex="1">
+          <mxGeometry x="340" y="840" width="350" height="310" as="geometry" />
+        </mxCell>
+        <mxCell id="5EiUYvOmLtu-O9d95kXI-1" value="user(student)" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" vertex="1">
+          <mxGeometry x="350" y="2050" width="30" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="5EiUYvOmLtu-O9d95kXI-39" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.4;entryDx=0;entryDy=0;entryPerimeter=0;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" source="5EiUYvOmLtu-O9d95kXI-1" target="5M_BxhGtRvAO6rKEQUzK-37" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="596" y="1835" as="sourcePoint" />
+            <mxPoint x="441" y="2205" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5EiUYvOmLtu-O9d95kXI-41" value="" style="endArrow=classic;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" source="5EiUYvOmLtu-O9d95kXI-1" target="5M_BxhGtRvAO6rKEQUzK-36" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="306" y="2005" as="sourcePoint" />
+            <mxPoint x="427.99999999999955" y="2137.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5EiUYvOmLtu-O9d95kXI-52" value="" style="endArrow=classic;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" source="5EiUYvOmLtu-O9d95kXI-1" target="5M_BxhGtRvAO6rKEQUzK-35" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="326" y="1855" as="sourcePoint" />
+            <mxPoint x="428.0000000000002" y="1990" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5EiUYvOmLtu-O9d95kXI-59" value="" style="endArrow=classic;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" source="5EiUYvOmLtu-O9d95kXI-1" target="5M_BxhGtRvAO6rKEQUzK-34" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="306" y="2005" as="sourcePoint" />
+            <mxPoint x="441" y="2055" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rmpbXRxHIenhHcvBAkNY-39" value="เพิ่ม ลบ แก้ไข เอกสารโครงการ" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" vertex="1">
+          <mxGeometry x="1745.5" y="1296.5" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="P1cJ3jxfY9NAmH3YO0xf-6" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;fillColor=#f5f5f5;strokeColor=#666666;" parent="1" source="rmpbXRxHIenhHcvBAkNY-40" target="P1cJ3jxfY9NAmH3YO0xf-1" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rmpbXRxHIenhHcvBAkNY-40" value="staff&lt;br&gt;(เฉพาะหน่วยงานภายใต้สังกัด)" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" vertex="1">
+          <mxGeometry x="2180" y="721.25" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="P1cJ3jxfY9NAmH3YO0xf-8" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;fillColor=#f5f5f5;strokeColor=#666666;" parent="1" source="rmpbXRxHIenhHcvBAkNY-41" target="P1cJ3jxfY9NAmH3YO0xf-1" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rmpbXRxHIenhHcvBAkNY-41" value="advisor&lt;br&gt;(เฉพาะหน่วยงานภายใต้การดูแล)" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" vertex="1">
+          <mxGeometry x="2180" y="1096" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rmpbXRxHIenhHcvBAkNY-43" value="เรียกดูงบประมาณ&lt;br&gt;ปัจจุบันของหน่วยงาน" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" vertex="1">
+          <mxGeometry x="1744" y="1229" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rmpbXRxHIenhHcvBAkNY-45" value="" style="endArrow=classic;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;edgeStyle=orthogonalEdgeStyle;curved=1;fillColor=#f5f5f5;strokeColor=#666666;" parent="1" source="rmpbXRxHIenhHcvBAkNY-41" target="rmpbXRxHIenhHcvBAkNY-43" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="2024" y="870" as="sourcePoint" />
+            <mxPoint x="1918" y="630" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rmpbXRxHIenhHcvBAkNY-48" value="" style="endArrow=classic;html=1;rounded=0;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;entryX=0;entryY=0.5;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;curved=1;fillColor=#f5f5f5;strokeColor=#666666;" parent="1" source="rmpbXRxHIenhHcvBAkNY-107" target="rmpbXRxHIenhHcvBAkNY-39" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1634" y="1063" as="sourcePoint" />
+            <mxPoint x="1756" y="1320" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rmpbXRxHIenhHcvBAkNY-49" value="เรียกดูจำนวนโครงการที่&lt;br&gt;จัดทำแล้วแยกหน่วยงาน" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" vertex="1">
+          <mxGeometry x="1747" y="1096" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rmpbXRxHIenhHcvBAkNY-51" value="" style="endArrow=classic;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;edgeStyle=orthogonalEdgeStyle;curved=1;fillColor=#f5f5f5;strokeColor=#666666;" parent="1" source="rmpbXRxHIenhHcvBAkNY-40" target="rmpbXRxHIenhHcvBAkNY-49" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1924" y="810" as="sourcePoint" />
+            <mxPoint x="1974" y="760" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rmpbXRxHIenhHcvBAkNY-54" value="เพิ่ม ลบ แก้ไข บทบาท&lt;br&gt;และสถานะของผู้ใช้งานระบบ" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" vertex="1">
+          <mxGeometry x="1732.5" y="120" width="176" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="rmpbXRxHIenhHcvBAkNY-57" value="&amp;nbsp;ติดตามสถานะปัจจุบัน&lt;br&gt;ของโครงการ" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" vertex="1">
+          <mxGeometry x="1745.5" y="1160" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rmpbXRxHIenhHcvBAkNY-58" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;edgeStyle=orthogonalEdgeStyle;curved=1;fillColor=#f5f5f5;strokeColor=#666666;" parent="1" source="rmpbXRxHIenhHcvBAkNY-107" target="rmpbXRxHIenhHcvBAkNY-57" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1634" y="1040" as="sourcePoint" />
+            <mxPoint x="1765" y="963" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rmpbXRxHIenhHcvBAkNY-59" value="" style="endArrow=classic;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;edgeStyle=orthogonalEdgeStyle;curved=1;fillColor=#f5f5f5;strokeColor=#666666;" parent="1" source="rmpbXRxHIenhHcvBAkNY-41" target="rmpbXRxHIenhHcvBAkNY-57" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1654" y="830" as="sourcePoint" />
+            <mxPoint x="1778" y="750" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rmpbXRxHIenhHcvBAkNY-64" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;edgeStyle=orthogonalEdgeStyle;curved=1;fillColor=#f5f5f5;strokeColor=#666666;" parent="1" source="rmpbXRxHIenhHcvBAkNY-107" target="rmpbXRxHIenhHcvBAkNY-43" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1634" y="1048" as="sourcePoint" />
+            <mxPoint x="1778" y="930" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rmpbXRxHIenhHcvBAkNY-65" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;edgeStyle=orthogonalEdgeStyle;curved=1;fillColor=#f5f5f5;strokeColor=#666666;" parent="1" source="rmpbXRxHIenhHcvBAkNY-103" target="rmpbXRxHIenhHcvBAkNY-49" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1634" y="714" as="sourcePoint" />
+            <mxPoint x="1941" y="673" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rmpbXRxHIenhHcvBAkNY-69" value="เพิ่ม ลบ แก้ไข เอกสารโครงการ" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" vertex="1">
+          <mxGeometry x="1741.5" y="345" width="164" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="rmpbXRxHIenhHcvBAkNY-70" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;edgeStyle=orthogonalEdgeStyle;curved=1;fillColor=#f5f5f5;strokeColor=#666666;" parent="1" source="rmpbXRxHIenhHcvBAkNY-103" target="rmpbXRxHIenhHcvBAkNY-69" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1634" y="706" as="sourcePoint" />
+            <mxPoint x="1928" y="750" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rmpbXRxHIenhHcvBAkNY-71" value="" style="endArrow=classic;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;edgeStyle=orthogonalEdgeStyle;curved=1;fillColor=#f5f5f5;strokeColor=#666666;" parent="1" source="rmpbXRxHIenhHcvBAkNY-40" target="rmpbXRxHIenhHcvBAkNY-69" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="2084" y="653" as="sourcePoint" />
+            <mxPoint x="1928" y="680" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rmpbXRxHIenhHcvBAkNY-72" value="เรียกดูเอกสารโครงการ" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" vertex="1">
+          <mxGeometry x="1747" y="1026" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rmpbXRxHIenhHcvBAkNY-73" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;edgeStyle=orthogonalEdgeStyle;curved=1;fillColor=#f5f5f5;strokeColor=#666666;" parent="1" source="rmpbXRxHIenhHcvBAkNY-103" target="rmpbXRxHIenhHcvBAkNY-72" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1634" y="700" as="sourcePoint" />
+            <mxPoint x="1856.15" y="400.3800000000001" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rmpbXRxHIenhHcvBAkNY-74" value="" style="endArrow=classic;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;edgeStyle=orthogonalEdgeStyle;curved=1;fillColor=#f5f5f5;strokeColor=#666666;" parent="1" source="rmpbXRxHIenhHcvBAkNY-40" target="rmpbXRxHIenhHcvBAkNY-72" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="2084" y="646" as="sourcePoint" />
+            <mxPoint x="2009" y="390" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rmpbXRxHIenhHcvBAkNY-75" value="เรียกดูบทบาทและสถานะ&lt;br&gt;ของผู้ใช้งานระบบ" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" vertex="1">
+          <mxGeometry x="1741.5" y="200" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="P1cJ3jxfY9NAmH3YO0xf-5" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;fillColor=#f5f5f5;strokeColor=#666666;" parent="1" source="rmpbXRxHIenhHcvBAkNY-103" target="P1cJ3jxfY9NAmH3YO0xf-1" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rmpbXRxHIenhHcvBAkNY-103" value="admin&lt;br&gt;(ทุกหน่วยงาน)" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" vertex="1">
+          <mxGeometry x="1463" y="721.25" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="P1cJ3jxfY9NAmH3YO0xf-7" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;fillColor=#f5f5f5;strokeColor=#666666;" parent="1" source="rmpbXRxHIenhHcvBAkNY-107" target="P1cJ3jxfY9NAmH3YO0xf-1" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rmpbXRxHIenhHcvBAkNY-107" value="student&lt;br&gt;(เฉพาะหน่วยงานของตนเอง)" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" vertex="1">
+          <mxGeometry x="1463" y="1096" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rmpbXRxHIenhHcvBAkNY-149" value="" style="endArrow=classic;html=1;rounded=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" source="rmpbXRxHIenhHcvBAkNY-182" target="5M_BxhGtRvAO6rKEQUzK-6" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="2490" as="sourcePoint" />
+            <mxPoint x="541" y="2646" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rmpbXRxHIenhHcvBAkNY-174" value="เพิ่ม ลบ แก้ไข งบประมาณประจำปี" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" vertex="1">
+          <mxGeometry x="544" y="2408.5" width="164" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="rmpbXRxHIenhHcvBAkNY-175" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" source="rmpbXRxHIenhHcvBAkNY-182" target="rmpbXRxHIenhHcvBAkNY-174" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="401" y="2456" as="sourcePoint" />
+            <mxPoint x="695" y="2500" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rmpbXRxHIenhHcvBAkNY-177" value="เพิ่มเงินเหลือจ่ายของแต่ละโครงการคืนกองงบประมาณหลักได้" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" vertex="1">
+          <mxGeometry x="563" y="2690" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rmpbXRxHIenhHcvBAkNY-178" value="" style="endArrow=classic;html=1;rounded=0;entryX=-0.019;entryY=0.673;entryDx=0;entryDy=0;entryPerimeter=0;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" source="rmpbXRxHIenhHcvBAkNY-182" target="rmpbXRxHIenhHcvBAkNY-177" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="401" y="2450" as="sourcePoint" />
+            <mxPoint x="695" y="2430" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rmpbXRxHIenhHcvBAkNY-182" value="admin&lt;br&gt;" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" vertex="1">
+          <mxGeometry x="370" y="2430" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rmpbXRxHIenhHcvBAkNY-224" value="staff" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" vertex="1">
+          <mxGeometry x="360" y="1368" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="rmpbXRxHIenhHcvBAkNY-235" value="" style="endArrow=classic;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" source="rmpbXRxHIenhHcvBAkNY-224" target="5M_BxhGtRvAO6rKEQUzK-13" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="299" y="1478.5" as="sourcePoint" />
+            <mxPoint x="294" y="1418.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rmpbXRxHIenhHcvBAkNY-255" value="" style="endArrow=classic;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" source="rmpbXRxHIenhHcvBAkNY-224" target="5M_BxhGtRvAO6rKEQUzK-12" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="459" y="1321.5" as="sourcePoint" />
+            <mxPoint x="294.0000000000023" y="1343.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rmpbXRxHIenhHcvBAkNY-258" value="" style="endArrow=classic;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" source="rmpbXRxHIenhHcvBAkNY-224" target="5M_BxhGtRvAO6rKEQUzK-11" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="459" y="1314.5" as="sourcePoint" />
+            <mxPoint x="380" y="1258.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="o-RQzrBwaxVtIbwnVmt1-1" value="เพิ่ม ลบ แก้ไข เอกสารโครงการของทุกหน่วยงาน" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" vertex="1">
+          <mxGeometry x="28" y="2546" width="176" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="o-RQzrBwaxVtIbwnVmt1-2" value="เพิ่ม ลบ แก้ไข บทบาทและสถานะของผู้ใช้งานระบบ" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" vertex="1">
+          <mxGeometry x="28" y="2260" width="176" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="o-RQzrBwaxVtIbwnVmt1-3" value="เรียกดูบทบาทและสถานะของผู้ใช้งานระบบ" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" vertex="1">
+          <mxGeometry x="28" y="2330" width="176" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="o-RQzrBwaxVtIbwnVmt1-4" value="เพิ่ม ลบ ฟอร์มเอกสารของโครงการ" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" vertex="1">
+          <mxGeometry x="28" y="2401" width="176" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="o-RQzrBwaxVtIbwnVmt1-5" value="เรียกดูเอกสารโครงการได้ทุกหน่วยงาน" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" vertex="1">
+          <mxGeometry x="28" y="2470" width="176" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="o-RQzrBwaxVtIbwnVmt1-6" value="เรียกดูจำนวนโครงการที่ถูกจัดทำแล้วทั้งหมดของทุกหน่วยงาน" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" vertex="1">
+          <mxGeometry x="544" y="2260" width="176" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="o-RQzrBwaxVtIbwnVmt1-7" value="เพิ่ม แก้ไข ติดตามสถานะปัจจุบันของโครงการทุกหน่วยงาน" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" vertex="1">
+          <mxGeometry x="544" y="2336" width="176" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="o-RQzrBwaxVtIbwnVmt1-8" value="" style="endArrow=classic;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" source="rmpbXRxHIenhHcvBAkNY-182" target="o-RQzrBwaxVtIbwnVmt1-1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="411" y="2440" as="sourcePoint" />
+            <mxPoint x="532" y="2203" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="o-RQzrBwaxVtIbwnVmt1-9" value="" style="endArrow=classic;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" source="rmpbXRxHIenhHcvBAkNY-182" target="o-RQzrBwaxVtIbwnVmt1-2" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="380" y="2441" as="sourcePoint" />
+            <mxPoint x="264" y="2213" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="o-RQzrBwaxVtIbwnVmt1-10" value="" style="endArrow=classic;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" source="rmpbXRxHIenhHcvBAkNY-182" target="o-RQzrBwaxVtIbwnVmt1-3" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="2451" as="sourcePoint" />
+            <mxPoint x="274" y="2223" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="o-RQzrBwaxVtIbwnVmt1-11" value="" style="endArrow=classic;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" source="rmpbXRxHIenhHcvBAkNY-182" target="o-RQzrBwaxVtIbwnVmt1-4" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="2461" as="sourcePoint" />
+            <mxPoint x="284" y="2233" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="o-RQzrBwaxVtIbwnVmt1-12" value="" style="endArrow=classic;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" source="rmpbXRxHIenhHcvBAkNY-182" target="o-RQzrBwaxVtIbwnVmt1-5" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="410" y="2471" as="sourcePoint" />
+            <mxPoint x="294" y="2243" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="o-RQzrBwaxVtIbwnVmt1-13" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" source="rmpbXRxHIenhHcvBAkNY-182" target="o-RQzrBwaxVtIbwnVmt1-6" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="380" y="2475" as="sourcePoint" />
+            <mxPoint x="529" y="2297.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="o-RQzrBwaxVtIbwnVmt1-14" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" source="rmpbXRxHIenhHcvBAkNY-182" target="o-RQzrBwaxVtIbwnVmt1-7" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="2485" as="sourcePoint" />
+            <mxPoint x="274" y="2523" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5M_BxhGtRvAO6rKEQUzK-2" value="เรียกดูจำนวนโครงการที่ถูกจัดทำแล้วทั้งหมดของแต่ละหน่วยงาน" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" vertex="1">
+          <mxGeometry x="28" y="2621" width="176" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="5M_BxhGtRvAO6rKEQUzK-3" value="เรียกดูจำนวนโครงการที่ถูกจัดทำแล้วทั้งหมดของแต่ละฝ่าย" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" vertex="1">
+          <mxGeometry x="28" y="2690" width="176" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="5M_BxhGtRvAO6rKEQUzK-4" value="เรียกดูงบประมาณปัจจุบันทั้งหมดแยกแต่ละหน่วยงาน" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" vertex="1">
+          <mxGeometry x="550" y="2477.5" width="164" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="5M_BxhGtRvAO6rKEQUzK-5" value="เรียกดูงบประมาณปัจจุบันทั้งหมดแยกแต่ละฝ่าย" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" vertex="1">
+          <mxGeometry x="551" y="2546" width="164" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="5M_BxhGtRvAO6rKEQUzK-6" value="เรียกดูงบประมาณปัจจุบันรวมทั้งหมดทุกหน่วยงาน" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" vertex="1">
+          <mxGeometry x="551" y="2628.5" width="164" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="5M_BxhGtRvAO6rKEQUzK-7" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" source="rmpbXRxHIenhHcvBAkNY-182" target="5M_BxhGtRvAO6rKEQUzK-4" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="410" y="2471" as="sourcePoint" />
+            <mxPoint x="538" y="2480" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5M_BxhGtRvAO6rKEQUzK-8" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" source="rmpbXRxHIenhHcvBAkNY-182" target="5M_BxhGtRvAO6rKEQUzK-5" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="410" y="2477" as="sourcePoint" />
+            <mxPoint x="545" y="2540" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5M_BxhGtRvAO6rKEQUzK-9" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.989;entryY=0.369;entryDx=0;entryDy=0;entryPerimeter=0;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" source="rmpbXRxHIenhHcvBAkNY-182" target="5M_BxhGtRvAO6rKEQUzK-2" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="380" y="2483" as="sourcePoint" />
+            <mxPoint x="254" y="2594" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5M_BxhGtRvAO6rKEQUzK-10" value="" style="endArrow=classic;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" source="rmpbXRxHIenhHcvBAkNY-182" target="5M_BxhGtRvAO6rKEQUzK-3" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="380" y="2490" as="sourcePoint" />
+            <mxPoint x="252" y="2660" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5M_BxhGtRvAO6rKEQUzK-11" value="เรียกดูเอกสารโครงการได้เฉพาะหน่วยงานภายใต้สังกัด" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" vertex="1">
+          <mxGeometry x="40" y="1238.5" width="176" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="5M_BxhGtRvAO6rKEQUzK-12" value="เพิ่ม ลบ แก้ไข เอกสารโครงการของหน่วยงานภายใต้สังกัด" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" vertex="1">
+          <mxGeometry x="40" y="1328.5" width="176" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="5M_BxhGtRvAO6rKEQUzK-13" value="เรียกดูจำนวนโครงการที่ถูกจัดทำแล้วได้เฉพาะหน่วยงานภายใต้สังกัด" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" vertex="1">
+          <mxGeometry x="40" y="1407" width="176" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="5M_BxhGtRvAO6rKEQUzK-14" value="เพิ่ม แก้ไข ติดตามสถานะปัจจุบันของโครงการได้เฉพาะหน่วยงานภายใต้สังกัด" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" vertex="1">
+          <mxGeometry x="40" y="1493" width="176" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="5M_BxhGtRvAO6rKEQUzK-16" value="เพิ่ม ลบ แก้ไข งบประมาณประจำปีได้เฉพาะหน่วยงานภายใต้สังกัด" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" vertex="1">
+          <mxGeometry x="508" y="1238.5" width="176" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="5M_BxhGtRvAO6rKEQUzK-17" value="เรียกดูงบประมาณปัจจุบันทั้งหมดแยกแต่ละหน่วยงาน" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" vertex="1">
+          <mxGeometry x="508" y="1329" width="194" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="5M_BxhGtRvAO6rKEQUzK-18" value="เรียกดูงบประมาณปัจจุบันทั้งหมดทุกหน่วยงาน" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" vertex="1">
+          <mxGeometry x="502" y="1406.25" width="194" height="66.5" as="geometry" />
+        </mxCell>
+        <mxCell id="5M_BxhGtRvAO6rKEQUzK-19" value="เพิ่มเงินเหลือจ่ายของแต่ละโครงการคืนกองงบประมาณหลักได้เฉพาะหน่วยงานภายใต้สังกัด" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" vertex="1">
+          <mxGeometry x="496" y="1478" width="200" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="5M_BxhGtRvAO6rKEQUzK-20" value="" style="endArrow=classic;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" source="rmpbXRxHIenhHcvBAkNY-224" target="5M_BxhGtRvAO6rKEQUzK-14" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="340" y="1412.5" as="sourcePoint" />
+            <mxPoint x="226" y="1449.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5M_BxhGtRvAO6rKEQUzK-21" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" source="rmpbXRxHIenhHcvBAkNY-224" target="5M_BxhGtRvAO6rKEQUzK-19" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="340" y="1421.5" as="sourcePoint" />
+            <mxPoint x="216" y="1535.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5M_BxhGtRvAO6rKEQUzK-22" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" source="rmpbXRxHIenhHcvBAkNY-224" target="5M_BxhGtRvAO6rKEQUzK-18" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="370" y="1418.5" as="sourcePoint" />
+            <mxPoint x="540" y="1543.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5M_BxhGtRvAO6rKEQUzK-23" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" source="rmpbXRxHIenhHcvBAkNY-224" target="5M_BxhGtRvAO6rKEQUzK-17" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="380" y="1428.5" as="sourcePoint" />
+            <mxPoint x="550" y="1553.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5M_BxhGtRvAO6rKEQUzK-24" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" source="rmpbXRxHIenhHcvBAkNY-224" target="5M_BxhGtRvAO6rKEQUzK-16" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="1438.5" as="sourcePoint" />
+            <mxPoint x="560" y="1563.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5M_BxhGtRvAO6rKEQUzK-25" value="advisor" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" vertex="1">
+          <mxGeometry x="340" y="1770" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="5M_BxhGtRvAO6rKEQUzK-26" value="เรียกดูเอกสารโครงการได้เฉพาะหน่วยงานภายใต้การดูแล" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" vertex="1">
+          <mxGeometry x="100" y="1720" width="176" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="5M_BxhGtRvAO6rKEQUzK-27" value="เรียกดูจำนวนโครงการที่จัดทำแล้วได้เฉพาะหน่วยงานภายใต้การดูแล" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" vertex="1">
+          <mxGeometry x="100" y="1830" width="176" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="5M_BxhGtRvAO6rKEQUzK-28" value="&amp;nbsp;ติดตามสถานะปัจจุบันของโครงการได้เฉพาะหน่วยงานภายใต้การดูแล" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" vertex="1">
+          <mxGeometry x="450" y="1720" width="176" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="5M_BxhGtRvAO6rKEQUzK-29" value="เรียกดูงบประมาณปัจจุบันทั้งหมดได้เฉพาะหน่วยงานภายใต้การดูแล" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" vertex="1">
+          <mxGeometry x="426" y="1820" width="204" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="5M_BxhGtRvAO6rKEQUzK-30" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" source="5M_BxhGtRvAO6rKEQUzK-25" target="5M_BxhGtRvAO6rKEQUzK-28" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="306" y="1908.5" as="sourcePoint" />
+            <mxPoint x="440" y="1816.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5M_BxhGtRvAO6rKEQUzK-31" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" source="5M_BxhGtRvAO6rKEQUzK-25" target="5M_BxhGtRvAO6rKEQUzK-29" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="380" y="1779" as="sourcePoint" />
+            <mxPoint x="460" y="1763" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5M_BxhGtRvAO6rKEQUzK-32" value="" style="endArrow=classic;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" source="5M_BxhGtRvAO6rKEQUzK-25" target="5M_BxhGtRvAO6rKEQUzK-26" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="380" y="1803" as="sourcePoint" />
+            <mxPoint x="460" y="1763" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5M_BxhGtRvAO6rKEQUzK-33" value="" style="endArrow=classic;html=1;rounded=0;entryX=1.023;entryY=0.385;entryDx=0;entryDy=0;entryPerimeter=0;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" source="5M_BxhGtRvAO6rKEQUzK-25" target="5M_BxhGtRvAO6rKEQUzK-27" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="380" y="1823" as="sourcePoint" />
+            <mxPoint x="436" y="1870" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5M_BxhGtRvAO6rKEQUzK-34" value="เรียกดูเอกสารโครงการของหน่วยงาน" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" vertex="1">
+          <mxGeometry x="80" y="1960" width="176" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="5M_BxhGtRvAO6rKEQUzK-35" value="เพิ่ม ลบ แก้ไข เอกสารโครงการของหน่วยงาน" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" vertex="1">
+          <mxGeometry x="80" y="2050" width="176" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="5M_BxhGtRvAO6rKEQUzK-36" value="เรียกดูจำนวนโครงการที่จัดทำแล้วได้เฉพาะหน่วยงานภายใต้การดูแล" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" vertex="1">
+          <mxGeometry x="80" y="2130" width="176" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="5M_BxhGtRvAO6rKEQUzK-37" value="เรียกดูงบประมาณปัจจุบันทั้งหมดได้เฉพาะหน่วยงานภายใต้การดูแล" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" vertex="1">
+          <mxGeometry x="470" y="2100" width="204" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="5M_BxhGtRvAO6rKEQUzK-38" value="&amp;nbsp;ติดตามสถานะปัจจุบันของโครงการได้เฉพาะหน่วยงานภายใต้การดูแล" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" vertex="1">
+          <mxGeometry x="470" y="1970" width="176" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="5M_BxhGtRvAO6rKEQUzK-39" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" source="5EiUYvOmLtu-O9d95kXI-1" target="5M_BxhGtRvAO6rKEQUzK-38" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="316" y="2097" as="sourcePoint" />
+            <mxPoint x="480" y="2202" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="tSsIBaGaeIuZSB1Pof6B-1" value="staff (ได้เฉพาะหน่วยงานภายใต้สังกัด)" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" vertex="1">
+          <mxGeometry x="160" y="1000" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="tSsIBaGaeIuZSB1Pof6B-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" source="tSsIBaGaeIuZSB1Pof6B-3" target="tSsIBaGaeIuZSB1Pof6B-17" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="270" y="870" />
+              <mxPoint x="270" y="930" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="tSsIBaGaeIuZSB1Pof6B-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fillColor=#ffe6cc;strokeColor=#d79b00;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" source="tSsIBaGaeIuZSB1Pof6B-3" target="tSsIBaGaeIuZSB1Pof6B-21" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="270" y="870" />
+              <mxPoint x="270" y="690" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="tSsIBaGaeIuZSB1Pof6B-3" value="admin (ได้ทุกหน่วยงาน)" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" vertex="1">
+          <mxGeometry x="160" y="840" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="tSsIBaGaeIuZSB1Pof6B-7" value="เรียกดูเอกสารโครงการ" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" vertex="1">
+          <mxGeometry x="354" y="860" width="156" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="tSsIBaGaeIuZSB1Pof6B-8" value="เพิ่ม ลบ แก้ไข เอกสารโครงการ" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" vertex="1">
+          <mxGeometry x="354" y="930" width="156" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="tSsIBaGaeIuZSB1Pof6B-9" value="ดูจำนวนโครงการที่ถูกจัดทำ" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" vertex="1">
+          <mxGeometry x="354" y="1000" width="156" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="tSsIBaGaeIuZSB1Pof6B-10" value="เพิ่ม แก้ไข ติดตามสถานะปัจจุบันของโครงการ" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" vertex="1">
+          <mxGeometry x="354" y="1070" width="156" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="tSsIBaGaeIuZSB1Pof6B-11" value="เพิ่ม ลบ แก้ไข งบประมาณประจำปี" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" vertex="1">
+          <mxGeometry x="521" y="860" width="156" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="tSsIBaGaeIuZSB1Pof6B-12" value="เรียกดูงบประมาณปัจจุบันทั้งหมดแยกแต่ละหน่วยงาน" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" vertex="1">
+          <mxGeometry x="521" y="930" width="156" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="tSsIBaGaeIuZSB1Pof6B-13" value="เรียกดูงบประมาณปัจจุบันทั้งหมดทุกหน่วยงาน" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" vertex="1">
+          <mxGeometry x="521" y="1000" width="156" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="tSsIBaGaeIuZSB1Pof6B-14" value="เพิ่มเงินเหลือจ่ายของแต่ละโครงการคืนกองงบประมาณหลัก" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" vertex="1">
+          <mxGeometry x="521" y="1070" width="156" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="tSsIBaGaeIuZSB1Pof6B-18" value="เพิ่ม ลบ แก้ไข บทบาทและสถานะของผู้ใช้งานระบบ" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" vertex="1">
+          <mxGeometry x="351.5" y="625" width="156" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="tSsIBaGaeIuZSB1Pof6B-19" value="เรียกดูบทบาทและสถานะของผู้ใช้งานระบบ" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" vertex="1">
+          <mxGeometry x="518" y="625" width="156" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="tSsIBaGaeIuZSB1Pof6B-20" value="เพิ่ม ลบ ฟอร์มเอกสารของโครงการ" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" vertex="1">
+          <mxGeometry x="352" y="695" width="156" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="tSsIBaGaeIuZSB1Pof6B-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.003;entryY=0.611;entryDx=0;entryDy=0;entryPerimeter=0;fillColor=#dae8fc;strokeColor=#6c8ebf;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" source="tSsIBaGaeIuZSB1Pof6B-1" target="tSsIBaGaeIuZSB1Pof6B-17" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="tSsIBaGaeIuZSB1Pof6B-36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" source="tSsIBaGaeIuZSB1Pof6B-27" target="tSsIBaGaeIuZSB1Pof6B-34" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="tSsIBaGaeIuZSB1Pof6B-37" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.002;entryY=0.308;entryDx=0;entryDy=0;entryPerimeter=0;fillColor=#e1d5e7;strokeColor=#9673a6;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" source="tSsIBaGaeIuZSB1Pof6B-27" target="tSsIBaGaeIuZSB1Pof6B-33" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="230" y="280" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="tSsIBaGaeIuZSB1Pof6B-27" value="user(student)" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" vertex="1">
+          <mxGeometry x="140" y="117.5" width="30" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="tSsIBaGaeIuZSB1Pof6B-35" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" source="tSsIBaGaeIuZSB1Pof6B-28" target="tSsIBaGaeIuZSB1Pof6B-33" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="tSsIBaGaeIuZSB1Pof6B-28" value="advisor (เฉพาะหน่วยงานภายใต้การดูแล)" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" vertex="1">
+          <mxGeometry x="140" y="285" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="tSsIBaGaeIuZSB1Pof6B-29" value="เรียกดูเอกสารโครงการ" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" vertex="1">
+          <mxGeometry x="313" y="250" width="156" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="tSsIBaGaeIuZSB1Pof6B-30" value="เรียกดูงบประมาณปัจจุบันของหน่วยงาน" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" vertex="1">
+          <mxGeometry x="476" y="320" width="156" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="tSsIBaGaeIuZSB1Pof6B-31" value="ดูจำนวนโครงการที่ถูกจัดทำ" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" vertex="1">
+          <mxGeometry x="313" y="320" width="156" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="tSsIBaGaeIuZSB1Pof6B-32" value="&amp;nbsp;ติดตามสถานะปัจจุบันของโครงการ" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" vertex="1">
+          <mxGeometry x="476" y="250" width="156" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="tSsIBaGaeIuZSB1Pof6B-34" value="เพิ่ม ลบ แก้ไข เอกสารโครงการ" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" vertex="1">
+          <mxGeometry x="296" y="120" width="156" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="37O4RwiXMm0Le-OvoPTe-1" value="เพิ่ม ลบ ฟอร์มเอกสาร&lt;br&gt;ของโครงการ" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" vertex="1">
+          <mxGeometry x="1741.5" y="270" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="37O4RwiXMm0Le-OvoPTe-3" value="เพิ่ม แก้ไข ติดตามสถานะปัจจุบันของโครงการ" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" vertex="1">
+          <mxGeometry x="1747" y="543" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="37O4RwiXMm0Le-OvoPTe-4" value="เพิ่ม ลบ แก้ไข &lt;br&gt;งบประมาณประจำปี" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" vertex="1">
+          <mxGeometry x="1748.5" y="612" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="37O4RwiXMm0Le-OvoPTe-5" value="เรียกดูงบประมาณปัจจุบันทั้งหมดแยกหน่วยงาน" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" vertex="1">
+          <mxGeometry x="1747" y="682" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="37O4RwiXMm0Le-OvoPTe-6" value="เรียกดูงบประมาณปัจจุบันทั้งหมดรวมทุกหน่วยงาน" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" vertex="1">
+          <mxGeometry x="1747" y="819" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="37O4RwiXMm0Le-OvoPTe-7" value="เพิ่มข้อมูลงบประมาณ&lt;br&gt;ที่ใช้จ่ายจริง" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" vertex="1">
+          <mxGeometry x="1748.5" y="890" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="37O4RwiXMm0Le-OvoPTe-8" value="" style="endArrow=classic;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;edgeStyle=orthogonalEdgeStyle;curved=1;fillColor=#f5f5f5;strokeColor=#666666;" parent="1" source="rmpbXRxHIenhHcvBAkNY-40" target="37O4RwiXMm0Le-OvoPTe-3" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="2110" y="700" as="sourcePoint" />
+            <mxPoint x="2019" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="37O4RwiXMm0Le-OvoPTe-9" value="" style="endArrow=classic;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;edgeStyle=orthogonalEdgeStyle;curved=1;fillColor=#f5f5f5;strokeColor=#666666;" parent="1" source="rmpbXRxHIenhHcvBAkNY-40" target="37O4RwiXMm0Le-OvoPTe-4" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="2104" y="706" as="sourcePoint" />
+            <mxPoint x="2020" y="570" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="37O4RwiXMm0Le-OvoPTe-10" value="" style="endArrow=classic;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;edgeStyle=orthogonalEdgeStyle;curved=1;fillColor=#f5f5f5;strokeColor=#666666;" parent="1" source="rmpbXRxHIenhHcvBAkNY-40" target="37O4RwiXMm0Le-OvoPTe-5" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="2114" y="716" as="sourcePoint" />
+            <mxPoint x="2030" y="580" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="37O4RwiXMm0Le-OvoPTe-11" value="" style="endArrow=classic;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;edgeStyle=orthogonalEdgeStyle;curved=1;fillColor=#f5f5f5;strokeColor=#666666;" parent="1" source="rmpbXRxHIenhHcvBAkNY-40" target="37O4RwiXMm0Le-OvoPTe-6" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="2124" y="726" as="sourcePoint" />
+            <mxPoint x="2040" y="590" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="37O4RwiXMm0Le-OvoPTe-12" value="" style="endArrow=classic;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;edgeStyle=orthogonalEdgeStyle;curved=1;fillColor=#f5f5f5;strokeColor=#666666;" parent="1" source="rmpbXRxHIenhHcvBAkNY-40" target="37O4RwiXMm0Le-OvoPTe-7" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="2134" y="736" as="sourcePoint" />
+            <mxPoint x="2050" y="600" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="37O4RwiXMm0Le-OvoPTe-13" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;edgeStyle=orthogonalEdgeStyle;curved=1;fillColor=#f5f5f5;strokeColor=#666666;" parent="1" source="rmpbXRxHIenhHcvBAkNY-103" target="37O4RwiXMm0Le-OvoPTe-3" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1644" y="724" as="sourcePoint" />
+            <mxPoint x="1870" y="510" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="37O4RwiXMm0Le-OvoPTe-14" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;edgeStyle=orthogonalEdgeStyle;curved=1;fillColor=#f5f5f5;strokeColor=#666666;" parent="1" source="rmpbXRxHIenhHcvBAkNY-103" target="37O4RwiXMm0Le-OvoPTe-4" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1654" y="734" as="sourcePoint" />
+            <mxPoint x="1880" y="520" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="37O4RwiXMm0Le-OvoPTe-15" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;edgeStyle=orthogonalEdgeStyle;curved=1;fillColor=#f5f5f5;strokeColor=#666666;" parent="1" source="rmpbXRxHIenhHcvBAkNY-103" target="37O4RwiXMm0Le-OvoPTe-5" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1664" y="744" as="sourcePoint" />
+            <mxPoint x="1890" y="530" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="37O4RwiXMm0Le-OvoPTe-16" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;edgeStyle=orthogonalEdgeStyle;curved=1;fillColor=#f5f5f5;strokeColor=#666666;" parent="1" source="rmpbXRxHIenhHcvBAkNY-103" target="37O4RwiXMm0Le-OvoPTe-6" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1674" y="754" as="sourcePoint" />
+            <mxPoint x="1900" y="540" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="37O4RwiXMm0Le-OvoPTe-17" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;edgeStyle=orthogonalEdgeStyle;curved=1;fillColor=#f5f5f5;strokeColor=#666666;" parent="1" source="rmpbXRxHIenhHcvBAkNY-103" target="37O4RwiXMm0Le-OvoPTe-7" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1684" y="764" as="sourcePoint" />
+            <mxPoint x="1910" y="550" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="37O4RwiXMm0Le-OvoPTe-20" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;edgeStyle=orthogonalEdgeStyle;curved=1;fillColor=#f5f5f5;strokeColor=#666666;" parent="1" source="rmpbXRxHIenhHcvBAkNY-107" target="rmpbXRxHIenhHcvBAkNY-49" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1644" y="1073" as="sourcePoint" />
+            <mxPoint x="1779" y="1190" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="37O4RwiXMm0Le-OvoPTe-21" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;edgeStyle=orthogonalEdgeStyle;curved=1;fillColor=#f5f5f5;strokeColor=#666666;" parent="1" source="rmpbXRxHIenhHcvBAkNY-107" target="rmpbXRxHIenhHcvBAkNY-72" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1643" y="1032" as="sourcePoint" />
+            <mxPoint x="1766" y="800" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="37O4RwiXMm0Le-OvoPTe-22" value="" style="endArrow=classic;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;edgeStyle=orthogonalEdgeStyle;curved=1;" parent="1" source="rmpbXRxHIenhHcvBAkNY-41" target="rmpbXRxHIenhHcvBAkNY-49" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="2104" y="1058" as="sourcePoint" />
+            <mxPoint x="1929" y="1040" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="37O4RwiXMm0Le-OvoPTe-23" value="" style="endArrow=classic;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;edgeStyle=orthogonalEdgeStyle;curved=1;fillColor=#f5f5f5;strokeColor=#666666;" parent="1" source="rmpbXRxHIenhHcvBAkNY-41" target="rmpbXRxHIenhHcvBAkNY-72" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="2104" y="1041" as="sourcePoint" />
+            <mxPoint x="1916" y="800" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PnuVkftov76lWLMbrwmG-2" value="เรียกดูจำนวนโครงการที่จัดทำแล้วแยกฝ่ายหน่วยงาน" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" vertex="1">
+          <mxGeometry x="1748.5" y="403" width="147" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="PnuVkftov76lWLMbrwmG-4" value="เรียกดูจำนวนโครงการที่จัดทำแล้วรวมทุกหน่วยงาน" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" vertex="1">
+          <mxGeometry x="1748.5" y="473" width="147" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="PnuVkftov76lWLMbrwmG-5" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;edgeStyle=orthogonalEdgeStyle;curved=1;fillColor=#f5f5f5;strokeColor=#666666;" parent="1" source="rmpbXRxHIenhHcvBAkNY-103" target="PnuVkftov76lWLMbrwmG-2" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1643" y="780" as="sourcePoint" />
+            <mxPoint x="1757" y="625" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PnuVkftov76lWLMbrwmG-6" value="" style="endArrow=classic;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;edgeStyle=orthogonalEdgeStyle;curved=1;fillColor=#f5f5f5;strokeColor=#666666;" parent="1" source="rmpbXRxHIenhHcvBAkNY-40" target="PnuVkftov76lWLMbrwmG-2" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1639" y="770" as="sourcePoint" />
+            <mxPoint x="1764" y="440" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PnuVkftov76lWLMbrwmG-8" value="" style="endArrow=classic;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;edgeStyle=orthogonalEdgeStyle;curved=1;fillColor=#f5f5f5;strokeColor=#666666;" parent="1" source="rmpbXRxHIenhHcvBAkNY-40" target="PnuVkftov76lWLMbrwmG-4" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="2103" y="825" as="sourcePoint" />
+            <mxPoint x="1921" y="450" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PnuVkftov76lWLMbrwmG-9" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;edgeStyle=orthogonalEdgeStyle;curved=1;fillColor=#f5f5f5;strokeColor=#666666;" parent="1" source="rmpbXRxHIenhHcvBAkNY-103" target="PnuVkftov76lWLMbrwmG-4" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1643" y="780" as="sourcePoint" />
+            <mxPoint x="1757" y="625" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PnuVkftov76lWLMbrwmG-11" value="เรียกดูงบประมาณปัจจุบันทั้งหมดแยกฝ่ายหน่วยงาน" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" vertex="1">
+          <mxGeometry x="1747" y="751" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="PnuVkftov76lWLMbrwmG-12" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;edgeStyle=orthogonalEdgeStyle;curved=1;fillColor=#f5f5f5;strokeColor=#666666;" parent="1" target="PnuVkftov76lWLMbrwmG-11" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1500" y="751" as="sourcePoint" />
+            <mxPoint x="1757" y="745" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PnuVkftov76lWLMbrwmG-13" value="" style="endArrow=classic;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;edgeStyle=orthogonalEdgeStyle;curved=1;fillColor=#f5f5f5;strokeColor=#666666;" parent="1" source="rmpbXRxHIenhHcvBAkNY-40" target="PnuVkftov76lWLMbrwmG-11" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="2093" y="838" as="sourcePoint" />
+            <mxPoint x="1907" y="745" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="P1cJ3jxfY9NAmH3YO0xf-1" value="เข้าถึงการรายงานผล&lt;br&gt;ประเภทต่างๆตามบทบาท" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" vertex="1">
+          <mxGeometry x="1748.5" y="956" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="RT6BizPViVm5CZ8Vax3i-6" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;curved=1;fillColor=#f5f5f5;strokeColor=#666666;" parent="1" source="rmpbXRxHIenhHcvBAkNY-103" target="rmpbXRxHIenhHcvBAkNY-54" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1600" y="670" as="sourcePoint" />
+            <mxPoint x="1650" y="620" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="RT6BizPViVm5CZ8Vax3i-7" value="" style="endArrow=classic;html=1;rounded=0;fillColor=#f5f5f5;strokeColor=#666666;entryX=0;entryY=0.5;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;curved=1;" parent="1" target="rmpbXRxHIenhHcvBAkNY-75" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1500" y="750" as="sourcePoint" />
+            <mxPoint x="1650" y="610" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="RT6BizPViVm5CZ8Vax3i-8" value="" style="endArrow=classic;html=1;rounded=0;fillColor=#f5f5f5;strokeColor=#666666;entryX=0;entryY=0.5;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;curved=1;" parent="1" target="37O4RwiXMm0Le-OvoPTe-1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1500" y="750" as="sourcePoint" />
+            <mxPoint x="1751" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="RT6BizPViVm5CZ8Vax3i-13" value="นักศึกษาที่มีรายชื่อในระบบ" style="swimlane;horizontal=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="1253" y="1680" width="817" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="RT6BizPViVm5CZ8Vax3i-14" value="ขั้นตอนการเสนอพิจารณาโครงการ" style="swimlane;horizontal=0;whiteSpace=wrap;html=1;startSize=23;" parent="1" vertex="1">
+          <mxGeometry x="1230" y="1680" width="840" height="470" as="geometry" />
+        </mxCell>
+        <mxCell id="RT6BizPViVm5CZ8Vax3i-126" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="RT6BizPViVm5CZ8Vax3i-14" source="RT6BizPViVm5CZ8Vax3i-17" target="RT6BizPViVm5CZ8Vax3i-18" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RT6BizPViVm5CZ8Vax3i-17" value="เริ่มต้น&lt;br&gt;" style="rounded=1;whiteSpace=wrap;html=1;gradientColor=none;arcSize=50;" parent="RT6BizPViVm5CZ8Vax3i-14" vertex="1">
+          <mxGeometry x="80" y="40" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="RT6BizPViVm5CZ8Vax3i-127" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="RT6BizPViVm5CZ8Vax3i-14" source="RT6BizPViVm5CZ8Vax3i-18" target="RT6BizPViVm5CZ8Vax3i-19" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RT6BizPViVm5CZ8Vax3i-18" value="เลือกชื่อโครงการที่ต้องการในหน้า &quot;โครงการทั้งหมด&quot;" style="rounded=1;whiteSpace=wrap;html=1;gradientColor=none;arcSize=24;" parent="RT6BizPViVm5CZ8Vax3i-14" vertex="1">
+          <mxGeometry x="240" y="30" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="RT6BizPViVm5CZ8Vax3i-19" value="ส่งคำร้อง &quot;เสนอพิจารณา&quot; โครงการ" style="rounded=1;whiteSpace=wrap;html=1;gradientColor=none;arcSize=24;" parent="RT6BizPViVm5CZ8Vax3i-14" vertex="1">
+          <mxGeometry x="200" y="120" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="RT6BizPViVm5CZ8Vax3i-15" value="ผู้ดูแลระบบ / บุคลากรกองกิจ" style="swimlane;horizontal=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="1253" y="1870" width="817" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="RT6BizPViVm5CZ8Vax3i-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="RT6BizPViVm5CZ8Vax3i-15" source="RT6BizPViVm5CZ8Vax3i-24" target="RT6BizPViVm5CZ8Vax3i-26" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RT6BizPViVm5CZ8Vax3i-24" value="อัพเดทสถานะและเพิ่มรายการสถานะใหม่ใน &quot;แสดงสถานะอัพเดท&quot;" style="rounded=1;whiteSpace=wrap;html=1;gradientColor=none;arcSize=24;" parent="RT6BizPViVm5CZ8Vax3i-15" vertex="1">
+          <mxGeometry x="165.5" y="20" width="203" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="RT6BizPViVm5CZ8Vax3i-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="RT6BizPViVm5CZ8Vax3i-15" source="RT6BizPViVm5CZ8Vax3i-26" target="RT6BizPViVm5CZ8Vax3i-29" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RT6BizPViVm5CZ8Vax3i-31" value="ใช่" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="RT6BizPViVm5CZ8Vax3i-30" vertex="1" connectable="0">
+          <mxGeometry x="-0.0973" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="RT6BizPViVm5CZ8Vax3i-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="RT6BizPViVm5CZ8Vax3i-15" source="RT6BizPViVm5CZ8Vax3i-26" target="RT6BizPViVm5CZ8Vax3i-32" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RT6BizPViVm5CZ8Vax3i-34" value="ไม่" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="RT6BizPViVm5CZ8Vax3i-33" vertex="1" connectable="0">
+          <mxGeometry x="0.0567" y="-1" relative="1" as="geometry">
+            <mxPoint y="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="RT6BizPViVm5CZ8Vax3i-26" value="&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; ข้อมูลที่ร้องขอเปิดโครงการ&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; ถูกต้องหรือไม่" style="rhombus;whiteSpace=wrap;html=1;" parent="RT6BizPViVm5CZ8Vax3i-15" vertex="1">
+          <mxGeometry x="176.25" y="80" width="181.5" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="RT6BizPViVm5CZ8Vax3i-38" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="RT6BizPViVm5CZ8Vax3i-15" source="RT6BizPViVm5CZ8Vax3i-29" target="RT6BizPViVm5CZ8Vax3i-37" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RT6BizPViVm5CZ8Vax3i-29" value="ดำเนินการอนุมัติ" style="rounded=1;whiteSpace=wrap;html=1;gradientColor=none;arcSize=24;" parent="RT6BizPViVm5CZ8Vax3i-15" vertex="1">
+          <mxGeometry x="417" y="100" width="133" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="RT6BizPViVm5CZ8Vax3i-35" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="RT6BizPViVm5CZ8Vax3i-15" source="RT6BizPViVm5CZ8Vax3i-32" target="RT6BizPViVm5CZ8Vax3i-26" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="147" y="120" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="137" y="230" />
+              <mxPoint x="137" y="120" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="RT6BizPViVm5CZ8Vax3i-32" value="แก้ไขรายละเอียดโครงการ" style="rounded=1;whiteSpace=wrap;html=1;gradientColor=none;arcSize=24;" parent="RT6BizPViVm5CZ8Vax3i-15" vertex="1">
+          <mxGeometry x="200.5" y="210" width="133" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="RT6BizPViVm5CZ8Vax3i-43" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="RT6BizPViVm5CZ8Vax3i-15" source="RT6BizPViVm5CZ8Vax3i-37" target="RT6BizPViVm5CZ8Vax3i-42" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RT6BizPViVm5CZ8Vax3i-37" value="อัพเดทสถานะและเพิ่มรายการสถานะใหม่ใน &quot;แสดงสถานะอัพเดท&quot;" style="rounded=1;whiteSpace=wrap;html=1;gradientColor=none;arcSize=24;" parent="RT6BizPViVm5CZ8Vax3i-15" vertex="1">
+          <mxGeometry x="577" y="100" width="203" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="RT6BizPViVm5CZ8Vax3i-42" value="เสร็จสิ้น" style="rounded=1;whiteSpace=wrap;html=1;gradientColor=none;arcSize=50;" parent="RT6BizPViVm5CZ8Vax3i-15" vertex="1">
+          <mxGeometry x="638.5" y="190" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="RT6BizPViVm5CZ8Vax3i-16" value="final use case diagram&lt;br&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="1700" y="1388" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RT6BizPViVm5CZ8Vax3i-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="RT6BizPViVm5CZ8Vax3i-19" target="RT6BizPViVm5CZ8Vax3i-24" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RT6BizPViVm5CZ8Vax3i-45" value="ขั้นตอนการเสนอพิจารณาโครงการ" style="swimlane;horizontal=0;whiteSpace=wrap;html=1;startSize=23;" parent="1" vertex="1">
+          <mxGeometry x="1240" y="3530" width="840" height="680" as="geometry" />
+        </mxCell>
+        <mxCell id="RT6BizPViVm5CZ8Vax3i-46" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="RT6BizPViVm5CZ8Vax3i-45" source="RT6BizPViVm5CZ8Vax3i-47" target="RT6BizPViVm5CZ8Vax3i-49" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RT6BizPViVm5CZ8Vax3i-49" value="นักศึกษาที่มีชื่อในผู้รับผิดชอบโครงการติดต่อห้องกองกิจการนักศึกษาโดยตรง" style="rounded=1;whiteSpace=wrap;html=1;gradientColor=none;arcSize=24;" parent="RT6BizPViVm5CZ8Vax3i-45" vertex="1">
+          <mxGeometry x="60" y="120" width="220" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="RT6BizPViVm5CZ8Vax3i-51" value="ผู้ดูแลระบบ / บุคลากรกองกิจ" style="swimlane;horizontal=0;whiteSpace=wrap;html=1;" parent="RT6BizPViVm5CZ8Vax3i-45" vertex="1">
+          <mxGeometry x="23" width="817" height="680" as="geometry" />
+        </mxCell>
+        <mxCell id="RT6BizPViVm5CZ8Vax3i-52" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="RT6BizPViVm5CZ8Vax3i-51" source="RT6BizPViVm5CZ8Vax3i-53" target="RT6BizPViVm5CZ8Vax3i-58" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RT6BizPViVm5CZ8Vax3i-53" value="อัพเดทสถานะและเพิ่มรายการสถานะใหม่ใน &quot;แสดงสถานะอัพเดท&quot;" style="rounded=1;whiteSpace=wrap;html=1;gradientColor=none;arcSize=24;" parent="RT6BizPViVm5CZ8Vax3i-51" vertex="1">
+          <mxGeometry x="157" y="220" width="203" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="RT6BizPViVm5CZ8Vax3i-54" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="RT6BizPViVm5CZ8Vax3i-51" source="RT6BizPViVm5CZ8Vax3i-58" target="RT6BizPViVm5CZ8Vax3i-60" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RT6BizPViVm5CZ8Vax3i-55" value="ใช่" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="RT6BizPViVm5CZ8Vax3i-54" vertex="1" connectable="0">
+          <mxGeometry x="-0.0973" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="RT6BizPViVm5CZ8Vax3i-56" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="RT6BizPViVm5CZ8Vax3i-51" source="RT6BizPViVm5CZ8Vax3i-58" target="RT6BizPViVm5CZ8Vax3i-62" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RT6BizPViVm5CZ8Vax3i-57" value="ไม่" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="RT6BizPViVm5CZ8Vax3i-56" vertex="1" connectable="0">
+          <mxGeometry x="0.0567" y="-1" relative="1" as="geometry">
+            <mxPoint y="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="RT6BizPViVm5CZ8Vax3i-58" value="&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; ข้อมูลที่ร้องขอเปิดโครงการ&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; ถูกต้องหรือไม่" style="rhombus;whiteSpace=wrap;html=1;" parent="RT6BizPViVm5CZ8Vax3i-51" vertex="1">
+          <mxGeometry x="167.75" y="280" width="181.5" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="RT6BizPViVm5CZ8Vax3i-59" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="RT6BizPViVm5CZ8Vax3i-51" source="RT6BizPViVm5CZ8Vax3i-60" target="RT6BizPViVm5CZ8Vax3i-64" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RT6BizPViVm5CZ8Vax3i-60" value="ดำเนินการอนุมัติ" style="rounded=1;whiteSpace=wrap;html=1;gradientColor=none;arcSize=24;" parent="RT6BizPViVm5CZ8Vax3i-51" vertex="1">
+          <mxGeometry x="408.5" y="300" width="133" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="RT6BizPViVm5CZ8Vax3i-61" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="RT6BizPViVm5CZ8Vax3i-51" source="RT6BizPViVm5CZ8Vax3i-62" target="RT6BizPViVm5CZ8Vax3i-58" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="147" y="260" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="192" y="370" />
+              <mxPoint x="137" y="370" />
+              <mxPoint x="137" y="320" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="RT6BizPViVm5CZ8Vax3i-62" value="แก้ไขรายละเอียดโครงการ" style="rounded=1;whiteSpace=wrap;html=1;gradientColor=none;arcSize=24;" parent="RT6BizPViVm5CZ8Vax3i-51" vertex="1">
+          <mxGeometry x="192" y="410" width="133" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="RT6BizPViVm5CZ8Vax3i-63" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="RT6BizPViVm5CZ8Vax3i-51" source="RT6BizPViVm5CZ8Vax3i-64" target="RT6BizPViVm5CZ8Vax3i-65" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RT6BizPViVm5CZ8Vax3i-64" value="อัพเดทสถานะและเพิ่มรายการสถานะใหม่ใน &quot;แสดงสถานะอัพเดท&quot;" style="rounded=1;whiteSpace=wrap;html=1;gradientColor=none;arcSize=24;" parent="RT6BizPViVm5CZ8Vax3i-51" vertex="1">
+          <mxGeometry x="568.5" y="300" width="203" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="RT6BizPViVm5CZ8Vax3i-65" value="เสร็จสิ้น" style="rounded=1;whiteSpace=wrap;html=1;gradientColor=none;arcSize=50;" parent="RT6BizPViVm5CZ8Vax3i-51" vertex="1">
+          <mxGeometry x="630" y="390" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="RT6BizPViVm5CZ8Vax3i-69" value="&amp;nbsp;สถานะโครงการต้องอยู่ในช่วง &quot;เงินโครงการอนุมัติ&quot;" style="rounded=1;whiteSpace=wrap;html=1;gradientColor=none;arcSize=24;" parent="RT6BizPViVm5CZ8Vax3i-51" vertex="1">
+          <mxGeometry x="307" y="120" width="170" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="RT6BizPViVm5CZ8Vax3i-47" value="เริ่มต้น&lt;br&gt;" style="rounded=1;whiteSpace=wrap;html=1;gradientColor=none;arcSize=50;" parent="RT6BizPViVm5CZ8Vax3i-51" vertex="1">
+          <mxGeometry x="107" y="50" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="RT6BizPViVm5CZ8Vax3i-93" value="นักศึกษาที่มีรายชื่อในระบบ" style="swimlane;horizontal=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="1264.5" y="2250" width="817" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="RT6BizPViVm5CZ8Vax3i-94" value="ขั้นตอนการรับเงินโครงการ" style="swimlane;horizontal=0;whiteSpace=wrap;html=1;startSize=23;" parent="1" vertex="1">
+          <mxGeometry x="1241.5" y="2250" width="840" height="440" as="geometry" />
+        </mxCell>
+        <mxCell id="RT6BizPViVm5CZ8Vax3i-123" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="RT6BizPViVm5CZ8Vax3i-94" source="RT6BizPViVm5CZ8Vax3i-96" target="RT6BizPViVm5CZ8Vax3i-116" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RT6BizPViVm5CZ8Vax3i-96" value="เริ่มต้น&lt;br&gt;" style="rounded=1;whiteSpace=wrap;html=1;gradientColor=none;arcSize=50;" parent="RT6BizPViVm5CZ8Vax3i-94" vertex="1">
+          <mxGeometry x="78.5" y="30" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="RT6BizPViVm5CZ8Vax3i-124" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="RT6BizPViVm5CZ8Vax3i-94" source="RT6BizPViVm5CZ8Vax3i-116" target="RT6BizPViVm5CZ8Vax3i-118" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RT6BizPViVm5CZ8Vax3i-116" value="นักศึกษาติดต่อห้องกองกิจการนักศึกษา อาคาร40ปี ชั้น5" style="rounded=1;whiteSpace=wrap;html=1;gradientColor=none;arcSize=24;" parent="RT6BizPViVm5CZ8Vax3i-94" vertex="1">
+          <mxGeometry x="209.94" y="30" width="160.13" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="RT6BizPViVm5CZ8Vax3i-118" value="&amp;nbsp;สถานะโครงการต้องอยู่ในช่วง &quot;เงินโครงการอนุมัติ&quot;เป็นต้นไป" style="rounded=1;whiteSpace=wrap;html=1;gradientColor=none;arcSize=24;" parent="RT6BizPViVm5CZ8Vax3i-94" vertex="1">
+          <mxGeometry x="205" y="110" width="170" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="RT6BizPViVm5CZ8Vax3i-100" value="ผู้ดูแลระบบ / บุคลากรกองกิจ" style="swimlane;horizontal=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="1264.5" y="2440" width="817" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="RT6BizPViVm5CZ8Vax3i-103" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="RT6BizPViVm5CZ8Vax3i-100" source="RT6BizPViVm5CZ8Vax3i-107" target="RT6BizPViVm5CZ8Vax3i-109" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RT6BizPViVm5CZ8Vax3i-166" value="ได้" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="RT6BizPViVm5CZ8Vax3i-103" vertex="1" connectable="0">
+          <mxGeometry x="-0.0727" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="RT6BizPViVm5CZ8Vax3i-105" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="RT6BizPViVm5CZ8Vax3i-100" source="RT6BizPViVm5CZ8Vax3i-107" target="RT6BizPViVm5CZ8Vax3i-111" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RT6BizPViVm5CZ8Vax3i-106" value="ไม่" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="RT6BizPViVm5CZ8Vax3i-105" vertex="1" connectable="0">
+          <mxGeometry x="0.0567" y="-1" relative="1" as="geometry">
+            <mxPoint y="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="RT6BizPViVm5CZ8Vax3i-107" value="&amp;nbsp; &amp;nbsp;ตรวจสอบหน้า&quot;รายละเอียดนักศึกษารับเงิน&quot; ว่าสามารถกรอกข้อมูลได้หรือไม่" style="rhombus;whiteSpace=wrap;html=1;" parent="RT6BizPViVm5CZ8Vax3i-100" vertex="1">
+          <mxGeometry x="176.25" y="41" width="181.5" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="RT6BizPViVm5CZ8Vax3i-108" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="RT6BizPViVm5CZ8Vax3i-100" source="RT6BizPViVm5CZ8Vax3i-109" target="RT6BizPViVm5CZ8Vax3i-113" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RT6BizPViVm5CZ8Vax3i-109" value="ใส่รายละเอียดการรับเงิน" style="rounded=1;whiteSpace=wrap;html=1;gradientColor=none;arcSize=24;" parent="RT6BizPViVm5CZ8Vax3i-100" vertex="1">
+          <mxGeometry x="417" y="61" width="133" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="RT6BizPViVm5CZ8Vax3i-122" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="RT6BizPViVm5CZ8Vax3i-100" source="RT6BizPViVm5CZ8Vax3i-111" target="RT6BizPViVm5CZ8Vax3i-114" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RT6BizPViVm5CZ8Vax3i-111" value="มีนักศึกษารับเงินไปเรียบร้อยแล้ว" style="rounded=1;whiteSpace=wrap;html=1;gradientColor=none;arcSize=24;" parent="RT6BizPViVm5CZ8Vax3i-100" vertex="1">
+          <mxGeometry x="200.5" y="171" width="133" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="RT6BizPViVm5CZ8Vax3i-112" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="RT6BizPViVm5CZ8Vax3i-100" source="RT6BizPViVm5CZ8Vax3i-113" target="RT6BizPViVm5CZ8Vax3i-114" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RT6BizPViVm5CZ8Vax3i-113" value="อัพเดทสถานะและเพิ่มรายการสถานะใหม่ใน &quot;รายละเอียดนักศึกษารับเงิน&quot;" style="rounded=1;whiteSpace=wrap;html=1;gradientColor=none;arcSize=24;" parent="RT6BizPViVm5CZ8Vax3i-100" vertex="1">
+          <mxGeometry x="577" y="61" width="203" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="RT6BizPViVm5CZ8Vax3i-114" value="เสร็จสิ้น" style="rounded=1;whiteSpace=wrap;html=1;gradientColor=none;arcSize=50;" parent="RT6BizPViVm5CZ8Vax3i-100" vertex="1">
+          <mxGeometry x="638.5" y="171" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="RT6BizPViVm5CZ8Vax3i-125" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="RT6BizPViVm5CZ8Vax3i-118" target="RT6BizPViVm5CZ8Vax3i-107" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RT6BizPViVm5CZ8Vax3i-128" value="นักศึกษาที่มีรายชื่อในระบบ" style="swimlane;horizontal=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="1263" y="2750" width="817" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="RT6BizPViVm5CZ8Vax3i-129" value="ขั้นตอนการสรุปโครงการ" style="swimlane;horizontal=0;whiteSpace=wrap;html=1;startSize=23;" parent="1" vertex="1">
+          <mxGeometry x="1240" y="2750" width="840" height="430" as="geometry" />
+        </mxCell>
+        <mxCell id="RT6BizPViVm5CZ8Vax3i-130" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="RT6BizPViVm5CZ8Vax3i-129" source="RT6BizPViVm5CZ8Vax3i-131" target="RT6BizPViVm5CZ8Vax3i-167" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="240" y="70" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="RT6BizPViVm5CZ8Vax3i-131" value="เริ่มต้น&lt;br&gt;" style="rounded=1;whiteSpace=wrap;html=1;gradientColor=none;arcSize=50;" parent="RT6BizPViVm5CZ8Vax3i-129" vertex="1">
+          <mxGeometry x="78.5" y="40" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="RT6BizPViVm5CZ8Vax3i-132" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="RT6BizPViVm5CZ8Vax3i-129" source="RT6BizPViVm5CZ8Vax3i-167" target="RT6BizPViVm5CZ8Vax3i-134" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="310" y="110" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="RT6BizPViVm5CZ8Vax3i-134" value="&amp;nbsp;สถานะโครงการต้องอยู่ในช่วง &quot;ร่างสรุปผลโครงการ&quot;เป็นต้นไป" style="rounded=1;whiteSpace=wrap;html=1;gradientColor=none;arcSize=24;" parent="RT6BizPViVm5CZ8Vax3i-129" vertex="1">
+          <mxGeometry x="205" y="130" width="170" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="RT6BizPViVm5CZ8Vax3i-167" value="เลือกชื่อโครงการที่ต้องการในหน้า &quot;โครงการทั้งหมด&quot;" style="rounded=1;whiteSpace=wrap;html=1;gradientColor=none;arcSize=24;" parent="RT6BizPViVm5CZ8Vax3i-129" vertex="1">
+          <mxGeometry x="230" y="30" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="RT6BizPViVm5CZ8Vax3i-135" value="ผู้ดูแลระบบ / บุคลากรกองกิจ" style="swimlane;horizontal=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="1263" y="2960" width="817" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="RT6BizPViVm5CZ8Vax3i-156" value="&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; ข้อมูลที่ร้องขอปิดโครงการ&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; ถูกต้องหรือไม่" style="rhombus;whiteSpace=wrap;html=1;" parent="RT6BizPViVm5CZ8Vax3i-135" vertex="1">
+          <mxGeometry x="176.19" y="30" width="181.5" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="RT6BizPViVm5CZ8Vax3i-158" value="ดำเนินการสรุปผล" style="rounded=1;whiteSpace=wrap;html=1;gradientColor=none;arcSize=24;" parent="RT6BizPViVm5CZ8Vax3i-135" vertex="1">
+          <mxGeometry x="416.94" y="50" width="133" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="RT6BizPViVm5CZ8Vax3i-152" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="RT6BizPViVm5CZ8Vax3i-135" source="RT6BizPViVm5CZ8Vax3i-156" target="RT6BizPViVm5CZ8Vax3i-158" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RT6BizPViVm5CZ8Vax3i-153" value="ใช่" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="RT6BizPViVm5CZ8Vax3i-152" vertex="1" connectable="0">
+          <mxGeometry x="-0.0973" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="RT6BizPViVm5CZ8Vax3i-159" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="RT6BizPViVm5CZ8Vax3i-135" source="RT6BizPViVm5CZ8Vax3i-160" target="RT6BizPViVm5CZ8Vax3i-156" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="146.94" y="70" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="137" y="180" />
+              <mxPoint x="137" y="70" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="RT6BizPViVm5CZ8Vax3i-160" value="แก้ไขรายละเอียดปืดโครงการ" style="rounded=1;whiteSpace=wrap;html=1;gradientColor=none;arcSize=24;" parent="RT6BizPViVm5CZ8Vax3i-135" vertex="1">
+          <mxGeometry x="200.44" y="160" width="133" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="RT6BizPViVm5CZ8Vax3i-154" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="RT6BizPViVm5CZ8Vax3i-135" source="RT6BizPViVm5CZ8Vax3i-156" target="RT6BizPViVm5CZ8Vax3i-160" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RT6BizPViVm5CZ8Vax3i-155" value="ไม่" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="RT6BizPViVm5CZ8Vax3i-154" vertex="1" connectable="0">
+          <mxGeometry x="0.0567" y="-1" relative="1" as="geometry">
+            <mxPoint y="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="RT6BizPViVm5CZ8Vax3i-162" value="อัพเดทสถานะและเพิ่มรายการสถานะใหม่ใน &quot;แสดงสถานะอัพเดท&quot;" style="rounded=1;whiteSpace=wrap;html=1;gradientColor=none;arcSize=24;" parent="RT6BizPViVm5CZ8Vax3i-135" vertex="1">
+          <mxGeometry x="576.94" y="50" width="203" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="RT6BizPViVm5CZ8Vax3i-157" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="RT6BizPViVm5CZ8Vax3i-135" source="RT6BizPViVm5CZ8Vax3i-158" target="RT6BizPViVm5CZ8Vax3i-162" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RT6BizPViVm5CZ8Vax3i-163" value="เสร็จสิ้น" style="rounded=1;whiteSpace=wrap;html=1;gradientColor=none;arcSize=50;" parent="RT6BizPViVm5CZ8Vax3i-135" vertex="1">
+          <mxGeometry x="638.44" y="140" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="RT6BizPViVm5CZ8Vax3i-161" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="RT6BizPViVm5CZ8Vax3i-135" source="RT6BizPViVm5CZ8Vax3i-162" target="RT6BizPViVm5CZ8Vax3i-163" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RT6BizPViVm5CZ8Vax3i-149" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="RT6BizPViVm5CZ8Vax3i-134" target="RT6BizPViVm5CZ8Vax3i-156" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1530" y="3000" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
