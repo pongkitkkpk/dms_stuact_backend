@@ -1,11 +1,11 @@
-<mxfile host="app.diagrams.net" modified="2024-06-19T09:55:26.755Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36" etag="enQk5gBXRdG1y07Xjulu" version="24.5.4" type="device">
+<mxfile host="app.diagrams.net" modified="2024-06-19T10:38:41.579Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36" etag="Dcn_PiAYiHckR6TLSNc1" version="24.5.5" type="device">
   <diagram name="หน้า-1" id="xoCHngNK6IxY0QqmwnbI">
-    <mxGraphModel dx="1075" dy="435" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="1654" math="0" shadow="0">
+    <mxGraphModel dx="1290" dy="522" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="1654" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="RT6BizPViVm5CZ8Vax3i-2" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="1560" y="90" width="560" height="1280" as="geometry" />
+          <mxGeometry x="1560" y="110" width="560" height="1260" as="geometry" />
         </mxCell>
         <mxCell id="tSsIBaGaeIuZSB1Pof6B-33" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" vertex="1">
           <mxGeometry x="296" y="230" width="350" height="170" as="geometry" />
@@ -47,9 +47,6 @@
           <mxGeometry x="1745.5" y="1296.5" width="150" height="60" as="geometry" />
         </mxCell>
         <mxCell id="P1cJ3jxfY9NAmH3YO0xf-6" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;fillColor=#f5f5f5;strokeColor=#666666;" parent="1" source="rmpbXRxHIenhHcvBAkNY-40" target="P1cJ3jxfY9NAmH3YO0xf-1" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="X_mMpTQVKw5BesLhOwYD-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;curved=1;fillColor=#F5F5F5;" edge="1" parent="1" source="rmpbXRxHIenhHcvBAkNY-40" target="37O4RwiXMm0Le-OvoPTe-1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="rmpbXRxHIenhHcvBAkNY-40" value="staff&lt;br&gt;(เฉพาะหน่วยงานภายใต้สังกัด)" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" vertex="1">
@@ -115,7 +112,7 @@
             <mxPoint x="1941" y="673" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="rmpbXRxHIenhHcvBAkNY-69" value="เพิ่ม ลบ แก้ไข เอกสารโครงการ" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" vertex="1">
+        <mxCell id="rmpbXRxHIenhHcvBAkNY-69" value="เรียกดูจำนวนโครงการที่จัดทำแล้วแยกฝ่ายหน่วยงาน" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" vertex="1">
           <mxGeometry x="1741.5" y="345" width="164" height="50" as="geometry" />
         </mxCell>
         <mxCell id="rmpbXRxHIenhHcvBAkNY-70" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;edgeStyle=orthogonalEdgeStyle;curved=1;fillColor=#f5f5f5;strokeColor=#666666;" parent="1" source="rmpbXRxHIenhHcvBAkNY-103" target="rmpbXRxHIenhHcvBAkNY-69" edge="1">
@@ -514,7 +511,7 @@
         <mxCell id="tSsIBaGaeIuZSB1Pof6B-34" value="เพิ่ม ลบ แก้ไข เอกสารโครงการ" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" vertex="1">
           <mxGeometry x="296" y="120" width="156" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="37O4RwiXMm0Le-OvoPTe-1" value="เพิ่ม ลบ แก้ไข บทบาท&lt;br&gt;และสถานะของผู้ใช้งานระบบระดับนักศึกษา/ที่ปรึกษา" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" vertex="1">
+        <mxCell id="37O4RwiXMm0Le-OvoPTe-1" value="เรียกดูจำนวนโครงการที่จัดทำแล้วรวมทุกหน่วยงาน" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" vertex="1">
           <mxGeometry x="1741.5" y="270" width="150" height="60" as="geometry" />
         </mxCell>
         <mxCell id="37O4RwiXMm0Le-OvoPTe-3" value="เพิ่ม แก้ไข ติดตามสถานะปัจจุบันของโครงการ" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" vertex="1">
@@ -616,10 +613,10 @@
             <mxPoint x="1916" y="800" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="PnuVkftov76lWLMbrwmG-2" value="เรียกดูจำนวนโครงการที่จัดทำแล้วแยกฝ่ายหน่วยงาน" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" vertex="1">
+        <mxCell id="PnuVkftov76lWLMbrwmG-2" value="เพิ่ม ลบ แก้ไข บทบาท&lt;br&gt;และสถานะของผู้ใช้งานระบบระดับนักศึกษา/ที่ปรึกษา" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" vertex="1">
           <mxGeometry x="1748.5" y="403" width="147" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="PnuVkftov76lWLMbrwmG-4" value="เรียกดูจำนวนโครงการที่จัดทำแล้วรวมทุกหน่วยงาน" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" vertex="1">
+        <mxCell id="PnuVkftov76lWLMbrwmG-4" value="เพิ่ม ลบ แก้ไข เอกสารโครงการ" style="ellipse;whiteSpace=wrap;html=1;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;" parent="1" vertex="1">
           <mxGeometry x="1748.5" y="473" width="147" height="60" as="geometry" />
         </mxCell>
         <mxCell id="PnuVkftov76lWLMbrwmG-5" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Bai Jamjuree;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss2%3Ffamily%3DAnuphan%26family%3DBai%2BJamjuree%26family%3DIBM%2BPlex%2BSans%2BThai%26family%3DPridi%3Awght%40300%26family%3DPrompt%26family%3DThe%2BGirl%2BNext%2BDoor%26display%3Dswap;edgeStyle=orthogonalEdgeStyle;curved=1;fillColor=#f5f5f5;strokeColor=#666666;" parent="1" source="rmpbXRxHIenhHcvBAkNY-103" target="PnuVkftov76lWLMbrwmG-2" edge="1">
