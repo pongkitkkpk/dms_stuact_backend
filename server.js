@@ -9,8 +9,15 @@ const login = require('./src/login');
 const userInfo = require('./src/getUserInfo');
 const db = require('./db');
 
-
 const nodemailer = require('nodemailer');
+
+const adminRoutes = require('./src/adminRoutes');
+const studentRoutes = require('./src/studentRoutes');
+const stuactRoutes = require('./src/stuactRoutes');
+app.use(adminRoutes)
+app.use(studentRoutes)
+app.use(stuactRoutes)
+
 
 app.use(cors());
 app.use(express.json());
