@@ -5,7 +5,6 @@ const app = express();
 const cors = require('cors');
 const axios = require('axios');
 const routes = require('./routes');
-const port = process.env.PORT || 3001;
 const login = require('./src/login');
 const userInfo = require('./src/getUserInfo');
 const db = require('./db');
