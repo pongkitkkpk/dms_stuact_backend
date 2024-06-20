@@ -1,4 +1,8 @@
+
+require('dotenv').config()
 const mysql = require('mysql');
+
+
 //docker
 // const db = mysql.createConnection({
 //     user: "root",
@@ -8,10 +12,10 @@ const mysql = require('mysql');
 // });
 // xampp
 const db = mysql.createConnection({
-    user: "root",
-    host: "localhost",
-    password: "",
-    database: "usersystem"
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASS,
+    database: process.env.DB_NAME
 });
 
 module.exports = db;

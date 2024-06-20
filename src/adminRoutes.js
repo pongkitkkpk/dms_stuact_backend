@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const db = require('../db');
 
+
 router.get('/allusers', (req, res) => {
     db.query("SELECT * FROM users", (err, result) => {
         if (err) {
