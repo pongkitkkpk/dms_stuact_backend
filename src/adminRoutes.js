@@ -3,6 +3,9 @@ const router = express.Router();
 const db = require('../db');
 
 
+router.get('/apiadmin/status', (req, res) => {
+    res.json({ status: 'admin ok', message: 'Server is running' });
+});
 router.get('/allusers', (req, res) => {
     db.query("SELECT * FROM users", (err, result) => {
         if (err) {
@@ -36,7 +39,7 @@ router.get('/allprojectshavenumber/', (req, res) => {
 
 router.get('/yearlyprojectshavenumber/:yearly', (req, res) => {
     const yearly = req.params.yearly;
-    db.query("SELECT * FROM projects WHERE project_phase != 'ร่างคำขออนุมัติ' AND project_phase != 'ดำเนินการขออนุมัติ' AND project_phase != 'โครงการอนุมัติ' AND yearly = ?",yearly, (err, result) => {
+    db.query("SELECT * FROM projects WHERE project_phase != 'ร่างคำขออนุมัติ' AND project_phase != 'ดำเนินการขออนุมัติ' AND project_phase != 'โครงการอนุมัติ' AND yearly = ?", yearly, (err, result) => {
         if (err) {
             console.log(err);
             res.status(500).send(err);
@@ -116,8 +119,8 @@ router.post('/user/createUser', (req, res) => {
         codebooksome,
         codebooksomeoutyear,
         agencyGroupName
-     } = req.body;
-     console.log(req.body)
+    } = req.body;
+    console.log(req.body)
 
     db.query(
         "INSERT INTO users (id_student, name_student,Phone,AgencyAdvisor, department, position, clubName,WorkGroup,ClubGroup, campus,email,account_type,STU_STATUS_DESC,LEVEL_DESC, yearly, codedivision, codeagency, codeworkgroup, codebooksome,codebooksomeoutyear,agencyGroupName) VALUES (?,?,?,?,?,?,?,?,?,?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
@@ -155,17 +158,17 @@ router.post('/user/createUser', (req, res) => {
 });
 
 router.post('/createNetProject', (req, res) => {
-    const { 
+    const {
         project_name,
         AgnecyGroupName,
         responsible_agency,
         campus,
         net_budget,
         yearly,
-        
-     } = req.body;
-     console.log(req.body)
-     const createdAt = new Date();
+
+    } = req.body;
+    console.log(req.body)
+    const createdAt = new Date();
     db.query(
         "INSERT INTO netprojectbudget (project_name,AgnecyGroupName, responsible_agency, yearly, campus, net_budget,createdAt) VALUES (?,?,?,?,?,?,?)",
         [project_name,
@@ -200,7 +203,7 @@ router.get('/getallNetProject', (req, res) => {
 });
 router.get('/getyearlyNetProject/:yearly', (req, res) => {
     const yearly = req.params.yearly;
-    db.query("SELECT * FROM netprojectbudget WHERE yearly = ?",yearly, (err, result) => {
+    db.query("SELECT * FROM netprojectbudget WHERE yearly = ?", yearly, (err, result) => {
         if (err) {
             console.log(err);
             res.status(500).send(err);
@@ -225,22 +228,22 @@ router.get('/getSelectGroupNetProject/:AgnecyGroupName/:yearly', (req, res) => {
 
 
 router.put("/updateusebudget/:project_name", (req, res) => {
-    
+
     const project_name = req.params.project_name;
-    const {allow_budget} = req.body;
+    const { allow_budget } = req.body;
     db.query(
-      "UPDATE netprojectbudget SET allow_budget= ? WHERE project_name = ?",
-      [allow_budget, project_name],
-      (err, result) => {
-        if (err) {
-          console.error(err);
-          res.status(500).send("Error updating project data"); // Handle the error and send an appropriate response
-        } else {
-          console.log("Project data updated successfully");
+        "UPDATE netprojectbudget SET allow_budget= ? WHERE project_name = ?",
+        [allow_budget, project_name],
+        (err, result) => {
+            if (err) {
+                console.error(err);
+                res.status(500).send("Error updating project data"); // Handle the error and send an appropriate response
+            } else {
+                console.log("Project data updated successfully");
+            }
         }
-      }
     );
-  });
+});
 
 router.delete('/deleteNetProject/:id', (req, res) => { // Added a leading slash
     const id = req.params.id;
