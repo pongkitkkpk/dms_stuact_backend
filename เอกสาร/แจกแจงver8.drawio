@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2024-06-19T10:38:41.579Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36" etag="Dcn_PiAYiHckR6TLSNc1" version="24.5.5" type="device">
+<mxfile host="app.diagrams.net" modified="2024-06-24T06:15:43.741Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36" etag="P4OI4ipJeNRas_gRgCq2" version="24.5.3" type="device">
   <diagram name="หน้า-1" id="xoCHngNK6IxY0QqmwnbI">
-    <mxGraphModel dx="1290" dy="522" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="1654" math="0" shadow="0">
+    <mxGraphModel dx="1071" dy="540" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="1654" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -977,6 +977,185 @@
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="1530" y="3000" as="targetPoint" />
           </mxGeometry>
+        </mxCell>
+        <mxCell id="Ld2-AKlEoLJIqSZ0AKJT-2" value="" style="endArrow=none;dashed=1;html=1;strokeWidth=2;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="2488" y="111.50000000000003" as="sourcePoint" />
+            <mxPoint x="3338" y="111.00000000000003" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Ld2-AKlEoLJIqSZ0AKJT-4" value="" style="endArrow=none;dashed=1;html=1;dashPattern=12 12;strokeWidth=2;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="2698" y="1545.96" as="sourcePoint" />
+            <mxPoint x="2698" y="19.000000000000007" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Ld2-AKlEoLJIqSZ0AKJT-6" value="&lt;span style=&quot;font-family: &amp;quot;Bai Jamjuree&amp;quot;; font-size: 18px;&quot;&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;ผู้ดูแลระบบ&lt;/font&gt;&lt;/span&gt;&lt;div style=&quot;font-size: 18px;&quot;&gt;&lt;span style=&quot;font-family: &amp;quot;Bai Jamjuree&amp;quot;;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="2548" y="68.75" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Ld2-AKlEoLJIqSZ0AKJT-7" value="&lt;div style=&quot;font-size: 18px;&quot;&gt;&lt;font face=&quot;Bai Jamjuree&quot;&gt;บุคลากรกองกิจการนักศึกษา&lt;/font&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="2713" y="46.00000000000001" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Ld2-AKlEoLJIqSZ0AKJT-65" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="Ld2-AKlEoLJIqSZ0AKJT-8" target="Ld2-AKlEoLJIqSZ0AKJT-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Ld2-AKlEoLJIqSZ0AKJT-8" value="&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;font-size: 18px; font-family: &amp;quot;Bai Jamjuree&amp;quot;; background-color: initial;&quot;&gt;เพิ่มผู้ใช้ นักศึกษาและอาจารย์ที่ปรึกษา&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="2733" y="271.58" width="160" height="68.75" as="geometry" />
+        </mxCell>
+        <mxCell id="Ld2-AKlEoLJIqSZ0AKJT-66" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="Ld2-AKlEoLJIqSZ0AKJT-14" target="Ld2-AKlEoLJIqSZ0AKJT-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Ld2-AKlEoLJIqSZ0AKJT-14" value="&lt;div&gt;&lt;span style=&quot;font-family: &amp;quot;Bai Jamjuree&amp;quot;; font-size: 18px;&quot;&gt;กำหนดบทบาท&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="2753" y="370.96" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Ld2-AKlEoLJIqSZ0AKJT-67" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="Ld2-AKlEoLJIqSZ0AKJT-15" target="Ld2-AKlEoLJIqSZ0AKJT-23">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Ld2-AKlEoLJIqSZ0AKJT-15" value="&lt;div&gt;&lt;span style=&quot;font-family: &amp;quot;Bai Jamjuree&amp;quot;; font-size: 18px;&quot;&gt;เพิ่มงบประมาณ(ประจำปีแต่ละโครงการ)&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="2738" y="448.9599999999999" width="150" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="Ld2-AKlEoLJIqSZ0AKJT-16" value="" style="endArrow=none;dashed=1;html=1;dashPattern=12 12;strokeWidth=2;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="2938" y="1545.96" as="sourcePoint" />
+            <mxPoint x="2938" y="28.500000000000007" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Ld2-AKlEoLJIqSZ0AKJT-63" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="Ld2-AKlEoLJIqSZ0AKJT-17" target="Ld2-AKlEoLJIqSZ0AKJT-18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Ld2-AKlEoLJIqSZ0AKJT-17" value="&lt;font face=&quot;Bai Jamjuree&quot;&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;เพิ่มผู้ใช้ บุคลากรกองกิจการนักศึกษา&lt;/span&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="2518" y="149.75" width="160" height="76.21" as="geometry" />
+        </mxCell>
+        <mxCell id="Ld2-AKlEoLJIqSZ0AKJT-64" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="Ld2-AKlEoLJIqSZ0AKJT-18" target="Ld2-AKlEoLJIqSZ0AKJT-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Ld2-AKlEoLJIqSZ0AKJT-18" value="&lt;div&gt;&lt;span style=&quot;font-family: &amp;quot;Bai Jamjuree&amp;quot;; font-size: 18px;&quot;&gt;กำหนดบทบาท&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="2538" y="275.96" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Ld2-AKlEoLJIqSZ0AKJT-19" value="" style="endArrow=none;dashed=1;html=1;dashPattern=12 12;strokeWidth=2;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="3168" y="1525.96" as="sourcePoint" />
+            <mxPoint x="3148" y="30.180000000000007" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Ld2-AKlEoLJIqSZ0AKJT-21" value="&lt;div style=&quot;font-size: 18px;&quot;&gt;&lt;font face=&quot;Bai Jamjuree&quot;&gt;อาจารย์ที่ปรึกษา&lt;/font&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="3148" y="49.75000000000001" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Ld2-AKlEoLJIqSZ0AKJT-22" value="&lt;div style=&quot;font-size: 18px;&quot;&gt;&lt;font face=&quot;Bai Jamjuree&quot;&gt;นักศึกษา&lt;/font&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="2943" y="50.00000000000001" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Ld2-AKlEoLJIqSZ0AKJT-68" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="Ld2-AKlEoLJIqSZ0AKJT-23" target="Ld2-AKlEoLJIqSZ0AKJT-24">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Ld2-AKlEoLJIqSZ0AKJT-23" value="&lt;div&gt;&lt;span style=&quot;font-family: &amp;quot;Bai Jamjuree&amp;quot;; font-size: 18px;&quot;&gt;สร้างโครงการ&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="2983" y="463.9599999999999" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Ld2-AKlEoLJIqSZ0AKJT-71" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="Ld2-AKlEoLJIqSZ0AKJT-24" target="Ld2-AKlEoLJIqSZ0AKJT-70">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Ld2-AKlEoLJIqSZ0AKJT-24" value="&lt;div&gt;&lt;span style=&quot;font-family: &amp;quot;Bai Jamjuree&amp;quot;; font-size: 18px;&quot;&gt;ขอเสนอร่างคำขออนุมัติผ่านระบบ&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="2960.5" y="552.9599999999999" width="170" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="Ld2-AKlEoLJIqSZ0AKJT-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="Ld2-AKlEoLJIqSZ0AKJT-25" target="Ld2-AKlEoLJIqSZ0AKJT-26">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Ld2-AKlEoLJIqSZ0AKJT-30" value="&lt;font face=&quot;Bai Jamjuree&quot;&gt;&lt;span style=&quot;font-size: 18px; text-wrap: wrap; background-color: rgb(251, 251, 251);&quot;&gt;ไม่อนุมัติ&lt;/span&gt;&lt;/font&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="Ld2-AKlEoLJIqSZ0AKJT-28">
+          <mxGeometry x="0.239" y="3" relative="1" as="geometry">
+            <mxPoint x="-15" y="-5" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Ld2-AKlEoLJIqSZ0AKJT-35" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="Ld2-AKlEoLJIqSZ0AKJT-25" target="Ld2-AKlEoLJIqSZ0AKJT-33">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="2748" y="932.3749999999999" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="2728" y="785.83" />
+              <mxPoint x="2728" y="958.83" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Ld2-AKlEoLJIqSZ0AKJT-36" value="&lt;br&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: &amp;quot;Bai Jamjuree&amp;quot;; font-size: 18px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(251, 251, 251); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;&quot;&gt;อนุมัติ&lt;/span&gt;&lt;div&gt;&lt;br/&gt;&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="Ld2-AKlEoLJIqSZ0AKJT-35">
+          <mxGeometry x="0.0639" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Ld2-AKlEoLJIqSZ0AKJT-25" value="&lt;span style=&quot;font-family: &amp;quot;Bai Jamjuree&amp;quot;; font-size: 18px;&quot;&gt;พิจารณาข้อมูลโครงการ&lt;/span&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="2748" y="717.9599999999999" width="160" height="135.87" as="geometry" />
+        </mxCell>
+        <mxCell id="Ld2-AKlEoLJIqSZ0AKJT-31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="Ld2-AKlEoLJIqSZ0AKJT-26" target="Ld2-AKlEoLJIqSZ0AKJT-25">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Ld2-AKlEoLJIqSZ0AKJT-26" value="&lt;div&gt;&lt;span style=&quot;font-family: &amp;quot;Bai Jamjuree&amp;quot;; font-size: 18px;&quot;&gt;แก้ไขโครงการ&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="2960.5" y="853.83" width="155" height="41" as="geometry" />
+        </mxCell>
+        <mxCell id="Ld2-AKlEoLJIqSZ0AKJT-42" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="Ld2-AKlEoLJIqSZ0AKJT-33" target="Ld2-AKlEoLJIqSZ0AKJT-38">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Ld2-AKlEoLJIqSZ0AKJT-33" value="&lt;div&gt;&lt;span style=&quot;font-family: &amp;quot;Bai Jamjuree&amp;quot;; font-size: 18px;&quot;&gt;ดำเนินการอนุมัติ&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="2748" y="932.83" width="147.5" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Ld2-AKlEoLJIqSZ0AKJT-56" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="Ld2-AKlEoLJIqSZ0AKJT-38" target="Ld2-AKlEoLJIqSZ0AKJT-41">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Ld2-AKlEoLJIqSZ0AKJT-38" value="&lt;font face=&quot;Bai Jamjuree&quot;&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;โครงการอนุมัติ&lt;/span&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="2751.75" y="1018.8299999999999" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Ld2-AKlEoLJIqSZ0AKJT-57" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="Ld2-AKlEoLJIqSZ0AKJT-40" target="Ld2-AKlEoLJIqSZ0AKJT-45">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Ld2-AKlEoLJIqSZ0AKJT-40" value="&lt;div&gt;&lt;span style=&quot;font-family: &amp;quot;Bai Jamjuree&amp;quot;; font-size: 18px;&quot;&gt;รับเงินโครงการ&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="2965.5" y="1102.83" width="145" height="52.21" as="geometry" />
+        </mxCell>
+        <mxCell id="Ld2-AKlEoLJIqSZ0AKJT-44" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="Ld2-AKlEoLJIqSZ0AKJT-41" target="Ld2-AKlEoLJIqSZ0AKJT-40">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Ld2-AKlEoLJIqSZ0AKJT-41" value="&lt;font face=&quot;Bai Jamjuree&quot;&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;เงินโครงการอนุมัติ&lt;/span&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="2503" y="1105.04" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Ld2-AKlEoLJIqSZ0AKJT-47" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="Ld2-AKlEoLJIqSZ0AKJT-45" target="Ld2-AKlEoLJIqSZ0AKJT-46">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Ld2-AKlEoLJIqSZ0AKJT-45" value="&lt;div&gt;&lt;span style=&quot;font-family: &amp;quot;Bai Jamjuree&amp;quot;; font-size: 18px;&quot;&gt;จัดทำเอกสารปิดโครงการ&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="2948" y="1182.83" width="180" height="74.43" as="geometry" />
+        </mxCell>
+        <mxCell id="Ld2-AKlEoLJIqSZ0AKJT-52" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="Ld2-AKlEoLJIqSZ0AKJT-46" target="Ld2-AKlEoLJIqSZ0AKJT-49">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Ld2-AKlEoLJIqSZ0AKJT-54" value="&lt;font face=&quot;Bai Jamjuree&quot;&gt;&lt;span style=&quot;font-size: 18px; text-wrap: wrap; background-color: rgb(251, 251, 251);&quot;&gt;แก้ไข&lt;/span&gt;&lt;/font&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="Ld2-AKlEoLJIqSZ0AKJT-52">
+          <mxGeometry x="0.0756" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Ld2-AKlEoLJIqSZ0AKJT-59" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="Ld2-AKlEoLJIqSZ0AKJT-46" target="Ld2-AKlEoLJIqSZ0AKJT-58">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Ld2-AKlEoLJIqSZ0AKJT-60" value="&lt;font face=&quot;Bai Jamjuree&quot;&gt;&lt;span style=&quot;font-size: 18px; text-wrap: wrap; background-color: rgb(251, 251, 251);&quot;&gt;ผ่าน&lt;/span&gt;&lt;/font&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="Ld2-AKlEoLJIqSZ0AKJT-59">
+          <mxGeometry x="-0.0495" y="-4" relative="1" as="geometry">
+            <mxPoint y="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Ld2-AKlEoLJIqSZ0AKJT-46" value="&lt;span style=&quot;font-family: &amp;quot;Bai Jamjuree&amp;quot;; font-size: 18px;&quot;&gt;ตรวจสอบข้อมูล&lt;/span&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="2741.75" y="1245.8899999999999" width="160" height="135.87" as="geometry" />
+        </mxCell>
+        <mxCell id="Ld2-AKlEoLJIqSZ0AKJT-55" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="Ld2-AKlEoLJIqSZ0AKJT-49" target="Ld2-AKlEoLJIqSZ0AKJT-46">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Ld2-AKlEoLJIqSZ0AKJT-49" value="&lt;div&gt;&lt;span style=&quot;font-family: &amp;quot;Bai Jamjuree&amp;quot;; font-size: 18px;&quot;&gt;แก้ไขข้อมูลเอกสารปิดโครงการ&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="2949.25" y="1377.83" width="177.5" height="83" as="geometry" />
+        </mxCell>
+        <mxCell id="Ld2-AKlEoLJIqSZ0AKJT-62" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="Ld2-AKlEoLJIqSZ0AKJT-58" target="Ld2-AKlEoLJIqSZ0AKJT-61">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Ld2-AKlEoLJIqSZ0AKJT-58" value="&lt;div&gt;&lt;span style=&quot;font-family: &amp;quot;Bai Jamjuree&amp;quot;; font-size: 18px;&quot;&gt;ดำเนินการอนุมัติ&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="2741.75" y="1460.83" width="147.5" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Ld2-AKlEoLJIqSZ0AKJT-61" value="&lt;font face=&quot;Bai Jamjuree&quot;&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;ปิดโครงการโดยสำเร็จ&lt;/span&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="2723" y="1552.83" width="185" height="72" as="geometry" />
+        </mxCell>
+        <mxCell id="Ld2-AKlEoLJIqSZ0AKJT-72" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="Ld2-AKlEoLJIqSZ0AKJT-70" target="Ld2-AKlEoLJIqSZ0AKJT-25">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Ld2-AKlEoLJIqSZ0AKJT-70" value="&lt;div&gt;&lt;span style=&quot;font-family: &amp;quot;Bai Jamjuree&amp;quot;; font-size: 18px;&quot;&gt;ตรวจสอบคำขออนุมัติผ่านระบบ&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="3188" y="636.9599999999999" width="170" height="90" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
